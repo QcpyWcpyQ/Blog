@@ -1,0 +1,179 @@
+---
+import { Icon } from "astro-icon/components";
+import CoverImage from "@/components/common/CoverImage.astro";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { getProjectStatusMeta, resolveLinkIcon } from "@/utils/projects-utils";
+import { url } from "@/utils/url-utils";
+
+interface Props {
+	id: string;
+	title: string;
+	description?: string;
+	image: string;
+	basePath?: string;
+	tags?: string[];
+	published?: Date;
+	status?: string;
+	link?: { label: string; icon: string; value: string }[];
+}
+
+const {
+	id,
+	title,
+	description,
+	image,
+	basePath = "/",
+	tags,
+	published,
+	status,
+	link = [],
+} = Astro.props;
+
+const detailUrl = url(`/projects/${id}/`);
+
+// 状态元数据（标准 key → 本地化 + 配色）
+const statusMeta = status ? getProjectStatusMeta(status) : null;
+
+// 标签：只显示前 N 个，超出折叠成 +N
+const maxTags = 2;
+const visibleTags = (tags || []).slice(0, maxTags);
+const hiddenTagCount = (tags || []).length - visibleTags.length;
+
+// 网格封面是否撑满贴边，跟随文章列表设置（postListLayout.grid.coverFullWidth）
+const gridCoverFullWidth =
+	siteConfig.postListLayout.grid.coverFullWidth ?? false;
+
+const coverClass = gridCoverFullWidth
+	? "project-card-image group relative block aspect-2/1 overflow-hidden"
+	: "project-card-image group relative block aspect-2/1 overflow-hidden mx-4 mt-4 rounded-xl";
+---
+
+<div
+  class="project-card post-card-wrapper card-base flex flex-col w-full rounded-(--radius-large) overflow-hidden relative"
+  data-status={status || ""}
+  data-tags={tags?.join(",") || ""}
+>
+  <!-- 封面（在上） -->
+  <a href={detailUrl} aria-label={title} class={coverClass}>
+    {image ? (
+      <CoverImage
+        src={image}
+        basePath={basePath}
+        alt={title}
+        class="w-full h-full transition-transform duration-300 group-hover:scale-110"
+        preview={false}
+      />
+    ) : (
+      <div class="w-full h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+        <Icon name="material-symbols:rocket-launch" class="text-gray-400 text-6xl" />
+      </div>
+    )}
+    <!-- 悬浮：变暗 + 箭头（同文章列表网格模式） -->
+    <div class="absolute inset-0 pointer-events-none z-10 transition group-hover:bg-black/30" />
+    <div class="absolute inset-0 pointer-events-none z-20 flex items-center justify-center">
+      <Icon
+        name="material-symbols:chevron-right-rounded"
+        class="transition opacity-0 scale-50 group-hover:opacity-100 group-hover:scale-100 text-white text-5xl"
+      />
+    </div>
+    <!-- 状态徽标覆盖在封面右上角 -->
+    {statusMeta && (
+      <span
+        class={`absolute top-3 right-3 z-30 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium backdrop-blur-md ${statusMeta.coverClassName}`}
+      >
+        {statusMeta.icon && <Icon name={statusMeta.icon} class="text-sm" />}
+        {statusMeta.label}
+      </span>
+    )}
+  </a>
+
+  <!-- 内容（在下） -->
+  <div class="post-card-content p-4 flex flex-col flex-1 min-h-0">
+    <a
+      href={detailUrl}
+      class="post-card-title font-bold text-[1.35rem] leading-[1.75rem] text-black/90 dark:text-white/90 line-clamp-1 hover:text-(--primary) transition-colors flex-1 min-w-0"
+    >
+      {title}
+    </a>
+
+    <!-- 时间 + 标签-->
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-1">
+      {published && (
+        <div class="flex items-center">
+          <div class="meta-icon">
+            <Icon name="material-symbols:calendar-today-outline-rounded" class="text-xl" />
+          </div>
+          <span class="text-50 text-sm font-medium">{formatDateToYYYYMMDD(published)}</span>
+        </div>
+      )}
+      {visibleTags.length > 0 && (
+        <div class="flex items-center">
+          <div class="meta-icon">
+            <Icon name="material-symbols:tag-rounded" class="text-xl" />
+          </div>
+          <span class="flex flex-row flex-nowrap items-center">
+            {visibleTags.map((tag, i) => (
+              <span class="flex items-center">
+                {i !== 0 && (
+                  <span class="mx-1.5 text-sm font-medium text-(--meta-divider)">/</span>
+                )}
+                <span class="text-50 text-sm font-medium whitespace-nowrap">{tag}</span>
+              </span>
+            ))}
+            {hiddenTagCount > 0 && (
+              <span class="ml-1.5 text-50 text-sm font-medium">+{hiddenTagCount}</span>
+            )}
+          </span>
+        </div>
+      )}
+    </div>
+
+    {description && (
+      <p class="description text-sm text-neutral-600 dark:text-neutral-400 line-clamp-2 leading-relaxed mt-2" title={description}>
+        {description}
+      </p>
+    )}
+
+    <!-- 底部：link 按钮 + 查看详情（右下角，底对齐不随描述高度） -->
+    <div class="mt-auto pt-4 flex flex-wrap items-center gap-2">
+        {link.map((r) => {
+          const resolvedIcon = resolveLinkIcon(r.icon, r.label);
+          return (
+            <a
+              href={r.value}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg bg-(--primary)/10 text-(--primary) hover:bg-(--primary)/20 transition-colors"
+            >
+              {resolvedIcon.kind === "icon" && (
+                <Icon name={resolvedIcon.value} class="text-sm" />
+              )}
+              {resolvedIcon.kind === "image" && (
+                <img
+                  src={resolvedIcon.value}
+                  alt=""
+                  class="w-3.5 h-3.5 object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
+              )}
+              {resolvedIcon.kind === "letter" && (
+                <span class="text-sm font-bold">{resolvedIcon.value}</span>
+              )}
+              {r.label}
+            </a>
+          );
+        })}
+        <a
+          href={detailUrl}
+          class="inline-flex items-center gap-1 text-xs font-medium text-neutral-500 dark:text-neutral-400 hover:text-(--primary) transition-colors ml-auto"
+        >
+          {i18n(I18nKey.projectDetails)}
+          <Icon name="material-symbols:chevron-right-rounded" class="text-sm" />
+        </a>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,205 @@
+---
+import { Icon } from "astro-icon/components";
+import ProjectCard from "@/components/pages/projects/ProjectCard.astro";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import "@/styles/dynamic.css";
+import { getSortedProjects } from "@/utils/content-utils";
+import {
+	getProjectStatusMeta,
+	PROJECT_STATUS_KEYS,
+} from "@/utils/projects-utils";
+import { getFileDirFromPath, removeFileExtension } from "@/utils/url-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.projects) {
+	return Astro.redirect("/404/");
+}
+
+const title = i18n(I18nKey.projects);
+const description = i18n(I18nKey.projectsDescription);
+
+const projects = await getSortedProjects();
+const projectMeta = projects.map((p) => ({
+	id: removeFileExtension(p.id),
+	title: p.data.title,
+	description: p.data.description,
+	image: p.data.image,
+	basePath: getFileDirFromPath(p.filePath || ""),
+	tags: p.data.tags,
+	published: p.data.published,
+	link: p.data.link,
+	status: p.data.status,
+}));
+
+// 筛选：显示全部已知状态（带图标）
+const statusFilters = PROJECT_STATUS_KEYS.map((key) => {
+	const meta = getProjectStatusMeta(key);
+	return { key, label: meta.label, icon: meta.icon };
+});
+---
+
+<MainGridLayout title={title} description={description}>
+	<section class="dynamic-page">
+		<!-- 标题面板 -->
+		<header class="card-base dynamic-page-header">
+			<div class="dynamic-page-heading">
+				<div class="dynamic-page-icon" aria-hidden="true">
+					<Icon name="material-symbols:rocket-launch" />
+				</div>
+				<div>
+					<h2>{title}</h2>
+					{description && <p>{description}</p>}
+				</div>
+			</div>
+			<div class="dynamic-count" aria-label={title}>
+				<Icon name="material-symbols:rocket-launch" />
+				<strong>{projectMeta.length}</strong>
+				<span>{title}</span>
+			</div>
+		<!-- 搜索 + 状态筛选（标题面板内，整行；搜索与筛选分两行） -->
+		<project-filter style="grid-column: 1 / -1">
+			<div class="relative mb-3">
+				<Icon
+					name="material-symbols:search"
+					class="absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 dark:text-neutral-500 text-lg pointer-events-none"
+				/>
+				<input
+					type="text"
+					data-search
+					placeholder={i18n(I18nKey.projectSearch)}
+					class="w-full pl-10 pr-4 py-2 rounded-xl border border-(--line-divider) bg-transparent text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 dark:placeholder-neutral-500 focus:border-(--primary) focus:ring-1 focus:ring-(--primary) outline-none transition-all duration-200 text-sm"
+				/>
+			</div>
+			<div class="flex flex-wrap items-center gap-2">
+				<button
+					data-status="all"
+					class="category-pill px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200"
+					data-active
+				>
+					{i18n(I18nKey.all)}
+				</button>
+				{statusFilters.map((s) => (
+					<button
+						data-status={s.key}
+						class="category-pill px-3 py-1.5 rounded-full text-sm font-medium transition-colors duration-200 inline-flex items-center gap-1.5"
+					>
+						{s.icon && <Icon name={s.icon} class="text-base" />}
+						{s.label}
+					</button>
+				))}
+			</div>
+		</project-filter>
+		</header>
+
+		<!-- 内容面板：项目卡片网格 -->
+		{projectMeta.length > 0 ? (
+			<div class="project-grid" style="--project-card-min-width: 320px">
+				{projectMeta.map((p) => (
+					<ProjectCard
+						id={p.id}
+						title={p.title}
+						description={p.description}
+						image={p.image}
+						basePath={p.basePath}
+						tags={p.tags}
+						published={p.published}
+						link={p.link}
+						status={p.status}
+					/>
+				))}
+			</div>
+		) : (
+			<div class="card-base flex flex-col items-center justify-center py-16 text-neutral-400 dark:text-neutral-500">
+				<Icon name="material-symbols:rocket-launch" class="text-6xl mb-4 opacity-50" />
+				<p class="text-lg">{i18n(I18nKey.projectEmpty)}</p>
+			</div>
+		)}
+
+		<!-- 筛选无结果空态 -->
+		<div class="projects-empty hidden flex-col items-center justify-center py-12 text-neutral-400 dark:text-neutral-500">
+			<Icon name="material-symbols:search-off-rounded" class="text-4xl mb-3" />
+			<div class="text-sm">{i18n(I18nKey.searchNoResults)}</div>
+		</div>
+	</section>
+
+	<script slot="head" is:inline>
+		if (!customElements.get("project-filter")) {
+			class ProjectFilter extends HTMLElement {
+				selectedStatus = "all";
+				connectedCallback() {
+					this.addEventListener("click", this.handleClick);
+					this.addEventListener("input", this.handleInput);
+				}
+				disconnectedCallback() {
+					this.removeEventListener("click", this.handleClick);
+					this.removeEventListener("input", this.handleInput);
+				}
+				handleClick(e) {
+					const button = e.target.closest("button");
+					if (!button) return;
+					this.selectedStatus = button.dataset.status;
+					this.querySelectorAll("button").forEach((b) =>
+						b.removeAttribute("data-active"),
+					);
+					button.setAttribute("data-active", "");
+					this.applyFilters();
+				}
+				handleInput() {
+					this.applyFilters();
+				}
+				applyFilters() {
+					const container = this.closest(".dynamic-page");
+					if (!container) return;
+					const input = this.querySelector("[data-search]");
+					const query = (input?.value || "").toLowerCase().trim();
+					const cards = container.querySelectorAll(".project-card");
+					let hasVisible = false;
+					cards.forEach((card) => {
+						const statusMatch =
+							this.selectedStatus === "all" ||
+							card.dataset.status === this.selectedStatus;
+						const tags = (card.dataset.tags || "").toLowerCase();
+						const title = (
+							card.querySelector(".post-card-title")?.textContent || ""
+						).toLowerCase();
+						const desc = (
+							card.querySelector(".description")?.textContent || ""
+						).toLowerCase();
+						const searchMatch =
+							!query ||
+							title.includes(query) ||
+							desc.includes(query) ||
+							tags.includes(query);
+						if (statusMatch && searchMatch) {
+							card.style.display = "";
+							hasVisible = true;
+						} else {
+							card.style.display = "none";
+						}
+					});
+					const empty = container.querySelector(".projects-empty");
+					if (empty) {
+						empty.classList.toggle("hidden", hasVisible);
+						empty.classList.toggle("flex", !hasVisible);
+					}
+				}
+			}
+			customElements.define("project-filter", ProjectFilter);
+		}
+	</script>
+
+	<style is:global>
+		/* 与文章列表网格模式一致：auto-fill minmax 自动换列 */
+		.project-grid {
+			display: grid;
+			grid-template-columns: repeat(
+				auto-fill,
+				minmax(var(--project-card-min-width, 320px), 1fr)
+			);
+			gap: 1rem;
+		}
+	</style>
+</MainGridLayout>

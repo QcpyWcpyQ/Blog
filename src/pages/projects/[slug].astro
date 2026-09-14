@@ -1,0 +1,203 @@
+---
+import { render } from "astro:content";
+import Markdown from "@components/common/Markdown.astro";
+import { Icon } from "astro-icon/components";
+import CoverImage from "@/components/common/CoverImage.astro";
+import { siteConfig } from "@/config";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import MainGridLayout from "@/layouts/MainGridLayout.astro";
+import { getSortedProjects } from "@/utils/content-utils";
+import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import {
+	getProjectStatusMeta,
+	resolveLinkIcon,
+	resolveProjectImage,
+	resolveProjectImageAbsolute,
+} from "@/utils/projects-utils";
+import {
+	getFileDirFromPath,
+	removeFileExtension,
+	url,
+} from "@/utils/url-utils";
+
+// 检查页面是否启用
+if (!siteConfig.pages.projects) {
+	return Astro.redirect("/404/");
+}
+
+export async function getStaticPaths() {
+	const projects = await getSortedProjects();
+	return projects.map((entry) => ({
+		params: { slug: removeFileExtension(entry.id) },
+		props: { entry },
+	}));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+const { title, description, published, tags, link, status } = entry.data;
+
+// OG 元数据用绝对 URL；页面内封面由 <CoverImage> 用原始 src + basePath 解析（同文章页）
+const coverOg = await resolveProjectImageAbsolute(
+	entry.data.image,
+	entry.filePath,
+);
+// 灯箱用的同源可加载 URL（本地调试不指向远程域名）
+const coverLightboxSrc = await resolveProjectImage(
+	entry.data.image,
+	entry.filePath,
+);
+// 封面 basePath：封面本体走 <CoverImage>（astro:assets 才会真正产出资源）
+const coverBasePath = getFileDirFromPath(entry.filePath || "");
+
+// 状态元数据（标准 key → 本地化 + 配色）
+const statusMeta = status ? getProjectStatusMeta(status) : null;
+
+// 标签：详情页完整显示所有标签（不折叠成 +N）
+const visibleTags = tags || [];
+---
+
+<MainGridLayout
+  title={title}
+  description={description || title}
+  lang={entry.data.lang || undefined}
+  setOGTypeArticle={true}
+  headings={headings}
+  postCoverImage={coverOg}
+>
+  <div class="flex w-full rounded-(--radius-large) overflow-hidden relative mb-4">
+    <div id="post-container" class="card-base z-10 px-6 md:px-9 pt-6 pb-4 relative w-full">
+      <!-- 返回列表 -->
+      <a
+        href={url("/projects/")}
+        class="inline-flex items-center gap-1.5 text-sm text-(--primary) hover:underline mb-4"
+      >
+        <Icon name="material-symbols:arrow-back" class="text-base" />
+        {i18n(I18nKey.projectBack)}
+      </a>
+
+      <!-- 项目头部：封面在上，信息在下（单栏） -->
+      <div class="mb-6">
+        <!-- 状态（名称前）+ 名称 -->
+        <div class="flex items-center gap-3 flex-wrap">
+          <div
+            data-pagefind-weight="10"
+            data-pagefind-meta="title"
+            class="text-3xl md:text-[2.25rem]/[2.75rem] font-bold leading-tight text-neutral-900 dark:text-neutral-100"
+          >
+            {title}
+          </div>
+          {statusMeta && (
+            <span class={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-lg ${statusMeta.className}`}>
+              {statusMeta.icon && <Icon name={statusMeta.icon} class="text-xl" />}
+              {statusMeta.label}
+            </span>
+          )}
+        </div>
+
+        <!-- 日期 + 标签-->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mt-3">
+          <div class="flex items-center">
+            <div class="meta-icon">
+              <Icon name="material-symbols:calendar-today-outline-rounded" class="text-xl" />
+            </div>
+            <time datetime={published.toISOString()} class="text-50 text-sm font-medium">
+              {formatDateToYYYYMMDD(published)}
+            </time>
+          </div>
+          {visibleTags.length > 0 && (
+            <div class="flex items-center">
+              <div class="meta-icon">
+                <Icon name="material-symbols:tag-rounded" class="text-xl" />
+              </div>
+              <span class="flex flex-wrap items-center">
+                {visibleTags.map((tag, i) => (
+                  <span class="flex items-center">
+                    {i !== 0 && (
+                      <span class="mx-1.5 text-sm font-medium text-(--meta-divider)">/</span>
+                    )}
+                    <span class="text-50 text-sm font-medium whitespace-nowrap">{tag}</span>
+                  </span>
+                ))}
+              </span>
+            </div>
+          )}
+        </div>
+
+        {description && (
+          <p class="mt-2 text-neutral-600 dark:text-neutral-400 leading-relaxed line-clamp-4">
+            {description}
+          </p>
+        )}
+
+        <!-- 外链按钮-->
+        {link.length > 0 && (
+          <div class="flex flex-wrap items-center gap-2.5 mt-4">
+            {link.map((r, i) => {
+              const resolvedIcon = resolveLinkIcon(r.icon, r.label);
+              const isFirst = i === 0;
+              return (
+                <a
+                  href={r.value}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class:list={[
+                    "inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-colors",
+                    isFirst
+                      ? "bg-(--primary) text-white dark:text-black/70 hover:bg-(--primary)/80"
+                      : "border border-(--primary)/40 text-(--primary) hover:bg-(--primary)/10",
+                  ]}
+                >
+                  {resolvedIcon.kind === "icon" && <Icon name={resolvedIcon.value} class="text-base" />}
+                  {resolvedIcon.kind === "image" && (
+                    <img
+                      src={resolvedIcon.value}
+                      alt=""
+                      class="w-4 h-4 object-contain"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  )}
+                  {resolvedIcon.kind === "letter" && (
+                    <span class="text-sm font-bold">{resolvedIcon.value}</span>
+                  )}
+                  {r.label}
+                </a>
+              );
+            })}
+          </div>
+        )}
+
+        <!-- 封面（在元数据与链接下方，完整显示、灯箱放大；未配置则不显示） -->
+        {entry.data.image && (
+          <div class="mt-4">
+            <div
+              data-fancybox="project-cover"
+              data-src={coverLightboxSrc}
+              data-type="image"
+              class="relative block w-full cursor-pointer overflow-hidden rounded-xl"
+            >
+              <CoverImage
+                src={entry.data.image}
+                basePath={coverBasePath}
+                alt={title}
+                class="w-full"
+                preview={false}
+                naturalHeight
+              />
+            </div>
+          </div>
+        )}
+      </div>
+
+      <!-- README 正文 -->
+      <div data-pagefind-body>
+        <Markdown class="mb-6 markdown-content">
+          <Content />
+        </Markdown>
+      </div>
+    </div>
+  </div>
+</MainGridLayout>
