@@ -25,11 +25,10 @@ Note that if the statement is interpreted in the context of natural numbers, it 
 
   - **Example 1.1**  
     If $\left\|P\right\|$ is the truth value of $P$ and $\left\|Q\right\|$ is the truth value of $Q$, then
-
     $$
     \left\|P\land Q\right\|=\min\left\{\left\|P\right\|,\left\|Q\right\|\right\}.
     $$
-
+    
     This algebraic perspective is useful for replacing structural properties of logical connectives.
 
 ---
