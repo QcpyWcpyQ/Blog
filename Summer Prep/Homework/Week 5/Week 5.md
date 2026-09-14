@@ -156,3 +156,76 @@
 
 ---
 
+- **Problem 5**  
+  Let
+  $$
+  A = (a_{ij}) \in M_{m\times n}(\mathbb R).
+  $$
+  Prove that the following three statements are equivalent
+  $$
+  A = \mathbb 0, \quad A^\top A = \mathbb 0_{n\times n}, \quad AA^\top = \mathbb 0_{m\times m}.
+  $$
+  By saying that the three statements are equivalent, you must prove that each one holds if and only if the others hold. In particular, it is sufficient to establish
+  $$
+  \begin{aligned}
+  A = \mathbb 0 &\implies A^\top A = \mathbb 0, \\
+  A^\top A = \mathbb 0 &\implies A = \mathbb 0,
+  \end{aligned}
+  $$
+  and
+  $$
+  \begin{aligned}
+  A = \mathbb 0 &\implies AA^\top = \mathbb 0, \\
+  AA^\top = \mathbb 0 &\implies A = \mathbb 0.
+  \end{aligned}
+  $$
+  Your proof should use only the definitions of matrix multiplication and transpose. In particular, when proving
+  $$
+  A^\top A = \mathbb 0 \implies A = \mathbb 0,
+  $$
+  examine the diagonal entries of $A^\top A$ and justify carefully why they force every entry of $A$ to be zero. Similarly, for
+  $$
+  AA^\top = \mathbb 0 \implies A = \mathbb 0,
+  $$
+  examine the diagonal entries of $AA^\top$.
+
+  - **Proof 5.1**  
+    Let $A = \lb a_{ij} \eb_{m\times n}$, which means $A^\top = \lb a_{ji} \eb_{n\times m}$.  
+
+    1. **Proof of $A = \mathbb 0 \implies A^\top A = \mathbb 0$**  
+       $$
+       A = \mathbb 0 \implies a_{ij} = 0 \quad (\forall 1 \leqslant i \leqslant m, \,\, 1 \leqslant j \leqslant n).
+       $$
+       The $(k,j)$-th entry of $A^\top A$ is given by
+       $$
+       \sum_{i=1}^m a_{ik}a_{ij} = \sum_{i=1}^m 0 \cdot 0 = 0 \quad (\forall 1 \leqslant k,j \leqslant n) \implies A^\top A = \mathbb 0_{n\times n}.
+       $$
+
+    2. **Proof of $A^\top A = \mathbb 0 \implies A = \mathbb 0$**  
+       Let $A^\top A = \mathbb 0_{n\times n}$. For each $j \in \{1, 2, \cdots, n\}$, the $j$-th diagonal entry of $A^\top A$ is computed as
+       $$
+       \sum_{i=1}^m a_{ij}a_{ij} = \sum_{i=1}^m a_{ij}^2 = 0.
+       $$
+       Since $a_{ij} \in \mathbb R \implies a_{ij}^2 \geqslant 0$ for all $i$, a sum of nonnegative real numbers equals zero if and only if each term is zero, which yields
+       $$
+       a_{ij}^2 = 0 \implies a_{ij} = 0 \quad (\forall 1 \leqslant i \leqslant m, \,\, 1 \leqslant j \leqslant n) \implies A = \mathbb 0_{m\times n}.
+       $$
+
+    3. **Proof of $A = \mathbb 0 \implies AA^\top = \mathbb 0$**  
+       $$
+       A = \mathbb 0 \implies a_{ij} = 0 \quad (\forall 1 \leqslant i \leqslant m, \,\, 1 \leqslant j \leqslant n).
+       $$
+       The $(i,k)$-th entry of $AA^\top$ is given by
+       $$
+       \sum_{j=1}^n a_{ij}a_{kj} = \sum_{j=1}^n 0 \cdot 0 = 0 \quad (\forall 1 \leqslant i,k \leqslant m) \implies AA^\top = \mathbb 0_{m\times m}.
+       $$
+
+    4. **Proof of $AA^\top = \mathbb 0 \implies A = \mathbb 0$**  
+       Let $AA^\top = \mathbb 0_{m\times m}$. For each $i \in \{1, 2, \cdots, m\}$, the $i$-th diagonal entry of $AA^\top$ is computed as
+       $$
+       \sum_{j=1}^n a_{ij}a_{ij} = \sum_{j=1}^n a_{ij}^2 = 0.
+       $$
+       Since $a_{ij} \in \mathbb R \implies a_{ij}^2 \geqslant 0$ for all $j$, a sum of nonnegative real numbers equals zero if and only if each term is zero, which yields
+       $$
+       a_{ij}^2 = 0 \implies a_{ij} = 0 \quad (\forall 1 \leqslant i \leqslant m, \,\, 1 \leqslant j \leqslant n) \implies A = \mathbb 0_{m\times n}.
+       $$
