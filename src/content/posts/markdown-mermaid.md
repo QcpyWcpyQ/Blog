@@ -1,5 +1,6 @@
 ---
 title: Markdown Mermaid 图表
+draft: true
 published: 1970-01-01
 pinned: false
 description: 一个包含 Mermaid 的 Markdown 博客文章简单示例。
