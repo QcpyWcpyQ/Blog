@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Basic of Polynomials$\newcommand{\i}{\operatorname{i}}\newcommand{\deg}{\operatorname{deg}}$
+## Basic of Polynomials
 
 Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R, \mathbb C$.
 

@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Week 5$\def\lb{\begin{bmatrix}}\def\eb{\end{bmatrix}}\def\i{\operatorname{i}}$
+## Week 5
 
 - **Problem 1**
   Let $A, B \in M_n(\mathbb R)$ satisfy

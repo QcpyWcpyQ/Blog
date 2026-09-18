@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Irreducibility in $\newcommand{\K}{\mathbb{K}}\K[x]\newcommand{\i}{\operatorname{i}}$.
+## Irreducibility in $\K[x]$.
 
 - **Exercise 1**  
   Determine polynomials below is rather reducible or not.

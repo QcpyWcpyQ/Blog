@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Basics of Polynomials$\newcommand{\deg}{\operatorname{deg}}$
+## Basics of Polynomials
 
 - **Exercise 1**  
   Let $p(x)=x^3+2x^2-x+1$ and $q(x)=-x^3+x^2+3x-2$.

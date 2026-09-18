@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Special Matrices and Transposition$\def\lb{\begin{bmatrix}}\def\eb{\end{bmatrix}}\def\i{\operatorname{i}}$
+## Special Matrices and Transposition
 
 - **Definition 1**  
   The **identity matrix** $I_n=\lb \delta_{ij} \eb_{n}\in M_n(S)$ is defined by  

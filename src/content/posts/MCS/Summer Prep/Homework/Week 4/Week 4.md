@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Week 4$\newcommand{\i}{\operatorname{i}}$
+## Week 4
 
 - **Problem 1**
   Let 

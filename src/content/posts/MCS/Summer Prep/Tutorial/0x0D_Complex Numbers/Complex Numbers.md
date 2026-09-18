@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Complex Numbers $\newcommand{\i}{\operatorname{i}}$
+## Complex Numbers
 
 - **Exercise 1**
   Comupute

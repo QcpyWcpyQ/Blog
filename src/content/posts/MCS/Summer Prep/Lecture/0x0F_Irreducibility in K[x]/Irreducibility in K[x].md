@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Irreducibility in $\mathbb K[x]\newcommand{\deg}{\operatorname{deg}}\newcommand{\i}{\operatorname{i}}$
+## Irreducibility in $\mathbb K[x]$
 
 - **Definition 1**
   A polynomial $p(x)\in\mathbb K[x]$ with $\deg(p(x))>0$ is **irreducible** over $\mathbb K$ if whenever $p(x)=q(x)h(x)$ for some $q(x),h(x)\in\mathbb K[x]$ then either $q(x)$ or $h(x)$ is a constant polynomial. Otherwise, $p(x)$ is **reducible**.
@@ -196,4 +196,3 @@ image: ""
       $$
       Similarly it follows that $s$ divides $a_n$. Therefore, the rational roots theorem is proved.
     
-      

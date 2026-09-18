@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Matrix arithmetic $\def\lb{\begin{bmatrix}}\def\eb{\end{bmatrix}}\def\i{\operatorname{i}}$
+## Matrix arithmetic
 
 - **Exercise 1**  
   Let

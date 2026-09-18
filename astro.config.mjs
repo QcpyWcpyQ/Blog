@@ -302,7 +302,19 @@ export default defineConfig({
 				[remarkPlantuml, plantumlConfig],
 			],
 			rehypePlugins: [
-				[rehypeKatex, { katex }],
+				[
+					rehypeKatex,
+					{
+						katex,
+						macros: {
+							"\\lb": "\\begin{bmatrix}",
+							"\\eb": "\\end{bmatrix}",
+							"\\i": "\\operatorname{i}",
+							"\\deg": "\\operatorname{deg}",
+							"\\K": "\\mathbb{K}",
+						},
+					},
+				],
 				[rehypeCallouts, { theme: siteConfig.post.rehypeCallouts.theme }],
 				rehypeSlug,
 				rehypeCodeGroup,

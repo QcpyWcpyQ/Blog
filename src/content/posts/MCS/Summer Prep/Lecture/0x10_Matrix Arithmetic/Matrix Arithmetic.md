@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Matrix Arithmetic$\newcommand{\lb}{\begin{bmatrix}}\newcommand{\eb}{\end{bmatrix}}\newcommand{\i}{\operatorname{i}}$
+## Matrix Arithmetic
 
 Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
 

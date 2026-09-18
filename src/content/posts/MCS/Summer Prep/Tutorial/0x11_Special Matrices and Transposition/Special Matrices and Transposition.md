@@ -7,7 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
-## Special Matrices and Transposition$\def\lb{\begin{bmatrix}}\def\eb{\end{bmatrix}}\def\i{\operatorname{i}}$
+## Special Matrices and Transposition
 
 - **Exercise 1**  
   Let $u=\lb 1 & a & b \\ 0 & 1 & c \\ 0 & 0 & 1\eb$ with $a,b,c\in\mathbb R$. Prove that $u$ is invertible and find $u^{-1}$.
