@@ -42,11 +42,11 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "Firefly",
+	title: "cpy",
 
 	// 站点副标题
-	subtitle: "Demo site",
-
+	subtitle: "sama",
+j
 	// 站点 URL
 	site_url: "https://cpysama.com",
 
