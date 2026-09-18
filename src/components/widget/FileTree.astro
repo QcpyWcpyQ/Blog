@@ -81,8 +81,12 @@ const currentPath = decodeURIComponent(Astro.url.pathname)
 		padding: 0.3rem 0.5rem;
 		padding-left: calc(0.5rem + var(--tree-level, 0) * 1rem);
 		border-radius: 0.5rem;
-		color: var(--deep-text);
+		color: rgba(0, 0, 0, 0.78);
 		transition: background-color 150ms ease, color 150ms ease;
+	}
+
+	:global(.dark) .file-tree-row {
+		color: rgba(255, 255, 255, 0.82);
 	}
 
 	.file-tree-row:hover {
@@ -90,7 +94,8 @@ const currentPath = decodeURIComponent(Astro.url.pathname)
 		color: var(--primary);
 	}
 
-	.file-tree-file-row.is-active {
+	.file-tree-file-row.is-active,
+	.file-tree-folder-row.is-active {
 		background: color-mix(in srgb, var(--primary) 13%, transparent);
 		color: var(--primary);
 		font-weight: 700;
@@ -141,7 +146,11 @@ const currentPath = decodeURIComponent(Astro.url.pathname)
 	}
 
 	.file-tree-file-icon {
-		color: var(--content-meta);
+		color: rgba(0, 0, 0, 0.55);
+	}
+
+	:global(.dark) .file-tree-file-icon {
+		color: rgba(255, 255, 255, 0.62);
 	}
 
 	.file-tree-count {
