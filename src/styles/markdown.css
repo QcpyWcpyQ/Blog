@@ -129,12 +129,14 @@
   }
 
   /* 让公式中的上标、下标更紧凑，避免脚本字号抢过正文和主公式。 */
+  .katex .sizing.reset-size6.size3,
   .katex .katex-sizing.reset-size6.size3,
   .katex .fontsize-ensurer.reset-size6.size3 {
     font-size: 0.58em;
   }
 
   /* 多层嵌套的上标、下标再略微收小一级。 */
+  .katex .sizing.reset-size6.size2,
   .katex .katex-sizing.reset-size6.size2,
   .katex .fontsize-ensurer.reset-size6.size2 {
     font-size: 0.48em;
