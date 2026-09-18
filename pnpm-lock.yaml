@@ -129,8 +129,8 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       katex:
-        specifier: ^0.18.7
-        version: 0.18.7
+        specifier: ^0.16.47
+        version: 0.16.47
       l2d-widget:
         specifier: ^0.1.1
         version: 0.1.2
