@@ -42,9 +42,6 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		url: "#",
 		icon: "material-symbols:group",
 		children: [
-			// 友链
-			LinkPresets.Friends,
-
 			// 留言
 			LinkPresets.Guestbook,
 		],
@@ -105,21 +102,15 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 		children: [
 			{
 				name: "GitHub",
-				url: "https://github.com/CuteLeaf/Firefly",
+				url: "https://github.com/QcpyWcpyQ",
 				external: true,
 				icon: "fa7-brands:github",
 			},
 			{
-				name: "Gitee",
-				url: "https://gitee.com/CuteLeaf/Firefly",
+				name: "Luogu",
+				url: "https://www.luogu.com.cn/user/450861",
 				external: true,
-				icon: "fa7-brands:gitee",
-			},
-			{
-				name: "Firefly文档",
-				url: "https://docs-firefly.cuteleaf.cn",
-				external: true,
-				icon: "material-symbols:docs",
+				icon: "material-symbols:school",
 			},
 		],
 	});
