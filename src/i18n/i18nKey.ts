@@ -28,6 +28,7 @@ enum I18nKey {
 	tableOfContents = "tableOfContents",
 	tocEmpty = "tocEmpty",
 	music = "music",
+	fileTree = "fileTree",
 
 	// 动态
 	dynamic = "dynamic",

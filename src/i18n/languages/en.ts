@@ -32,6 +32,7 @@ export const en: Translation = {
 	[Key.tableOfContents]: "Table of Contents",
 	[Key.tocEmpty]: "No table of contents on this page",
 	[Key.music]: "Music",
+	[Key.fileTree]: "File tree",
 	[Key.dynamic]: "Moments",
 	[Key.latestDynamics]: "Latest Moments",
 	[Key.moreDynamics]: "More moments",

@@ -32,6 +32,7 @@ export const ru: Translation = {
 	[Key.tableOfContents]: "Содержание",
 	[Key.tocEmpty]: "На этой странице нет оглавления",
 	[Key.music]: "Музыка",
+	[Key.fileTree]: "Дерево файлов",
 	[Key.dynamic]: "Моменты",
 	[Key.latestDynamics]: "Последние публикации",
 	[Key.moreDynamics]: "Больше публикаций",

@@ -32,6 +32,7 @@ export const zh_TW: Translation = {
 	[Key.tableOfContents]: "文章目錄",
 	[Key.tocEmpty]: "目前頁面沒有目錄",
 	[Key.music]: "音樂",
+	[Key.fileTree]: "檔案樹",
 	[Key.dynamic]: "動態",
 	[Key.latestDynamics]: "最新動態",
 	[Key.moreDynamics]: "更多動態",
