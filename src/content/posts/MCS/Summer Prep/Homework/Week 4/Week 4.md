@@ -26,13 +26,13 @@ image: ""
   Here, "exactly two digits" means that the number can be written as a decimal with two digits after the decimal point, but cannot be written as a decimal with only one digit after the decimal point.
 
   - **Proof 1.1**
-    Suppose $p \in \mathbb N,q \in \mathbb N, 0 < p < q$. By definition, we have $\dfrac{p}{q} = \dfrac{N}{100}$ for some $10 \leqslant N < 100$ and $10\not\mid N$. Then
+    Suppose $p \in \mathbb N,q \in \mathbb N, 0 < p < q$. By definition, we have $\dfrac{p}{q} = \dfrac{N}{100}$ for some $10 \leqslant N < 100$ and $10\nmid N$. Then
     $$
     100p = qN.
     $$
     Since $\dfrac{p}{q}$ is a reduced representation, $p$ and $q$ have no common prime factors. By theorem, since the decimal representation of $\dfrac{p}{q}$ is finite, the only possible prime factors of $q$ are $2$ or $5$. Thus, $q$ must be a divisor of $100 = 2^2 \cdot 5^2$.  We have $\operatorname{Div}_+(100)=\{1, 2, 4, 5, 10, 20, 25, 50, 100\}$.
   
-    * ($\Longrightarrow$) Suppose $\dfrac{p}{q}$ has exactly two decimal digits, which means $10 \not\mid N$. We prove the required set by eliminating the invalid values of $q$:
+    * ($\Longrightarrow$) Suppose $\dfrac{p}{q}$ has exactly two decimal digits, which means $10 \nmid N$. We prove the required set by eliminating the invalid values of $q$:
       * If $q = 1$, then $100p = N$. This implies $10 \mid N$, which is a contradiction.
       * If $q = 2$, then $50p = N \implies 10 \mid 50p \implies 10 \mid N$, which is a contradiction.
       * If $q = 5$, then $20p = N \implies 10 \mid 20p \implies 10 \mid N$, which is a contradiction.
@@ -43,13 +43,13 @@ image: ""
       q \in \{4, 20, 25, 50, 100\}.
       $$
       
-    * ($\Longleftarrow$) Suppose $q \in \{4, 20, 25, 50, 100\}$. Since $\dfrac{p}{q}$ is a reduced representation, we know that if $2 \mid q$ then $2 \not\mid p$, and if $5 \mid q$ then $5 \not\mid p$. By proposition, we show that $10 \not\mid N$ for each case:
-      * If $q = 4$, then $100p = 4N \implies N = 25p$. Since $4 = 2^2 \mid q$, we have $2 \not\mid p$, which means $p$ is odd. Thus, $2 \not\mid 25p \implies 2 \not\mid N \implies 10 \not\mid N$.
-      * If $q = 20$, then $100p = 20N \implies N = 5p$. Since $20 = 2^2 \cdot 5 \mid q$, we have $2 \not\mid p$, which means $p$ is odd. Thus, $2 \not\mid 5p \implies 2 \not\mid N \implies 10 \not\mid N$.
-      * If $q = 25$, then $100p = 25N \implies N = 4p$. Since $25 = 5^2 \mid q$, we have $5 \not\mid p$. Thus, $5 \not\mid 4p \implies 5 \not\mid N \implies 10 \not\mid N$.
-      * If $q = 50$, then $100p = 50N \implies N = 2p$. Since $50 = 2 \cdot 5^2 \mid q$, we have $5 \not\mid p$. Thus, $5 \not\mid 2p \implies 5 \not\mid N \implies 10 \not\mid N$.
-      * If $q = 100$, then $100p = 100N \implies N = p$. Since $\dfrac{p}{100}$ is a reduced representation, we have that $p$ cannot be a multiple of $10$. Thus, $10 \not\mid N$.
-      In all cases, $10 \not\mid N$, which means the decimal representation cannot be simplified to have only one digit after the decimal point. Since $q \mid 100$, it terminates after at most two digits. Thus, it terminates after exactly two digits.
+    * ($\Longleftarrow$) Suppose $q \in \{4, 20, 25, 50, 100\}$. Since $\dfrac{p}{q}$ is a reduced representation, we know that if $2 \mid q$ then $2 \nmid p$, and if $5 \mid q$ then $5 \nmid p$. By proposition, we show that $10 \nmid N$ for each case:
+      * If $q = 4$, then $100p = 4N \implies N = 25p$. Since $4 = 2^2 \mid q$, we have $2 \nmid p$, which means $p$ is odd. Thus, $2 \nmid 25p \implies 2 \nmid N \implies 10 \nmid N$.
+      * If $q = 20$, then $100p = 20N \implies N = 5p$. Since $20 = 2^2 \cdot 5 \mid q$, we have $2 \nmid p$, which means $p$ is odd. Thus, $2 \nmid 5p \implies 2 \nmid N \implies 10 \nmid N$.
+      * If $q = 25$, then $100p = 25N \implies N = 4p$. Since $25 = 5^2 \mid q$, we have $5 \nmid p$. Thus, $5 \nmid 4p \implies 5 \nmid N \implies 10 \nmid N$.
+      * If $q = 50$, then $100p = 50N \implies N = 2p$. Since $50 = 2 \cdot 5^2 \mid q$, we have $5 \nmid p$. Thus, $5 \nmid 2p \implies 5 \nmid N \implies 10 \nmid N$.
+      * If $q = 100$, then $100p = 100N \implies N = p$. Since $\dfrac{p}{100}$ is a reduced representation, we have that $p$ cannot be a multiple of $10$. Thus, $10 \nmid N$.
+      In all cases, $10 \nmid N$, which means the decimal representation cannot be simplified to have only one digit after the decimal point. Since $q \mid 100$, it terminates after at most two digits. Thus, it terminates after exactly two digits.
 
 ---
 

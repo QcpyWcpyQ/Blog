@@ -41,7 +41,7 @@ image: ""
       $$
       S=\left\{ax+py:x,y\in\mathbb Z\land ax+py>0\right\}.
       $$
-      Since $p\not\mid a$, we have that $a\neq 0$. Therefore $\vert a\vert \in S$ because $\vert a\vert = a \cdot 1 + p\cdot 0 > 0$ if $a > 0$, or $\vert a\vert = a \cdot (-1) + p\cdot 0 > 0$ if $a < 0$.
+      Since $p\nmid a$, we have that $a\neq 0$. Therefore $\vert a\vert \in S$ because $\vert a\vert = a \cdot 1 + p\cdot 0 > 0$ if $a > 0$, or $\vert a\vert = a \cdot (-1) + p\cdot 0 > 0$ if $a < 0$.
       Now, as $S\subseteq \mathbb N$ and $S\neq\varnothing$, by the well-ordering axiom $S$ has a first element $d$. Therefore $d=ax_0+py_0>0$. If we divide $a$ by $d$, then by the division algorithm we have that
       $$
       a=dq+r\text{ with } 0\leqslant r<\vert d\vert =d.
@@ -50,13 +50,13 @@ image: ""
       $$
       r=a-dq=a-\left(ax_0+py_0\right)q=a\left(1-x_0q\right)+p\left(-y_0q\right).
       $$
-      If $r>0$, then $r\in S$, which contradicts the minimality of $d$. Therefore we obtain that $r=0$ and $a=dq$, that is, $d\mid a$. Using the same argument, dividing $p$ by $d$ shows that $d\mid p$. Now, as $p$ is prime we have that $d=1\lor d=p$, but as $p\not\mid a$ we have that $d=1$. Therefore we obtain that $ax_0+py_0=1$.
+      If $r>0$, then $r\in S$, which contradicts the minimality of $d$. Therefore we obtain that $r=0$ and $a=dq$, that is, $d\mid a$. Using the same argument, dividing $p$ by $d$ shows that $d\mid p$. Now, as $p$ is prime we have that $d=1\lor d=p$, but as $p\nmid a$ we have that $d=1$. Therefore we obtain that $ax_0+py_0=1$.
 
   - **Corollary 1.4 (Euclid's Lemma)**
     (1) Let $p$ be a prime and let $a,b\in\mathbb Z$. If $p\mid ab$, then $p\mid a\lor p\mid b$.
 
     - **Proof 1.4.1**
-      Suppose that $p\not\mid a$, then by $\text{Lemma 1.3}$ there exist $x,y\in\mathbb Z$ such that $ax+py=1$, hence
+      Suppose that $p\nmid a$, then by $\text{Lemma 1.3}$ there exist $x,y\in\mathbb Z$ such that $ax+py=1$, hence
       $$
       abx+pby=b.
       $$

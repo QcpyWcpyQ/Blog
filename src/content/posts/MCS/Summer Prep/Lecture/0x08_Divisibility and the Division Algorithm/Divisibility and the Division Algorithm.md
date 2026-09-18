@@ -14,7 +14,7 @@ image: ""
   We say that $a$ is a **factor** or **divisor** of $b$.
   We say that $b$ is **divisible** by $a$ or $b$ is a **multiple** of $a$.
 
-  If $a$ does not divide $b$ we write $a\not\mid b$.
+  If $a$ does not divide $b$ we write $a\nmid b$.
 
   The set of all divisors of $b$ is denoted $\text{Div}(b)$ and the set of all positive divisors of $b$ is denoted $\text{Div}_+(b)$.
 
@@ -30,7 +30,7 @@ image: ""
   The unique $k$ such that $b=ka$ is called the **exact quotient** of $b$ by $a$ and is denoted $\dfrac ba$.
 
   - **Example 1.1**
-    $7\not\mid 6$ because there is no $k\in\mathbb Z$ such that $6=7k$.
+    $7\nmid 6$ because there is no $k\in\mathbb Z$ such that $6=7k$.
 
     $6\mid 42$ since $42=7\cdot 6$ and we have that $7=\dfrac{42} 6$.
 
@@ -112,7 +112,7 @@ image: ""
     If $a\mid bc$, must $a\mid b$ or $a\mid c$?
   
     - **Solution 1.4.1**
-      No. For example, $6\mid (2)(3)$ but $6\not\mid 2$ and $6\not\mid 3$.
+      No. For example, $6\mid (2)(3)$ but $6\nmid 2$ and $6\nmid 3$.
   
   Divisibility is not an order relation on $\mathbb Z$ because it is not antisymmetric. For example, $2\mid -2$ and $-2\mid 2$ but $2\neq -2$.
 
