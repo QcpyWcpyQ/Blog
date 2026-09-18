@@ -46,7 +46,7 @@ export const siteConfig: SiteConfig = {
 
 	// 站点副标题
 	subtitle: "sama",
-j
+
 	// 站点 URL
 	site_url: "https://cpysama.com",
 
