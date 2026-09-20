@@ -1,5 +1,5 @@
 ---
-title: "Basics of polinomials"
+title: "Basics of Polynomials"
 published: 2026-09-18
 description: ""
 tags: [MCS]
@@ -17,7 +17,7 @@ image: ""
 
   - **Solution 1.1**  
 
-    1. For the sum of the polynomials, we have:
+    1. For the sum of the polynomials, we have
        $$
        \begin{aligned}
        (p+q)(x) &= p(x)+q(x) \\
@@ -25,7 +25,7 @@ image: ""
        &= 3x^2+2x-1.
        \end{aligned}
        $$
-       For the product of the polynomials, by expanding each term systematically, we have:
+       For the product of the polynomials, by expanding each term systematically, we have
        $$
        \begin{aligned}
        (pq)(x) &= p(x)q(x) \\
@@ -43,9 +43,9 @@ image: ""
     2. By definition, we obtain that
        * Since the leading term of $p(x)$ is $x^3$, we have $\deg p = 3$.
        * Since the leading term of $q(x)$ is $-x^3$, we have \(\deg q = 3\).
-       * Since the leading term of $(p+q)(x) = 3x^2+2x-1$ is $3x^2$, so we have $\deg(p+q) = 2$. 
+       * Since the leading term of $(p+q)(x) = 3x^2+2x-1$ is $3x^2$, so we have $\deg(p+q) = 2$.
        * Since the leading term of $(pq)(x) = -x^6-x^5+6x^4+2x^3-6x^2+5x-2$ is $-x^6$, so we have $\deg(pq) = 6$.
-       
+
 
 ---
 
@@ -64,8 +64,8 @@ image: ""
        &= x^n-a^n.
        \end{aligned}
        $$
-    
-    2. We consider the product based on the value of $x$:
+
+    2. We consider the product based on the value of $x$
        If $x=1$, then
        $$
        \begin{aligned}
@@ -99,17 +99,17 @@ image: ""
 
 ---
 
-- **Exercise 3**
+- **Exercise 3**  
   Find the quotient and the remainder of the division of $3x^3-16x^2+23x-2$ by $3x-1$.
-  - **Solution 3.1**
+  - **Solution 3.1**  
     We have that $3x^3-16x^2+23x-2=(3x-1)\left(x^2-5x+6\right)+4$. Thus $x^2-5x+6$ is the quotient and $4$ is the remainder.
 
 ---
 
-- **Exercise 4**
+- **Exercise 4**  
   Let $a,b\in S, a\neq 0$. For $f\in S[x]\setminus\{0\}$, prove that the remainder of the division of $f$ by $ax+b$ is $f\left(-\dfrac ba\right)$.
 
-  - **Proof 4.1**
+  - **Proof 4.1**  
     By the division algorithm for polynomials, there exist unique polynomials $q(x), r(x) \in S[x]$ such that
     $$
     f(x) = (ax+b)q(x) + r(x)
@@ -123,10 +123,10 @@ image: ""
 
 ---
 
-- **Exercise 5**
+- **Exercise 5**  
   For which values of $a$ and $b$ does the polynomial $p(x)=3x^3+ax^2+bx+2$ have a remainder equal to $12$ when divided by $x+1$ and a remainder of $4$ when divided by $x+2$?
 
-  - **Solution 5.1**
+  - **Solution 5.1**  
     By the Remainder Theorem, the remainder of the division of $p(x)$ by $x-\alpha$ is equal to $p(\alpha)$.  
     For the divisor $x+1 = x-(-1)$, the remainder is $p(-1) = 12$. Substituting $x = -1$ into $p(x)$ gives the first equation
     $$

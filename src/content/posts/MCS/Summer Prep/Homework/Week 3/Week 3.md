@@ -9,28 +9,28 @@ image: ""
 ---
 ## Week 3
 
-- **Problem 1**
+- **Problem 1**  
   We say that two integers have *different parity* if one of them is odd and the other one is even.
   Prove that two integers have different parity if and only if their sum is odd.
 
-  - **Proof 1.1**
+  - **Proof 1.1**  
     ($\Longrightarrow$) Suppose two integers have different parity. Without loss of generality, let one of them be $2k_1$ for some $k_1 \in \mathbb Z$ and the other one be $2k_2 + 1$ for some $k_2 \in \mathbb Z$. Then their sum
     $$
     2k_1 + (2k_2 + 1) = 2(k_1 + k_2) + 1
     $$
     is odd because $k_1 + k_2 \in \mathbb Z$.
 
-    ($\Longleftarrow$) Let the two integers be $a$ and $b$, and suppose that their sum is odd, that is, $a + b = 2s + 1$ for some $s \in \mathbb Z$. By definition, the integer $a$ must be either even or odd. We consider these two cases:
+    ($\Longleftarrow$) Let the two integers be $a$ and $b$, and suppose that their sum is odd, that is, $a + b = 2s + 1$ for some $s \in \mathbb Z$. By definition, the integer $a$ must be either even or odd. We consider these two cases
 
-    1. **Case 1**: Suppose $a$ is even, so $a = 2k_1$ for some $k_1 \in \mathbb Z$. 
-       Then we can express $b$ as:
+    1. **Case 1**: Suppose $a$ is even, so $a = 2k_1$ for some $k_1 \in \mathbb Z$.
+       Then we can express $b$ as
        $$
        b = (a + b) - a = (2s + 1) - 2k_1 = 2(s - k_1) + 1.
        $$
        Since $s - k_1 \in \mathbb Z$, $b$ is an odd integer. Thus, $a$ is even and $b$ is odd, meaning they have different parity.
 
-    2. **Case 2**: Suppose $a$ is odd, so $a = 2k_1 + 1$ for some $k_1 \in \mathbb Z$. 
-       Then we can express $b$ as:
+    2. **Case 2**: Suppose $a$ is odd, so $a = 2k_1 + 1$ for some $k_1 \in \mathbb Z$.
+       Then we can express $b$ as
        $$
        b = (a + b) - a = (2s + 1) - (2k_1 + 1) = 2(s - k_1).
        $$
@@ -40,19 +40,19 @@ image: ""
 
 ---
 
-- **Problem 2**
+- **Problem 2**  
   Suppose that $n$ lines are drawn in the plane so that
-  
+
   1. no two lines are parallel;
   2. no three lines pass through the same point.
-  
+
   Prove by induction that the lines divide the plane into
   $$
   1 + \dfrac{n(n+1)}{2}
   $$
   regions.
 
-  - **Proof 2.1**
+  - **Proof 2.1**  
     By induction.
 
     1. Base step
@@ -63,13 +63,13 @@ image: ""
        $$
        1 + \dfrac{n(n+1)}{2}
        $$
-       regions. 
-       Now consider the case with $n + 1$ lines. When we add the $(n+1)$-th line to the existing $n$ lines:
-       
+       regions.
+       Now consider the case with $n + 1$ lines. When we add the $(n+1)$-th line to the existing $n$ lines
+
        * Since no two lines are parallel and no three lines pass through the same point, the new line must intersect all $n$ existing lines at exactly $n$ distinct, non-overlapping intersection points.
        * These $n$ distinct intersection points divide the new $(n+1)$-th line into exactly $n+1$ line segments or rays at the ends.
        * Each of these $n+1$ segments cuts through an existing region and splits it into two, thereby creating exactly $n+1$ new regions.
-       
+
        Hence, the total number of regions for $n+1$ lines is
        $$
        \begin{aligned}
@@ -82,13 +82,13 @@ image: ""
 
 ---
 
-- **Problem 3**
+- **Problem 3**  
   Prove by induction that for every $n \in \mathbb N_0$,
   $$
   4 \mid \left(5^{n+1} + 3 \cdot 9^n - 4\right).
   $$
 
-  - **Proof 3.1**
+  - **Proof 3.1**  
     By induction.
 
     1. Base step
@@ -116,7 +116,7 @@ image: ""
 
 ---
 
-- **Problem 4**
+- **Problem 4**  
   Suppose $a, c \in \mathbb N$ with
   $$
   a < c \quad \text{and} \quad a \mid c.
@@ -128,9 +128,9 @@ image: ""
   Determine all possible values of $c$ in terms of $a$. Justify your answer.  
   Your proof should use only the definition and basic properties of divisibility.
 
-  - **Solution 4.1**
+  - **Solution 4.1**  
     Suppose $a,c\in\mathbb N$ with $a<c,a\mid c,c-a\mid c+a$. The only possible values of $c$ in terms of $a$ are $c = 2a$ and $c = 3a$.
-    By the basic properties of divisibility, since $c - a \mid c + a$ and $c - a \mid c - a$, it must divide their difference:
+    By the basic properties of divisibility, since $c - a \mid c + a$ and $c - a \mid c - a$, it must divide their difference
     $$
     c - a \mid (c + a) - (c - a) \implies c - a \mid 2a.
     $$
@@ -150,30 +150,30 @@ image: ""
 
 ---
 
-- **Problem 5**
+- **Problem 5**  
   Suppose $x,y\in\mathbb N$ with
   $$
   x^6 = 81 y^{10}.
   $$
   Prove that every prime that divides $y$ also divides $x$.
 
-  - **Proof 5.1**
+  - **Proof 5.1**  
     Suppose $x,y\in\mathbb N$ with $x^6 = 81 y^{10}$. Let $p$ be a prime number such that $p \mid y$. Since $y \in \mathbb N$, by definition, we have $\nu_p(y) \geqslant 1$.  
-    
+
     By Proposition, we have
     $$
     \begin{aligned}
-    
+
     \nu_p\left(x^6\right) &= \nu_p\left(81 y^{10}\right) \\
     6\nu_p(x) &= \nu_p(81) + 10\nu_p(y).
-    
+
     \end{aligned}
     $$
-    We know that $\nu_p(81) \geqslant 0$ for any prime $p$. Together with $\nu_p(y) \geqslant 1$, we obtain that 
+    We know that $\nu_p(81) \geqslant 0$ for any prime $p$. Together with $\nu_p(y) \geqslant 1$, we obtain that
     $$
     6\nu_p(x) = \nu_p(81) + 10\nu_p(y) \geqslant 0 + 10(1) = 10.
     $$
     This implies $6\nu_p(x) \geqslant 10$, which means $\nu_p(x) \geqslant \dfrac{10}{6} > 0$.  
     Since $\nu_p(x) \in \mathbb N_0$, it must be that $\nu_p(x) \geqslant 1$. By definition, this means $p \mid x$.  
-    
+
     Therefore, every prime that divides $y$ also divides $x$.

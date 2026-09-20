@@ -67,7 +67,7 @@ image: ""
     then $\min\{a,b\}\leqslant\min\{a,\max\{b,c\}\}$.       
     The other inequality is almost the same. Then $M_2=\max\{\min\{a,b\},\min\{a,c\}\}$.    
 
-  - **Solution 3.2**
+  - **Solution 3.2**  
     We want to prove $\forall a,b,c\in\mathbb R,\min\{a,\max\{b,c\}\}=\max\{\min\{a,b\},\min\{a,c\}\}$.
     Suppose $a,b,c\in\left\{0,1\right\}$. We split into two cases depending on the value of $a$.
     **Case 1** $a=0$
@@ -91,11 +91,11 @@ image: ""
 
   - **Solution 3.1**  
     Suppose $a_1,a_2,\cdots,a_7\in\mathbb Z$. Let $K$ be the number of odd integers among $a_1,a_2,\cdots,a_7$.       
-    If $4\leqslant K\leqslant 7$, then take $4$ of these odd integers, their sum is even:       
+    If $4\leqslant K\leqslant 7$, then take $4$ of these odd integers, their sum is even
     $$
     (2a+1)+(2b+1)+(2c+1)+(2d+1)=2(a+b+c+d+2).
     $$
-    If $0\leqslant K<4$, then take $4$ of these even integers, their sum is even: 
+    If $0\leqslant K<4$, then take $4$ of these even integers, their sum is even
     $$
     2a+2b+2c+2d=2(a+b+c+d).
     $$

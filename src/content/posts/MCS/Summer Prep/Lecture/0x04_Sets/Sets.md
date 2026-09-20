@@ -116,21 +116,21 @@ image: ""
 
   - **Proposition 8.1**  
     Let $X$ be a set.  
-  
+
     1. If $A,B \subseteq X$ then $A,B\subseteq A\cup B$ and $A\cap B\subseteq A,B$.  
-  
+
     2. If $A,B\subseteq X$ then $A\cup B=B\cup A$ and $A\cap B=B\cap A$.  
-  
+
     3. If $A,B\subseteq X$ and $A\subseteq B$ then $B^\complement\subseteq A^\complement$.  
-  
+
     4. $X^\complement=\varnothing$ and $\varnothing^\complement=X$.  
-  
+
     5. If $A,B\subseteq X$ then $\left(A\cup B\right)^\complement=A^\complement\cap B^\complement$.  
-  
+
     6. If $A,B\subseteq X$ then $\left(A\cap B\right)^\complement=A^\complement\cup B^\complement$.  
-  
+
     $5, 6$ are De Morgan's laws.  
-  
+
     **Proof**  
     - Let $x\in A$, then $x\in A$ or $x\in B$, that is,  
        $$
@@ -147,22 +147,22 @@ image: ""
        &=\left\{x:x\in B\text{ or }x\in A\right\}=B\cup A  
        \end{aligned}.
        $$
-  
+
     Analogously, we have that $A\cap B=B\cap A$.  
-  
+
     - Suppose that $A\subseteq B$ and let $x\in B^\complement$, then $x\not\in B$; since $A\subseteq B$ we have that $x\not\in A$ and thus $x\in A^\complement$.  
        Therefore, $B^\complement\subseteq A^\complement$.  
-    - By definition:  
-  
+    - By definition
+
     $$
     \begin{aligned}
     &X^\complement=\left\{x\in X:x\not\in X\right\}=\varnothing \\  
     &\varnothing^\complement=\left\{x\in X:x\not\in\varnothing\right\}=X.
     \end{aligned}
     $$
-  
+
     - Let $x\in\left(A\cup B\right)^\complement$, then  
-  
+
     $$
     \begin{aligned}  
     x\in\left(A\cup B\right)^\complement&\iff x\not\in\left(A\cup B\right) \\  
@@ -174,9 +174,9 @@ image: ""
     \end{aligned}
     $$
     Thus $\left(A\cup B\right)^\complement=A^\complement\cap B^\complement$.  
-  
+
     - Let $x\in\left(A\cap B\right)^\complement$, then  
-  
+
     $$
     \begin{aligned}  
     x\in\left(A\cap B\right)^\complement&\iff x\not\in\left(A\cap B\right) \\  
@@ -188,7 +188,7 @@ image: ""
     \end{aligned}
     $$
     Thus $\left(A\cap B\right)^\complement=A^\complement\cup B^\complement$.  
-  
+
 
 ---
 
@@ -200,10 +200,10 @@ image: ""
     $$
     \mathscr P(X)=\left\{\varnothing,\left\{a\right\},\left\{b\right\},\left\{c\right\},\left\{a,b\right\},\left\{a,c\right\},\left\{b,c\right\},\left\{a,b,c\right\}\right\}.
     $$
-  
-  - **Example 9.2**
+
+  - **Example 9.2**  
     Let $A$ and $B$ be sets. Prove that $\mathscr P(A)\subseteq \mathscr P(B)$, if and only if, $A\subseteq B$.
-  
-    - **Proof 9.2.1**
+
+    - **Proof 9.2.1**  
       Suppose that $\mathscr P(A)\subseteq \mathscr P(B)$. Let $x\in A$ then $\left\{x\right\}\in\mathscr P(A)$ and thus $\left\{x\right\}\in\mathscr  P(B)$, therefore $x\in B$, hence $A\subseteq B$.
       Suppose that $A\subseteq B$. Let $X\in\mathscr P(A)$ then $X\subseteq A$, that is, $X\subseteq B$, therefore $X\in\mathscr P(B)$ and thus $\mathscr P(A)\subseteq \mathscr P(B)$.

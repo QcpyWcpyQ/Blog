@@ -9,22 +9,22 @@ image: ""
 ---
 ## Well Ordering and the Induction Principle
 
-- **Definition 1**
+- **Definition 1**  
   Let $A\subseteq \mathbb Z$. We say that $A$ is **bounded below** if there exists $l\in\mathbb Z$ such that $l\leqslant a$ for all $a\in A$ and $l$ is called a **lower bound** of $A$. If $l$ is a lower bound of $A$ and $l\in A$, we say that $l$ is the **first element** of $A$ (minimum).
-- **Remark 1**
+- **Remark 1**  
   The first element of $A$, if it exists, is unique.
   If $l$ and $l^\prime$ are both first elements of $A$, then $l\leqslant l^\prime$ and $l^\prime \leqslant l$, therefore $l=l^\prime$.
 
 ---
 
-- **Definition 2**
+- **Definition 2**  
   Let $A\subseteq \mathbb Z$. We say that $A$ is **bounded above** if there exists $u\in\mathbb Z$ such that $a\leqslant u$ for all $a\in A$ and $u$ is called an **upper bound** of $A$. If $u$ is an upper bound of $A$ and $u\in A$, we say that $u$ is the **last element** of $A$ (maximum).
 
-- **Remark 2**
+- **Remark 2**  
   The last element of $A$, if it exists, is unique.
   If $u$ and $u^\prime$ are both last elements of $A$, then $u^\prime\leqslant u$ and $u \leqslant u^\prime$, therefore $u=u^\prime$.
 
-  - **Example 2.1**
+  - **Example 2.1**  
 
     1. The set $A=\left\{a\in\mathbb Z:a\geqslant -2\right\}$ is bounded below but is not bounded above.
        $$
@@ -54,10 +54,10 @@ image: ""
 
   **Well ordering axiom**: Every nonempty subset of $\mathbb N$ has a first element.
 
-  - **Theorem 2.2**
+  - **Theorem 2.2**  
     Every nonempty subset $A\subseteq\mathbb N$ which is bounded above in \(\mathbb N\) has a last element.
 
-    - **Proof 2.2.1**
+    - **Proof 2.2.1**  
       Since $A$ is bounded above in $\mathbb N$, let $y\in\mathbb N$ be such an upper bound of $A$.
       $$
       U=\left\{u\in\mathbb N:u\text{ is an upper bound of }A\right\}.
@@ -66,10 +66,10 @@ image: ""
 
       Therefore there exists $a\in A$ such that $n-1<a$ and $a\leqslant n$ because $n$ is an upper bound of $A$. Then $a=n$ because there is no natural number between $n-1$ and $n$. Therefore $n$ is the last element of $A$.
 
-  - **Proposition 2.3**
+  - **Proposition 2.3**  
     Every nonempty subset $A\subseteq\mathbb Z$ that is bounded below has a first element.
 
-    - **Proof 2.3.1**
+    - **Proof 2.3.1**  
       Let $A\subseteq \mathbb Z$ be bounded below with $A\neq\varnothing$, $y$ be a lower bound of $A$ and consider the set
       $$
       B=\left\{a-y+1:a\in A\right\}.
@@ -86,19 +86,19 @@ image: ""
 
 ---
 
-- **Theorem 3 (The principle of induction)**
-  Let $S\subseteq\mathbb N$ that satisfies the following conditions:
+- **Theorem 3 (The principle of induction)**  
+  Let $S\subseteq\mathbb N$ that satisfies the following conditions
 
   1. $1\in S$.
   2. If $n\in S$ then $n+1\in S$.
 
   Then $S=\mathbb N$.
 
-  - **Proof 3.1**
+  - **Proof 3.1**  
     Let $S^\prime =\mathbb N\setminus S$ and suppose that $S\neq \mathbb N$. Then $S^\prime \neq \varnothing$ and by the well ordering axiom $S^\prime$ has a first element $m$. Since $1\in S$, then $m>1$ and thus $m-1\in \mathbb N$. Since $m$ is the first element of $S^\prime$ then $m-1\in S$. And by $\text{condition (2)}$, we have that $m=(m-1)+1\in S$ which is a contradiction because $m\in S^\prime$. Therefore $S^\prime=\varnothing$ and $S=\mathbb N$.
 
-- **Corollary 3 (The principle of induction, alternative form)**
-  Let $P(n)$ be a statement defined for every $n\in \mathbb N$. Suppose that:
+- **Corollary 3 (The principle of induction, alternative form)**  
+  Let $P(n)$ be a statement defined for every $n\in \mathbb N$. Suppose that
 
   1. $P(1)$ is true.
   2. If $P(n)$ is true then $P(n+1)$ is true.
@@ -107,10 +107,10 @@ image: ""
 
   The $\text{condition (1)}$ is called the **base step**, the assumption that $P(n)$ is true is called the **inductive hypothesis** and the passage from $P(n)$ to $P(n+1)$ is called the **inductive step**.
 
-  - **Example 3.1**
+  - **Example 3.1**  
     Prove that $1+2+\cdots+n=\dfrac{n(n+1)}{2}$ for every $n\in\mathbb N$.
 
-    - **Proof 3.1.1**
+    - **Proof 3.1.1**  
 
       1. Base step
          If $n=1$ the result is true since $1=\dfrac{1(1+1)}{2}$.
@@ -135,10 +135,10 @@ image: ""
          $$
          is true for every $n\in\mathbb N$.
 
-  - **Example 3.2**
+  - **Example 3.2**  
     Prove that $n!\geqslant 2^{n-1}$ for every $n\in\mathbb N$.
 
-    - **Proof 3.2.1**
+    - **Proof 3.2.1**  
 
       1. Base step
          If $n=1$ the result is true since $1!=1\geqslant 1=2^{1-1}$.

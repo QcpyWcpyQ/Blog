@@ -53,7 +53,7 @@ image: ""
     $$
     \begin{aligned}
     \dfrac{A+A^\top}{2}&=\lb 4 & 3 \\ 3 & 3 \eb \\
-    \dfrac{A-A^\top}{2}&=\lb 0 & 2 \\ -2 & 0 \eb 
+    \dfrac{A-A^\top}{2}&=\lb 0 & 2 \\ -2 & 0 \eb
     \end{aligned}
     $$
     since $\dfrac{A+A^\top}{2}$ is symmetric and $\dfrac{A-A^\top}{2}$ is antisymmetric.
@@ -82,7 +82,7 @@ image: ""
     \eb\lb
     1 & 0 & 0 \\
     0 & 2 & 0 \\
-    0 & 0 & 4 
+    0 & 0 & 4
     \eb=\lb
     a_{11}&2a_{12}&4a_{13} \\
     a_{21}&2a_{22}&4a_{23} \\
@@ -91,7 +91,7 @@ image: ""
     DA&=\lb
     1 & 0 & 0 \\
     0 & 2 & 0 \\
-    0 & 0 & 4 
+    0 & 0 & 4
     \eb\lb
     a_{11}&a_{12}&a_{13} \\
     a_{21}&a_{22}&a_{23} \\

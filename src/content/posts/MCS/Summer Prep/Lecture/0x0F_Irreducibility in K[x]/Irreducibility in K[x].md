@@ -9,7 +9,7 @@ image: ""
 ---
 ## Irreducibility in $\mathbb K[x]$
 
-- **Definition 1**
+- **Definition 1**  
   A polynomial $p(x)\in\mathbb K[x]$ with $\deg(p(x))>0$ is **irreducible** over $\mathbb K$ if whenever $p(x)=q(x)h(x)$ for some $q(x),h(x)\in\mathbb K[x]$ then either $q(x)$ or $h(x)$ is a constant polynomial. Otherwise, $p(x)$ is **reducible**.
 
   - **Example 1.1**  
@@ -34,7 +34,7 @@ image: ""
   p(x)=q(x)h(x).
   $$
 
-  - **Theorem 3.1 (Factor Theorem)**
+  - **Theorem 3.1 (Factor Theorem)**  
     Let $p(x)\in\mathbb K[x]$ and $\alpha\in\mathbb K$, then $\alpha$ is a root of $p(x)$ if and only if $(x-\alpha)\mid p(x)$.
 
     - **Proof 3.1.1**  
@@ -53,17 +53,17 @@ image: ""
     p(x)=(x-1)\left(x^2-x-6\right).
     $$
 
-  - **Corollary 3.3**
+  - **Corollary 3.3**  
     Let $p(x)\in\mathbb K[x]$ with $\deg(p(x))>1$. If $p(x)$ has a root in $\mathbb K$ then $p(x)$ is reducible over $\mathbb K$.
 
-    - **Proof 3.3.1**
+    - **Proof 3.3.1**  
       Let $\alpha$ be a root of $p(x)$, then by the factor theorem $(x-\alpha)\mid p(x)$, that is, there exists a polynomial $q(x)\in\mathbb K[x]$ such that $p(x)=(x-\alpha)q(x)$. Since
       $$
       \deg(p(x))=\deg((x-\alpha)q(x))=1+\deg(q(x))>1.
       $$
       Then $q(x)$ is not a constant polynomial and thus $p(x)$ is reducible over $\mathbb K$.
 
-  - **Remark 3.4**
+  - **Remark 3.4**  
     The converse is false. Consider $p(x)=x^4+2x^2+1\in\mathbb R[x]$, then $p(x)$ is reducible over $\mathbb R$ since
     $$
     p(x)=\left(x^2+1\right)\left(x^2+1\right).
@@ -76,7 +76,7 @@ image: ""
     1. If \(\deg(p(x))=1\), then $p(x)$ is irreducible over $\mathbb K$.
     2. If $\deg(p(x))$ is $2$ or $3$, then $p(x)$ is irreducible over $\mathbb K$ if and only if $p(x)$ has no roots in $\mathbb K$.
 
-    - **Proof 3.5.1**
+    - **Proof 3.5.1**  
 
       1. If $p(x)=q(x)h(x)$ then
          $$
@@ -172,8 +172,8 @@ image: ""
     $$
     \pm 1,\pm 2,\pm 4,\pm 8,\pm\dfrac 13,\pm\dfrac 23,\pm\dfrac 43,\pm\dfrac 83.
     $$
-    
-    - **Proof 4.8.1**
+
+    - **Proof 4.8.1**  
       Suppose $p(x)=a_0+a_1x+\cdots+a_nx^n\in\mathbb Z[x]$ with $a_0,a_n\neq 0$. Suppose $p\left(\dfrac rs\right)=0$ for some coprime $r,s\in\mathbb Z$, that is  
       $$
       p\left(\dfrac rs\right)=a_0+a_1\left(\dfrac rs\right)+\cdots+a_n\left(\dfrac rs\right)^n=0.
@@ -195,4 +195,4 @@ image: ""
       s\left(a_{0}s^{n-1}+a_1rs^{n-2}+\cdots+a_{n-1}r^{n-1}\right)=-a_{n}r^{n}.
       $$
       Similarly it follows that $s$ divides $a_n$. Therefore, the rational roots theorem is proved.
-    
+

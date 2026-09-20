@@ -18,7 +18,7 @@ image: ""
   $$
   R=\left\{(1,1),(2,2),(3,3),(1,2),(2,1)\right\}.  
   $$
-  Determine whether $R$ is:  
+  Determine whether $R$ is
 
   1. reflexive $\checkmark$.  
   2. symmetric $\checkmark$.  
@@ -152,7 +152,7 @@ image: ""
 
 ---
 
-- **Exercise 7**
+- **Exercise 7**  
   Properties of a Relation
   Let
   $$
@@ -162,13 +162,13 @@ image: ""
   $$
   R = \{(1, 1), (2, 2), (3, 3), (4, 4), (1, 2), (2, 1)\}
   $$
-  Determine whether $R$ is:
+  Determine whether $R$ is
   (a) reflexive;
   (b) symmetric;
   (c) antisymmetric;
   (d) transitive.
 
-  - **Solution 7.1**
+  - **Solution 7.1**  
 
     * **(a) Reflexive:** Yes. By definition, a relation $R$ on $A$ is reflexive if for every $x \in A$, $(x, x) \in R$. For $A = \{1, 2, 3, 4\}$, the pairs $(1, 1), (2, 2), (3, 3),$ and $(4, 4)$ are all explicitly present in $R$.
 
@@ -176,7 +176,7 @@ image: ""
 
     * **(c) Antisymmetric:** No. By definition, a relation is antisymmetric if for any $x, y \in A$, $((x, y) \in R \land (y, x) \in R) \implies x = y$. In this relation, we have $(1, 2) \in R$ and $(2, 1) \in R$, but $1 \neq 2$.
 
-    * **(d) Transitive:** Yes. By definition, a relation is transitive if for any $x, y, z \in A$, $((x, y) \in R \land (y, z) \in R) \implies (x, z) \in R$. Checking the non-trivial combinations:
+    * **(d) Transitive:** Yes. By definition, a relation is transitive if for any $x, y, z \in A$, $((x, y) \in R \land (y, z) \in R) \implies (x, z) \in R$. Checking the non-trivial combinations
       $$
       ((1, 2) \in R \land (2, 1) \in R) \implies (1, 1) \in R
       $$
@@ -189,7 +189,7 @@ image: ""
 
 ---
 
-- **Exercise 8**
+- **Exercise 8**  
   Relations on Integers
   For each of the following relations on $\mathbb{Z}$, determine whether it is reflexive, symmetric, antisymmetric, and transitive. For every property that fails, give a counterexample.
   (a)
@@ -205,22 +205,22 @@ image: ""
   a \sim b \iff |a - b| \leqslant 2
   $$
 
-  - **Solution 8.1**
-    **Part (a):**
+  - **Solution 8.1**  
+    **Part (a)**
     * **Reflexive:** Yes. For any integer $a \in \mathbb{Z}$, the statement $a = a$ is universally true. Therefore, $a \sim a$ holds for all $a \in \mathbb{Z}$.
     * **Symmetric:** Yes. Let $a, b \in \mathbb{Z}$ such that $a \sim b$. By definition, this means $a = b$. Since equality is symmetric, it follows that $b = a$, which means $b \sim a$.
     * **Antisymmetric:** Yes. Let $a, b \in \mathbb{Z}$ such that $a \sim b$ and $b \sim a$. By definition, this implies $a = b$ and $b = a$. This directly satisfies the requirement that $a = b$.
     * **Transitive:** Yes. Let $a, b, c \in \mathbb{Z}$ such that $a \sim b$ and $b \sim c$. By definition, this yields $a = b$ and $b = c$. Substituting $b$ gives $a = c$, which means $a \sim c$.
 
-  - **Solution 8.2**
-    **Part (b):**
+  - **Solution 8.2**  
+    **Part (b)**
     * **Reflexive:** Yes. For any integer $a \in \mathbb{Z}$, the statement $a \leqslant a$ is always true. Thus, $a \sim a$ holds for all $a \in \mathbb{Z}$.
     * **Symmetric:** No. Let $a = 1$ and $b = 2$. We have $1 \leqslant 2$, so $1 \sim 2$ is true. However, $2 \leqslant 1$ is false, so $2 \sim 1$ does not hold.
     * **Antisymmetric:** Yes. Let $a, b \in \mathbb{Z}$ such that $a \sim b$ and $b \sim a$. By definition, this means $a \leqslant b$ and $b \leqslant a$. By the properties of the standard order relation on integers, $a \leqslant b \land b \leqslant a \implies a = b$.
     * **Transitive:** Yes. Let $a, b, c \in \mathbb{Z}$ such that $a \sim b$ and $b \sim c$. By definition, this yields $a \leqslant b$ and $b \leqslant c$. By the transitivity property of inequalities, $a \leqslant b \land b \leqslant c \implies a \leqslant c$, which means $a \sim c$.
 
-  - **Solution 8.3**
-    **Part (c):**
+  - **Solution 8.3**  
+    **Part (c)**
     * **Reflexive:** Yes. For any integer $a \in \mathbb{Z}$, we have $|a - a| = |0| = 0$. Since $0 \leqslant 2$, the condition $|a - a| \leqslant 2$ is satisfied, so $a \sim a$ holds for all $a \in \mathbb{Z}$.
     * **Symmetric:** Yes. Let $a, b \in \mathbb{Z}$ such that $a \sim b$. By definition, $|a - b| \leqslant 2$. Since $|a - b| = |-(b - a)| = |b - a|$, we have $|b - a| \leqslant 2$, which means $b \sim a$.
     * **Antisymmetric:** No. Let $a = 1$ and $b = 2$. We have $|1 - 2| = |-1| = 1 \leqslant 2$, so $1 \sim 2$ holds. Similarly, $|2 - 1| = |1| = 1 \leqslant 2$, so $2 \sim 1$ holds. However, $1 \neq 2$.
@@ -228,7 +228,7 @@ image: ""
 
 ---
 
-- **Exercise 9**
+- **Exercise 9**  
   An Equivalence Relation on Integers
   Define a relation $\sim$ on $\mathbb{Z}$ by
   $$
@@ -238,15 +238,15 @@ image: ""
   (b) Find $[0]$, $[1]$, $[2]$, $[3]$, $[5]$.
   (c) How many distinct equivalence classes are there?
 
-  - **Solution 9.1**
-    **Part (a):**
+  - **Solution 9.1**  
+    **Part (a)**
     * **Reflexive:** Let $a \in \mathbb{Z}$. Then $a - a = 0$. Since $0 = 4 \times 0$, $0$ is divisible by $4$. Thus, $a \sim a$ for all $a \in \mathbb{Z}$.
     * **Symmetric:** Let $a, b \in \mathbb{Z}$ such that $a \sim b$. By definition, $a - b = 4k$ for some $k \in \mathbb{Z}$. Then $b - a = -(a - b) = -4k = 4(-k)$. Since $-k \in \mathbb{Z}$, $b - a$ is divisible by $4$, so $b \sim a$.
     * **Transitive:** Let $a, b, c \in \mathbb{Z}$ such that $a \sim b$ and $b \sim c$. By definition, $a - b = 4k$ and $b - c = 4m$ for some $k, m \in \mathbb{Z}$. Adding these equations gives $(a - b) + (b - c) = 4k + 4m \implies a - c = 4(k + m)$. Since $k + m \in \mathbb{Z}$, $a - c$ is divisible by $4$, so $a \sim c$.
       Since $\sim$ is reflexive, symmetric, and transitive, it is an equivalence relation.
 
-  - **Solution 9.2**
-    **Part (b):**
+  - **Solution 9.2**  
+    **Part (b)**
     By definition, $[a] = \{x \in \mathbb{Z} \mid x - a = 4k, k \in \mathbb{Z}\} = \{a + 4k \mid k \in \mathbb{Z}\}$.
     * $[0] = \{\dots, -8, -4, 0, 4, 8, \dots\} = \{4k \mid k \in \mathbb{Z}\}$
     * $[1] = \{\dots, -7, -3, 1, 5, 9, \dots\} = \{1 + 4k \mid k \in \mathbb{Z}\}$
@@ -254,13 +254,13 @@ image: ""
     * $[3] = \{\dots, -5, -1, 3, 7, 11, \dots\} = \{3 + 4k \mid k \in \mathbb{Z}\}$
     * $[5] = \{\dots, -3, 1, 5, 9, 13, \dots\} = [1]$
 
-  - **Solution 9.3**
-    **Part (c):**
+  - **Solution 9.3**  
+    **Part (c)**
     There are exactly $4$ distinct equivalence classes, which are $[0], [1], [2],$ and $[3]$.
 
 ---
 
-- **Exercise 10**
+- **Exercise 10**  
   Same Remainder
   Let
   $$
@@ -273,17 +273,17 @@ image: ""
   (a) Write down all equivalence classes.
   (b) Write the relation $\sim$ explicitly as a set of ordered pairs.
 
-  - **Solution 10.1**
-    **Part (a):**
-    We group the elements of $A$ by their remainder when divided by $3$:
+  - **Solution 10.1**  
+    **Part (a)**
+    We group the elements of $A$ by their remainder when divided by $3$
 
     * Remainder $0$: $[0] = \{0, 3, 6\}$
     * Remainder $1$: $[1] = \{1, 4, 7\}$
     * Remainder $2$: $[2] = \{2, 5\}$
 
-  - **Solution 10.2**
-    **Part (b):**
-    The relation $\sim$ consists of all pairs $(x, y)$ such that $x$ and $y$ belong to the same equivalence class:
+  - **Solution 10.2**  
+    **Part (b)**
+    The relation $\sim$ consists of all pairs $(x, y)$ such that $x$ and $y$ belong to the same equivalence class
     $$
     \begin{aligned}
     \sim = \{ &(0,0), (0,3), (0,6), (3,0), (3,3), (3,6), (6,0), (6,3), (6,6), \\
@@ -294,7 +294,7 @@ image: ""
 
 ---
 
-- **Exercise 11**
+- **Exercise 11**  
   A Partial Order on Sets
   Let
   $$
@@ -302,8 +302,8 @@ image: ""
   $$
   Consider the relation $\subseteq$ on $\mathscr{P}(X)$. Prove that $\subseteq$ is a partial order.
 
-  - **Solution 11.1**
-    **Proof:**
+  - **Solution 11.1**  
+    **Proof**
     * **Reflexive:** Let $A \in \mathscr{P}(X)$. For any $x \in A$, the statement $x \in A$ is true, so $A \subseteq A$ holds by definition of subset.
     * **Antisymmetric:** Let $A, B \in \mathscr{P}(X)$ such that $A \subseteq B$ and $B \subseteq A$. By definition of subset, $A \subseteq B \implies (\forall x \in A \implies x \in B)$ and $B \subseteq A \implies (\forall x \in B \implies x \in A)$. Thus $x \in A \iff x \in B$, which implies $A = B$.
     * **Transitive:** Let $A, B, C \in \mathscr{P}(X)$ such that $A \subseteq B$ and $B \subseteq C$. Let $x \in A$. Since $A \subseteq B$, it follows that $x \in B$. Since $B \subseteq C$ and $x \in B$, it follows that $x \in C$. Thus $x \in A \implies x \in C$, meaning $A \subseteq C$.
@@ -311,7 +311,7 @@ image: ""
 
 ---
 
-- **Exercise 12**
+- **Exercise 12**  
   Divisibility as a Partial Order
   Let $\mathbb{N}$ denote the set of positive integers. Define a relation $\preceq$ on $\mathbb{N}$ by
   $$
@@ -319,8 +319,8 @@ image: ""
   $$
   Recall that $x \mid y$ means that there exists $k \in \mathbb{N}$ such that $y = xk$. Prove that $\preceq$ is a partial order on $\mathbb{N}$.
 
-  - **Solution 12.1**
-    **Proof:**
+  - **Solution 12.1**  
+    **Proof**
 
     * **Reflexive:** Let $x \in \mathbb{N}$. We can write $x = x \times 1$. Since $1 \in \mathbb{N}$, there exists a positive integer $k=1$ such that $x = xk$, meaning $x \mid x$. Thus, $x \preceq x$.
 
@@ -332,7 +332,7 @@ image: ""
 
 ---
 
-- **Exercise 13**
+- **Exercise 13**  
   Inverse Relation
   Let $\sim$ be a relation on a set $X$. The inverse relation $\sim^{-1}$ is defined by
   $$
@@ -343,9 +343,9 @@ image: ""
   \sim \,=\, \sim^{-1}.
   $$
 
-  - **Solution 13.1**
-    **Proof:**
-    $(\Longrightarrow)$ Assume $\sim$ is symmetric. We prove $\sim \,=\, \sim^{-1}$ by showing mutual inclusion:
+  - **Solution 13.1**  
+    **Proof**
+    $(\Longrightarrow)$ Assume $\sim$ is symmetric. We prove $\sim \,=\, \sim^{-1}$ by showing mutual inclusion
 
     * Let $(x, y) \in \;\sim$, meaning $x \sim y$. Since $\sim$ is symmetric, we have $y \sim x$. By definition of the inverse relation, $y \sim x \iff x \sim^{-1} y$, which means $(x, y) \in \;\sim^{-1}$. Thus, $\sim \,\subseteq\, \sim^{-1}$.
     * Let $(x, y) \in \;\sim^{-1}$, meaning $x \sim^{-1} y$. By definition of the inverse relation, this means $y \sim x$. Since $\sim$ is symmetric, $y \sim x \implies x \sim y$, which means $(x, y) \in \;\sim$. Thus, $\sim^{-1} \,\subseteq\, \sim$.
@@ -358,7 +358,7 @@ image: ""
 
 ---
 
-- **Exercise 14**
+- **Exercise 14**  
   Identity Relation and Antisymmetry
   Let $\sim_X$ be the identity relation on $X$, defined by
   $$
@@ -369,8 +369,8 @@ image: ""
   \{(x, y) \in X \times X \mid x \sim y\} \cap \{(x, y) \in X \times X \mid x \sim^{-1} y\} \subseteq \{(x, y) \in X \times X \mid x \sim_X y\}.
   $$
 
-  - **Solution 14.1**
-    **Proof:**
+  - **Solution 14.1**  
+    **Proof**
     For simplicity, let $R = \{(x, y) \in X \times X \mid x \sim y\}$, $R^{-1} = \{(x, y) \in X \times X \mid x \sim^{-1} y\}$, and $I = \{(x, y) \in X \times X \mid x \sim_X y\}$.
 
     $(\Longrightarrow)$ Assume $\sim$ is antisymmetric. Let $(x, y) \in R \cap R^{-1}$.
@@ -391,7 +391,7 @@ image: ""
 
 ---
 
-- **Exercise 15**
+- **Exercise 15**  
   Which Relations Define Functions?
   For each of the following relations $R \subseteq \mathbb{R} \times \mathbb{R}$, determine whether $R$ defines a function
   $$
@@ -403,10 +403,10 @@ image: ""
   (c) $R = \{(x, y) \in \mathbb{R}^2 : xy = 1\}$.
   (d) $R = \{(x, y) \in \mathbb{R}^2 : y^3 = x\}$.
 
-  - **Solution 15.1**
+  - **Solution 15.1**  
     By definition, a relation $R \subseteq \mathbb{R} \times \mathbb{R}$ defines a function $f \colon \mathbb{R} \rightarrow \mathbb{R}$ if for every $x \in \mathbb{R}$, there exists a unique $y \in \mathbb{R}$ such that $(x, y) \in R$.
     * **(a) Yes.** For every $x \in \mathbb{R}$, the value $y = x^2$ is a uniquely determined real number.
-    * **(b) No.** It fails on two conditions of the definition:
+    * **(b) No.** It fails on two conditions of the definition
       * For $x = -1 \in \mathbb{R}$, there is no $y \in \mathbb{R}$ such that $y^2 = -1$.
       * For $x = 4 \in \mathbb{R}$, there is no unique $y$ because both $y = 2$ and $y = -2$ satisfy $y^2 = 4$.
     * **(c) No.** For $x = 0 \in \mathbb{R}$, there is no $y \in \mathbb{R}$ such that $0 \cdot y = 1$. Thus, $f(0)$ is undefined, so it cannot be a function from the entire domain $\mathbb{R}$.
@@ -414,7 +414,7 @@ image: ""
 
 ---
 
-- **Exercise 16**
+- **Exercise 16**  
   Natural Domains and Ranges
   Verify the natural domains and corresponding ranges of the following functions. The domain in each case consists of all values of $x$ for which the formula is well-defined.
   $$
@@ -428,47 +428,47 @@ image: ""
   \end{array}
   $$
 
-  - **Solution 16.1**
-    * **For $y = x^2$:**
+  - **Solution 16.1**  
+    * **For $y = x^2$**
       * **Domain:** The expression $x^2$ is defined for all real numbers, so the domain is $(-\infty, \infty)$.
       * **Range:** Since the square of any real number is non-negative, $x^2 \ge 0$, and for any $y \ge 0$, $x = \sqrt{y}$ exists. Thus, the range is $[0, \infty)$.
-    * **For $y = \frac{1}{x}$:**
+    * **For $y = \frac{1}{x}$**
       * **Domain:** The expression is well-defined as long as the denominator is non-zero, so $x \neq 0$, which gives $(-\infty, 0) \cup (0, \infty)$.
       * **Range:** Since $y = \frac{1}{x}$, $y$ can never be $0$. For any $y \neq 0$, we can choose $x = \frac{1}{y}$, so the range is $(-\infty, 0) \cup (0, \infty)$.
-    * **For $y = \sqrt{x}$:**
+    * **For $y = \sqrt{x}$**
       * **Domain:** The square root is defined for non-negative real numbers, so $x \ge 0$, giving the domain $[0, \infty)$.
       * **Range:** The principal square root function always yields non-negative values, so $y \ge 0$, and for any $y \ge 0$, $x = y^2$ is in the domain. Thus, the range is $[0, \infty)$.
-    * **For $y = \sqrt{4 - x}$:**
+    * **For $y = \sqrt{4 - x}$**
       * **Domain:** We require $4 - x \ge 0 \iff x \le 4$, which gives the interval $(-\infty, 4]$.
       * **Range:** The square root outputs non-negative values, $y \ge 0$. For any $y \ge 0$, setting $y = \sqrt{4-x} \iff y^2 = 4 - x \iff x = 4 - y^2$, which is always $\le 4$. Thus, the range is $[0, \infty)$.
-    * **For $y = \sqrt{1 - x^2}$:**
+    * **For $y = \sqrt{1 - x^2}$**
       * **Domain:** We require $1 - x^2 \ge 0 \iff x^2 \le 1 \iff -1 \le x \le 1$, which gives the interval $[-1, 1]$.
       * **Range:** Since $-1 \le x \le 1$, we have $0 \le x^2 \le 1$, which implies $0 \le 1 - x^2 \le 1$. Taking the square root gives $0 \le y \le 1$. For any $y \in [0, 1]$, $x = \sqrt{1-y^2}$ is a valid domain element. Thus, the range is $[0, 1]$.
 
 ---
 
-- **Exercise 17**
+- **Exercise 17**  
   Domain, Codomain, and Image
   Let
   $$
   f \colon \mathbb{Z} \rightarrow \mathbb{Z}, \quad f(n) = 2n.
   $$
-  Determine:
+  Determine
   (a) the domain of $f$;
   (b) the codomain of $f$;
   (c) the image of $f$.
   Is the image equal to the codomain?
 
-  - **Solution 17.1**
+  - **Solution 17.1**  
 
-    * **(a) Domain of $f$:**
+    * **(a) Domain of $f$**
       By definition, for a function written as $f \colon A \rightarrow B$, the set $A$ is the domain. Therefore, the domain of $f$ is $\mathbb{Z}$ (the set of all integers).
 
-    * **(b) Codomain of $f$:**
+    * **(b) Codomain of $f$**
       By definition, for a function written as $f \colon A \rightarrow B$, the set $B$ is the codomain. Therefore, the codomain of $f$ is $\mathbb{Z}$ (the set of all integers).
 
-    * **(c) Image of $f$:**
-      The image of $f$ is the set of all outputs generated by the function:
+    * **(c) Image of $f$**
+      The image of $f$ is the set of all outputs generated by the function
       $$
       \text{Image}(f) = \{f(n) \mid n \in \mathbb{Z}\} = \{2n \mid n \in \mathbb{Z}\}
       $$
@@ -479,7 +479,7 @@ image: ""
 
 ---
 
-- **Exercise 18**
+- **Exercise 18**  
   Identity and Inclusion
   Let
   $$
@@ -497,9 +497,9 @@ image: ""
   (b) Do the two functions have the same rule?
   (c) Are they equal as functions? Explain.
 
-  - **Solution 18.1**
+  - **Solution 18.1**  
 
-    * **(a)** By evaluating each element of the domain $A = \{1, 2, 3\}$ under their respective definitions:
+    * **(a)** By evaluating each element of the domain $A = \{1, 2, 3\}$ under their respective definitions
       $$
       \text{id}_A(1) = 1, \quad \text{id}_A(2) = 2, \quad \text{id}_A(3) = 3
       $$
@@ -514,7 +514,7 @@ image: ""
 
 ---
 
-- **Exercise 19**
+- **Exercise 19**  
   Restriction of a Function
   Let
   $$
@@ -533,14 +533,14 @@ image: ""
   (c) Are $f$ and $g$ equal?
   (d) Do they have the same formula?
 
-  - **Solution 19.1**
+  - **Solution 19.1**  
 
-    * **(a)** By definition of a function restriction, restricting a function $f \colon X \rightarrow Y$ to a subset $A \subseteq X$ means the new function has domain $A$ while retaining the original rule and codomain. Therefore:
+    * **(a)** By definition of a function restriction, restricting a function $f \colon X \rightarrow Y$ to a subset $A \subseteq X$ means the new function has domain $A$ while retaining the original rule and codomain. Therefore
 
       * Domain of $g$ is $A = [-1, 1]$.
       * Codomain of $g$ is $\mathbb{R}$.
 
-    * **(b)** Since $g(x) = f(x)$ for all $x \in A$, we substitute the values into the formula $x^2 - 1$:
+    * **(b)** Since $g(x) = f(x)$ for all $x \in A$, we substitute the values into the formula $x^2 - 1$
       $$
       g(-1) = (-1)^2 - 1 = 1 - 1 = 0
       $$
@@ -559,40 +559,40 @@ image: ""
 
 ---
 
-- **Exercise 20**
+- **Exercise 20**  
   Construct Your Own Relation
   Let
   $$
   A = \{1, 2, 3, 4\}.
   $$
-  Construct:
+  Construct
   (a) a relation that is reflexive but not symmetric;
   (b) a relation that is symmetric but not reflexive;
   (c) an equivalence relation with exactly two equivalence classes;
   (d) a partial order different from the equality relation.
 
-  - **Solution 20.1**
+  - **Solution 20.1**  
 
-    * **(a)** To be reflexive, the relation must contain $(1,1), (2,2), (3,3),$ and $(4,4)$. To violate symmetry, we add a directional pair without its inverse, such as $(1,2)$ without $(2,1)$:
+    * **(a)** To be reflexive, the relation must contain $(1,1), (2,2), (3,3),$ and $(4,4)$. To violate symmetry, we add a directional pair without its inverse, such as $(1,2)$ without $(2,1)$
       $$
       R = \{(1, 1), (2, 2), (3, 3), (4, 4), (1, 2)\}.
       $$
 
-    * **(b)** To violate reflexivity, at least one diagonal element must be missing (e.g., $(1,1) \notin R$). To maintain symmetry, any ordered pair must have its coordinates flipped within the set:
+    * **(b)** To violate reflexivity, at least one diagonal element must be missing (e.g., $(1,1) \notin R$). To maintain symmetry, any ordered pair must have its coordinates flipped within the set
       $$
       R = \{(1, 2), (2, 1)\}.
       $$
 
-    * **(c)** To form an equivalence relation with exactly two classes, we can partition $A$ into two disjoint non-empty subsets, for instance, $A_1 = \{1, 2\}$ and $A_2 = \{3, 4\}$. The relation is constructed by taking $(A_1 \times A_1) \cup (A_2 \times A_2)$:
+    * **(c)** To form an equivalence relation with exactly two classes, we can partition $A$ into two disjoint non-empty subsets, for instance, $A_1 = \{1, 2\}$ and $A_2 = \{3, 4\}$. The relation is constructed by taking $(A_1 \times A_1) \cup (A_2 \times A_2)$
       $$
       R = \{(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (3, 4), (4, 3), (4, 4)\}.
       $$
-      Explicitly rewritten for verification:
+      Explicitly rewritten for verification
       $$
       R = \{(1, 1), (1, 2), (2, 1), (2, 2), (3, 3), (3, 4), (4, 3), (4, 4)\}.
       $$
 
-    * **(d)** A partial order must be reflexive, antisymmetric, and transitive. The standard total order relation "less than or equal to" on integers satisfies this. Restricting it to $A$ yields:
+    * **(d)** A partial order must be reflexive, antisymmetric, and transitive. The standard total order relation "less than or equal to" on integers satisfies this. Restricting it to $A$ yields
       $$
       R = \{(1, 1), (2, 2), (3, 3), (4, 4), (1, 2), (1, 3), (1, 4), (2, 3), (2, 4), (3, 4)\}.
       $$
@@ -600,83 +600,83 @@ image: ""
 
 ---
 
-- **Exercise 21**
+- **Exercise 21**  
   Let $f\colon \mathbb R\to \mathbb R$, defined by $f(x)=x^3+2$. Prove that $f$ is bijective.
-  
-  - **Proof 21.1**
-  
+
+  - **Proof 21.1**  
+
     - **Injectivity** Suppose $x,y\in \mathbb R$, suppose $f(x)=f(y)$, we want to prove that $x=y$. Then
       $$
       \begin{aligned}
-      
+
       f(x)=f(y)&\iff x^3+2=y^3+2 \\
       &\iff x^3=y^3 \\
       &\iff x^3-y^3=0 \\
       &\iff (x-y)\left(x^2+xy+y^2\right)=0=(x-y)\left(\left(x+\dfrac y2\right)^2+\left(\dfrac{\sqrt 3}{2}y\right)^2\right) \\
       &\iff x=y\lor \left(\left(x+\dfrac y2\right)^2+\left(\dfrac{\sqrt 3}{2}y\right)^2\right)=0 \\
       &\iff x=y\lor (x=0\land y=0).
-      
+
       \end{aligned}
       $$
       In any case $x=y$. Then $f$ is injective.
-  
+
     - **Surjectivity** Suppose $y\in\mathbb R$. We want to prove $\exist x\in\mathbb R$ such that $x^3+2=y\iff x^3=y-2$.
       $$
       \begin{aligned}
-      
+
       x:=\sqrt[3]{y-2} \implies f(x)=\left(\sqrt[3]{y-2}\right)^3+2=y-2+2=y.
-      
+
       \end{aligned}
       $$
-      
-    
+
+
     Thus $f$ is bijective.
 
 ---
 
-- **Exercise 22**
+- **Exercise 22**  
   Let $f\colon \mathbb Z\to \mathbb Z$, defined by $f(n)=3n+1$. Is $f$ injective? Is $f$ surjective? Is $f$ bijective?
-  - **Solution**
+  - **Solution**  
     - **Injectivity** Suppose $n,m\in \mathbb Z,f(n)=f(m)$ By definition of $f$, $3n+1=3m+1\implies 3n=3m\implies n=m$.
     - **Surjective** Suppose $y\in\mathbb Z$. We want to find $n\in\mathbb Z$ such that $f(n)=m=3n+1\implies \dfrac{m-1}3=n$.
       By contradiction. If $n\in \mathbb Z$ such that $f(n)=3$ then $n=\dfrac 23\not\in \mathbb Z$. Then there doesn't exist $n\in\mathbb Z$ such that $f(n)=3$. Then $3\not\in \text{Im}f\implies f$ is not surjective. Thus $f$ is not bijective.
 
 ---
 
-- **Exercise 23**
+- **Exercise 23**  
   Let $f\colon X\to Y$ be a function. Prove that $f$ is injective $\iff$ For every set $Z$ and for every pair of functions $g,h\colon Z\to X$, if $f\circ g=f\circ h\implies g=h$.
 
-  - **Proof 23.1**
+  - **Proof 23.1**  
     Suppose $f\colon X\to Y$ a function.
 
     ($\Longrightarrow$) Suppose $f$ is injective. Suppose $Z$ is a set, $g,h\colon Z\to X$ such that $f\circ g=f\circ h\implies\forall z\in Z,(f\circ g)(z)=(f\circ h)(z)$. Then $f(g(z))=g(h(z))$. By the definition of injection, $g(z)=h(z)$ for all $z\in Z$ thus $g=h$.
-    
+
     $(\Longleftarrow)$ Assume that for every set $Z$ and for every pair of functions $g, h \colon Z \rightarrow X$, $f \circ g = f \circ h \implies g = h$ holds. We need to show that $f$ is injective.
-    Let $x_1, x_2 \in X$ be arbitrary elements in the domain such that:
+    Let $x_1, x_2 \in X$ be arbitrary elements in the domain such that
     $$
     f(x_1) = f(x_2)
     $$
     Since our hypothesis holds true for any choice of set $Z$, let us choose $Z = \{*\}$ to be a singleton set containing a single element.  
-    We define two functions $g, h \colon \{*\} \rightarrow X$ by their assignments:
+    We define two functions $g, h \colon \{*\} \rightarrow X$ by their assignments
     $$
     g(*) = x_1 \quad \text{and} \quad h(*) = x_2
     $$
-    Now, evaluate the compositions $f \circ g$ and $f \circ h$ on the single element $* \in Z$:
+    Now, evaluate the compositions $f \circ g$ and $f \circ h$ on the single element $* \in Z$
     $$
     (f \circ g)(*) = f(g(*)) = f(x_1)
     $$
-    
+
     $$
     (f \circ h)(*) = f(h(*)) = f(x_2)
     $$
-    
-    Since we assumed $f(x_1) = f(x_2)$, it follows that $(f \circ g)(*) = (f \circ h)(*)$. Since the domain contains only $*$, this implies:
+
+    Since we assumed $f(x_1) = f(x_2)$, it follows that $(f \circ g)(*) = (f \circ h)(*)$. Since the domain contains only $*$, this implies
     $$
     f \circ g = f \circ h
     $$
     By our hypothesis, this condition guarantees that $g = h$.  
     By definition of function equality, $g = h \implies g(*) = h(*)$.  
-    Substituting our definitions back gives:
+    Substituting our definitions back gives
     $$
     x_1 = x_2
     $$
@@ -685,11 +685,11 @@ image: ""
 
 ---
 
-- **Exercise 24**
-  Consider ther functions $f,g\colon\mathbb R\to\mathbb R$ defined by
+- **Exercise 24**  
+  Consider the functions $f,g\colon\mathbb R\to\mathbb R$ defined by
   $$
   f(x)=\dfrac{x}{1+\vert x\vert},\quad g(x)=\begin{cases}
-  
+
   \dfrac{x}{1+\vert x\vert}\quad &(\vert x\vert<1) \\
   0 \quad &(\vert x\vert\geqslant 1)
   \end{cases}
@@ -698,121 +698,121 @@ image: ""
   1. Is $g$ a left inverse of $f$ ?
      $$
      \begin{aligned}
-     
+
      (g\circ f)(x)&=g(f(x)) =g\left(\dfrac{x}{1+\vert x\vert}\right) \\
      &=\dfrac{\dfrac{x}{1+\vert x\vert}}{1-\left\vert\dfrac{x}{1+\vert x\vert}\right\vert} \\
      &=\dfrac{\dfrac{x}{1+\vert x\vert}}{1-\dfrac{\vert x\vert}{1+\vert x\vert}} \\
      &=x
-     
+
      \end{aligned}
      $$
      Thus the statement is true.
-  
+
   2. Is $g$ a right inverse of $f$ ?
      $$
      (f\circ g)(1)=f(g(1))=f(0)=0
      $$
-  
+
      Thus the statement is false
-  
-  3. Is $f$ invertible? 
-  
-     - **Problem 28**
+
+  3. Is $f$ invertible?
+
+     - **Solution 24.3**  
        The function $f \colon \mathbb{R} \rightarrow \mathbb{R}$ is **not invertible** because it is not surjective onto its given codomain $\mathbb{R}$.
-       
-       - **Analysis based on definitions:**
+
+       - **Analysis based on definitions**
          By definition, a function is invertible if and only if it is a bijection.
          Let $x_1, x_2 \in \mathbb{R}$ such that $f(x_1) = f(x_2)$.
-       
+
          * If $x_1, x_2 \ge 0$, then $\frac{x_1}{1 + x_1} = \frac{x_2}{1 + x_2} \implies x_1(1 + x_2) = x_2(1 + x_1) \implies x_1 = x_2$.
          * If $x_1, x_2 < 0$, then $\frac{x_1}{1 - x_1} = \frac{x_2}{1 - x_2} \implies x_1(1 - x_2) = x_2(1 - x_1) \implies x_1 = x_2$.
          * Since $f(x) \ge 0$ for $x \ge 0$ and $f(x) < 0$ for $x < 0$, inputs of different signs cannot have the same output. Thus, $f(x_1) = f(x_2) \implies x_1 = x_2$, showing that $f$ is injective.
-         
-         Let $y \in \mathbb{R}$ be an arbitrary element in the codomain. By observing the structure of the function, since $1 + |x| > |x|$ holds true for all $x \in \mathbb{R}$, we always have:
+
+         Let $y \in \mathbb{R}$ be an arbitrary element in the codomain. By observing the structure of the function, since $1 + |x| > |x|$ holds true for all $x \in \mathbb{R}$, we always have
          $$
          |f(x)| = \left| \frac{x}{1 + |x|} \right| = \frac{|x|}{1 + |x|} < 1
          $$
-         This means the image of $f$ is bounded, specifically $\text{Im } f = (-1, 1)$. Because the image does not equal the given codomain ($\text{Im} f \neq \mathbb{R}$), there exist elements in the codomainfor which no preimage $x \in \mathbb{R}$ can be found. Thus, $f$ is not surjective.
+         This means the image of $f$ is bounded, specifically $\text{Im } f = (-1, 1)$. Because the image does not equal the given codomain ($\text{Im} f \neq \mathbb{R}$), there exist elements in the codomain for which no preimage $x \in \mathbb{R}$ can be found. Thus, $f$ is not surjective.
 
 ---
 
-- **Problem 25**
+- **Problem 25**  
   Determine the maximal possible domain $D$ of $f(x) = \frac{x + 1}{x + 2}$ and the image $I = \text{Im } f$. Is $f \colon D \rightarrow I$ bijective, invertible? If so, find the inverse.
-  
-  - **Solution 25.1**
-    * **Maximal Domain:** The rational function is well-defined as long as the denominator is non-zero, $x + 2 \neq 0 \iff x \neq -2$. Thus, the maximal possible domain is:
+
+  - **Solution 25.1**  
+    * **Maximal Domain:** The rational function is well-defined as long as the denominator is non-zero, $x + 2 \neq 0 \iff x \neq -2$. Thus, the maximal possible domain is
       $$
       D = \mathbb{R} \setminus \{-2\}
       $$
-    * **Image:** By definition, $\text{Im } f = \{y \in \mathbb{R} \mid \exists x \in D, \, f(x) = y\}$. Let $y = \frac{x + 1}{x + 2}$. Rearranging the equation to solve for $x$:
+    * **Image:** By definition, $\text{Im } f = \{y \in \mathbb{R} \mid \exists x \in D, \, f(x) = y\}$. Let $y = \frac{x + 1}{x + 2}$. Rearranging the equation to solve for $x$
       $$
       y(x + 2) = x + 1 \implies yx + 2y = x + 1 \implies x(y - 1) = 1 - 2y \implies x = \frac{1 - 2y}{y - 1}
       $$
-      The expression for $x$ is well-defined for all $y \neq 1$. Furthermore, the value of $x$ can never equal $-2$ because $\frac{1 - 2y}{y - 1} = -2 \implies 1 - 2y = -2y + 2 \implies 1 = 2$, which is impossible. Thus, the image is:
+      The expression for $x$ is well-defined for all $y \neq 1$. Furthermore, the value of $x$ can never equal $-2$ because $\frac{1 - 2y}{y - 1} = -2 \implies 1 - 2y = -2y + 2 \implies 1 = 2$, which is impossible. Thus, the image is
       $$
       I = \mathbb{R} \setminus \{1\}
       $$
-    * **Bijectivity and Inversibility:** 
+    * **Bijectivity and Invertibility**
       * **Injective:** Let $x_1, x_2 \in D$ such that $f(x_1) = f(x_2)$. Then $\frac{x_1 + 1}{x_1 + 2} = \frac{x_2 + 1}{x_2 + 2} \implies (x_1 + 1)(x_2 + 2) = (x_2 + 1)(x_1 + 2) \implies x_1 x_2 + 2x_1 + x_2 + 2 = x_1 x_2 + 2x_2 + x_1 + 2 \implies x_1 = x_2$.
       * **Surjective:** By restricting the codomain to the image $I$, every $y \in I$ has a preimage $x = \frac{1 - 2y}{y - 1} \in D$ such that $f(x) = y$.
       Since $f \colon D \rightarrow I$ is both injective and surjective, it is bijective and therefore invertible.
-    * **Inverse Function:** The inverse function $f^{-1} \colon I \rightarrow D$ is given by:
+    * **Inverse Function:** The inverse function $f^{-1} \colon I \rightarrow D$ is given by
       $$
       f^{-1}(y) = \frac{1 - 2y}{y - 1}
       $$
 
 ---
 
-- **Problem 26**
+- **Problem 26**  
   Let $f \colon \mathbb{R} \rightarrow \mathbb{R}$ be a function defined by $f(x) = \frac{x^2}{x^2 + 1}$.
-  
+
   1. Find $f^{-1}\left(\frac{1}{2}\right)$.
   2. Find $f^{-1}\left(\left[\frac{1}{4}, \frac{3}{4}\right]\right)$.
   3. Let $A = [0, 3] \subset \mathbb{R}$, find $f(A)$, $f^{-1}(f(A))$.
 
-  - **Solution 26.1**
-    * **1.** By definition of a singleton preimage, we solve $f(x) = \frac{1}{2}$:
+  - **Solution 26.1**  
+    * **1.** By definition of a singleton preimage, we solve $f(x) = \frac{1}{2}$
       $$
       \frac{x^2}{x^2 + 1} = \frac{1}{2} \implies 2x^2 = x^2 + 1 \implies x^2 = 1 \implies x = \pm 1
       $$
-      Thus:
+      Thus
       $$
       f^{-1}\left(\frac{1}{2}\right) = \{-1, 1\}
       $$
-    * **2.** By definition, $f^{-1}\left(\left[\frac{1}{4}, \frac{3}{4}\right]\right) = \left\{x \in \mathbb{R} \mid \frac{1}{4} \le \frac{x^2}{x^2 + 1} \le \frac{3}{4}\right\}$. Since $x^2 + 1 > 0$, we solve the inequalities separately:
+    * **2.** By definition, $f^{-1}\left(\left[\frac{1}{4}, \frac{3}{4}\right]\right) = \left\{x \in \mathbb{R} \mid \frac{1}{4} \le \frac{x^2}{x^2 + 1} \le \frac{3}{4}\right\}$. Since $x^2 + 1 > 0$, we solve the inequalities separately
       * Left side: $\frac{1}{4}(x^2 + 1) \le x^2 \implies x^2 + 1 \le 4x^2 \implies 3x^2 \ge 1 \implies x^2 \ge \frac{1}{3} \implies x \in \left(-\infty, -\frac{1}{\sqrt{3}}\right] \cup \left[\frac{1}{\sqrt{3}, \infty}\right)$.
       * Right side: $x^2 \le \frac{3}{4}(x^2 + 1) \implies 4x^2 \le 3x^2 + 3 \implies x^2 \le 3 \implies x \in \left[-\sqrt{3}, \sqrt{3}\right]$.
-      Intersecting the two solution intervals yields:
-      
+      Intersecting the two solution intervals yields
+
       $$
       f^{-1}\left(\left[\frac{1}{4}, \frac{3}{4}\right]\right) = \left[-\sqrt{3}, -\frac{1}{\sqrt{3}}\right] \cup \left[\frac{1}{\sqrt{3}}, \sqrt{3}\right]
       $$
     * **3.** Note that the question text has a standard typo writing $A \subset \mathbb{R}^3$, but the interval $[0, 3]$ indicates $A \subset \mathbb{R}$.
-      * To find $f(A)$, since $f(x) = \frac{x^2}{x^2 + 1} = 1 - \frac{1}{x^2 + 1}$, the function is strictly increasing on $[0, 3]$. Evaluating at the endpoints gives $f(0) = 0$ and $f(3) = \frac{9}{10}$. Thus:
+      * To find $f(A)$, since $f(x) = \frac{x^2}{x^2 + 1} = 1 - \frac{1}{x^2 + 1}$, the function is strictly increasing on $[0, 3]$. Evaluating at the endpoints gives $f(0) = 0$ and $f(3) = \frac{9}{10}$. Thus
         $$
         f(A) = \left[0, \frac{9}{10}\right]
         $$
-      * To find $f^{-1}(f(A))$, we solve $x \in \mathbb{R}$ such that $0 \le \frac{x^2}{x^2 + 1} \le \frac{9}{10}$. The left inequality is true for all $x \in \mathbb{R}$. The right inequality gives $10x^2 \le 9x^2 + 9 \implies x^2 \le 9 \implies -3 \le x \le 3$. Thus:
+      * To find $f^{-1}(f(A))$, we solve $x \in \mathbb{R}$ such that $0 \le \frac{x^2}{x^2 + 1} \le \frac{9}{10}$. The left inequality is true for all $x \in \mathbb{R}$. The right inequality gives $10x^2 \le 9x^2 + 9 \implies x^2 \le 9 \implies -3 \le x \le 3$. Thus
         $$
         f^{-1}(f(A)) = [-3, 3]
         $$
 
 ---
 
-- **Problem 27**
+- **Problem 27**  
   Let $f \colon X \rightarrow Y$ be a function. Prove that $f$ is injective $\iff \forall A \subseteq X, \, f^{-1}(f(A)) \subseteq A$.
-  
-  - **Solution 27.1**
-    **Proof:**
+
+  - **Solution 27.1**  
+    **Proof**
     $(\Longrightarrow)$ Assume $f$ is injective. Let $A \subseteq X$ be an arbitrary subset, and let $x \in f^{-1}(f(A))$.
     By definition of preimage, $x \in f^{-1}(f(A)) \implies f(x) \in f(A)$.
     By definition of image, $f(x) \in f(A) \implies \exists x' \in A$ such that $f(x) = f(x')$.
     Since $x, x' \in X$ and $f$ is given to be injective, $f(x) = f(x') \implies x = x'$.
     Since $x' \in A$, it follows directly that $x \in A$.
     Thus, $f^{-1}(f(A)) \subseteq A$.
-  
+
     $(\Longleftarrow)$ Assume that for every subset $A \subseteq X$, $f^{-1}(f(A)) \subseteq A$ holds true. We need to show that $f$ is injective.
-    Let $x_1, x_2 \in X$ be arbitrary elements in the domain such that:
+    Let $x_1, x_2 \in X$ be arbitrary elements in the domain such that
     $$
     f(x_1) = f(x_2)
     $$
@@ -821,7 +821,7 @@ image: ""
     Since we assumed $f(x_1) = f(x_2)$, it follows that $f(x_2) \in \{f(x_1)\} = f(A)$.
     By definition of preimage, $f(x_2) \in f(A) \implies x_2 \in f^{-1}(f(A))$.
     By our hypothesis, $f^{-1}(f(A)) \subseteq A$, which means $x_2 \in A$.
-    Since $A = \{x_1\}$, the statement $x_2 \in \{x_1\}$ implies:
+    Since $A = \{x_1\}$, the statement $x_2 \in \{x_1\}$ implies
     $$
     x_2 = x_1
     $$

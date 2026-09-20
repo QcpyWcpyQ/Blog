@@ -120,7 +120,7 @@ image: ""
        $$
        A\lb 2 \\ 3 \\ -5 \eb = \lb 2 & 3 & -1 \\ -1 & 2 & 4 \eb \lb 2 \\ 3 \\ -5 \eb = \lb 2 \cdot 2 + 3 \cdot 3 + (-1) \cdot (-5) \\ (-1) \cdot 2 + 2 \cdot 3 + 4 \cdot (-5) \eb = \lb 4 + 9 + 5 \\ -2 + 6 - 20 \eb = \lb 18 \\ -16 \eb.
        $$
-    
+
     3. Let $A = \lb a_{ij} \eb_{m\times n}$ and let $e_k = \lb \delta_{jk} \eb_{n\times 1}$ be the $k$-th standard basis vector where $\delta_{jk} = 1$ if $j=k$ and $\delta_{jk} = 0$ if $j \neq k$. Then the $i$-th entry of the column vector $Ae_k$ is given by
        $$
           \sum_{j=1}^n a_{ij}\delta_{jk} = a_{ik}.
@@ -153,17 +153,17 @@ image: ""
 - **Exercise 6**  
 
   1. Find nonzero matrices $A\in M_{2\times 3}(\mathbb R)$ and $B\in M_{3\times 2}(\mathbb R)$ such that $AB=\mathbb 0_{2\times 2}$ but $BA\neq\mathbb 0_{3\times 3}$.
-  2. Use your example to show that the following statements are false:
+  2. Use your example to show that the following statements are false
      - $AB=0\implies A=0\lor B=0$.
      - $AB=0\implies BA=0$.
 
-  - **Solution 6.1**
+  - **Solution 6.1**  
     1. Let the non-zero matrices be defined as
        $$
        A=\lb
        1 & 1 & 0 \\
        0 & 0 & 0
-       \eb_{2\times 3}, \quad 
+       \eb_{2\times 3}, \quad
        B=\lb
        1 & 0 \\
        -1 & 0 \\
@@ -193,7 +193,7 @@ image: ""
        \eb \neq \mathbb 0_{3\times 3}.
        $$
 
-    2. By using the explicit counterexample constructed in part (1), we analyze the truth values of the statements:
+    2. By using the explicit counterexample constructed in part (1), we analyze the truth values of the statements
        * Since $A \neq \mathbb 0_{2\times 3}$ and $B \neq \mathbb 0_{3\times 2}$ but $AB = \mathbb 0_{2\times 2}$, the implication $AB=0\implies A=0\lor B=0$ is false.
        * Since $AB = \mathbb 0_{2\times 2}$ but $BA \neq \mathbb 0_{3\times 3}$, the implication $AB=0\implies BA=0$ is false.
 

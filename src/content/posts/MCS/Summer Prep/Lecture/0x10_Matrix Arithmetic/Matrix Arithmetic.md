@@ -70,7 +70,7 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     0 & 0 \\
     0 & 0 \\
     0 & 0 \\
-    0 & 0 
+    0 & 0
     \eb, \quad
     \mathbb 0_{3}=\lb
     0 & 0 & 0 \\
@@ -89,11 +89,11 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     $$
     A=\lb
     1 & -2 & 0 \\
-    3 & 7 & 1 
+    3 & 7 & 1
     \eb, \quad
     B=\lb
     -2 & 3 & 1 \\
-    4 & -2 & 1 
+    4 & -2 & 1
     \eb.
     $$
     Then we have the sum
@@ -136,14 +136,14 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     $$
     A=\lb
     \i & 0 \\
-    0 & -\i 
+    0 & -\i
     \eb,
     $$
     then we have  
     $$
     \i A=\lb
     -1 & 0 \\
-    0 & 1 
+    0 & 1
     \eb.
     $$
 
@@ -238,13 +238,13 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
 
   - **Remark 7.1**  
     For the product between $A$ and $B$ to make sense, the number of columns of $A$ must be equal to the number of rows of $B$.
-    
+
   - **Example 7.2**  
     Let  
     $$
     A=\lb
     1 & 2 & -1 \\
-    3 & 1 & 4 
+    3 & 1 & 4
     \eb, \quad
     B=\lb
     -2 & 5 \\
@@ -277,7 +277,7 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     $$
 
   - **Theorem 7.3**  
-    Let $A,B,C$ be matrices with sizes such that the foloowing operations make sense and let $\alpha\in S$. Then
+    Let $A,B,C$ be matrices with sizes such that the following operations make sense and let $\alpha\in S$. Then
 
     1. $(AB)C=A(BC)$.
     2. $(A+B)C=AC+BC$.
@@ -289,10 +289,10 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
       1. Let $A=\lb a_{ij} \eb_{m\times n},B=\lb b_{jk} \eb_{n\times p},C=\lb c_{kl} \eb_{p\times q}$. Then  
          $$
          \begin{aligned}
-         
+
          (AB)C &= [d_{ik}]_{m\times b}[c_{kl}]_{p\times q} \\
          &= [e_{il}]_{m\times q}
-         
+
          \end{aligned}
          $$
 
@@ -366,14 +366,14 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     The product of matrices is not commutative. For example, consider  
     $$
     A=\lb
-    
+
     1 & 3 \\
     2 & -1
-    
+
     \eb,
-    
+
     B=\lb
-    
+
     2 & -1 \\
     0 & 2
     \eb.
@@ -382,51 +382,51 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     $$
     \begin{aligned}
     AB&=\lb
-    
+
     1 & 3 \\
     2 & -1
-    
+
     \eb\lb
-    
+
     2 & -1 \\
     0 & 2
     \eb=\lb
-    
+
     2 & 5 \\
     4 & -4
     \eb \\
-    
+
     BA&=\lb
-    
+
     2 & -1 \\
     0 & 2
     \eb\lb
-    
+
     1 & 3 \\
     2 & -1
-    
+
     \eb=\lb
-    
+
     0 & 7 \\
     4 & -2
-    \eb 
-    
+    \eb
+
     \end{aligned}
     $$
     That is, $AB\neq BA$.
 
   - **Remark 7.5**  
-    The product between two nonzero square matrices canbe zero matrix. For example
+    The product between two nonzero square matrices can be the zero matrix. For example
     $$
     A=\lb
-    
+
     1 & 0 \\
     0 & 0
-    
+
     \eb,
-    
+
     B=\lb
-    
+
     0 & 0 \\
     0 & 1
     \eb.
@@ -435,13 +435,13 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
     $$
     AB=\lb1 & 0 \\
     0 & 0
-    
+
     \eb\lb
-    
+
     0 & 0 \\
     0 & 1
     \eb=\lb
-    
+
     0 & 0 \\
     0 & 0
     \eb.

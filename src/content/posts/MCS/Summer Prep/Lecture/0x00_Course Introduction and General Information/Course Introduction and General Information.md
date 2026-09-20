@@ -16,7 +16,7 @@ image: ""
   Office: L-202, SC
 
   Office hour: Wednesday 10:00 - 11:00
-  
+
   Lectures G21, G24: Mon 10:00 - 12:00 (E2-401),  Tu 8:00 - 10:00 (E2-401), Thu 8:00 - 10:00 (E2-401), Fri 10:00 - 12:00 (E2-401)
 
 ---
@@ -28,7 +28,7 @@ image: ""
   Office: L-202, SC
 
   Office hour: Wednesday 14:30 - 15:30
-  
+
   Lectures G22, G23: Mon 8:00 - 10:00 (E2-402),  Tu 10:00 - 12:00 (E2-402), Thu 10:00 - 12:00 (E2-402), Fri 10:00 - 12:00 (E2-402)
 
 ---

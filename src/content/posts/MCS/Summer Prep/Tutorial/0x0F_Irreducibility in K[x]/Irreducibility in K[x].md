@@ -13,7 +13,7 @@ image: ""
   Determine polynomials below is rather reducible or not.
   $$
   \begin{array}{c|c|c|c|c}
-  
+
   &\Z&\Q&\R&\C  \\
   p_1(x)=x^2+4x+4=(x+2)^2 & 1 & 1 & 1 & 1 \\
   p_2(x)=x^2-4=(x-2)(x+2) & 1 & 1 & 1 & 1 \\
@@ -21,9 +21,9 @@ image: ""
   p_4(x)=x^2-\dfrac 49=\left(x-\dfrac 23\right)\left(x+\dfrac 23\right) & 0 & 1 & 1 & 1 \\
   p_5(x)=x^2-2=\left(x-\sqrt 2\right)\left(x+\sqrt 2\right) & 0 & 0 & 1  & 1 \\
   p_6(x)=x^2+1=\left(x-\i\right)\left(x+\i\right) & 0 & 0 & 0 & 1
-  
-  
-  
+
+
+
   \end{array}
   $$
 
@@ -50,11 +50,11 @@ image: ""
     We have that
     $$
     \begin{aligned}
-    
+
     p(x)&=x^{12}+2x^6+1-x^6 \\
     &= \left(x^6+1\right)^2-x^6 \\
     &= \left(x^6+1-x^3\right)\left(x^6+1+x^3\right).
-    
+
     \end{aligned}
     $$
     Therefore it is reducible over $\Z,\Q,\R,\C$.

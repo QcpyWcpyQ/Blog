@@ -9,7 +9,7 @@ image: ""
 ---
 ## Decimal Representation
 
-- **Exercise 1**
+- **Exercise 1**  
   For each of the following reduced fractions, determine whether its decimal representation is finite or infinite repeating.
   For each fraction with a finite decimal representation, determine the smallest number of digits after the decimal point needed to represent it.
   For each fraction with an infinite repeating decimal representation, determine whether the repeating part begins immediately after the decimal point or only after one or more nonrepeating digits.
@@ -29,7 +29,7 @@ image: ""
      40 &= 24\cdot 1+16 \\
      160 &= 24\cdot 6+16 \\
      160 &= 24\cdot 6+16 \\
-     &\ \ \vdots 
+     &\ \ \vdots
      \end{aligned}
      $$
      Thus $\frac{7}{24}=0.291\overline{6}$. The repeating part begins only after $3$ nonrepeating digits.
@@ -92,24 +92,24 @@ image: ""
 
 ---
 
-- **Exercise 2**
+- **Exercise 2**  
   Let $x=0.a_1a_2a_3\cdots$ and $y=0.b_1b_2b_3\cdots$ be two decimal representations, neither of which is eventually an infinite string of $9$'s. Suppose $n$ is the first index for which $a_n\neq b_n$. Prove that
   $$
   x<y\iff a_n<b_n.
   $$
 
-  - **Proof 2.1**
-    Since $n$ is the first index for which $a_n \neq b_n$, we have $a_k = b_k$ for all $1 \leqslant k < n$. We can express the difference $y - x$ as:
+  - **Proof 2.1**  
+    Since $n$ is the first index for which $a_n \neq b_n$, we have $a_k = b_k$ for all $1 \leqslant k < n$. We can express the difference $y - x$ as
     $$
     y - x = (b_n - a_n)10^{-n} + \sum_{i=n+1}^{\infty} (b_i - a_i)10^{-i}.
     $$
-    
+
     ($\Longleftarrow$) Suppose $a_n < b_n$. Since $a_n, b_n$ are distinct digits, we have $b_n - a_n \geqslant 1$.  
-    For the remaining tail digits, the minimum possible value of $b_i - a_i$ is $0 - 9 = -9$. Since the decimal representations do not eventually terminate in an infinite string of $9$'s, the tail sum satisfies a strict inequality:
+    For the remaining tail digits, the minimum possible value of $b_i - a_i$ is $0 - 9 = -9$. Since the decimal representations do not eventually terminate in an infinite string of $9$'s, the tail sum satisfies a strict inequality
     $$
     \sum_{i=n+1}^{\infty} (b_i - a_i)10^{-i} > \sum_{i=n+1}^{\infty} (-9)10^{-i} = -9 \cdot \frac{10^{-(n+1)}}{1 - 10^{-1}} = -10^{-n}.
     $$
-    Substituting this back into the difference equation, we obtain:
+    Substituting this back into the difference equation, we obtain
     $$
     y - x > 1 \cdot 10^{-n} - 10^{-n} = 0 \implies x < y.
     $$

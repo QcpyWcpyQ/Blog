@@ -9,7 +9,7 @@ image: ""
 ---
 ## Week 5
 
-- **Problem 1**
+- **Problem 1**  
   Let $A, B \in M_n(\mathbb R)$ satisfy
   $$
   AB = A \quad \text{and} \quad BA = B.
@@ -52,12 +52,12 @@ image: ""
 
 ---
 
-- **Problem 2**
+- **Problem 2**  
   Write the polynomials
-  
+
   1. $f(x) = x^6 - 5x^4 - 4x^2 + 20$
   2. $g(x) = 2x^5 - 2x^4 - 2x^3 + 2x^2 - 4x + 4$
-  
+
   as a product of irreducible factors over $\mathbb Z[x]$, $\mathbb Q[x]$, $\mathbb R[x]$, and $\mathbb C[x]$.
 
   - **Solution 2.1**  
@@ -104,7 +104,7 @@ image: ""
 
 ---
 
-- **Problem 3**
+- **Problem 3**  
   Let $n \in \mathbb N$ such that $n$ is even. Show that the polynomial $p(x) = x^n + x^{n-1} + \cdots + x + 1$ has no rational roots.
 
   - **Proof 3.1**  
@@ -127,12 +127,12 @@ image: ""
       p(-1) = 1 - 1 + 1 - 1 + \cdots - 1 + 1 = 1.
       $$
       Since $p(-1) = 1 \neq 0$, $-1$ is not a root.
-    
+
     Therefore, $p(x)$ has no rational roots.
 
 ---
 
-- **Problem 4**
+- **Problem 4**  
   Let $a, b \in \mathbb K$ with $a \neq b$, and let $p(x) \in \mathbb K[x]$. Find the remainder when $p(x)$ is divided by $(x - a)(x - b)$ in terms of $p(a)$ and $p(b)$.
 
   - **Solution 4.1**  
@@ -151,10 +151,10 @@ image: ""
     Then we solve this linear system of equations for $B$ and $C$. We have
     $$
     \begin{cases}
-    
+
     B = \dfrac{p(a) - p(b)}{a - b} \\
     C = \dfrac{ap(b) - bp(a)}{a - b}
-    
+
     \end{cases}.
     $$
     Substituting the expressions for $B$ and $C$ back into $r(x) = Bx + C$ yields

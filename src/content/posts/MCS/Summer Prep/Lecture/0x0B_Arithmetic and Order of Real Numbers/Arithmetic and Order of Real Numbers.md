@@ -9,8 +9,8 @@ image: ""
 ---
 ## Arithmetic and Order of Real Numbers
 
-- **Definition 1**
-  The set of **real numbers**, denoted $\mathbb R$, is a set that contains $\mathbb Q$. Its sum, product, and order extend the operations and order in $\mathbb Z$ and satisfy the following properties for all $x,y,z\in\mathbb R$:
+- **Definition 1**  
+  The set of **real numbers**, denoted $\mathbb R$, is a set that contains $\mathbb Q$. Its sum, product, and order extend the operations and order in $\mathbb Z$ and satisfy the following properties for all $x,y,z\in\mathbb R$
 
   1. $$
      (x+y)+z=x+(y+z).
@@ -21,7 +21,7 @@ image: ""
      x+0=x.
      $$
 
-  3. For each $x\in\mathbb R$, there exists a unique $-x\in\mathbb R$ such that 
+  3. For each $x\in\mathbb R$, there exists a unique $-x\in\mathbb R$ such that
      $$
      x+(-x)=0.
      $$
@@ -34,7 +34,7 @@ image: ""
      (xy)z=x(yz).
      $$
 
-  6. There exists a unique element $1\in\mathbb R$ such that 
+  6. There exists a unique element $1\in\mathbb R$ such that
      $$
      x\cdot 1=x.
      $$
@@ -60,21 +60,21 @@ image: ""
 
 ---
 
-- **Definition 2**
+- **Definition 2**  
   The set of **irrational numbers** is the set of those real numbers that are not rational numbers, that is,
   $$
   \mathbb R\setminus \mathbb Q.
   $$
 
-  - **Example 2.1**
+  - **Example 2.1**  
     $$
     \sqrt 2, \mathrm e, \pi.
     $$
 
-  - **Proposition 2.2**
+  - **Proposition 2.2**  
     The number \(\sqrt 2\) is irrational.
 
-    - **Proof 2.2.1**
+    - **Proof 2.2.1**  
       Suppose that $\sqrt 2=\frac pq$ with $p\in\mathbb Z, q\in\mathbb N$ and $p, q$ are coprime. Then
       $$
       p^2=2q^2.
@@ -88,15 +88,15 @@ image: ""
       $$
       Then $2\mid q^2$, and since $2$ is a prime we have that $2\mid q$, which is a contradiction since $p, q$ are coprime.
 
-  - **Proposition 2.3**
-    Let $a,b,c,d\in\mathbb R$, then:
+  - **Proposition 2.3**  
+    Let $a,b,c,d\in\mathbb R$, then
 
     1. If $a<b$ and $c<0$, then $ac>bc$.
     2. If $a<b$ and $c<d$, then $a+c<b+d$.
     3. If $a<b$, then $-a>-b$.
     4. If $a<0$ and $b<0$, then $ab>0$.
 
-    - **Proof 2.3.1**
+    - **Proof 2.3.1**  
 
       1. Since $-c>0$ and $b-a>0$, then
          $$
@@ -113,26 +113,26 @@ image: ""
       3. By $\text{Proposition 2.3(1)}$ with $c=-1$.
 
       4. Since $-a>0$ and $-b>0$, then $ab=(-a)(-b)>0$.
-    
-  - **Proposition 2.4**
+
+  - **Proposition 2.4**  
     $a>0\iff \dfrac 1a>0$.
-  
-    - **Proof 2.4.1**
+
+    - **Proof 2.4.1**  
       ($\Longrightarrow$) Suppose $a>0$. By the axiom of the multiplicative inverse, there exists $a^{-1}=\dfrac 1a$ such that $a\cdot \dfrac 1a=1$. Since $1>0$ and $a>0$, it follows from the properties of order and multiplication that $\dfrac 1a$ must be positive, as a positive number multiplied by a negative number would yield a negative result. Thus, $\dfrac 1a>0$.
-    
+
       ($\Longleftarrow$) Suppose $a\in\mathbb R$ such that $\dfrac 1a>0$. Applying the forward implication ($\Longrightarrow$) to the positive real number $\dfrac 1a$, we have that its multiplicative inverse must also be positive, that is, $\dfrac{1}{\frac 1a}>0$. Since $a \cdot \dfrac 1a = 1$, multiplying both sides by $\dfrac{1}{\frac 1a}$ yields $a = \dfrac{1}{\frac 1a}$. Therefore, we have $a>0$.
-    
+
 
 ---
 
-- **Definition 3**
+- **Definition 3**  
   Let $x \in \mathbb R$ and $n \in \mathbb N$, we define
   $$
   x^n = \underbrace{x \cdot x \cdots \cdot x}_{n \text{ times}}.
   $$
   If $x \neq 0$ we define $x^0 = 1$ and $x^{-n} = \left(x^{-1}\right)^n$.
 
-  - **Theorem 3.1**
+  - **Theorem 3.1**  
     Let $x, y \in \mathbb R$ and $m, n \in \mathbb N$, then
 
     1. $x^{m+n} = x^m \cdot x^n$.
@@ -141,7 +141,7 @@ image: ""
     4. $\dfrac{x^m}{x^n} = x^{m-n}$ if $x \neq 0$.
     5. $\left(\dfrac{x}{y}\right)^n = \dfrac{x^n}{y^n}$ if $y \neq 0$.
 
-    - **Proof 3.1.1**
+    - **Proof 3.1.1**  
 
       1. Fix $m\in\mathbb N$ and use induction on $n$.
          For $n=1$ the result is true since $x^{m+1}=x^mx=x^mx^1$.
@@ -230,10 +230,10 @@ image: ""
          $$
          Thus the result is true for $n+1$. So the result is true for every $n\in\mathbb N$.
 
-  - **Proposition 3.2**
+  - **Proposition 3.2**  
     If $n\in\mathbb N$ and $0\leqslant x<y$, then $x^n<y^n$. In particular, if $x,y\geqslant 0$ and $x^n=y^n$, then $x=y$.
 
-    - **Proof 3.2.1**
+    - **Proof 3.2.1**  
       Use induction on $n$.
       If $n=1$, then the result is true since $x^1<y^1$.
       Suppose that the result is true for $n$, that is,
@@ -253,13 +253,13 @@ image: ""
 
 ---
 
-- **Definition 4**
+- **Definition 4**  
   If $x\geqslant 0$ and $n\in\mathbb N$, the **n-th root** of $x$, denoted $\sqrt[n]{x}$, is the unique nonnegative number $y$ such that $y^n=x$.
 
-  - **Example 4.1**
+  - **Example 4.1**  
     The equation $y^2=9$ has two solutions: $-3$ and $3$. But $\sqrt 9=3$ denotes only the nonnegative one.
 
-  - **Remark 4.2**
+  - **Remark 4.2**  
     A negative real number has no even root, whereas an odd root is defined by
     $$
     \sqrt[n]{x}=-\sqrt[n]{-x}

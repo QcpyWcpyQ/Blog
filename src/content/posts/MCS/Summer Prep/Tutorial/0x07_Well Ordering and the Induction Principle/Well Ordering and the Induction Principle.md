@@ -9,7 +9,7 @@ image: ""
 ---
 ## Well Ordering and the Induction Principle
 
-- **Exercise 1**
+- **Exercise 1**  
   Consider $A=\left\{n\in\mathbb Z:n>10\right\}$.
 
   1. Give $5$ different lower bounds of $A$.
@@ -17,7 +17,7 @@ image: ""
   3. Find $\min A$.
   4. Explain why $10$ is not the minimum.
 
-  - **Solution 1.1**
+  - **Solution 1.1**  
     1. $10, 9, 8, 7, 6$.
     2. None.
     3. As $A$ is bounded below, $\min A$ exists. Since $n \geqslant 10 + 1 = 11$, $11$ is a lower bound of $A$. Since $11\in A$, we have $11=\min A$.
@@ -25,10 +25,10 @@ image: ""
 
 ---
 
-- **Exercise 2**
+- **Exercise 2**  
   Prove that $\forall n\in \mathbb N,1+3+\cdots + (2n-1)=n^2$.
 
-  - **Proof 2.1**
+  - **Proof 2.1**  
     By induction.
 
     1. Base step
@@ -55,10 +55,10 @@ image: ""
 
 ---
 
-- **Exercise 3**
+- **Exercise 3**  
   Prove that $\forall n\in \mathbb N, 2^n\geqslant n+1$.
 
-  - **Proof 3.1**
+  - **Proof 3.1**  
     By induction.
 
     1. Base step
@@ -82,10 +82,10 @@ image: ""
 
 ---
 
-- **Exercise 4**
+- **Exercise 4**  
   Prove that $\forall n \in \mathbb N, n \geqslant 4, 2^n \geqslant n^2$.
 
-  - **Proof 4.1**
+  - **Proof 4.1**  
     By induction.
 
     1. Base step
@@ -116,10 +116,10 @@ image: ""
 
 ---
 
-- **Exercise 5**
+- **Exercise 5**  
   Prove that $\forall n\in\mathbb N,3\mid \left(4^n-1\right)$.
 
-  - **Proof 5.1**
+  - **Proof 5.1**  
     By induction.
 
     1. Base step
@@ -139,7 +139,7 @@ image: ""
        &= 3\cdot(4k+1).
        \end{aligned}
        $$
-       Since $4k+1\in\mathbb Z$, $3\mid\left(4^{n+1}-1\right)$. Then the result is true for $n+1$ and therefore 
+       Since $4k+1\in\mathbb Z$, $3\mid\left(4^{n+1}-1\right)$. Then the result is true for $n+1$ and therefore
        $$
        3\mid \left(4^n-1\right)
        $$
@@ -147,10 +147,10 @@ image: ""
 
 ---
 
-- **Exercise 6 (Fibonacci Inequality)**
+- **Exercise 6 (Fibonacci Inequality)**  
   Prove that $\forall n\in\mathbb N,F_n<2^n$ where $F_n$ is defined by $F_1=1,F_2=1,F_{n+2}=F_{n+1}+F_n$.
 
-  - **Proof 6.1**
+  - **Proof 6.1**  
     By induction.
 
     1. Base step
@@ -177,7 +177,7 @@ image: ""
 
 ---
 
-- **Exercise 7 (Intersection of lines)**
+- **Exercise 7 (Intersection of lines)**  
   Suppose that $n$ lines are drawn in the plane so that
 
   1. no two lines are parallel;
@@ -185,7 +185,7 @@ image: ""
 
   Prove that the number of intersection points is $\dfrac{n(n-1)}{2}$.
 
-  - **Proof 7.1**
+  - **Proof 7.1**  
     By induction.
 
     1. Base step
@@ -196,8 +196,8 @@ image: ""
        $$
        \dfrac{n(n-1)}{2}
        $$
-       intersection points. 
-       Now consider the case with $n+1$ lines. When we add the $(n+1)$-th line to the existing $n$ lines:
+       intersection points.
+       Now consider the case with $n+1$ lines. When we add the $(n+1)$-th line to the existing $n$ lines
 
        * Since no two lines are parallel, the new line must intersect with all of the existing $n$ lines, creating $n$ new intersection points.
        * Since no three lines pass through the same point, all of these $n$ new intersection points are distinct from the previous ones.

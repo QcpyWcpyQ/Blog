@@ -13,46 +13,46 @@ image: ""
   The **identity matrix** $I_n=\lb \delta_{ij} \eb_{n}\in M_n(S)$ is defined by  
   $$
   \delta_{ij}=\begin{cases}
-  
+
   1\quad(i=j) \\
   0\quad(i\neq j)
-  
+
   \end{cases}.
   $$
 
   - **Example 1.1**  
     $$
     I_2=\lb
-    
+
     \delta_{11}&\delta_{12} \\
     \delta_{21}&\delta_{22}
-    
+
     \eb=\lb
-    
+
     1 &0 \\
     0&1
-    
+
     \eb,\quad
     I_3=\lb
-    
+
     \delta_{11}&\delta_{12}&\delta_{13} \\
     \delta_{21}&\delta_{22}&\delta_{23} \\
     \delta_{31}&\delta_{32}&\delta_{33}
     \eb=\lb
-    
+
     1 &0 &0 \\
     0 &1 &0 \\
     0 &0 &1
-    
+
     \eb.
     $$
-    
+
   - **Proposition 1.2**  
     For every $A\in M_{m\times n}(S)$  
     $$
     I_mA=A\quad\text{and}\quad AI_n=A.
     $$
-  
+
     - **Proof 1.2.1**  
       Let $A=\lb a_{ij}\eb_{m\times n}$ then  
       $$
@@ -80,7 +80,7 @@ image: ""
   If it exists, $B$ is called the **inverse** of $A$ and is denoted by $A^{-1}$.
 
   - **Theorem 2.1**  
-    If $A\in M_n(S)$ is an invertible matrix then its inverse is unique. Moreover, if $A$ and $B$ are invertible matrices with the same size, then $AB$ is also an invertible matrix and $(AB)^{-1}=B^{-1}A^{-1}$.
+    If $A\in M_n(S)$ is an invertible matrix then its inverse is unique. Moreover, if $A$ and $B$ are invertible matrices of the same size, then $AB$ is also an invertible matrix and $(AB)^{-1}=B^{-1}A^{-1}$.
 
     - **Proof 2.1.1**  
       Suppose that $B$ and $C$ are inverses of $A$ then  
@@ -105,71 +105,71 @@ image: ""
     If $A=\lb a&b\\c&d\eb$ and $ad-bc\neq 0$ then $A$ is invertible and  
     $$
     A^{-1}=\dfrac{1}{ad-bc}\lb
-    
+
     d&-b \\
     -c&a
-    
+
     \eb.
     $$
     In fact, let $B=\lb x&y\\z&w\eb$ such that $AB=I_2$ then  
     $$
     \begin{aligned}
-    
+
     \lb a&b\\c&d\eb\lb x&y\\z&w\eb &=\lb 1&0\\0&1\eb \\
-    
+
     \lb ax+bz&ay+bw\\cx+dz&cy+dw\eb&=\lb 1&0\\0&1\eb \\
-    
+
     \end{aligned}
     $$
     so we obtain the linear system  
     $$
     \begin{cases}
-    
+
     ax+bz=1 \quad&\left(E_1\right)\\
     ay+bw=0 &\left(E_2\right)\\
     cx+dz=0 &\left(E_3\right)\\
     cy+dw=1 &\left(E_4\right)
-    
+
     \end{cases}
     $$
     From $d\left(E_1\right)-b\left(E_3\right),d\left(E_2\right)-b\left(E_4\right),c\left(E_1\right)-a\left(E_3\right),c\left(E_2\right)-a\left(E_4\right)$ we obtain the following equation  
     $$
     \begin{cases}
-    
+
     (ad-bc)x=d \\
     (ad-bc)y=-b \\
     (ad-bc)z=-c \\
     (ad-bc)w=a \\
-    
+
     \end{cases}
     $$
     Now, if $ad-bc\neq 0$ we have that  
     $$
     \begin{cases}
-    
+
     x=\dfrac{1}{ad-bc}d \\
     y=\dfrac{1}{ad-bc}(-b) \\
     z=\dfrac{1}{ad-bc}(-c) \\
-    w=\dfrac{1}{ad-bc}a 
-    
+    w=\dfrac{1}{ad-bc}a
+
     \end{cases}
     $$
     Hence  
     $$
     B=\dfrac{1}{ad-bc}\lb
-    
+
     d&-b \\
     -c&a
-    
+
     \eb.
     $$
     with $AB=I_2=BA$. Therefore $A$ is invertible and  
     $$
     A^{-1}=\dfrac{1}{ad-bc}\lb
-    
+
     d&-b \\
     -c&a
-    
+
     \eb.
     $$
 
@@ -180,13 +180,13 @@ image: ""
       Since $2\times 2-3\times 2=-2\neq 0$ then $A$ is invertible and  
       $$
       A^{-1}=-\dfrac{1}{2}\lb
-      
+
       2&-3\\-2&2
-      
+
       \eb=\lb
-      
+
       -1&\dfrac{3}{2}\\1&-1
-      
+
       \eb.
       $$
 
@@ -199,16 +199,16 @@ image: ""
   A matrix $D=\lb d_{ij}\eb_n\in M_n(S)$ is **diagonal** if $d_{ij}=0$ for $i\neq j$ and we write $D=\operatorname{diag}(d_{11},d_{22},\cdots,d_{nn})$. That is  
   $$
   D=\lb
-  
+
   d_{11}&0&\cdots&0&0 \\
   0&d_{22}&\cdots&0&0 \\
   \vdots&\vdots&\ddots&\vdots&\vdots \\
   0&0&\cdots&d_{n-1n-1}&0 \\
   0&0&\cdots&0&d_{nn}
-  
+
   \eb.
   $$
-  
+
 
   - **Remark 3.1**  
     If $D,E\in M_n(S)$ are diagonal matrices then  
@@ -218,26 +218,26 @@ image: ""
     Hence diagonal matrices commute.
 
   - **Remark 3.2**  
-    Multiplication by a diagonal matrix has a simple effect. If $A\in M_{n}(S)$ and $D=\operatorname{diag}(d_{11},d_{22},\cdots,d_{nn})$ then $AD$ is obtained by multiplying column $j$ of $A$ by $d_{jj}$. Similarly, $DA$ is obtained by multiplying the row $i$ of $A$ by $d_{ii}$. For example
+    Multiplication by a diagonal matrix has a simple effect. If $A\in M_{n}(S)$ and $D=\operatorname{diag}(d_{11},d_{22},\cdots,d_{nn})$ then $AD$ is obtained by multiplying column $j$ of $A$ by $d_{jj}$. Similarly, $DA$ is obtained by multiplying row $i$ of $A$ by $d_{ii}$. For example
     $$
     \lb
-    
+
     a_{11}&a_{12}&a_{13} \\
     a_{21}&a_{22}&a_{23} \\
     a_{31}&a_{32}&a_{33}
-    
+
     \eb\lb
-    
+
     d_{11}&0&0 \\
     0&d_{22}&0 \\
     0&0&d_{33}
-    
+
     \eb=\lb
-    
+
     a_{11}d_{11}&a_{12}d_{22}&a_{13}d_{33} \\
     a_{21}d_{11}&a_{22}d_{22}&a_{23}d_{33} \\
     a_{31}d_{11}&a_{32}d_{22}&a_{33}d_{33}
-    
+
     \eb.
     $$
 
@@ -257,14 +257,14 @@ image: ""
     \eb,\quad B=\lb
     1 & 0 & 0 \\
     -4 & -3 & 0 \\
-    8 & 9 & 6 
+    8 & 9 & 6
     \eb.
     $$
     Then $A$ is upper triangular and $B$ is lower triangular.
 
   - **Proposition 4.2**  
-    The product of two upper triangular matrices with the same size is upper triangular.  
-    The product of two lower triangular matrices with the same size is lower triangular.
+    The product of two upper triangular matrices of the same size is upper triangular.  
+    The product of two lower triangular matrices of the same size is lower triangular.
 
     - **Proof 4.2.1**  
       Let $A,B\in M_n(S)$ be upper triangular matrices then  
@@ -275,7 +275,7 @@ image: ""
       $$
       c_{ik}=\sum_{j=1}^na_{ij}b_{jk}=0
       $$
-      and thus $AB$ is upper triangular. Analogously, the product of two lower triangular matrices with the same size is lower triangular.
+      and thus $AB$ is upper triangular. Analogously, the product of two lower triangular matrices of the same size is lower triangular.
 
 ---
 

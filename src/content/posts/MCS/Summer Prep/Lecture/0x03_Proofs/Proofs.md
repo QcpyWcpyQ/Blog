@@ -28,7 +28,7 @@ Proofs are the primary means by which mathematical truth is established. The pur
 ---
 
 - **Definition 3: Indirect Strategy for Disjunction**  
-  Another useful strategy to prove $P \lor Q$ is to proceed indirectly. Assume that one of the disjuncts is false (say $\neg P$) and then prove the other ($Q$):  
+  Another useful strategy to prove $P \lor Q$ is to proceed indirectly. Assume that one of the disjuncts is false (say $\neg P$) and then prove the other ($Q$)
   $$
   P \lor Q \equiv \neg P \implies Q.
   $$
@@ -36,7 +36,7 @@ Proofs are the primary means by which mathematical truth is established. The pur
 ---
 
 - **Definition 4: Proof by Cases**  
-  If we know that $P \lor Q$ is true, and we can prove $R$ from $P$, and also prove $R$ from $Q$, we may conclude $R$:    
+  If we know that $P \lor Q$ is true, and we can prove $R$ from $P$, and also prove $R$ from $Q$, we may conclude $R$
   - **Example 4.1**  
     Suppose a natural number is either even or odd, and we want to prove that $n^2$ is even. We divide the argument into two cases: if $n$ is even, $n^2$ is even; if $n$ is odd, $n^2$ is even. Since one of these cases must be true, $n^2$ is even in either case.    
 
@@ -57,11 +57,11 @@ Proofs are the primary means by which mathematical truth is established. The pur
 ---
 
 - **Definition 7: Proof by Contradiction**  
-  To prove $P \implies Q$, suppose that $P$ is true and $Q$ is false ($P \land \neg Q$) and show that this assumption leads to a contradiction ($R \land \neg R$):  
+  To prove $P \implies Q$, suppose that $P$ is true and $Q$ is false ($P \land \neg Q$) and show that this assumption leads to a contradiction ($R \land \neg R$)
   $$
   P \implies Q \equiv (P \land \neg Q) \implies (R \land \neg R).
   $$
-  We have:  
+  We have
   $$
   \begin{array}{c|c|c|c|c|c|c|c} P & Q & R & \neg Q & P\land\neg Q & R\land\neg R & P\implies Q & (P\and \neg Q)\implies(R\and \neg R) \\ \hline 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\ 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \end{array}
   $$
@@ -73,14 +73,14 @@ Proofs are the primary means by which mathematical truth is established. The pur
   A statement is disproved if we show a single instance in which it is false, known as a **counterexample**.    
   For a universally quantified statement $\forall x P(x)$, a single object $x_0$ for which $P(x_0)$ is false suffices to disprove the statement.   
   For an implication $P \implies Q$, a counterexample consists of a situation where $P$ is true and $Q$ is false.   
-  
+
   - **Example 8.1**  
     Consider the statement $x^2 - 1 > 0$ for all $x \in \mathbb{R}$. To disprove it, use the counterexample $x_0 = 1$, which gives $1^2 - 1 = 0 \ngtr 0$. Thus, the statement is false.    
   - **Example 8.2**  
     Prove that the existentially quantified statement $(\exists x \in \mathbb{R})\left(\frac{1}{x^2+1} > 1\right)$ is false.     
-    - **Solution 8.2.1** 
-    
-    - We need to show that $\frac{1}{x^2+1} \le 1$ for every $x \in \mathbb{R}$. Since $0 \le x^2$ for all $x \in \mathbb{R}$, it follows that $1 \le x^2 + 1$. Because $x^2 + 1 > 0$, taking the reciprocal reverses the inequality:
+    - **Solution 8.2.1**  
+
+    - We need to show that $\frac{1}{x^2+1} \le 1$ for every $x \in \mathbb{R}$. Since $0 \le x^2$ for all $x \in \mathbb{R}$, it follows that $1 \le x^2 + 1$. Because $x^2 + 1 > 0$, taking the reciprocal reverses the inequality
       $$
       \frac{1}{x^2+1} \le 1.
       $$

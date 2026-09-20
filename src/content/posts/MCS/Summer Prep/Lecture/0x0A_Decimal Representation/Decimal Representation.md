@@ -9,7 +9,7 @@ image: ""
 ---
 ## Decimal Representation
 
-- **Definition 1**
+- **Definition 1**  
   A decimal is an expression of the form
   $$
   \pm a_0.a_1a_2a_3\cdots
@@ -18,11 +18,11 @@ image: ""
 
 ---
 
-- **Definition 2**
-  Let $a_0.a_1a_2a_3\cdots$ be a decimal. If only a finite number of the digits $a_1,a_2,a_3\cdots$ are nonzero, the decimal is called **finite**. Otherwise, it is called **infinite**. 
+- **Definition 2**  
+  Let $a_0.a_1a_2a_3\cdots$ be a decimal. If only a finite number of the digits $a_1,a_2,a_3\cdots$ are nonzero, the decimal is called **finite**. Otherwise, it is called **infinite**.
   If the digits $a_1,a_2,a_3,\cdots$ repeat periodically from some point on, the decimal is called a **repeating decimal**.
 
-  The periodic part of a repeating decimal is the part that repeats indefinitely, and it can be represented in the following form:
+  The periodic part of a repeating decimal is the part that repeats indefinitely, and it can be represented in the following form
   $$
   \begin{aligned}
   0.333\cdots &= 0.\overline{3} \\
@@ -30,13 +30,13 @@ image: ""
   \end{aligned}
   $$
 
-  - **Theorem 2.1**
+  - **Theorem 2.1**  
     Let $x$ be a nonzero decimal. If $x$ is a finite or repeating decimal, then there exist $p,q\in\mathbb Z$ with $q\neq 0$ such that $qx=p$.
 
-    - **Proof 2.1.1**
+    - **Proof 2.1.1**  
       Let $x$ be a nonzero decimal with a finite or infinite periodic representation.
 
-      Consider the case where $x$ is finite, that is, 
+      Consider the case where $x$ is finite, that is,
       $$
       x=\pm a_0.a_1a_2a_3\cdots a_n.
       $$
@@ -50,7 +50,7 @@ image: ""
       $$
       we have that $qx=p$.
 
-      Consider the case in which $x$ has an infinite periodic representation and assume that $x>0$, as the case $x<0$ is similar, that is, 
+      Consider the case in which $x$ has an infinite periodic representation and assume that $x>0$, as the case $x<0$ is similar, that is,
       $$
       x=a_0.b_1b_2\cdots b_m\overline{c_1c_2\cdots c_n}.
       $$
@@ -74,33 +74,33 @@ image: ""
       $$
       we have that $qx=p$.
 
-  - **Example 2.2**
+  - **Example 2.2**  
     (1) If $x=0.\overline 3$, then $10x=3+x$, that is, $x=\frac 39=\frac 13$.
 
     (2) If $x=0.\overline{45}$, then $100x=45+x$, that is, $x=\frac {45}{99}=\frac{5}{11}$.
 
-  - **Remark 2.3**
+  - **Remark 2.3**  
     A solution of the equation $qx=p$ is represented as $\frac pq$.
 
 ---
 
-- **Definition 3**
+- **Definition 3**  
   The set of **rational numbers** is
   $$
   \mathbb Q=\left\{\dfrac pq:p,q\in\mathbb Z\text{ with }q\neq 0\right\}.
   $$
   For a given $\frac pq\in\mathbb Q$, we say that $p$ is the **numerator** and $q$ is the **denominator**.
 
-  - **Remark 3.1**
+  - **Remark 3.1**  
     Every integer is a rational number since $n=\frac n1$, that is, $\mathbb Z\subseteq\mathbb Q$.
 
-  - **Remark 3.2**
+  - **Remark 3.2**  
     Two fractions represent the same rational number when
     $$
     \frac pq=\frac rs\iff ps=qr.
     $$
 
-  - **Example 3.3**
+  - **Example 3.3**  
     $$
     \frac 15=\frac{2}{10}=\frac{14}{70}=\cdots.
     $$
@@ -109,19 +109,19 @@ image: ""
 
   Since two fractions $\frac pq$ and $\frac rs$ are equal, if and only if, $ps=qr$, then the reduced representation of a rational number is that one for which $p\in\mathbb Z, q\in\mathbb N$ are such that $px+qy=1$ for some $x,y\in\mathbb Z$, and we say that $p, q$ are **coprime**.
 
-  - **Example 3.4 (Finite decimal number)**
+  - **Example 3.4 (Finite decimal number)**  
     The decimal $0.75$ is the same as the rational number $\frac{75}{100}$.
 
     The decimal $0.3333$ is the same as the rational number $\frac{3333}{10000}$.
 
     The decimal $0.0125$ is the same as the rational number $\frac{1}{80}$.
 
-  - **Example 3.5 (Infinite decimal number)**
+  - **Example 3.5 (Infinite decimal number)**  
     The decimal $0.333\cdots$ is the rational number $\frac 13$.
     The decimal $0.454545\cdots$ is the rational number $\frac 5{11}$.
     The decimal $0.31282828\cdots$ is the rational number $\frac{3097}{9900}$.
 
-  Rational numbers are ordered as follows:
+  Rational numbers are ordered as follows
   $$
   \frac ab<\frac cd\iff ad<bc.
   $$
@@ -130,20 +130,20 @@ image: ""
   x=\frac pq, y=\frac rq \text{ with } p<r.
   $$
 
-  - **Proposition 3.4 (Density of rational numbers)**
+  - **Proposition 3.4 (Density of rational numbers)**  
     Between any two distinct rational numbers there is another rational number.
 
-    - **Proof 3.4.1**
+    - **Proof 3.4.1**  
       Given $x,y\in\mathbb Q$ with $x<y$, then
       $$
       x<\frac{x+y}2<y,
       $$
       with $\frac{x+y}2\in\mathbb Q$.
 
-  - **Theorem 3.5**
+  - **Theorem 3.5**  
     If $x$ is a rational number, then it can be represented as a finite or repeating decimal.
 
-    - **Proof 3.5.1**
+    - **Proof 3.5.1**  
       Assume that $x>0$, that $x=\frac pq$ with $p, q$ coprime and $p<q$, and let $r_0=p$. Note that
       $$
       10\frac pq=\frac{10p} q,
@@ -179,7 +179,7 @@ image: ""
       $$
       \frac pq=\sum_{j=1}^N 10^{-j}k_j+10^{-N}\frac{r_N}q.
       $$
-      Note that there are two possibilities for the remainders $r_1,r_2,r_3,\cdots$:
+      Note that there are two possibilities for the remainders $r_1,r_2,r_3,\cdots$
 
       1. The sequence of remainders does not contain zero, so we obtain an infinite decimal representation of $\frac pq$.
 
@@ -189,7 +189,7 @@ image: ""
          $$
          that is, $r_{j+1}=0$ and $k_{j+1}=0$, therefore we obtain a finite decimal representation of $\frac pq$.
 
-  - **Example 3.6**
+  - **Example 3.6**  
     $\frac 7{12}$. We have
     $$
     \begin{aligned}
@@ -197,15 +197,15 @@ image: ""
     100 &= 12\cdot 8+4 \\
     40 &= 12\cdot 3+4 \\
     40 &= 12\cdot 3+4 \\
-    &\ \ \vdots 
+    &\ \ \vdots
     \end{aligned}
     $$
     So $\frac 7{12}=0.58\overline{3}$.
 
-  - **Theorem 3.7**
+  - **Theorem 3.7**  
     Let $\frac pq$ be a reduced representation. Its decimal representation is finite if and only if every prime factor of $q$ is either $2$ or $5$.
 
-    - **Proof 3.7.1**
+    - **Proof 3.7.1**  
       ($\Longrightarrow$) If $\frac pq$ is finite, then $\frac pq=\frac{N}{10^k}$ for some integers $N$ and $k\geqslant 0$. Hence $10^kp=qN$. Since $p$ and $q$ are coprime, there exist $x,y\in\mathbb Z$ such that
       $$
       \begin{aligned}
@@ -214,24 +214,24 @@ image: ""
       \end{aligned}
       $$
       so $q\mid 10^k=2^k\cdot 5^k$, which implies that the only possible prime factors of $q$ are $2$ or $5$.
-      
+
       ($\Longleftarrow$) Suppose that every prime factor of $q$ is either $2$ or $5$.
-      By the fundamental theorem of arithmetic, since $q \in \mathbb N$, we can express $q$ in the following form:
+      By the fundamental theorem of arithmetic, since $q \in \mathbb N$, we can express $q$ in the following form
       $$
       q = 2^\alpha \cdot 5^\beta \quad \text{for some } \alpha, \beta \in \mathbb N_0.
       $$
-      Let $k = \max(\alpha, \beta)$. Then we can find a nonnegative integer $N^\prime \in \mathbb N$ such that $10^k = q \cdot N^\prime$. 
-      Indeed, we have:
+      Let $k = \max(\alpha, \beta)$. Then we can find a nonnegative integer $N^\prime \in \mathbb N$ such that $10^k = q \cdot N^\prime$.
+      Indeed, we have
       $$
       10^k = 2^k \cdot 5^k = \left(2^\alpha \cdot 2^{k-\alpha}\right) \cdot \left(5^\beta \cdot 5^{k-\beta}\right) = q \cdot \left(2^{k-\alpha} \cdot 5^{k-\beta}\right).
       $$
-      Setting $N^\prime = 2^{k-\alpha} \cdot 5^{k-\beta} \in \mathbb Z$, we multiply both the numerator and the denominator of $\frac pq$ by $N^\prime$, yielding:
+      Setting $N^\prime = 2^{k-\alpha} \cdot 5^{k-\beta} \in \mathbb Z$, we multiply both the numerator and the denominator of $\frac pq$ by $N^\prime$, yielding
       $$
       \frac pq = \frac{p \cdot N^\prime}{q \cdot N^\prime} = \frac{p \cdot N^\prime}{10^k}.
       $$
-      Let $N = p \cdot N^\prime$. Since $p, N^\prime \in \mathbb Z$, we have $N \in \mathbb Z$. Therefore, the rational number can be written as:
+      Let $N = p \cdot N^\prime$. Since $p, N^\prime \in \mathbb Z$, we have $N \in \mathbb Z$. Therefore, the rational number can be written as
       $$
       \frac pq = \frac{N}{10^k}.
       $$
-      By Definition, any rational number that can be expressed as an integer divided by a power of $10$ has a decimal representation that terminates after at most $k$ digits. 
+      By Definition, any rational number that can be expressed as an integer divided by a power of $10$ has a decimal representation that terminates after at most $k$ digits.
       Therefore, the decimal representation of $\frac pq$ is finite.
