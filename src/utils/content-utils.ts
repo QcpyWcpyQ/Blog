@@ -38,16 +38,21 @@ export async function getSortedPosts(): Promise<CollectionEntry<"posts">[]> {
 }
 export type PostForList = {
 	id: string;
+	filePath?: string;
 	data: CollectionEntry<"posts">["data"];
 };
 export async function getSortedPostsList(): Promise<PostForList[]> {
 	const sortedFullPosts = await getRawSortedPosts();
 
 	// delete post.body
-	const sortedPostsList = sortedFullPosts.map((post) => ({
-		id: post.id,
-		data: post.data,
-	}));
+	const sortedPostsList = sortedFullPosts.map((post) => {
+		const entry = post as typeof post & { filePath?: string };
+		return {
+			id: post.id,
+			filePath: entry.filePath,
+			data: post.data,
+		};
+	});
 
 	return sortedPostsList;
 }

@@ -2,6 +2,7 @@ import { getPostUrlBySlug } from "@/utils/url-utils";
 
 export type FileTreePost = {
 	id: string;
+	filePath?: string;
 	data: {
 		title: string;
 	};
@@ -25,10 +26,25 @@ export type FileTreeFolder = {
 
 export type FileTreeNode = FileTreeFile | FileTreeFolder;
 
+function compareNames(a: string, b: string): number {
+	const aHex = a.match(/^0x([0-9a-f]+)(?:[_-]|$)/i);
+	const bHex = b.match(/^0x([0-9a-f]+)(?:[_-]|$)/i);
+	if (aHex && bHex) {
+		const difference = Number.parseInt(aHex[1], 16) - Number.parseInt(bHex[1], 16);
+		if (difference !== 0) return difference;
+	}
+
+	const naturalOrder = a.localeCompare(b, undefined, {
+		numeric: true,
+		sensitivity: "base",
+	});
+	return naturalOrder || a.localeCompare(b, undefined, { numeric: true });
+}
+
 function sortTree(nodes: FileTreeNode[]): void {
 	nodes.sort((a, b) => {
 		if (a.kind !== b.kind) return a.kind === "folder" ? -1 : 1;
-		return a.name.localeCompare(b.name, undefined, { numeric: true });
+		return compareNames(a.name, b.name);
 	});
 
 	for (const node of nodes) {
@@ -53,8 +69,25 @@ export function buildFileTree(
 		const fileName = parts.pop();
 		if (!fileName) continue;
 
+		const sourcePath = post.filePath?.replaceAll("\\", "/") ?? "";
+		const contentRoot = "src/content/posts/";
+		const contentRootIndex = sourcePath.lastIndexOf(contentRoot);
+		const sourceRelativePath =
+			contentRootIndex >= 0
+				? sourcePath.slice(contentRootIndex + contentRoot.length)
+				: "";
+		const sourceParts = sourceRelativePath
+			.replace(/\.(?:md|mdx)$/i, "")
+			.split("/")
+			.filter(Boolean);
+		const displayParts =
+			sourceParts.length === parts.length + 1
+				? sourceParts
+				: [...parts, fileName];
+		const displayFileName = displayParts.at(-1) ?? fileName;
+
 		let current = root;
-		for (const part of parts) {
+		for (const [index, part] of parts.entries()) {
 			const path = current.path ? `${current.path}/${part}` : part;
 			let folder = current.children.find(
 				(child): child is FileTreeFolder =>
@@ -65,7 +98,7 @@ export function buildFileTree(
 				folder = {
 					kind: "folder",
 					path,
-					name: part,
+					name: displayParts[index] ?? part,
 					children: [],
 					fileCount: 0,
 				};
@@ -77,7 +110,7 @@ export function buildFileTree(
 		current.children.push({
 			kind: "file",
 			id,
-			name: fileName,
+			name: displayFileName,
 			title: post.data.title,
 			url: getPostUrlBySlug(id),
 		});
