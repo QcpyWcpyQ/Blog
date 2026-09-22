@@ -10,4 +10,4 @@ image: ""
 
 ## Course Dependency DAG
 
-![Course Dependency DAG for MCS](./images/Course Dependency DAG for MCS.jpg)
+![Course Dependency DAG for MCS](./images/course-dependency-dag-for-mcs.jpg)
