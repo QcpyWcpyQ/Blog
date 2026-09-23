@@ -15,6 +15,7 @@
 
 - **Definition 2**   
   Let $X$ be a set and $\sim$ a relation on $X$.    
+  
   1. The relation is **reflexive** if $x\sim x$ for every $x\in X$.    
   2. The relation is **symmetric** if for every $x,y\in X$      
      $$
@@ -56,6 +57,7 @@
 
 - **Definition 4**   
   Let $X$ be a set. An **order relation** on $X$ is a relation $\sim$ that satisfies the following properties.    
+  
   1. $\sim$ is reflexive.   
   2. $\sim$ is antisymmetric.   
   3. $\sim$ is transitive.    

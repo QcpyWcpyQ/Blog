@@ -93,7 +93,7 @@
       we have the $AB$ is an invertible matrix and $(AB)^{-1}=B^{-1}A^{-1}$ because the inverse is unique.
 
   - **Example 2.2**  
-    If $A=\lb a&b\\c&d\eb and $ad-bc\neq 0$ then $A$ is invertible and  
+    If $A=\lb a&b\\c&d\eb$ and $ad-bc\neq 0$ then $A$ is invertible and  
     $$
     A^{-1}=\dfrac{1}{ad-bc}\lb
     
@@ -102,7 +102,7 @@
     
     \eb.
     $$
-    In fact, let $B=\lb x&y\\z&w\eb such that $AB=I_2$ then  
+    In fact, let $B=\lb x&y\\z&w\eb$ such that $AB=I_2$ then  
     $$
     \begin{aligned}
     

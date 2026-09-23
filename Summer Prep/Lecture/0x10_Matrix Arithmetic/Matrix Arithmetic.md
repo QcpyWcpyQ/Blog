@@ -103,7 +103,7 @@ Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.
 - **Definition 6**  
   Given a matrix $A=\lb a_{ij} \eb_{m\times n}\in M_{m\times n}(S)$ and $\alpha\in S$, we define the **scalar product** as the matrix  
   $$
-  \alpha A=\lb \alpha a_{ij} \eb_{m\times n}$.
+  \alpha A=\lb \alpha a_{ij} \eb_{m\times n}.
   $$
 
   - **Example 6.1**  

@@ -5,7 +5,7 @@
   $$
   \mathbb Z=\left\{\cdots,-3,-2,-1,0,1,2,3,\cdots\right\}.
   $$
-  In this course, we will consider that $0$ is not a natural number, that is, the set of **natural numbers** is
+  In this course, we   will consider that $0$ is not a natural number, that is, the set of **natural numbers** is
   $$
   \mathbb N=\left\{1,2,3,\cdots\right\}.
   $$

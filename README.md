@@ -1,10 +1,14 @@
+![Course Dependency DAG for MCS](./Image/Course%20Dependency%20DAG%20for%20MCS.jpg)
+
+
+
 # 📘 GTIIT | MCS Cohort 2026 Course Notes
 
 Welcome to the MCS 2026 Course Notes repository for review materials and study notes.
 
 ---
 
-## 🚀 Quick Start Guide
+## 🚀 Quick Start Guide (For GitHub Beginners)
 
 No installation required! Follow these steps to read the notes:
 
@@ -28,6 +32,7 @@ To save all files for offline reading:
 ---
 
 ## 📌 Course Dependency DAG for MCS
+
 
 ![Course Dependency DAG for MCS](./Image/Course%20Dependency%20DAG%20for%20MCS.jpg)
 
