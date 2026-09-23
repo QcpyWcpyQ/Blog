@@ -1,0 +1,223 @@
+---
+import { Icon } from "astro-icon/components";
+import WidgetLayout from "@/components/common/WidgetLayout.astro";
+import I18nKey from "@/i18n/i18nKey";
+import { i18n } from "@/i18n/translation";
+import type { WidgetComponentConfig } from "@/types/config";
+import { buildFileTree } from "@/utils/file-tree";
+import { getSortedPostsList } from "@/utils/content-utils";
+import FileTreeNode from "./FileTreeNode.astro";
+
+interface Props {
+	class?: string;
+	style?: string;
+	widgetConfig?: WidgetComponentConfig;
+}
+
+const { class: className, style, widgetConfig } = Astro.props;
+const showTitle = widgetConfig?.showTitle !== false;
+const tree = buildFileTree(await getSortedPostsList());
+const currentPath = decodeURIComponent(Astro.url.pathname)
+	.replace(/^\/posts\//, "")
+	.replace(/^\/+|\/+$/g, "");
+---
+
+<WidgetLayout
+	name={i18n(I18nKey.fileTree)}
+	showTitle={showTitle}
+	id="file-tree"
+	class={className}
+	style={style}
+	contentPadding={false}
+>
+	<div class="file-tree" data-file-tree>
+		<div class="file-tree-toolbar">
+			<div class="file-tree-root-label">
+				<Icon name="material-symbols:folder-open-rounded" class="file-tree-icon file-tree-folder-icon" aria-hidden="true" />
+				<span>{tree.name}</span>
+			</div>
+			<span class="file-tree-count">{tree.fileCount}</span>
+		</div>
+		<div class="file-tree-root">
+			{tree.children.map((node) => (
+				<FileTreeNode node={node} activeId={currentPath} />
+			))}
+		</div>
+	</div>
+</WidgetLayout>
+
+<style is:global>
+	.file-tree {
+		padding: 0.25rem 0.5rem 0.75rem;
+		font-size: 0.875rem;
+	}
+
+	.file-tree-toolbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.5rem;
+		padding: 0.5rem 0.75rem;
+		margin-bottom: 0.25rem;
+		color: var(--primary);
+		font-weight: 700;
+	}
+
+	.file-tree-root {
+		overflow-x: auto;
+		overflow-y: visible;
+		padding-bottom: 0.35rem;
+		scroll-behavior: smooth;
+		scrollbar-color: color-mix(in srgb, var(--primary) 45%, transparent) transparent;
+		scrollbar-width: thin;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.file-tree-root::-webkit-scrollbar {
+		height: 0.4rem;
+	}
+
+	.file-tree-root::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.file-tree-root::-webkit-scrollbar-thumb {
+		background: color-mix(in srgb, var(--primary) 38%, transparent);
+		border-radius: 999px;
+	}
+
+	.file-tree-root::-webkit-scrollbar-thumb:hover {
+		background: color-mix(in srgb, var(--primary) 62%, transparent);
+	}
+
+	.file-tree-root-label,
+	.file-tree-row {
+		display: flex;
+		align-items: center;
+		min-width: 0;
+	}
+
+	.file-tree-root-label {
+		gap: 0.5rem;
+	}
+
+	.file-tree-row {
+		position: relative;
+		gap: 0.35rem;
+		box-sizing: border-box;
+		width: max-content;
+		min-height: 2rem;
+		min-width: 100%;
+		padding: 0.3rem 0.5rem;
+		padding-left: calc(0.5rem + var(--tree-level, 0) * 1rem);
+		border-radius: 0.5rem;
+		color: rgba(0, 0, 0, 0.78);
+		transition: background-color 150ms ease, color 150ms ease;
+	}
+
+	.dark .file-tree-row {
+		color: rgba(255, 255, 255, 0.82);
+	}
+
+	.file-tree-row:hover {
+		background: var(--btn-plain-bg-hover);
+		color: var(--primary);
+	}
+
+	.file-tree-file-row.is-active,
+	.file-tree-folder-row.is-active {
+		background: color-mix(in srgb, var(--primary) 13%, transparent);
+		color: var(--primary);
+		font-weight: 700;
+	}
+
+	.file-tree-folder {
+		margin: 0;
+		width: max-content;
+		min-width: 100%;
+	}
+
+	.file-tree-folder > summary {
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.file-tree-folder > summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.file-tree-chevron {
+		flex: 0 0 auto;
+		font-size: 1.1rem;
+		transition: transform 150ms ease;
+	}
+
+	.file-tree-folder[open] > summary .file-tree-chevron {
+		transform: rotate(90deg);
+	}
+
+	.file-tree-children {
+		border-left: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+		margin-left: calc(0.5rem + var(--tree-level, 0) * 1rem + 0.58rem);
+	}
+
+	.file-tree-name {
+		flex: 0 0 auto;
+		white-space: nowrap;
+	}
+
+	.file-tree-icon {
+		flex: 0 0 auto;
+		font-size: 1.05rem;
+	}
+
+	.file-tree-folder-icon {
+		color: var(--primary);
+	}
+
+	.file-tree-file-icon {
+		color: rgba(0, 0, 0, 0.55);
+	}
+
+	.dark .file-tree-file-icon {
+		color: rgba(255, 255, 255, 0.62);
+	}
+
+	.file-tree-count {
+		flex: 0 0 auto;
+		font-size: 0.72rem;
+		font-variant-numeric: tabular-nums;
+		opacity: 0.55;
+	}
+
+	@media (max-width: 1279px) {
+		.file-tree {
+			font-size: 0.8125rem;
+		}
+	}
+</style>
+
+<script>
+	const initFileTrees = () => {
+		document.querySelectorAll<HTMLElement>("[data-file-tree]").forEach((tree) => {
+			if (tree.dataset.initialized === "true") return;
+			tree.dataset.initialized = "true";
+			const storageKey = "file-tree-open-folders";
+			const saved = new Set(JSON.parse(localStorage.getItem(storageKey) || "[]"));
+
+			tree.querySelectorAll<HTMLDetailsElement>("details[data-tree-path]").forEach((folder) => {
+				const path = folder.dataset.treePath || "";
+				if (path && saved.has(path)) folder.open = true;
+				folder.addEventListener("toggle", () => {
+					if (!path) return;
+					if (folder.open) saved.add(path);
+					else saved.delete(path);
+					localStorage.setItem(storageKey, JSON.stringify([...saved]));
+				});
+			});
+		});
+	};
+
+	document.addEventListener("DOMContentLoaded", initFileTrees);
+	document.addEventListener("astro:page-load", initFileTrees);
+</script>

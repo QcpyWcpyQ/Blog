@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components";
+import type { FileTreeNode as FileTreeNodeType } from "@/utils/file-tree";
+
+interface Props {
+	node: FileTreeNodeType;
+	activeId: string;
+	level?: number;
+}
+
+const { node, activeId, level = 0 } = Astro.props;
+const isActiveFile = node.kind === "file" && node.id === activeId;
+const hasActiveDescendant =
+	node.kind === "folder" &&
+	node.children.some((child) => {
+		if (child.kind === "file") return child.id === activeId;
+		return child.path === activeId || activeId.startsWith(`${child.path}/`);
+	});
+const isActiveFolder = node.kind === "folder" && hasActiveDescendant;
+const isOpen = node.kind === "folder" && (node.path === "" || hasActiveDescendant);
+---
+
+{node.kind === "folder" ? (
+	<details class="file-tree-folder" data-tree-path={node.path} open={isOpen}>
+		<summary
+			class:list={[
+				"file-tree-row",
+				"file-tree-folder-row",
+				isActiveFolder && "is-active",
+			]}
+			style={`--tree-level: ${level}`}
+		>
+			<Icon name="material-symbols:chevron-right-rounded" class="file-tree-chevron" aria-hidden="true" />
+			<Icon name="material-symbols:folder-rounded" class="file-tree-icon file-tree-folder-icon" aria-hidden="true" />
+			<span class="file-tree-name">{node.name}</span>
+			<span class="file-tree-count">{node.fileCount}</span>
+		</summary>
+		<div class="file-tree-children">
+			{node.children.map((child) => (
+				<Astro.self node={child} activeId={activeId} level={level + 1} />
+			))}
+		</div>
+	</details>
+) : (
+	<a
+		href={node.url}
+		class:list={["file-tree-row", "file-tree-file-row", isActiveFile && "is-active"]}
+		style={`--tree-level: ${level}`}
+		title={node.title}
+		aria-current={isActiveFile ? "page" : undefined}
+	>
+		<Icon name="material-symbols:description-outline-rounded" class="file-tree-icon file-tree-file-icon" aria-hidden="true" />
+		<span class="file-tree-name">{node.name}</span>
+	</a>
+)}
