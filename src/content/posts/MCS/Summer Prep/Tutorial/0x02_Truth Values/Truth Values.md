@@ -15,7 +15,7 @@ image: ""
   \begin{aligned}
   
   &A:P\implies \left(Q\implies R\right),\\
-  &B:\left(P\and Q\right)\implies R.
+  &B:\left(P\land Q\right)\implies R.
   
   \end{aligned}
   $$
@@ -26,7 +26,7 @@ image: ""
     $$
     \begin{array}{c|c|c|c|c|c|c}
     
-    P&Q&R&Q\implies R&P\and Q&P\implies \left(Q\implies R\right)&\left(P\and Q\right)\implies R \\ \hline
+    P&Q&R&Q\implies R&P\land Q&P\implies \left(Q\implies R\right)&\left(P\land Q\right)\implies R \\ \hline
     1&1&1&1&1&1&1 \\
     1&1&0&0&1&0&0 \\
     1&0&1&1&0&1&1 \\
@@ -47,8 +47,8 @@ image: ""
   $$
   \begin{aligned}
   
-  &A:\left(P\implies Q\right)\and\left(Q\implies R\right),\\
-  &B:\left(\neg P\or Q\right)\and\left(Q \or R\right).
+  &A:\left(P\implies Q\right)\land\left(Q\implies R\right),\\
+  &B:\left(\neg P\lor Q\right)\land\left(Q \lor R\right).
   
   \end{aligned}
   $$
@@ -75,7 +75,7 @@ image: ""
     $$
     **Case 2**: $B$ is false if and only if
     $$
-    \left(\neg P\or Q\right)\text{ is false or }\left(Q \or R\right)\text{ is false}.
+    \left(\neg P\lor Q\right)\text{ is false or }\left(Q \lor R\right)\text{ is false}.
     $$
     which means
     $$
@@ -114,7 +114,7 @@ image: ""
 ---
 
 - **Exercise 4**  
-  Are $A:\neg(P\and Q),B:\neg P\and \neg Q$ are equivalent?
+  Are $A:\neg(P\land Q),B:\neg P\land \neg Q$ are equivalent?
 
   - **Solution 4.1**  
     If $P$ is true and $Q$ is false, then $A$ is true and $B$ is false, then $A,B$ are not equivalent.
@@ -122,7 +122,7 @@ image: ""
 ---
 
 - **Exercise 5**  
-  Are $A:(P\implies Q)\and R,B:P\implies(Q\and R)$ are equivalent?
+  Are $A:(P\implies Q)\land R,B:P\implies(Q\land R)$ are equivalent?
 
   - **Solution 5.1**  
     If $P$ is false, then $B$ is always true. In this case, if $R$ is false, $A$ is false, then $A,B$ are not equivalent.
