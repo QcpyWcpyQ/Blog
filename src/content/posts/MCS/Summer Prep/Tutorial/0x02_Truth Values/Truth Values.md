@@ -13,10 +13,10 @@ image: ""
   Let $P,Q$ and $R$ be three mathematical statements, we want to prove that the propositions
   $$
   \begin{aligned}
-
+  
   &A:P\implies \left(Q\implies R\right),\\
   &B:\left(P\and Q\right)\implies R.
-
+  
   \end{aligned}
   $$
   are equivalent.
@@ -25,7 +25,7 @@ image: ""
     We have
     $$
     \begin{array}{c|c|c|c|c|c|c}
-
+    
     P&Q&R&Q\implies R&P\and Q&P\implies \left(Q\implies R\right)&\left(P\and Q\right)\implies R \\ \hline
     1&1&1&1&1&1&1 \\
     1&1&0&0&1&0&0 \\
@@ -35,7 +35,7 @@ image: ""
     0&1&0&0&0&1&1 \\
     0&0&1&1&0&1&1 \\
     0&0&0&1&0&1&1
-
+    
     \end{array}
     $$
     Therefore, $A\equiv B$.
@@ -46,10 +46,10 @@ image: ""
   Let $P,Q$ and $R$ be three mathematical statements, we want to prove that the propositions
   $$
   \begin{aligned}
-
+  
   &A:\left(P\implies Q\right)\and\left(Q\implies R\right),\\
   &B:\left(\neg P\or Q\right)\and\left(Q \or R\right).
-
+  
   \end{aligned}
   $$
   are equivalent.
@@ -57,7 +57,7 @@ image: ""
   - **Solution 2.2**  
     **Case 1**: $A$ is false if and only if
     $$
-    (P\implies Q)\text{ is false or } (\neg Q\implies R)\text{ is false}.
+    (P\implies Q)\text{ is false or } (Q\implies R)\text{ is false}.
     $$
     which means
     $$
@@ -66,7 +66,7 @@ image: ""
     \text{and} \\
     Q\text{ is false}
     \end{pmatrix} \text{or}
-
+    
     \begin{pmatrix}
     Q\text{ is false}\\
     \text{and} \\
@@ -84,7 +84,7 @@ image: ""
     \text{and} \\
     Q\text{ is false}
     \end{pmatrix} \text{or}
-
+    
     \begin{pmatrix}
     Q\text{ is false}\\
     \text{and} \\
@@ -100,10 +100,10 @@ image: ""
   Let $P,Q$ and $R$ be three mathematical statements, we want to prove that the propositions
   $$
   \begin{aligned}
-
+  
   &A:P\implies(Q\implies R), \\
   &B:(P\implies Q)\implies R.
-
+  
   \end{aligned}
   $$
   are not equivalent.
