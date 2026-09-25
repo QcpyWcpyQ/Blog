@@ -63,7 +63,7 @@ Proofs are the primary means by which mathematical truth is established. The pur
   $$
   We have
   $$
-  \begin{array}{c|c|c|c|c|c|c|c} P & Q & R & \neg Q & P\land\neg Q & R\land\neg R & P\implies Q & (P\and \neg Q)\implies(R\and \neg R) \\ \hline 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\ 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \end{array}
+  \begin{array}{c|c|c|c|c|c|c|c} P & Q & R & \neg Q & P\land\neg Q & R\land\neg R & P\implies Q & (P\land \neg Q)\implies(R\land \neg R) \\ \hline 1 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 1 & 0 & 1 & 1 & 1 & 0 & 0 & 0 \\ 1 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 0 & 0 & 0 & 1 & 1 \\ 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\ 0 & 0 & 0 & 1 & 0 & 0 & 1 & 1 \end{array}
   $$
   Therefore $P \implies Q \equiv (P \land \neg Q) \implies (R \land \neg R)$.
 
