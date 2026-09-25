@@ -120,7 +120,7 @@ image: ""
     - **Proof 2.4.1**  
       ($\Longrightarrow$) Suppose $a>0$. By the axiom of the multiplicative inverse, there exists $a^{-1}=\dfrac 1a$ such that $a\cdot \dfrac 1a=1$. Since $1>0$ and $a>0$, it follows from the properties of order and multiplication that $\dfrac 1a$ must be positive, as a positive number multiplied by a negative number would yield a negative result. Thus, $\dfrac 1a>0$.
 
-      ($\Longleftarrow$) Suppose $a\in\mathbb R$ such that $\dfrac 1a>0$. Applying the forward implication ($\Longrightarrow$) to the positive real number $\dfrac 1a$, we have that its multiplicative inverse must also be positive, that is, $\dfrac{1}{\frac 1a}>0$. Since $a \cdot \dfrac 1a = 1$, multiplying both sides by $\dfrac{1}{\frac 1a}$ yields $a = \dfrac{1}{\frac 1a}$. Therefore, we have $a>0$.
+      ($\Longleftarrow$) Suppose $a\in\mathbb R$ such that $\dfrac 1a>0$. Applying the forward implication ($\Longrightarrow$) to the positive real number $\dfrac 1a$, we have that its multiplicative inverse must also be positive, that is, $\left(\dfrac 1a\right)^{-1}>0$. Since $a \cdot \dfrac 1a = 1$, multiplying both sides by $\left(\dfrac 1a\right)^{-1}$ yields $a = \left(\dfrac 1a\right)^{-1}$. Therefore, we have $a>0$.
 
 
 ---
