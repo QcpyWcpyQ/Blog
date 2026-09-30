@@ -72,7 +72,7 @@ image: ""
     $$
 
   - **Proposition 2.2**  
-    The number \(\sqrt 2\) is irrational.
+    The number $\sqrt 2$ is irrational.
 
     - **Proof 2.2.1**  
       Suppose that $\sqrt 2=\frac pq$ with $p\in\mathbb Z, q\in\mathbb N$ and $p, q$ are coprime. Then
