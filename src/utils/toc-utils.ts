@@ -60,12 +60,21 @@ export class TOCManager {
 	}
 
 	/**
-	 * 获取标题的纯文本内容（排除 script/style 标签的文本）
+	 * 获取标题的纯文本内容（优先使用构建时保存的文本，并归一化 KaTeX）
 	 */
 	private getCleanTextContent(element: HTMLElement): string {
+		const preservedText = element.dataset.tocText?.trim();
+		if (preservedText) return preservedText;
+
 		const clone = element.cloneNode(true) as HTMLElement;
 		for (const el of clone.querySelectorAll("script, style")) {
 			el.remove();
+		}
+		for (const math of clone.querySelectorAll<HTMLElement>(".katex")) {
+			const visualText =
+				math.querySelector<HTMLElement>(".katex-html")?.textContent;
+			const sourceText = math.querySelector("annotation")?.textContent;
+			math.replaceWith(visualText || sourceText || "");
 		}
 		return clone.textContent || "";
 	}

@@ -64,9 +64,10 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { Content, headings } = await render(entry);
-
-const { remarkPluginFrontmatter } = await render(entry);
+const { Content, headings, remarkPluginFrontmatter } = await render(entry);
+const tocHeadings = Array.isArray(remarkPluginFrontmatter.tocHeadings)
+	? remarkPluginFrontmatter.tocHeadings
+	: headings;
 
 const bannerPostMeta = {
 	title: entry.data.title,
@@ -210,7 +211,7 @@ const seriesData = await getSeriesPosts(entry);
   ogImageWidth={coverImage?.width}
   ogImageHeight={coverImage?.height}
   ogImageAlt={entry.data.title}
-  headings={headings}
+  headings={tocHeadings}
   encrypted={!!entry.data.password}
   bannerPostMeta={bannerPostMeta}
 >

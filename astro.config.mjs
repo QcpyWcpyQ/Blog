@@ -53,6 +53,7 @@ import { remarkMermaid } from "./src/plugins/remark-mermaid.js";
 import { remarkPlantuml } from "./src/plugins/remark-plantuml.js";
 import { remarkReadingTime } from "./src/plugins/remark-reading-time.mjs";
 import { remarkWikiLink } from "./src/plugins/remark-wiki-link.js";
+import { rehypeTocHeadings } from "./src/plugins/toc-heading-text.mjs";
 import { collectUsedFontCssVars } from "./src/utils/fontHelper";
 
 if (process.env.NODE_ENV === "development") {
@@ -316,6 +317,7 @@ export default defineConfig({
 					},
 				],
 				[rehypeCallouts, { theme: siteConfig.post.rehypeCallouts.theme }],
+				rehypeTocHeadings,
 				rehypeSlug,
 				rehypeCodeGroup,
 				[rehypeMermaid, mermaidConfig],
