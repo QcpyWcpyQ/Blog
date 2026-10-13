@@ -99,10 +99,9 @@ The recurring goal is to make calculations and information processing faster and
 ---
 
 - **Example 4 (Euclidean division by repeated subtraction)**  
-  *Slides 10–14 and 23.*
-
+  
   **Problem description.** Given a dividend and divisor, find their quotient and remainder. Division with remainder is used in modular arithmetic and greatest common divisor (GCD) calculations.
-
+  
   **Specification.** Let $D$ be the dividend and $d$ the divisor. We require
   $$
   D\in\mathbb{Z}_{\geq0},\qquad d\in\mathbb{Z}_{>0}.
@@ -112,10 +111,10 @@ The recurring goal is to make calculations and information processing faster and
   \boxed{D=qd+r\qquad\text{and}\qquad0\leq r<d}.
   $$
   Here $q$ is the **quotient**, $r$ is the **remainder**, and `nat` in the pseudocode includes $0$.
-
+  
   - **Algorithm 4.1 (Repeated subtraction)**  
     Initialize the quotient to $0$ and the remainder to the original dividend. As long as the remainder is at least the divisor, subtract the divisor and increase the quotient by $1$.
-
+  
     ```text
     fun division(dividend: nat, divisor: nat)
         -> (quotient: nat, remainder: nat)
@@ -135,19 +134,19 @@ The recurring goal is to make calculations and information processing faster and
         ensure: dividend = quotient * divisor + remainder
                 and 0 <= remainder < divisor
     ```
-
+  
     The input `dividend` stays unchanged. The variable `remainder` records the amount still left to divide. The explicit return line makes the two outputs clear.
-
+  
   - **Worked example 4.2 (Dividing $17$ by $5$)**  
     *Supplementary trace of the lecture's test case.*
-
+  
     | State | Quotient $q$ | Remainder $r$ | Check $17=5q+r$ |
     | --- | --- | --- | --- |
     | Initialization | $0$ | $17$ | $17=5\cdot0+17$ |
     | After iteration 1 | $1$ | $12$ | $17=5\cdot1+12$ |
     | After iteration 2 | $2$ | $7$ | $17=5\cdot2+7$ |
     | After iteration 3 | $3$ | $2$ | $17=5\cdot3+2$ |
-
+  
     Since $2<5$, the loop stops and returns $(q,r)=(3,2)$.
 
 ---
