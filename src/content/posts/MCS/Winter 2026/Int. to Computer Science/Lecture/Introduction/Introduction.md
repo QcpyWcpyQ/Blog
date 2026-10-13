@@ -8,13 +8,7 @@ draft: false
 image: ""
 ---
 
-Source: *Introduction to Computer Science: Introduction*, by Valentin Cassano and Santiago Figueira, GTIIT, 31 slides. [Course material on Moodle](https://moodle.gtiit.edu.cn/moodle/mod/resource/view.php?id=160881).
-
-Page references below refer to the supplied PDF. Worked derivations added to explain the slides are labelled as supplementary.
-
 ## A brief history of computing
-
-*Slide 2.*
 
 Computing developed through successive attempts to automate calculation and information processing:
 
@@ -25,8 +19,6 @@ Computing developed through successive attempts to automate calculation and info
 The recurring goal is to make calculations and information processing faster and more reliable. Understanding the structure of these machines helps explain how programs execute and why they fail.
 
 ## Basics of computer organization
-
-*Slides 3–8.*
 
 - **Definition 1 (The von Neumann model)**  
   The **von Neumann model** describes a computer in which memory stores both **data and instructions**. Its main functional components are:
@@ -80,8 +72,6 @@ The recurring goal is to make calculations and information processing faster and
 
 ## Problems, algorithms, and programs
 
-*Slides 9–20.*
-
 - **Method 2 (The five-step course methodology)**
 
   | Step | Main question | Result |
@@ -129,19 +119,19 @@ The recurring goal is to make calculations and information processing faster and
     ```text
     fun division(dividend: nat, divisor: nat)
         -> (quotient: nat, remainder: nat)
-
+    
         require: divisor > 0
-
+    
         quotient := 0
         remainder := dividend
-
+    
         while remainder >= divisor:
             invariant: dividend = quotient * divisor + remainder
             remainder := remainder - divisor
             quotient := quotient + 1
-
+    
         return (quotient, remainder)
-
+    
         ensure: dividend = quotient * divisor + remainder
                 and 0 <= remainder < divisor
     ```
@@ -163,10 +153,9 @@ The recurring goal is to make calculations and information processing faster and
 ---
 
 - **Programming language 5 (C)**  
-  *Slides 15–19.*
-
+  
   C is a general-purpose language created by **Dennis Ritchie** in the 1970s. The lecture introduces these characteristics:
-
+  
   | Characteristic | Meaning |
   | --- | --- |
   | Imperative | Programs describe commands that change the program's state. |
@@ -175,27 +164,27 @@ The recurring goal is to make calculations and information processing faster and
   | Static type system | Types constrain operations and are checked during compilation. |
   | Recursion | Functions can call themselves. |
   | Close connection to the machine | C supports low-level memory access and efficient compilation with limited runtime support. |
-
+  
   - **Implementation 5.1 (The lecture's C function)**
-
+  
     ```c
     int divide(int dividend, int divisor)
     {
         int quotient = 0;
         int remainder = dividend;
-
+    
         while (remainder >= divisor)
         {
             remainder -= divisor;
             quotient++;
         }
-
+    
         return quotient;
     }
     ```
-
+  
     The function assumes `dividend >= 0` and `divisor > 0`.
-
+  
     | C expression | Meaning |
     | --- | --- |
     | `int quotient = 0;` | Declare an integer variable and initialize it to zero. |
@@ -203,14 +192,12 @@ The recurring goal is to make calculations and information processing faster and
     | `remainder -= divisor;` | Replace `remainder` with `remainder - divisor`. |
     | `quotient++;` | Increase `quotient` by one. |
     | `return quotient;` | Return the quotient to the caller. |
-
+  
     **Interface clarification.** The pseudocode specifies two outputs, but this C function returns **only the quotient**. It computes the remainder internally without returning it. For example, `divide(17, 5)` returns `3`. The excerpt is a function, so a complete standalone C program also needs an entry point that calls it.
-
+  
     **Input clarification.** The pseudocode uses natural numbers, while C's `int` is a bounded signed integer type. The input restrictions must be respected by the caller or checked before the function is called. The displayed function does not perform that validation.
 
 ## Analysis of algorithms
-
-*Slides 21–25.*
 
 Algorithm analysis considers two different questions: **correctness**, whether the algorithm solves the specified problem for every valid input, and **efficiency**, how its resource requirements grow.
 
@@ -274,8 +261,6 @@ Algorithm analysis considers two different questions: **correctness**, whether t
 
 ## Testing and debugging
 
-*Slides 26–27.*
-
 - **Definition 8 (Testing and debugging)**  
   **Testing** checks observed program behavior against the specification for selected inputs. **Debugging** locates and corrects the causes of incorrect behavior.
 
@@ -301,8 +286,6 @@ Algorithm analysis considers two different questions: **correctness**, whether t
     Passing selected tests provides evidence about those executions. A correctness proof explains why the result holds for every input satisfying the precondition. Both are useful: an algorithm can be correct while its implementation still contains mistakes.
 
 ## Course practices and next steps
-
-*Slides 28–30.*
 
 The course combines algorithmic problem solving with basic software engineering practices:
 
