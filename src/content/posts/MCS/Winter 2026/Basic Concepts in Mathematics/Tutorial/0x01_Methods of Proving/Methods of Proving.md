@@ -128,11 +128,3 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
     \frac{128^2-1}{3}=5461
     $$
     trominoes. Divisibility of the area by $3$ is necessary; the induction construction establishes that a tiling actually exists.
-
-## Proof checklist
-
-| Exercise | Induction statement | What makes the step work? |
-| --- | --- | --- |
-| $3$- and $5$-dollar coins | Every integer amount $m\geq8$ has a representation | Split according to whether a $5$-dollar coin is available; preserve nonnegative integer counts |
-| $2^n>n$ | The inequality holds at the current index | Use the hypothesis and the bound $2n\geq n+1$ for $n\geq1$ |
-| L-tromino tiling | Every board of the given size works for every missing-square position | A central tromino creates four smaller boards to which the hypothesis applies |
