@@ -1,5 +1,5 @@
 ---
-title: "Methods of proving"
+title: "Methods of Proving"
 published: 2026-10-12
 description: ""
 tags: [MCS]
