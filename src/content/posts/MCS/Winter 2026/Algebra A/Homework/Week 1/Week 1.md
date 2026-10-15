@@ -30,44 +30,25 @@ image: ""
   Determine whether the following statements are true or false. Justify each answer with a proof or a counterexample.
 
   1. Let $p$ be a prime number. For every $x\in\mathbb{Z}_p$, there exists $n\in\mathbb{N}$ such that $x^n=x$.
-  2. Let $\mathbb{F}$ be a field. There exists $x\in\mathbb{F}\setminus\{0,1\}$ such that $x^2=x$.
+  2. Let $\mathbb{F}$ be a field. Then, there exists $x\in\mathbb F$ such that $x\not\in\{0,1\}$ and $x^2=x$.
 
   - **Solution 2.1**
 
-    **1. True.** As the statement is written, take $n=1$ for every $x$. Then
+    **1. True.** Take $n=1\in\mathbb N$ for every $x$. Then
     $$
     x^n=x^1=x.
     $$
-    This proves the stated claim immediately. For this choice of $n$, the assumption that $p$ is prime is not needed.
-
-    **Supplementary stronger statement: one may also take $n=p>1$.** We prove
-    $$
-    x^p=x\qquad\text{for every }x\in\mathbb{Z}_p.
-    $$
-    If $x=0$, this is immediate. Suppose $x\neq0$. Since $p$ is prime, $\mathbb{Z}_p$ is a field, and multiplication by $x$ permutes its nonzero elements. Indeed, it sends nonzero elements to nonzero elements, and if $xa=xb$, cancellation gives $a=b$. An injective map from this finite set to itself is a permutation.
-
-    Consequently, multiplying all nonzero elements before and after this permutation gives
-    $$
-    \prod_{k=1}^{p-1}(xk)=\prod_{k=1}^{p-1}k
-    \qquad\text{in }\mathbb{Z}_p.
-    $$
-    Equivalently,
-    $$
-    x^{p-1}\prod_{k=1}^{p-1}k=\prod_{k=1}^{p-1}k.
-    $$
-    The product on the right is nonzero, because every factor is nonzero and a field has no zero divisors. Cancelling it gives $x^{p-1}=1$. Multiplying by $x$ yields $x^p=x$.
-
-    Thus the stronger statement also holds, including for $x=0$. This is the form of **Fermat's little theorem** valid for every element of $\mathbb{Z}_p$.
+    Therefore the statement is true;
 
     **2. False.** Suppose $x\in\mathbb{F}$ satisfies $x^2=x$. Subtracting $x$ and factoring gives
     $$
     x^2-x=0\quad\Longrightarrow\quad x(x-1)=0.
     $$
-    Since $\mathbb{F}$ is a field, the zero-product property implies
+    Since $\mathbb{F}$ is a field, by property, it implies that
     $$
     x=0\qquad\text{or}\qquad x-1=0.
     $$
-    Hence $x\in\{0,1\}$, so there is no solution outside this set. Conversely, $0$ and $1$ both satisfy $x^2=x$. Therefore the only solutions in any field are exactly $0$ and $1$.
+    Hence $x\in\{0,1\}$, so there is no solution outside this set. Therefore the statement is false.
 
 ---
 
@@ -76,12 +57,12 @@ image: ""
   $$
   \operatorname{GL}(2,\mathbb{R})
   :=\left\{A\in M_{2\times2}(\mathbb{R}):
-  \exists B\in M_{2\times2}(\mathbb{R}),\ AB=BA=I_2\right\}.
+  \exists B\in M_{2\times2}(\mathbb{R}),\ AB=BA=I\right\}.
   $$
-  Is $(\operatorname{GL}(2,\mathbb{R}),+,\cdot)$ a field under the usual matrix operations? Justify your answer.
+  Is $(\operatorname{GL}(2,\mathbb{R}),+,\cdot)$ a field? Justify your answer.
 
-  - **Solution 3.1 (Addition is not closed)**  
-    **No.** Both $I_2$ and $-I_2$ belong to $\operatorname{GL}(2,\mathbb{R})$, because
+  - **Solution 3.1**
+    **No.** Both $I_2$ and $-I_2$ belong to $\operatorname{GL}(2,\mathbb{R})$ because
     $$
     I_2I_2=I_2,\qquad(-I_2)(-I_2)=I_2.
     $$
@@ -89,30 +70,11 @@ image: ""
     $$
     I_2+(-I_2)=0_{2\times2}.
     $$
-    The zero matrix is not invertible: for every $B\in M_{2\times2}(\mathbb{R})$,
+    For every $B\in M_{2\times2}(\mathbb{R})$, we have that
     $$
     0_{2\times2}B=B0_{2\times2}=0_{2\times2}\neq I_2.
     $$
-    Thus the sum of two elements of $\operatorname{GL}(2,\mathbb{R})$ can lie outside the set. **Closure under addition fails**, which already proves that these operations do not make it a field.
-
-  - **Remark 3.2 (Multiplication also fails commutativity)**  
-    There is another obstruction. Let
-    $$
-    A=\begin{pmatrix}1&1\\0&1\end{pmatrix},\qquad
-    B=\begin{pmatrix}1&0\\1&1\end{pmatrix}.
-    $$
-    Both are invertible; their inverses are
-    $$
-    A^{-1}=\begin{pmatrix}1&-1\\0&1\end{pmatrix},\qquad
-    B^{-1}=\begin{pmatrix}1&0\\-1&1\end{pmatrix},
-    $$
-    as direct multiplication verifies. But
-    $$
-    AB=\begin{pmatrix}2&1\\1&1\end{pmatrix}
-    \neq
-    \begin{pmatrix}1&1\\1&2\end{pmatrix}=BA.
-    $$
-    Hence the field axiom of commutative multiplication fails as well. Having multiplicative inverses for all elements of this set is not sufficient to satisfy all field axioms.
+    Thus $0_{2\times 2}\not\in(\operatorname{GL}(2,\mathbb{R}),+,\cdot)$ Since the sum of elements of a field cannot lie outside the field, the statement is false.
 
 ---
 
@@ -121,47 +83,34 @@ image: ""
   $$
   p(x)=x^3-6x^2+11x-3,\qquad q(x)=x^2-4x+3.
   $$
-  Show that $q(x)$ divides $p(x)$ in $\mathbb{Z}_3[x]$, but not in $\mathbb{R}[x]$.
+  Suppose $p(x)=x^3-6x^2+11x-3,q(x)=x^2-4x+3.$. Show that $q(x)$ divides $p(x)$ in $\mathbb{Z}_3[x]$, but not in $\mathbb{R}[x]$.
 
-  - **Solution 4.1 (The coefficient field determines the remainder)**  
-    Polynomial division gives
+  - **Solution 4.1**  
+    We show that $q(x)$ divides $p(x)$ in $\mathbb{Z}_3[x]$. We clarify $p(x)$ and $q(x)$ in $\mathbb Z_{3}$ first. We have that  
     $$
     \begin{aligned}
-    p(x)-xq(x)&=-2x^2+8x-3,\\
-    p(x)-xq(x)-(-2)q(x)&=3.
+    p(x)&=x^3-6x^2+11x-3\equiv x^3+2x\pmod 3 \\
+    q(x)&=x^2-4x+3=x^2-x=x(x-1)\pmod 3
     \end{aligned}
     $$
-    Thus we have the integer-coefficient identity
+    Thus the root of $q(x)$ in $\mathbb Z_{3}$ is $0$ and $1$. Then we substitute $0$ and $1$ into $p(x)$  
     $$
-    \boxed{p(x)=(x-2)q(x)+3}.
+    \begin{aligned}
+    p(0)&\equiv 0^3+2\cdot 0=0\pmod 3 \\
+    p(1)&\equiv 1^3+2\cdot 1=3\equiv 0\pmod 3
+    \end{aligned}
     $$
-
-    **Over $\mathbb{Z}_3$.** Reduce every coefficient modulo $3$, and denote the resulting polynomials by $\overline{p}$ and $\overline{q}$. Then
+    Since $0,1$ are the root of $p(x)$ in $\mathbb Z_3$. Because each root of $q(x)$ is the root of $p(x)$ in $\mathbb Z_{3}$, we obtain that $q(x)$ divides $p(x)$ in $\mathbb Z_3$.
+    
+    We show that $q(x)$ does not divide $p(x)$ in $\mathbb R[x]$. We clarify $q(x)$ first, that is, 
     $$
-    \overline{p}(x)=x^3+2x,\qquad
-    \overline{q}(x)=x^2+2x.
+    q(x)=x^2-4x+3=(x-1)(x-3).
     $$
-    Since $3=0$ and $-2=1$ in $\mathbb{Z}_3$, the division identity becomes
+    Therefore the root of $q(x)$ in $\mathbb R$ is $1$ and $3$. Then we substitute $1$ and $3$ into $q(x)$  
     $$
-    \overline{p}(x)=(x+1)\overline{q}(x).
+    \begin{aligned}
+    p(1)&=1^3-6\cdot 1^2+11\cdot 1-3=3\neq 0 \\
+    p(3)&=3^3-6\cdot 3^2+11\cdot 3-3=3\neq 0
+    \end{aligned}
     $$
-    Directly,
-    $$
-    (x+1)(x^2+2x)=x^3+3x^2+2x=x^3+2x
-    \qquad\text{in }\mathbb{Z}_3[x].
-    $$
-    Therefore $q$ divides $p$ in $\mathbb{Z}_3[x]$, with quotient $x+1$.
-
-    **Over $\mathbb{R}$.** The remainder in the same division is the nonzero constant $3$, whose degree is less than $\deg q=2$. Therefore $q$ does not divide $p$ in $\mathbb{R}[x]$.
-
-    This can also be proved without invoking uniqueness of the division remainder. If $p=qh$ for some $h\in\mathbb{R}[x]$, then evaluating at $x=1$ would give
-    $$
-    p(1)=q(1)h(1)=0,
-    $$
-    because $q(1)=1-4+3=0$. But
-    $$
-    p(1)=1-6+11-3=3\neq0,
-    $$
-    a contradiction.
-
-    **Key point.** The remainder is $3$: it vanishes in $\mathbb{Z}_3$ and remains nonzero in $\mathbb{R}$. This is why divisibility differs between the two coefficient fields.
+    Since $1,3$ are not the root of $p(x)$ in $\mathbb R$. Because there exists a root of $q(x)$ is not the root of $p(x)$ in $\mathbb R$, we obtain that $q(x)$ does not divide $p(x)$ in $\mathbb R$.
