@@ -1,7 +1,7 @@
 ---
 title: "The Real Number System"
 published: 2026-10-13
-description: ""
+description: "Field and order axioms of the real numbers, complete proofs of their basic consequences, number sets, intervals, and absolute value."
 tags: [MCS]
 category: MCS
 draft: false
@@ -89,96 +89,447 @@ Its two main goals are to learn **calculus** and to understand **how mathematics
 
 ---
 
-- **Axioms 2 (Real numbers Axioms)**  
-    The real numbers axioms include:
+## Axioms for the real numbers
 
-    1. Field Axioms.
-    2. Order Axioms.
-    3. Completeness Axiom.
+- **Axioms 2 (The real number system)**  
+  The real numbers are described by three groups of axioms:
 
-    **Field Axioms**  
+  1. **Field axioms:** the rules for addition and multiplication.
+  2. **Order axioms:** the rules for comparing numbers, compatible with the field operations.
+  3. **Completeness axiom:** every nonempty subset of $\mathbb{R}$ that is bounded above has a least upper bound in $\mathbb{R}$. Here an upper bound is a number at least as large as every element of the set; the least upper bound is the smallest such number. Bounds and completeness are developed further in the tutorial.
 
-    1. $\mathbb R$ is a set where we can sum and multiply its element, that is, $x+y\in\mathbb R$ and $xy\in\mathbb R$. The sum satisfies these axioms:
-        1. Associativity: $\forall x,y,z,\in\mathbb R,(x+y)+z=x+(y+z)$.
-        2. Commutativity: $x+y=y+x$.
-        3. Neutral element: $\exists$ a number called $0$ such that $\forall x\in \mathbb R,x+0=0+x=x$.
-        4. Opposite element: $\forall x\in\mathbb R,\exists y\in\mathbb R$ such that $x+y=y+x=0$. This $y$ is called the opposite of $x$ and denoted $-x$.
-    2. The product satisfies these axioms:
-        1. Associativity: $\forall x,y,z\in\mathbb R,(xy)z=x(yz)$.
-        2. Commutativity: $\forall x,y\in\mathbb R,xy=yx$.
-        3. Identity element: $\exists$ a number called $1\neq 0$ such that $\forall x\in\mathbb R,1\cdot x=x\cdot 1=x$.
-        4. Inverse elemet: $\forall x\in\mathbb R,x\neq 0,\exists y$ such that $xy=yx=1$. This $y$ is called inverse of $x$ and denoted $x^{-1}$.
-    3. Distribution law: $\forall x,y,z\in\mathbb R,x(y+z)=xy+xz$.
+  The algebraic and order properties below are derived from the first two groups of axioms.
 
-    - **Properties 2.1**  
+### Field axioms
 
-        1. There is only $0$ with proprety $\operatorname{S3}$: If a number $a$ satisfies $\forall x\in\mathbb R,a+x=x\implies a=0$.
+Addition and multiplication are binary operations on $\mathbb{R}$. In particular, they are **closed**: if $x,y\in\mathbb{R}$, then $x+y\in\mathbb{R}$ and $xy\in\mathbb{R}$.
 
-            There is only $1$ with proprety $\operatorname{P3}$: If a number $a$ satisfies $\forall x\in\mathbb R,ax=x\implies a=1$.
+The labels below make the references in the proofs precise. All variables are real numbers unless stated otherwise.
 
-        2. The opposite of $x$ is unique: If $x+a=0\implies a=-x$.
+**Axioms for addition**
 
-            The inverse of $x\neq 0$ is unique: If $xa=1\implies a=x^{-1}$.
+| Label | Axiom | Statement |
+| --- | --- | --- |
+| S1 | Associativity | $(x+y)+z=x+(y+z)$ |
+| S2 | Commutativity | $x+y=y+x$ |
+| S3 | Additive identity | There exists $0$ such that $x+0=0+x=x$ for every $x$ |
+| S4 | Additive inverse | For every $x$, there exists an opposite $-x$ such that $x+(-x)=(-x)+x=0$ |
 
-        3. $\forall x\in\mathbb R,0x=0$.
+**Axioms for multiplication**
 
-        4. If $ax=ay$ and $a\neq 0$ then $x=y$ (Cancellation property).
+| Label | Axiom | Statement |
+| --- | --- | --- |
+| P1 | Associativity | $(xy)z=x(yz)$ |
+| P2 | Commutativity | $xy=yx$ |
+| P3 | Multiplicative identity | There exists $1\neq0$ such that $1x=x1=x$ for every $x$ |
+| P4 | Multiplicative inverse | For every $x\neq0$, there exists $x^{-1}$ such that $xx^{-1}=x^{-1}x=1$ |
 
-        5. $-(-x)=x,(-x)y=-(xy),(-x)(-y)=xy,(-1)x=-x$.
+**D: Distributivity.** For every $x,y,z\in\mathbb{R}$,
+$$
+x(y+z)=xy+xz.
+$$
+Multiplicative commutativity also gives the distributive law on the other side:
+$$
+(x+y)z=z(x+y)=zx+zy=xz+yz.
+$$
+The axioms assert the existence of identities and inverses; the next properties establish their uniqueness.
 
-        6. $((x_1+x_2)+x_3)+x_4=(x_1+x_2)+(x_3+x_4)=\cdots$. Since all are the same, we simply write $x_1+x_2+x_3+x_4$.
+### Consequences of the field axioms
 
-        - **Proof 2.1.1**  
-            1. Suppose that $a$ satisfies $\forall x,a+x=x$, we want to obtain $a=0$. Substituting $x=0$ we have $a+0=0$. By $\operatorname{S3}$ we have that $a+0=a$. Therefore $a=0$.
-                Suppose that $a$ satisfies $\forall x,ax=x$, we want to ontain $a=1$. Substituting $x=1$ we have that $a\cdot 1=1$. By $\operatorname{P3}$ we have that $a\cdot 1=a$. Therefore $a=1$.
-            2. Assume $a+x=0$. Then by $\operatorname{S4}$ we have that $a+x+(-x)=0+(-x)$ then $a+(x+(-x))=(-x)$ and then $a+0=-x$. Therefore $a=-x$.
-                Assume $ax=1$ and $x\neq 0$. Then by $\operatorname{P4}$ we have that $(ax)x^{-1}=1x^{-1}$ then $a\left(xx^{-1}\right)=x^{-1}$ and then $a\cdot 1=x^{-1}$. Therefore $a=x^{-1}$.
-            3. $0x=(0+0)x=0x+0x\implies 0x+(-0x)=0x+(0x+(-0x))\implies0=0x$.
-            4. Suppose $ax=ay$ and $a\neq 0$. Then $a^{-1}(ax)=a^{-1}(ay)$ and then $\left(a^{-1}a\right)x=\left(a^{-1}a\right)y$ and thus $1\cdot x=1\cdot y$. Therefore $x=y$.
+- **Properties 2.1**
 
-            5. **Rules for opposites and signs.**
+  1. **Unique identities.** The additive identity $0$ and multiplicative identity $1$ are unique.
+  2. **Unique inverses.** The opposite of each $x$ is unique, and the multiplicative inverse of each $x\neq0$ is unique.
+  3. **Multiplication by zero.** For every $x$,
+     $$
+     0x=x0=0.
+     $$
+  4. **Cancellation.** We have
+     $$
+     a+x=a+y\quad\Longrightarrow\quad x=y,
+     $$
+     and, if $a\neq0$,
+     $$
+     ax=ay\quad\Longrightarrow\quad x=y.
+     $$
+  5. **Opposites and signs.** For all $x,y$,
+     $$
+     \begin{gathered}
+     -(-x)=x,\qquad(-x)y=x(-y)=-(xy),\\
+     (-x)(-y)=xy,\qquad(-1)x=-x.
+     \end{gathered}
+     $$
+  6. **Associativity permits omission of parentheses.** All five full parenthesizations of four summands in a fixed order have the same value, denoted by $x_1+x_2+x_3+x_4$.
 
-                Since $(-x)+x=0$, the number $x$ is an opposite of $-x$. By uniqueness of the opposite, proved in part 2,
-                $$
-                -(-x)=x.
-                $$
+  - **Proof 2.1.1**
 
-                Next, distributivity and part 3 give
-                $$
-                xy+(-x)y=(x+(-x))y=0y=0.
-                $$
-                Thus $(-x)y$ is the opposite of $xy$. By uniqueness again,
-                $$
-                (-x)y=-(xy).
-                $$
-                By commutativity, we also obtain
-                $$
-                x(-y)=(-y)x=-(yx)=-(xy).
-                $$
-                Applying these identities and the double-negative identity yields
-                $$
-                (-x)(-y)=-\bigl(x(-y)\bigr)=-\bigl(-(xy)\bigr)=xy.
-                $$
+    **1. Uniqueness of the identities.** Suppose $a+x=x$ for every $x$. Taking $x=0$ gives $a+0=0$. But S3 gives $a+0=a$, so $a=0$.
 
-                Finally, applying the same identity with first factor $1$ gives
-                $$
-                (-1)x=-(1x)=-x.
-                $$
+    Similarly, if $ax=x$ for every $x$, then taking $x=1$ gives $a1=1$. By P3, $a1=a$, and hence $a=1$.
 
-            6. **Associativity and omission of parentheses.**
+    **2. Uniqueness of the inverses.** If $x+a=0$, commutativity and associativity give
+    $$
+    \begin{aligned}
+    a&=a+0=a+(x+(-x))\\
+     &=(a+x)+(-x)=0+(-x)=-x.
+    \end{aligned}
+    $$
+    If $x\neq0$ and $xa=1$, then
+    $$
+    \begin{aligned}
+    a&=a1=a(xx^{-1})\\
+     &=(ax)x^{-1}=1x^{-1}=x^{-1}.
+    \end{aligned}
+    $$
+    Thus the notation for each inverse is unambiguous.
 
-                Repeatedly applying additive associativity, $\operatorname{S1}$, gives
-                $$
-                \begin{aligned}
-                ((x_1+x_2)+x_3)+x_4
-                  &=(x_1+x_2)+(x_3+x_4)\\
-                  &=x_1+(x_2+(x_3+x_4))\\
-                  &=x_1+((x_2+x_3)+x_4)\\
-                  &=(x_1+(x_2+x_3))+x_4.
-                \end{aligned}
-                $$
-                These are all five ways to fully parenthesize the sum of four terms in this fixed order. They have the same value, so the notation
-                $$
-                x_1+x_2+x_3+x_4
-                $$
-                is unambiguous. Each step only changes the grouping of the terms and uses associativity.
+    **3. Multiplication by zero.** Distributivity gives
+    $$
+    0x=(0+0)x=0x+0x.
+    $$
+    Add the opposite of $0x$ to both sides and use associativity:
+    $$
+    0=0x+(-(0x))=(0x+0x)+(-(0x))=0x.
+    $$
+    Commutativity gives $x0=0x=0$ as well.
+
+    **4. Cancellation.** If $a+x=a+y$, adding $-a$ yields
+    $$
+    x=(-a)+(a+x)=(-a)+(a+y)=y.
+    $$
+    If $ax=ay$ and $a\neq0$, multiply both sides by $a^{-1}$:
+    $$
+    x=(a^{-1}a)x=a^{-1}(ax)=a^{-1}(ay)=(a^{-1}a)y=y.
+    $$
+    The condition $a\neq0$ is necessary for multiplicative cancellation: $0x=0y$ holds for any $x,y$, even if $x\neq y$.
+
+    **5. Opposites and signs.** Since $(-x)+x=0$, uniqueness of the opposite gives
+    $$
+    -(-x)=x.
+    $$
+    Next, distributivity and part 3 give
+    $$
+    xy+(-x)y=(x+(-x))y=0y=0.
+    $$
+    Therefore $(-x)y$ is the opposite of $xy$, and hence $(-x)y=-(xy)$. By commutativity,
+    $$
+    x(-y)=(-y)x=-(yx)=-(xy).
+    $$
+    These identities imply
+    $$
+    (-x)(-y)=-\bigl(x(-y)\bigr)=-\bigl(-(xy)\bigr)=xy.
+    $$
+    Finally, taking the first factor to be $1$ gives
+    $$
+    (-1)x=-(1x)=-x.
+    $$
+
+    **6. Omission of parentheses.** Repeated applications of S1 give
+    $$
+    \begin{aligned}
+    ((x_1+x_2)+x_3)+x_4
+      &=(x_1+x_2)+(x_3+x_4)\\
+      &=x_1+(x_2+(x_3+x_4))\\
+      &=x_1+((x_2+x_3)+x_4)\\
+      &=(x_1+(x_2+x_3))+x_4.
+    \end{aligned}
+    $$
+    These are all five full parenthesizations in the same order. Thus $x_1+x_2+x_3+x_4$ has an unambiguous value. Changing the grouping uses associativity; changing the order of the terms uses commutativity.
+
+---
+
+- **Definition 3 (Groups, rings, and fields)**  
+  The same types of axioms describe more general algebraic structures on a nonempty set, with the indicated operations closed on that set:
+
+  | Structure | Required properties |
+  | --- | --- |
+  | Group under $+$ | S1, S3, S4 |
+  | Commutative (abelian) group under $+$ | S1, S2, S3, S4 |
+  | Ring | S1–S4, P1, and both distributive laws |
+  | Commutative ring | The ring axioms together with P2 |
+  | Field | S1–S4, P1–P4, and D, with $1\neq0$ and P4 applying to nonzero elements |
+
+  In a general ring, multiplication need not be commutative, so **both** distributive laws must be required:
+  $$
+  x(y+z)=xy+xz,\qquad(x+y)z=xz+yz.
+  $$
+  In a field, either one implies the other by P2, as shown above.
+
+  The ring convention in these notes does not require a multiplicative identity; some texts include one in the definition of a ring. For a field, the nonzero elements form a commutative group under multiplication. Indeed, if $x,y\neq0$ but $xy=0$, multiplying by $x^{-1}$ would give $y=0$, a contradiction; hence nonzero elements are closed under multiplication. Also $x^{-1}\neq0$, since $xx^{-1}=1\neq0$. The remaining group properties follow from P1–P4.
+
+## Order on the real numbers
+
+- **Order axioms 4**  
+  The relation $\leq$ on $\mathbb{R}$ satisfies:
+
+  1. **Reflexivity:** $a\leq a$.
+  2. **Transitivity:** if $a\leq b$ and $b\leq c$, then $a\leq c$.
+  3. **Antisymmetry:** if $a\leq b$ and $b\leq a$, then $a=b$.
+  4. **Trichotomy:** exactly one of $a<b$, $a=b$, and $a>b$ holds.
+  5. **Compatibility with the field operations:**
+     $$
+     a\leq b\quad\Longrightarrow\quad a+c\leq b+c
+     \qquad\text{for every }c\in\mathbb{R},
+     $$
+     and
+     $$
+     a\leq b,\ c>0\quad\Longrightarrow\quad ac\leq bc.
+     $$
+
+  Here $a<b$ means $a\leq b$ and $a\neq b$. The notation $a\geq b$ means $b\leq a$, and $a>b$ means $b<a$.
+
+  A number is **positive** if it is greater than $0$ and **negative** if it is less than $0$. By trichotomy, every real number is positive, zero, or negative, with exactly one of these possibilities holding.
+
+  We use $b-a$ as an abbreviation for $b+(-a)$; see Definition 6.
+
+### Basic order properties and complete proofs
+
+- **Basic properties 4.1**
+
+  1. **Translation preserves all comparisons.** For every real $c$,
+     $$
+     \begin{aligned}
+     a\leq b&\iff a+c\leq b+c,\\
+     a<b&\iff a+c<b+c,\\
+     a\geq b&\iff a+c\geq b+c,\\
+     a>b&\iff a+c>b+c.
+     \end{aligned}
+     $$
+  2. **Comparison with a difference.**
+     $$
+     \begin{aligned}
+     a\leq b&\iff0\leq b-a, & a<b&\iff0<b-a,\\
+     a\geq b&\iff0\geq b-a, & a>b&\iff0>b-a.
+     \end{aligned}
+     $$
+  3. **Multiplication by a positive number preserves strict order.** If $c>0$, then
+     $$
+     a<b\Longrightarrow ac<bc,\qquad
+     a>b\Longrightarrow ac>bc.
+     $$
+  4. **Adding inequalities.** If $a\leq b$ and $c\leq d$, then
+     $$
+     a+c\leq b+d.
+     $$
+     If at least one of the two assumed inequalities is strict, then $a+c<b+d$.
+  5. **Negation reverses order.**
+     $$
+     a\leq b\iff-a\geq-b,\qquad
+     a<b\iff-a>-b.
+     $$
+     Interchanging $a$ and $b$ gives the versions for $\geq$ and $>$.
+  6. **Multiplication by a negative number reverses order.** If $c<0$, then
+     $$
+     a\leq b\Longrightarrow ac\geq bc,\qquad
+     a<b\Longrightarrow ac>bc.
+     $$
+     Interchanging $a$ and $b$ gives the versions for $\geq$ and $>$.
+  7. **Squares.** For every real $a$,
+     $$
+     a^2\geq0,\qquad a^2=0\iff a=0.
+     $$
+  8. **The sign of $1$.** We have $1>0$ and $-1<0$. Consequently, no real number satisfies $x^2=-1$.
+  9. **The sign of a reciprocal.** For $a\neq0$,
+     $$
+     a>0\iff a^{-1}>0,\qquad
+     a<0\iff a^{-1}<0.
+     $$
+  10. **Reciprocals reverse order on positive numbers.**
+      $$
+      0<a<b\quad\Longrightarrow\quad0<b^{-1}<a^{-1}.
+      $$
+  11. **Adding one increases a number.** For every real $a$,
+      $$
+      a<a+1.
+      $$
+
+  - **Proof 4.1.1**
+
+    **1. Translation.** The forward implication for $\leq$ is an order axiom. If $a+c\leq b+c$, adding $-c$ gives $a\leq b$, proving the converse.
+
+    If $a<b$, the axiom gives $a+c\leq b+c$. Equality would imply $a=b$ by additive cancellation, contradicting $a<b$. Hence $a+c<b+c$. Adding $-c$ proves the converse for strict inequalities as well. Interchanging $a$ and $b$ proves the statements for $\geq$ and $>$.
+
+    **2. Differences.** Apply part 1 with $c=-a$:
+    $$
+    a\leq b\iff a+(-a)\leq b+(-a)\iff0\leq b-a.
+    $$
+    The same argument with $<$, $\geq$, or $>$ gives the other three equivalences. Every implication is reversible because adding $a$ restores the original comparison.
+
+    **3. Multiplication by a positive number.** Suppose $a<b$ and $c>0$. Compatibility gives $ac\leq bc$. If $ac=bc$, then $a=b$ by multiplicative cancellation, since $c\neq0$. This contradicts $a<b$, so $ac<bc$. Interchanging $a$ and $b$ proves the version for $>$.
+
+    **4. Adding inequalities.** By translation and transitivity,
+    $$
+    a+c\leq b+c=c+b\leq d+b=b+d.
+    $$
+    If $a<b$, the first comparison is strict; if $c<d$, the second comparison is strict. In either case, the final comparison is strict.
+
+    To justify this last step directly, if $u<v\leq w$, transitivity gives $u\leq w$. Equality $u=w$ would give $v\leq u$, contradicting $u<v$ by antisymmetry. Thus $u<w$. If $u\leq v<w$, equality $u=w$ would imply $w\leq v$, contradicting $v<w$. Thus $u<w$ in this case too.
+
+    **5. Negation.** Add $(-a)+(-b)$ to both sides and simplify:
+    $$
+    a\leq b\iff-b\leq-a\iff-a\geq-b.
+    $$
+    Translation preserves strict comparisons too, so
+    $$
+    a<b\iff-b<-a\iff-a>-b.
+    $$
+    In particular, $c<0$ implies $-c>0$.
+
+    **6. Multiplication by a negative number.** If $c<0$, then $-c>0$. For $a\leq b$, the positive-multiplier axiom gives
+    $$
+    a(-c)\leq b(-c).
+    $$
+    Using the sign rules from Properties 2.1 and then part 5,
+    $$
+    -(ac)\leq-(bc)\quad\Longrightarrow\quad ac\geq bc.
+    $$
+    If $a<b$, part 3 gives $a(-c)<b(-c)$, and part 5 then gives $ac>bc$.
+
+    **7. Squares.** By trichotomy there are three cases:
+
+    - If $a>0$, multiply $0<a$ by $a>0$. Part 3 gives $0<a^2$.
+    - If $a=0$, then $a^2=0$ by multiplication by zero.
+    - If $a<0$, then $-a>0$, so the first case gives $(-a)^2>0$. The field sign rules give $(-a)^2=a^2$, hence $a^2>0$.
+
+    Thus every square is nonnegative, and a square is zero exactly when its base is zero.
+
+    **8. The sign of $1$.** Part 7 gives
+    $$
+    1=1\cdot1=1^2\geq0.
+    $$
+    Since the field axioms require $1\neq0$, it follows that $1>0$. Negation reverses order, so $-1<0$.
+
+    If a real $x$ satisfied $x^2=-1$, its square would be both nonnegative by part 7 and negative because $-1<0$, a contradiction.
+
+    **9. The sign of a reciprocal.** Let $a\neq0$ and write $b=a^{-1}$. Then $ab=1$, so $b\neq0$: otherwise $ab=a0=0\neq1$.
+
+    If $a>0$ but $b<0$, multiplying $b<0$ by $a>0$ gives $ab<0$. This contradicts $ab=1>0$. Trichotomy and $b\neq0$ therefore give $b>0$.
+
+    If $a<0$ but $b>0$, multiplying $a<0$ by $b>0$ again gives $ab<0$, a contradiction. Hence $b<0$.
+
+    Finally, $ba=1$, so $a$ is the inverse of $b$. Applying the same implications with $b$ in place of $a$ gives the converses. Therefore $a$ and $a^{-1}$ have the same sign.
+
+    **10. Order of positive reciprocals.** If $0<a<b$, part 9 gives $a^{-1}>0$ and $b^{-1}>0$. Their product is positive by part 3. Multiplying $a<b$ by this positive product yields
+    $$
+    a(a^{-1}b^{-1})<b(a^{-1}b^{-1}).
+    $$
+    Associativity, commutativity, and the inverse identities simplify this to
+    $$
+    b^{-1}<a^{-1}.
+    $$
+    Together with $b^{-1}>0$, this proves $0<b^{-1}<a^{-1}$.
+
+    **11. Adding one.** Since $0<1$ by part 8, adding $a$ gives
+    $$
+    a=a+0<a+1.
+    $$
+
+## Natural numbers, arithmetic notation, and intervals
+
+- **Definition 5 (Natural numbers and integers)**  
+  Starting from $1$, define the successive positive integers by
+  $$
+  2:=1+1,\qquad3:=2+1,\qquad4:=3+1,\quad\ldots.
+  $$
+  By Basic properties 4.1(11), adding $1$ increases a number. Thus
+  $$
+  0<1<2<3<\cdots.
+  $$
+  For example, $2>1>0$, and reversing these inequalities by negation gives
+  $$
+  2>1>0>-1>-2.
+  $$
+
+  In these notes, use the convention
+  $$
+  \mathbb{N}=\{1,2,3,\ldots\},\qquad
+  -\mathbb{N}=\{-n:n\in\mathbb{N}\},
+  $$
+  and define
+  $$
+  \mathbb{Z}=(-\mathbb{N})\cup\{0\}\cup\mathbb{N}.
+  $$
+  When zero is included, write $\mathbb{Z}_{\geq0}=\{0,1,2,\ldots\}$ explicitly.
+
+---
+
+- **Definition 6 (Subtraction and division)**
+
+  1. For $a,b\in\mathbb{R}$, define
+     $$
+     a-b:=a+(-b).
+     $$
+  2. For $a,b\in\mathbb{R}$ with $b\neq0$, define
+     $$
+     \frac{a}{b}:=ab^{-1}.
+     $$
+
+  Division is defined here only for a nonzero denominator. Zero has no multiplicative inverse, since $0x=0\neq1$ for every real $x$.
+
+---
+
+- **Definition 7 (Intervals)**
+
+  | Interval | Definition | Endpoints included |
+  | --- | --- | --- |
+  | $(a,b)$, for $a<b$ | $\{x\in\mathbb{R}:a<x<b\}$ | Neither |
+  | $[a,b]$, for $a\leq b$ | $\{x\in\mathbb{R}:a\leq x\leq b\}$ | Both |
+  | $[a,b)$, for $a<b$ | $\{x\in\mathbb{R}:a\leq x<b\}$ | Only $a$ |
+  | $(a,b]$, for $a<b$ | $\{x\in\mathbb{R}:a<x\leq b\}$ | Only $b$ |
+
+  The interval $(a,b)$ is **open**, and $[a,b]$ is **closed**. The other two are **half-open** intervals. In the degenerate closed case,
+  $$
+  [a,a]=\{a\},
+  $$
+  because $a\leq x\leq a$ implies $x=a$ by antisymmetry, and $a$ satisfies these inequalities by reflexivity.
+
+---
+
+- **Definition 8 (Rational numbers)**  
+  The rational numbers are the real numbers expressible as a ratio of two integers with nonzero denominator:
+  $$
+  \mathbb{Q}:=\left\{\frac{a}{b}:a,b\in\mathbb{Z},\ b\neq0\right\}\subseteq\mathbb{R}.
+  $$
+
+## Absolute value
+
+- **Definition 9 (Absolute value)**  
+  For $x\in\mathbb{R}$, define
+  $$
+  |x|:=\begin{cases}
+  x,&x\geq0,\\
+  -x,&x<0.
+  \end{cases}
+  $$
+
+  - **Properties 9.1**
+
+    1. **Nonnegativity and the zero case:** $|x|\geq0$, and $|x|=0$ if and only if $x=0$.
+    2. **Symmetry under negation:** $|-x|=|x|$.
+    3. **Multiplicativity:** $|ab|=|a|\,|b|$ for all real $a,b$.
+
+  - **Proof 9.1.1**
+
+    **1. Nonnegativity and the zero case.** If $x>0$, then $|x|=x>0$. If $x=0$, then $|x|=0$. If $x<0$, then $-x>0$ and $|x|=-x>0$. These three cases show both that $|x|\geq0$ always and that equality holds exactly for $x=0$.
+
+    **2. Symmetry.** Again consider the sign of $x$:
+
+    - If $x>0$, then $-x<0$, so $|-x|=-(-x)=x=|x|$.
+    - If $x=0$, then $-x=0$, and both absolute values are zero.
+    - If $x<0$, then $-x>0$, so $|-x|=-x=|x|$.
+
+    Thus $|-x|=|x|$ for every real $x$.
+
+    **3. Multiplicativity.** The sign rules for multiplication follow from Basic properties 4.1(3) and (6), with multiplication by zero handled by Properties 2.1(3). Apply them in each of the following four cases:
+
+    | Signs of $a,b$ | Sign of $ab$ | Absolute value of the product | Product of the absolute values |
+    | --- | --- | --- | --- |
+    | $a\geq0$, $b\geq0$ | $ab\geq0$ | $\lvert ab\rvert=ab$ | $\lvert a\rvert\,\lvert b\rvert=ab$ |
+    | $a<0$, $b\geq0$ | $ab\leq0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=(-a)b=-ab$ |
+    | $a\geq0$, $b<0$ | $ab\leq0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=a(-b)=-ab$ |
+    | $a<0$, $b<0$ | $ab>0$ | $\lvert ab\rvert=ab$ | $\lvert a\rvert\,\lvert b\rvert=(-a)(-b)=ab$ |
+
+    In the two middle rows, if $ab=0$, the formula $|ab|=-ab=0$ still holds. The cases cover every pair of real numbers, so
+    $$
+    \boxed{|ab|=|a|\,|b|}.
+    $$
