@@ -67,4 +67,4 @@ image: ""
 
         Yes, we can guarantee this because $\mathbb Z_3$ is a field.
 
-        $\deg(p(x)q(x))=4$ and $\deg(p(x))+\deg(q(x))=3+2=5$ in $\mathbb Z_4$. Therefore they are not equal. ($\mathbb Z_{4}$ is not a field)
+        $\deg(p(x)q(x))=3$ and $\deg(p(x))+\deg(q(x))=3+2=5$ in $\mathbb Z_4$. Therefore they are not equal. ($\mathbb Z_{4}$ is not a field)
