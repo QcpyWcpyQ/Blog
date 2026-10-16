@@ -153,7 +153,7 @@ image: ""
 - **Problem 1 (Sum of the first $n$ positive integers)**  
   Find a formula for
   $$
-  S_n=1+2+\cdots+n,\qquad n\geq 1.
+  S_n=1+2+\cdots+n,\qquad n\geqslant 1.
   $$
 
   - **Proof 1.1 (A geometric argument)**  
@@ -178,7 +178,7 @@ image: ""
 - **Problem 2 (Sum of cubes)**  
   Find a formula for
   $$
-  R_n=1^3+2^3+\cdots+n^3,\qquad n\geq1.
+  R_n=1^3+2^3+\cdots+n^3,\qquad n\geqslant1.
   $$
 
   - **Observation 2.1 (From examples to a conjecture)**  
@@ -195,7 +195,7 @@ image: ""
     $$
     R_n=S_n^2=\left(\frac{n(n+1)}{2}\right)^2.
     $$
-    To establish it for every $n\geq1$, use **mathematical induction**.
+    To establish it for every $n\geqslant1$, use **mathematical induction**.
 
   - **Proof 2.2 (Induction)**  
     **Base case ($n=1$).** We have
@@ -203,7 +203,7 @@ image: ""
     R_1=1^3=1=S_1^2.
     $$
 
-    **Induction step ($k\to k+1$).** Assume that, for some integer $k\geq1$,
+    **Induction step ($k\to k+1$).** Assume that, for some integer $k\geqslant1$,
     $$
     R_k=S_k^2=\left(\frac{k(k+1)}{2}\right)^2.
     $$
@@ -224,7 +224,7 @@ image: ""
     \boxed{1^3+2^3+\cdots+n^3=\left(1+2+\cdots+n\right)^2
     =\left(\frac{n(n+1)}{2}\right)^2}
     $$
-    for every integer $n\geq1$.
+    for every integer $n\geqslant1$.
 
 ---
 
@@ -237,7 +237,7 @@ image: ""
   $$
   Since $243=3^5$, it is enough to prove the more general statement
   $$
-  3^k\mid N_{3^k}\qquad\text{for every integer }k\geq1.
+  3^k\mid N_{3^k}\qquad\text{for every integer }k\geqslant1.
   $$
 
   - **Observation 3.1 (Divisibility by $3$ and $9$)**  
@@ -289,7 +289,7 @@ image: ""
 
     Thus the first factor is divisible by $3^k$ by the induction hypothesis, and the second factor is divisible by $3$. Their product is therefore divisible by $3^{k+1}$.
 
-    By mathematical induction, $3^k\mid N_{3^k}$ for every $k\geq1$. Taking $k=5$ gives
+    By mathematical induction, $3^k\mid N_{3^k}$ for every $k\geqslant1$. Taking $k=5$ gives
     $$
     \boxed{243\mid\underbrace{11\cdots1}_{243\text{ ones}}}.
     $$
@@ -328,7 +328,7 @@ image: ""
     $$
     T_n=x^n+\frac{1}{x^n}.
     $$
-    For $n\geq2$, expanding the product gives
+    For $n\geqslant2$, expanding the product gives
     $$
     \begin{aligned}
     T_nT_1
@@ -349,13 +349,13 @@ image: ""
     T_2=T_1^2-2=k^2-2\in\mathbb{Z}.
     $$
 
-    **Induction step.** Assume that $T_{n-1}$ and $T_n$ are integers for some $n\geq2$. Since $k$ is an integer, the recurrence implies
+    **Induction step.** Assume that $T_{n-1}$ and $T_n$ are integers for some $n\geqslant2$. Since $k$ is an integer, the recurrence implies
     $$
     T_{n+1}=kT_n-T_{n-1}\in\mathbb{Z}.
     $$
     Therefore the pair $(T_{n-1},T_n)$ being integral implies that $(T_n,T_{n+1})$ is integral. Starting from $(T_1,T_2)$, mathematical induction yields
     $$
-    \boxed{x^n+\frac{1}{x^n}\in\mathbb{Z}\qquad\text{for every integer }n\geq1}.
+    \boxed{x^n+\frac{1}{x^n}\in\mathbb{Z}\qquad\text{for every integer }n\geqslant1}.
     $$
 
   - **Remark 4.4 (Why two base cases are needed)**  

@@ -16,19 +16,19 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
   Prove that every integer amount greater than $7$ dollars can be formed using coins of denominations $3$ and $5$ dollars.
 
   - **Solution 1.1 (Induction with two cases)**  
-    For each integer $m\geq8$, let $P(m)$ be the statement
+    For each integer $m\geqslant8$, let $P(m)$ be the statement
     $$
-    \exists a,b\in\mathbb{Z}_{\geq0}\quad m=3a+5b.
+    \exists a,b\in\mathbb{Z}_{\geqslant0}\quad m=3a+5b.
     $$
     The numbers $a$ and $b$ count the coins of the two denominations, so they must be nonnegative integers.
 
     **Base case ($m=8$).** Since $8=3+5$, take $a=b=1$.
 
-    **Induction step ($m\to m+1$).** Let $m\geq8$ and assume $P(m)$. Choose nonnegative integers $a,b$ such that $m=3a+5b$. We construct a representation of $m+1$.
+    **Induction step ($m\to m+1$).** Let $m\geqslant8$ and assume $P(m)$. Choose nonnegative integers $a,b$ such that $m=3a+5b$. We construct a representation of $m+1$.
 
-    **Case 1: $b\geq1$.** Replace one $5$-dollar coin with two $3$-dollar coins. Set
+    **Case 1: $b\geqslant1$.** Replace one $5$-dollar coin with two $3$-dollar coins. Set
     $$
-    c=a+2\geq0,\qquad d=b-1\geq0.
+    c=a+2\geqslant0,\qquad d=b-1\geqslant0.
     $$
     Both are integers, and
     $$
@@ -40,9 +40,9 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
     \end{aligned}
     $$
 
-    **Case 2: $b=0$.** Then $3a=m\geq8$, so $a\geq3$ because $a$ is an integer. Replace three $3$-dollar coins with two $5$-dollar coins. Set
+    **Case 2: $b=0$.** Then $3a=m\geqslant8$, so $a\geqslant3$ because $a$ is an integer. Replace three $3$-dollar coins with two $5$-dollar coins. Set
     $$
-    c=a-3\geq0,\qquad d=2\geq0.
+    c=a-3\geqslant0,\qquad d=2\geqslant0.
     $$
     Again both are integers, and
     $$
@@ -54,7 +54,7 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
     \end{aligned}
     $$
 
-    These cases exhaust all possible values of $b$. Thus $P(m+1)$ holds whenever $P(m)$ holds. By induction, **every integer amount $m\geq8$ has a representation** $m=3a+5b$ with $a,b\in\mathbb{Z}_{\geq0}$.
+    These cases exhaust all possible values of $b$. Thus $P(m+1)$ holds whenever $P(m)$ holds. By induction, **every integer amount $m\geqslant8$ has a representation** $m=3a+5b$ with $a,b\in\mathbb{Z}_{\geqslant0}$.
 
     **Key idea.** Increase the total value by $1$ while keeping every coin count nonnegative. The two replacements work because $2\cdot3-5=1$ and $2\cdot5-3\cdot3=1$.
 
@@ -71,13 +71,13 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
 
     **Base case ($n=1$).** We have $2^1=2>1$.
 
-    **Induction step ($n\to n+1$).** Let $n\geq1$ and assume $2^n>n$. Multiplying by $2>0$ gives
+    **Induction step ($n\to n+1$).** Let $n\geqslant1$ and assume $2^n>n$. Multiplying by $2>0$ gives
     $$
     2^{n+1}=2\cdot2^n>2n.
     $$
-    Since $n\geq1$, we also have $2n\geq n+1$. Therefore
+    Since $n\geqslant1$, we also have $2n\geqslant n+1$. Therefore
     $$
-    2^{n+1}>2n\geq n+1.
+    2^{n+1}>2n\geqslant n+1.
     $$
     This proves the next case, so induction establishes the inequality for every positive integer $n$.
 
@@ -93,7 +93,7 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
   One unit square is removed from a $128\times128$ square grid. Prove that the remaining region can be tiled with **L-trominoes**, each made of three unit squares forming a $2\times2$ square with one corner missing. Tiles may be rotated and must cover the region without gaps or overlaps.
 
   - **Solution 3.1 (Induction on the board size)**  
-    Since $128=2^7$, prove the stronger statement $P(n)$ for every integer $n\geq1$:
+    Since $128=2^7$, prove the stronger statement $P(n)$ for every integer $n\geqslant1$:
 
     **Every $2^n\times2^n$ board with any one unit square removed can be tiled with L-trominoes.**
 
@@ -109,7 +109,7 @@ An induction proof specifies a statement $P(n)$, proves the first case, and prov
     4. The uncovered part of $Q_1$ is a $2^n\times2^n$ board with its original square missing. In each other quadrant, the central square is already occupied by the new tromino, so the region still to be tiled is also a $2^n\times2^n$ board with one square excluded.
     5. Apply the induction hypothesis to each of these four regions. Their tilings are disjoint from one another and from the central tromino, and together they cover every remaining square of the large board.
 
-    Thus $P(n+1)$ follows from $P(n)$. By induction, $P(n)$ holds for every integer $n\geq1$. Taking $n=7$ proves the claim for the $128\times128$ board.
+    Thus $P(n+1)$ follows from $P(n)$. By induction, $P(n)$ holds for every integer $n\geqslant1$. Taking $n=7$ proves the claim for the $128\times128$ board.
 
     **Illustration of the construction on a $4\times4$ board.** Here `×` is the original missing square, the three `T` squares form the central L-tromino, and `·` marks a square still to be tiled. The lines separate the quadrants.
 

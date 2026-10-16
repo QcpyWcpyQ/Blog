@@ -392,7 +392,7 @@ image: ""
     For $z=a+bi\in\mathbb{C}$, define its **complex conjugate** and **modulus** by
     $$
     \overline{z}=a-bi,\qquad
-    |z|=\sqrt{a^2+b^2}\in\mathbb{R}_{\geq0}.
+    |z|=\sqrt{a^2+b^2}\in\mathbb{R}_{\geqslant0}.
     $$
     Their basic relation is
     $$
@@ -509,7 +509,7 @@ image: ""
     For example, $3+4=2$ in $\mathbb{F}_5$, because $7\equiv2\pmod5$.
 
   - **Supplementary explanation 9.2 (Why primality gives inverses)**  
-    If $1\leq a\leq p-1$, then $\gcd(a,p)=1$. By Bézout's identity, there are integers $u,v$ such that
+    If $1\leqslant a\leqslant p-1$, then $\gcd(a,p)=1$. By Bézout's identity, there are integers $u,v$ such that
     $$
     au+pv=1.
     $$

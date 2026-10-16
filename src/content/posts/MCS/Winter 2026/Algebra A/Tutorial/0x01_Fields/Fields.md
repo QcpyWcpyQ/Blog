@@ -99,7 +99,7 @@ image: ""
 ## Modular arithmetic and representatives
 
 - **Problem 3**  
-  Let $m\geq1$ be an integer. Define congruence modulo $m$ by
+  Let $m\geqslant1$ be an integer. Define congruence modulo $m$ by
   $$
   a\equiv b\pmod m\quad\Longleftrightarrow\quad m\mid(a-b).
   $$
@@ -157,7 +157,7 @@ image: ""
 ## When modular arithmetic gives a field
 
 - **Problem 4**  
-  Let $m\geq2$ be an integer. Prove that $\mathbb{Z}_m$ is a field if and only if $m$ is prime.
+  Let $m\geqslant2$ be an integer. Prove that $\mathbb{Z}_m$ is a field if and only if $m$ is prime.
 
   - **Solution 4.1**
 
@@ -185,9 +185,9 @@ image: ""
     \overline{a}+\overline{0}=\overline{a},\qquad
     \overline{a}+\overline{-a}=\overline{0}.
     $$
-    The multiplicative identity is $\overline{1}$, since $\overline{1}\,\overline{a}=\overline{a}$. Moreover, $\overline{1}\neq\overline{0}$ because $p\geq2$ does not divide $1$.
+    The multiplicative identity is $\overline{1}$, since $\overline{1}\,\overline{a}=\overline{a}$. Moreover, $\overline{1}\neq\overline{0}$ because $p\geqslant2$ does not divide $1$.
 
-    It remains to prove that every nonzero class has a multiplicative inverse. Let $\overline{a}\neq\overline{0}$ and choose its representative with $1\leq a\leq p-1$. Since $p$ is prime,
+    It remains to prove that every nonzero class has a multiplicative inverse. Let $\overline{a}\neq\overline{0}$ and choose its representative with $1\leqslant a\leqslant p-1$. Since $p$ is prime,
     $$
     \gcd(a,p)=1.
     $$
@@ -206,7 +206,7 @@ image: ""
 
     All field axioms hold, proving
     $$
-    \boxed{\mathbb{Z}_m\text{ is a field}\iff m\text{ is prime}\qquad(m\geq2)}.
+    \boxed{\mathbb{Z}_m\text{ is a field}\iff m\text{ is prime}\qquad(m\geqslant2)}.
     $$
 
     **Computing inverses.** In Bézout's identity $au+pv=1$, the coefficient $u$ supplies the inverse of $a$ modulo $p$: $\overline{a}^{\,-1}=\overline{u}$.

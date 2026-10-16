@@ -104,11 +104,11 @@ The recurring goal is to make calculations and information processing faster and
   
   **Specification.** Let $D$ be the dividend and $d$ the divisor. We require
   $$
-  D\in\mathbb{Z}_{\geq0},\qquad d\in\mathbb{Z}_{>0}.
+  D\in\mathbb{Z}_{\geqslant0},\qquad d\in\mathbb{Z}_{>0}.
   $$
   The output consists of nonnegative integers $q$ and $r$ such that
   $$
-  \boxed{D=qd+r\qquad\text{and}\qquad0\leq r<d}.
+  \boxed{D=qd+r\qquad\text{and}\qquad0\leqslant r<d}.
   $$
   Here $q$ is the **quotient**, $r$ is the **remainder**, and `nat` in the pseudocode includes $0$.
   
@@ -204,9 +204,9 @@ Algorithm analysis considers two different questions: **correctness**, whether t
 
   | Concept | When it applies | Division example |
   | --- | --- | --- |
-  | **Precondition** | Must hold before execution begins | $D\geq0$ and $d>0$ |
-  | **Postcondition** | Must hold when execution finishes | $D=qd+r$ and $0\leq r<d$ |
-  | **Loop invariant** | Holds before and after every complete loop iteration | $D=qd+r$, with $q,r\geq0$ |
+  | **Precondition** | Must hold before execution begins | $D\geqslant0$ and $d>0$ |
+  | **Postcondition** | Must hold when execution finishes | $D=qd+r$ and $0\leqslant r<d$ |
+  | **Loop invariant** | Holds before and after every complete loop iteration | $D=qd+r$, with $q,r\geqslant0$ |
 
   The slide emphasizes the equality $D=qd+r$. Tracking nonnegativity as well makes the remainder bound explicit. An invariant concerns the loop boundaries; it need not hold between the two assignments inside the body.
 
@@ -217,7 +217,7 @@ Algorithm analysis considers two different questions: **correctness**, whether t
     $$
     and both $q$ and $r$ are nonnegative.
 
-    **Preservation.** Suppose $D=qd+r$ and the guard $r\geq d$ is true. After one complete iteration,
+    **Preservation.** Suppose $D=qd+r$ and the guard $r\geqslant d$ is true. After one complete iteration,
     $$
     q'=q+1,\qquad r'=r-d.
     $$
@@ -225,11 +225,11 @@ Algorithm analysis considers two different questions: **correctness**, whether t
     $$
     q'd+r'=(q+1)d+(r-d)=qd+r=D.
     $$
-    Also, $q'\geq0$ and $r'\geq0$. Thus the invariant is preserved.
+    Also, $q'\geqslant0$ and $r'\geqslant0$. Thus the invariant is preserved.
 
     **Postcondition on exit.** When the loop stops, the guard is false, so $r<d$. Combining this with the invariant gives
     $$
-    D=qd+r,\qquad0\leq r<d.
+    D=qd+r,\qquad0\leqslant r<d.
     $$
 
     **Termination.** During every iteration, $r$ decreases by the positive integer $d$ and remains nonnegative. A nonnegative integer cannot decrease strictly forever, so the loop eventually terminates.
@@ -277,7 +277,7 @@ Algorithm analysis considers two different questions: **correctness**, whether t
 
     For each valid case, check **both** parts of the postcondition:
     $$
-    D=qd+r\qquad\text{and}\qquad0\leq r<d.
+    D=qd+r\qquad\text{and}\qquad0\leqslant r<d.
     $$
     With a zero divisor, subtraction would not decrease the remainder. The input must be excluded or rejected before running this algorithm. The C function shown earlier checks neither input validity nor returns the remainder, so its direct return-value tests can verify only the expected quotient.
 

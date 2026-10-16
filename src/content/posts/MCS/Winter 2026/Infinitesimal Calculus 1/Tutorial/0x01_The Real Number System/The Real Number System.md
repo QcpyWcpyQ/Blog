@@ -15,23 +15,23 @@ image: ""
 
   A real number $u$ is an **upper bound (UB)** of $A$ if
   $$
-  x\leq u\qquad\text{for every }x\in A.
+  x\leqslant u\qquad\text{for every }x\in A.
   $$
   A real number $\ell$ is a **lower bound (LB)** of $A$ if
   $$
-  \ell\leq x\qquad\text{for every }x\in A.
+  \ell\leqslant x\qquad\text{for every }x\in A.
   $$
   The set is **bounded above** if it has an upper bound, **bounded below** if it has a lower bound, and **bounded** if it has both.
 
   The **supremum** of $A$, denoted $\sup A$, is its least upper bound. Thus $s=\sup A$ means:
 
-  1. $x\leq s$ for every $x\in A$.
-  2. If $u$ is any upper bound of $A$, then $s\leq u$.
+  1. $x\leqslant s$ for every $x\in A$.
+  2. If $u$ is any upper bound of $A$, then $s\leqslant u$.
 
   The **infimum** of $A$, denoted $\inf A$, is its greatest lower bound. Thus $m=\inf A$ means:
 
-  1. $m\leq x$ for every $x\in A$.
-  2. If $\ell$ is any lower bound of $A$, then $\ell\leq m$.
+  1. $m\leqslant x$ for every $x\in A$.
+  2. If $\ell$ is any lower bound of $A$, then $\ell\leqslant m$.
 
   - **Completeness axiom 1.1**  
     Every **nonempty** subset of $\mathbb{R}$ that is bounded above has a supremum in $\mathbb{R}$.
@@ -57,12 +57,12 @@ image: ""
   Here we use $\mathbb{N}=\{1,2,3,\ldots\}$, as in the original calculations.
 
   - **Solution 2.1 (The finite set $A$)**  
-    Every element of $A$ is at most $2$, so $2$ is an upper bound. Since $2\in A$, every upper bound $u$ must satisfy $2\leq u$. Hence
+    Every element of $A$ is at most $2$, so $2$ is an upper bound. Since $2\in A$, every upper bound $u$ must satisfy $2\leqslant u$. Hence
     $$
     \sup A=\max A=2.
     $$
 
-    Every element of $A$ is at least $0$, so $0$ is a lower bound. Since $0\in A$, every lower bound $\ell$ must satisfy $\ell\leq0$. Hence
+    Every element of $A$ is at least $0$, so $0$ is a lower bound. Since $0\in A$, every lower bound $\ell$ must satisfy $\ell\leqslant0$. Hence
     $$
     \inf A=\min A=0.
     $$
@@ -72,20 +72,20 @@ image: ""
 
     If $y<1$, then $1\in B$ and $1>y$, so $y$ is not an upper bound.
 
-    If $1\leq y<2$, choose
+    If $1\leqslant y<2$, choose
     $$
     x=\frac{y+2}{2}.
     $$
     Then
     $$
-    1\leq y<\frac{y+2}{2}<2,
+    1\leqslant y<\frac{y+2}{2}<2,
     $$
     so $x\in B$ and $x>y$. Again, $y$ is not an upper bound. These two cases cover every $y<2$, proving
     $$
     \sup B=2.
     $$
 
-    **Infimum.** Every $x\in B$ satisfies $1\leq x$, so $1$ is a lower bound. Because $1\in B$, every lower bound $\ell$ must satisfy $\ell\leq1$. Therefore
+    **Infimum.** Every $x\in B$ satisfies $1\leqslant x$, so $1$ is a lower bound. Because $1\in B$, every lower bound $\ell$ must satisfy $\ell\leqslant1$. Therefore
     $$
     \inf B=\min B=1.
     $$
@@ -102,24 +102,24 @@ image: ""
     c_1=-\frac73,\qquad c_2=-10,\qquad c_3=13.
     $$
 
-    **Infimum.** We show that $-10\leq c_n$ for every $n\in\mathbb{N}$:
+    **Infimum.** We show that $-10\leqslant c_n$ for every $n\in\mathbb{N}$:
 
     - For $n=1$, $c_1=-7/3>-10$.
     - For $n=2$, $c_2=-10$.
-    - For $n\geq3$, both $3n+4$ and $2n-5$ are positive, so $c_n>0>-10$.
+    - For $n\geqslant3$, both $3n+4$ and $2n-5$ are positive, so $c_n>0>-10$.
 
     Thus $-10$ is a lower bound. Since $c_2=-10\in C$, every lower bound is at most $-10$. Therefore
     $$
     \inf C=\min C=-10.
     $$
 
-    **Supremum.** We show that $c_n\leq13$ for every $n\in\mathbb{N}$. The cases $n=1,2$ follow from the values above. For $n\geq3$, the denominator is positive and
+    **Supremum.** We show that $c_n\leqslant13$ for every $n\in\mathbb{N}$. The cases $n=1,2$ follow from the values above. For $n\geqslant3$, the denominator is positive and
     $$
     \begin{aligned}
     13-c_n
       &=\frac{13(2n-5)-(3n+4)}{2n-5}\\
       &=\frac{23n-69}{2n-5}\\
-      &=\frac{23(n-3)}{2n-5}\geq0.
+      &=\frac{23(n-3)}{2n-5}\geqslant0.
     \end{aligned}
     $$
     Hence $13$ is an upper bound. Since $c_3=13\in C$, every upper bound is at least $13$. Therefore
@@ -152,7 +152,7 @@ image: ""
   - **Proof 3.1**  
     **Step 1: prove that $-A$ has a supremum.** Because $A$ is nonempty, $-A$ is also nonempty. Choose a lower bound $\ell$ of $A$. For every $a\in A$,
     $$
-    \ell\leq a\quad\Longrightarrow\quad -a\leq-\ell.
+    \ell\leqslant a\quad\Longrightarrow\quad -a\leqslant-\ell.
     $$
     Thus $-\ell$ is an upper bound of $-A$. By completeness, the real number
     $$
@@ -162,17 +162,17 @@ image: ""
 
     **Step 2: show that $-s$ is a lower bound of $A$.** For every $a\in A$, we have $-a\in-A$, and hence
     $$
-    -a\leq s\quad\Longrightarrow\quad -s\leq a.
+    -a\leqslant s\quad\Longrightarrow\quad -s\leqslant a.
     $$
     Therefore $-s$ is a lower bound.
 
     **Step 3: show that $-s$ is the greatest lower bound.** Let $b$ be any lower bound of $A$. Then
     $$
-    b\leq a\quad\text{for every }a\in A,
+    b\leqslant a\quad\text{for every }a\in A,
     $$
     so $-b$ is an upper bound of $-A$. Since $s$ is the least upper bound of $-A$,
     $$
-    s\leq-b\quad\Longrightarrow\quad b\leq-s.
+    s\leqslant-b\quad\Longrightarrow\quad b\leqslant-s.
     $$
     Thus every lower bound of $A$ is at most $-s$. Combining Steps 2 and 3 gives
     $$

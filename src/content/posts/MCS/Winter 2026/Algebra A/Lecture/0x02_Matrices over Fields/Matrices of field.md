@@ -14,7 +14,7 @@ image: ""
   Let $\mathbb{F}$ be a field and let $m,n$ be positive integers. The set of all matrices with $m$ rows, $n$ columns, and entries in $\mathbb{F}$ is denoted by
   $$
   M_{m\times n}(\mathbb{F})
-  =\{A=(A_{ij}):A_{ij}\in\mathbb{F},\ 1\leq i\leq m,\ 1\leq j\leq n\}.
+  =\{A=(A_{ij}):A_{ij}\in\mathbb{F},\ 1\leqslant i\leqslant m,\ 1\leqslant j\leqslant n\}.
   $$
   The entry $A_{ij}$ is in row $i$ and column $j$. Two matrices are equal if they have the same size and all corresponding entries are equal.
 

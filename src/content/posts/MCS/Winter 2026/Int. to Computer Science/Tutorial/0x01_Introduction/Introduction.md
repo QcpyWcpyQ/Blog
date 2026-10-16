@@ -52,16 +52,16 @@ The **specification determines what counts as a correct result**. Design the alg
 
     **Precondition (`require`):**
     $$
-    D\geq0,\qquad d>0.
+    D\geqslant0,\qquad d>0.
     $$
     **Postcondition (`ensure`):**
     $$
-    \boxed{D=qd+r\qquad\text{and}\qquad0\leq r<d}.
+    \boxed{D=qd+r\qquad\text{and}\qquad0\leqslant r<d}.
     $$
 
     The precondition states which inputs the algorithm promises to handle. The postcondition states what every result for a valid input must satisfy.
 
-    **Why must $d>0$?** With $d=0$, the required interval $0\leq r<0$ contains no values. Moreover, subtracting zero would never reduce the remainder. Such an input is outside the contract and must be excluded or rejected by the surrounding program.
+    **Why must $d>0$?** With $d=0$, the required interval $0\leqslant r<0$ contains no values. Moreover, subtracting zero would never reduce the remainder. Such an input is outside the contract and must be excluded or rejected by the surrounding program.
 
     **Clarification.** The slide's statement that behavior is undefined outside `require` means the specification makes no guarantee for those inputs. Whether a particular C execution has undefined behavior in the language's technical sense depends on what that execution does.
 
@@ -100,7 +100,7 @@ The **specification determines what counts as a correct result**. Design the alg
 
     The result satisfies both required conditions:
     $$
-    17=3\cdot5+2,\qquad0\leq2<5.
+    17=3\cdot5+2,\qquad0\leqslant2<5.
     $$
 
   - **Supplementary explanation 1.4 (Why the algorithm works)**  
@@ -108,7 +108,7 @@ The **specification determines what counts as a correct result**. Design the alg
     $$
     q'd+r'=(q+1)d+(r-d)=qd+r=D.
     $$
-    The guard $r\geq d$ ensures that $r'$ remains nonnegative. When the loop stops, $r<d$, so the invariant gives the full postcondition. Since $d>0$, the nonnegative integer $r$ strictly decreases on every iteration, which also proves termination.
+    The guard $r\geqslant d$ ensures that $r'$ remains nonnegative. When the loop stops, $r<d$, so the invariant gives the full postcondition. Since $d>0$, the nonnegative integer $r$ strictly decreases on every iteration, which also proves termination.
 
 ---
 
@@ -134,7 +134,7 @@ The **specification determines what counts as a correct result**. Design the alg
   | Pseudocode feature | C implementation |
   | --- | --- |
   | Assignment `:=` | `=` |
-  | Comparison $\geq$ | `>=` |
+  | Comparison $\geqslant$ | `>=` |
   | `while condition:` | `while (condition) { ... }` |
   | Increase quotient by one | `quotient++` |
   | Natural-number variables | `int`, subject to input restrictions and its representable range |
@@ -278,7 +278,7 @@ The **specification determines what counts as a correct result**. Design the alg
 
   Check both
   $$
-  D=qd+r\qquad\text{and}\qquad0\leq r<d.
+  D=qd+r\qquad\text{and}\qquad0\leqslant r<d.
   $$
   Also consider boundaries and inputs that exercise many loop iterations, such as a large dividend with a small positive divisor.
 

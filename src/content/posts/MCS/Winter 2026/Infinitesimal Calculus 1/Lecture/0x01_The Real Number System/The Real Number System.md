@@ -260,23 +260,23 @@ The axioms assert the existence of identities and inverses; the next properties 
 ## Order on the real numbers
 
 - **Order axioms 4**  
-  The relation $\leq$ on $\mathbb{R}$ satisfies:
+  The relation $\leqslant$ on $\mathbb{R}$ satisfies:
 
-  1. **Reflexivity:** $a\leq a$.
-  2. **Transitivity:** if $a\leq b$ and $b\leq c$, then $a\leq c$.
-  3. **Antisymmetry:** if $a\leq b$ and $b\leq a$, then $a=b$.
+  1. **Reflexivity:** $a\leqslant a$.
+  2. **Transitivity:** if $a\leqslant b$ and $b\leqslant c$, then $a\leqslant c$.
+  3. **Antisymmetry:** if $a\leqslant b$ and $b\leqslant a$, then $a=b$.
   4. **Trichotomy:** exactly one of $a<b$, $a=b$, and $a>b$ holds.
   5. **Compatibility with the field operations:**
      $$
-     a\leq b\quad\Longrightarrow\quad a+c\leq b+c
+     a\leqslant b\quad\Longrightarrow\quad a+c\leqslant b+c
      \qquad\text{for every }c\in\mathbb{R},
      $$
      and
      $$
-     a\leq b,\ c>0\quad\Longrightarrow\quad ac\leq bc.
+     a\leqslant b,\ c>0\quad\Longrightarrow\quad ac\leqslant bc.
      $$
 
-  Here $a<b$ means $a\leq b$ and $a\neq b$. The notation $a\geq b$ means $b\leq a$, and $a>b$ means $b<a$.
+  Here $a<b$ means $a\leqslant b$ and $a\neq b$. The notation $a\geqslant b$ means $b\leqslant a$, and $a>b$ means $b<a$.
 
   A number is **positive** if it is greater than $0$ and **negative** if it is less than $0$. By trichotomy, every real number is positive, zero, or negative, with exactly one of these possibilities holding.
 
@@ -289,17 +289,17 @@ The axioms assert the existence of identities and inverses; the next properties 
   1. **Translation preserves all comparisons.** For every real $c$,
      $$
      \begin{aligned}
-     a\leq b&\iff a+c\leq b+c,\\
+     a\leqslant b&\iff a+c\leqslant b+c,\\
      a<b&\iff a+c<b+c,\\
-     a\geq b&\iff a+c\geq b+c,\\
+     a\geqslant b&\iff a+c\geqslant b+c,\\
      a>b&\iff a+c>b+c.
      \end{aligned}
      $$
   2. **Comparison with a difference.**
      $$
      \begin{aligned}
-     a\leq b&\iff0\leq b-a, & a<b&\iff0<b-a,\\
-     a\geq b&\iff0\geq b-a, & a>b&\iff0>b-a.
+     a\leqslant b&\iff0\leqslant b-a, & a<b&\iff0<b-a,\\
+     a\geqslant b&\iff0\geqslant b-a, & a>b&\iff0>b-a.
      \end{aligned}
      $$
   3. **Multiplication by a positive number preserves strict order.** If $c>0$, then
@@ -307,26 +307,26 @@ The axioms assert the existence of identities and inverses; the next properties 
      a<b\Longrightarrow ac<bc,\qquad
      a>b\Longrightarrow ac>bc.
      $$
-  4. **Adding inequalities.** If $a\leq b$ and $c\leq d$, then
+  4. **Adding inequalities.** If $a\leqslant b$ and $c\leqslant d$, then
      $$
-     a+c\leq b+d.
+     a+c\leqslant b+d.
      $$
      If at least one of the two assumed inequalities is strict, then $a+c<b+d$.
   5. **Negation reverses order.**
      $$
-     a\leq b\iff-a\geq-b,\qquad
+     a\leqslant b\iff-a\geqslant-b,\qquad
      a<b\iff-a>-b.
      $$
-     Interchanging $a$ and $b$ gives the versions for $\geq$ and $>$.
+     Interchanging $a$ and $b$ gives the versions for $\geqslant$ and $>$.
   6. **Multiplication by a negative number reverses order.** If $c<0$, then
      $$
-     a\leq b\Longrightarrow ac\geq bc,\qquad
+     a\leqslant b\Longrightarrow ac\geqslant bc,\qquad
      a<b\Longrightarrow ac>bc.
      $$
-     Interchanging $a$ and $b$ gives the versions for $\geq$ and $>$.
+     Interchanging $a$ and $b$ gives the versions for $\geqslant$ and $>$.
   7. **Squares.** For every real $a$,
      $$
-     a^2\geq0,\qquad a^2=0\iff a=0.
+     a^2\geqslant0,\qquad a^2=0\iff a=0.
      $$
   8. **The sign of $1$.** We have $1>0$ and $-1<0$. Consequently, no real number satisfies $x^2=-1$.
   9. **The sign of a reciprocal.** For $a\neq0$,
@@ -345,29 +345,29 @@ The axioms assert the existence of identities and inverses; the next properties 
 
   - **Proof 4.1.1**
 
-    **1. Translation.** The forward implication for $\leq$ is an order axiom. If $a+c\leq b+c$, adding $-c$ gives $a\leq b$, proving the converse.
+    **1. Translation.** The forward implication for $\leqslant$ is an order axiom. If $a+c\leqslant b+c$, adding $-c$ gives $a\leqslant b$, proving the converse.
 
-    If $a<b$, the axiom gives $a+c\leq b+c$. Equality would imply $a=b$ by additive cancellation, contradicting $a<b$. Hence $a+c<b+c$. Adding $-c$ proves the converse for strict inequalities as well. Interchanging $a$ and $b$ proves the statements for $\geq$ and $>$.
+    If $a<b$, the axiom gives $a+c\leqslant b+c$. Equality would imply $a=b$ by additive cancellation, contradicting $a<b$. Hence $a+c<b+c$. Adding $-c$ proves the converse for strict inequalities as well. Interchanging $a$ and $b$ proves the statements for $\geqslant$ and $>$.
 
     **2. Differences.** Apply part 1 with $c=-a$:
     $$
-    a\leq b\iff a+(-a)\leq b+(-a)\iff0\leq b-a.
+    a\leqslant b\iff a+(-a)\leqslant b+(-a)\iff0\leqslant b-a.
     $$
-    The same argument with $<$, $\geq$, or $>$ gives the other three equivalences. Every implication is reversible because adding $a$ restores the original comparison.
+    The same argument with $<$, $\geqslant$, or $>$ gives the other three equivalences. Every implication is reversible because adding $a$ restores the original comparison.
 
-    **3. Multiplication by a positive number.** Suppose $a<b$ and $c>0$. Compatibility gives $ac\leq bc$. If $ac=bc$, then $a=b$ by multiplicative cancellation, since $c\neq0$. This contradicts $a<b$, so $ac<bc$. Interchanging $a$ and $b$ proves the version for $>$.
+    **3. Multiplication by a positive number.** Suppose $a<b$ and $c>0$. Compatibility gives $ac\leqslant bc$. If $ac=bc$, then $a=b$ by multiplicative cancellation, since $c\neq0$. This contradicts $a<b$, so $ac<bc$. Interchanging $a$ and $b$ proves the version for $>$.
 
     **4. Adding inequalities.** By translation and transitivity,
     $$
-    a+c\leq b+c=c+b\leq d+b=b+d.
+    a+c\leqslant b+c=c+b\leqslant d+b=b+d.
     $$
     If $a<b$, the first comparison is strict; if $c<d$, the second comparison is strict. In either case, the final comparison is strict.
 
-    To justify this last step directly, if $u<v\leq w$, transitivity gives $u\leq w$. Equality $u=w$ would give $v\leq u$, contradicting $u<v$ by antisymmetry. Thus $u<w$. If $u\leq v<w$, equality $u=w$ would imply $w\leq v$, contradicting $v<w$. Thus $u<w$ in this case too.
+    To justify this last step directly, if $u<v\leqslant w$, transitivity gives $u\leqslant w$. Equality $u=w$ would give $v\leqslant u$, contradicting $u<v$ by antisymmetry. Thus $u<w$. If $u\leqslant v<w$, equality $u=w$ would imply $w\leqslant v$, contradicting $v<w$. Thus $u<w$ in this case too.
 
     **5. Negation.** Add $(-a)+(-b)$ to both sides and simplify:
     $$
-    a\leq b\iff-b\leq-a\iff-a\geq-b.
+    a\leqslant b\iff-b\leqslant-a\iff-a\geqslant-b.
     $$
     Translation preserves strict comparisons too, so
     $$
@@ -375,13 +375,13 @@ The axioms assert the existence of identities and inverses; the next properties 
     $$
     In particular, $c<0$ implies $-c>0$.
 
-    **6. Multiplication by a negative number.** If $c<0$, then $-c>0$. For $a\leq b$, the positive-multiplier axiom gives
+    **6. Multiplication by a negative number.** If $c<0$, then $-c>0$. For $a\leqslant b$, the positive-multiplier axiom gives
     $$
-    a(-c)\leq b(-c).
+    a(-c)\leqslant b(-c).
     $$
     Using the sign rules from Properties 2.1 and then part 5,
     $$
-    -(ac)\leq-(bc)\quad\Longrightarrow\quad ac\geq bc.
+    -(ac)\leqslant-(bc)\quad\Longrightarrow\quad ac\geqslant bc.
     $$
     If $a<b$, part 3 gives $a(-c)<b(-c)$, and part 5 then gives $ac>bc$.
 
@@ -395,7 +395,7 @@ The axioms assert the existence of identities and inverses; the next properties 
 
     **8. The sign of $1$.** Part 7 gives
     $$
-    1=1\cdot1=1^2\geq0.
+    1=1\cdot1=1^2\geqslant0.
     $$
     Since the field axioms require $1\neq0$, it follows that $1>0$. Negation reverses order, so $-1<0$.
 
@@ -449,7 +449,7 @@ The axioms assert the existence of identities and inverses; the next properties 
   $$
   \mathbb{Z}=(-\mathbb{N})\cup\{0\}\cup\mathbb{N}.
   $$
-  When zero is included, write $\mathbb{Z}_{\geq0}=\{0,1,2,\ldots\}$ explicitly.
+  When zero is included, write $\mathbb{Z}_{\geqslant0}=\{0,1,2,\ldots\}$ explicitly.
 
 ---
 
@@ -473,15 +473,15 @@ The axioms assert the existence of identities and inverses; the next properties 
   | Interval | Definition | Endpoints included |
   | --- | --- | --- |
   | $(a,b)$, for $a<b$ | $\{x\in\mathbb{R}:a<x<b\}$ | Neither |
-  | $[a,b]$, for $a\leq b$ | $\{x\in\mathbb{R}:a\leq x\leq b\}$ | Both |
-  | $[a,b)$, for $a<b$ | $\{x\in\mathbb{R}:a\leq x<b\}$ | Only $a$ |
-  | $(a,b]$, for $a<b$ | $\{x\in\mathbb{R}:a<x\leq b\}$ | Only $b$ |
+  | $[a,b]$, for $a\leqslant b$ | $\{x\in\mathbb{R}:a\leqslant x\leqslant b\}$ | Both |
+  | $[a,b)$, for $a<b$ | $\{x\in\mathbb{R}:a\leqslant x<b\}$ | Only $a$ |
+  | $(a,b]$, for $a<b$ | $\{x\in\mathbb{R}:a<x\leqslant b\}$ | Only $b$ |
 
   The interval $(a,b)$ is **open**, and $[a,b]$ is **closed**. The other two are **half-open** intervals. In the degenerate closed case,
   $$
   [a,a]=\{a\},
   $$
-  because $a\leq x\leq a$ implies $x=a$ by antisymmetry, and $a$ satisfies these inequalities by reflexivity.
+  because $a\leqslant x\leqslant a$ implies $x=a$ by antisymmetry, and $a$ satisfies these inequalities by reflexivity.
 
 ---
 
@@ -497,20 +497,20 @@ The axioms assert the existence of identities and inverses; the next properties 
   For $x\in\mathbb{R}$, define
   $$
   |x|:=\begin{cases}
-  x,&x\geq0,\\
+  x,&x\geqslant0,\\
   -x,&x<0.
   \end{cases}
   $$
 
   - **Properties 9.1**
 
-    1. **Nonnegativity and the zero case:** $|x|\geq0$, and $|x|=0$ if and only if $x=0$.
+    1. **Nonnegativity and the zero case:** $|x|\geqslant0$, and $|x|=0$ if and only if $x=0$.
     2. **Symmetry under negation:** $|-x|=|x|$.
     3. **Multiplicativity:** $|ab|=|a|\,|b|$ for all real $a,b$.
 
   - **Proof 9.1.1**
 
-    **1. Nonnegativity and the zero case.** If $x>0$, then $|x|=x>0$. If $x=0$, then $|x|=0$. If $x<0$, then $-x>0$ and $|x|=-x>0$. These three cases show both that $|x|\geq0$ always and that equality holds exactly for $x=0$.
+    **1. Nonnegativity and the zero case.** If $x>0$, then $|x|=x>0$. If $x=0$, then $|x|=0$. If $x<0$, then $-x>0$ and $|x|=-x>0$. These three cases show both that $|x|\geqslant0$ always and that equality holds exactly for $x=0$.
 
     **2. Symmetry.** Again consider the sign of $x$:
 
@@ -524,9 +524,9 @@ The axioms assert the existence of identities and inverses; the next properties 
 
     | Signs of $a,b$ | Sign of $ab$ | Absolute value of the product | Product of the absolute values |
     | --- | --- | --- | --- |
-    | $a\geq0$, $b\geq0$ | $ab\geq0$ | $\lvert ab\rvert=ab$ | $\lvert a\rvert\,\lvert b\rvert=ab$ |
-    | $a<0$, $b\geq0$ | $ab\leq0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=(-a)b=-ab$ |
-    | $a\geq0$, $b<0$ | $ab\leq0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=a(-b)=-ab$ |
+    | $a\geqslant0$, $b\geqslant0$ | $ab\geqslant0$ | $\lvert ab\rvert=ab$ | $\lvert a\rvert\,\lvert b\rvert=ab$ |
+    | $a<0$, $b\geqslant0$ | $ab\leqslant0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=(-a)b=-ab$ |
+    | $a\geqslant0$, $b<0$ | $ab\leqslant0$ | $\lvert ab\rvert=-ab$ | $\lvert a\rvert\,\lvert b\rvert=a(-b)=-ab$ |
     | $a<0$, $b<0$ | $ab>0$ | $\lvert ab\rvert=ab$ | $\lvert a\rvert\,\lvert b\rvert=(-a)(-b)=ab$ |
 
     In the two middle rows, if $ab=0$, the formula $|ab|=-ab=0$ still holds. The cases cover every pair of real numbers, so

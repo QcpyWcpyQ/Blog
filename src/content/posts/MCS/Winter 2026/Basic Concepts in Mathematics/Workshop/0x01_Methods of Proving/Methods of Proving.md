@@ -12,7 +12,7 @@ image: ""
   Can $25$ HKD be exchanged for exactly ten coins of denominations $1$, $3$, and $5$ HKD?
 
   - **Solution 1.1 (Parity of the total)**  
-    **No.** Let $x,y,z\in\mathbb{Z}_{\geq0}$ be the numbers of $1$-, $3$-, and $5$-HKD coins. Exactly ten coins means
+    **No.** Let $x,y,z\in\mathbb{Z}_{\geqslant0}$ be the numbers of $1$-, $3$-, and $5$-HKD coins. Exactly ten coins means
     $$
     x+y+z=10.
     $$
@@ -44,7 +44,7 @@ image: ""
     $$
     For even $n$, choose a fixed $v>0$ and set
     $$
-    \omega_i=(-1)^{i-1}\frac{v}{r_i},\qquad1\leq i\leq n.
+    \omega_i=(-1)^{i-1}\frac{v}{r_i},\qquad1\leqslant i\leqslant n.
     $$
     Every contact satisfies this condition, including the contact between gears $n$ and $1$.
 
@@ -94,7 +94,7 @@ image: ""
 - **Exercise 5**  
   All dominoes in a standard set are arranged in one chain, each tile used exactly once, with equal labels at every join. If one exposed end is labelled $5$, what can be at the other exposed end?
 
-  Here the **standard double-six set** has one tile $\{a,b\}$ for each pair $0\leq a\leq b\leq6$, including the doubles. A blank half is labelled $0$.
+  Here the **standard double-six set** has one tile $\{a,b\}$ for each pair $0\leqslant a\leqslant b\leqslant6$, including the doubles. A blank half is labelled $0$.
 
   - **Solution 5.1 (Pairing equal labels)**  
     The other exposed end must also be **$5$**.
@@ -113,7 +113,7 @@ image: ""
     $$
     Therefore $e_k$ is even for every label $k$.
 
-    One exposed end is labelled $5$, so $e_5\geq1$. Since there are only two exposed ends in total and $e_5$ is even, we must have $e_5=2$. Hence both ends are labelled $5$.
+    One exposed end is labelled $5$, so $e_5\geqslant1$. Since there are only two exposed ends in total and $e_5$ is even, we must have $e_5=2$. Hence both ends are labelled $5$.
 
     **Key idea.** Count occurrences of a label on tile halves. A double contributes two occurrences of its label; its two halves must both be counted.
 
