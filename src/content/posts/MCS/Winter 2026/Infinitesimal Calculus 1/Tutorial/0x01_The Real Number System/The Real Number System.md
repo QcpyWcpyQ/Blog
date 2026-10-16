@@ -181,3 +181,137 @@ image: ""
 
   - **Remark 3.2 (The role of completeness)**  
     Negation reverses order and turns lower bounds of $A$ into upper bounds of $-A$. Completeness supplies $\sup(-A)$, and the proof constructs $\inf A$ from it. No separate assumption that $\inf A$ already exists is needed.
+
+---
+
+- **Exercise 4**  
+  Let $a\in\mathbb{R}\setminus\{0\}$. Prove that
+  $$
+  a>0\iff a^{-1}>0,\qquad a<0\iff a^{-1}<0.
+  $$
+
+  - **Proof 4.1 (A nonzero number and its inverse have the same sign)**  
+    Put $b=a^{-1}$. Then $ab=ba=1>0$, so $b\neq0$. We use the order properties that multiplication by a positive number preserves inequalities, while multiplication by a negative number reverses them.
+
+    **If $a>0$, then $b>0$.** Suppose instead that $b\leqslant0$. Multiplying by the positive number $a$ gives
+    $$
+    ab\leqslant a\cdot0=0,
+    $$
+    contradicting $ab=1>0$. Hence $b=a^{-1}>0$.
+
+    **If $a<0$, then $b<0$.** Suppose instead that $b\geqslant0$. Multiplying by the negative number $a$ reverses the inequality, so
+    $$
+    ab\leqslant a\cdot0=0,
+    $$
+    again contradicting $ab=1>0$. Hence $b=a^{-1}<0$.
+
+    **Converses.** Since $ba=1$, uniqueness of the multiplicative inverse gives
+    $$
+    b^{-1}=a,\qquad\text{that is, }(a^{-1})^{-1}=a.
+    $$
+    Applying the two implications just proved to the nonzero number $b$ gives
+    $$
+    b>0\Longrightarrow a=b^{-1}>0,\qquad
+    b<0\Longrightarrow a=b^{-1}<0.
+    $$
+    Thus both equivalences hold:
+    $$
+    \boxed{a>0\iff a^{-1}>0,\qquad a<0\iff a^{-1}<0}.
+    $$
+
+---
+
+- **Exercise 5**  
+  Let $a,b\in\mathbb{R}$. Prove that
+  $$
+  ab>0\iff(a>0\land b>0)\lor(a<0\land b<0).
+  $$
+
+  - **Proof 5.1 (A product is positive exactly when its factors have the same nonzero sign)**
+
+    **Forward direction.** Suppose $ab>0$. Neither factor can be zero, because a zero factor would give $ab=0$. In particular, trichotomy gives either $a>0$ or $a<0$.
+
+    - If $a>0$, Exercise 4 gives $a^{-1}>0$. Multiplying $ab>0$ by $a^{-1}$ preserves the inequality:
+      $$
+      a^{-1}(ab)>a^{-1}\cdot0
+      \quad\Longrightarrow\quad b>0.
+      $$
+      Thus $a>0$ and $b>0$.
+
+    - If $a<0$, Exercise 4 gives $a^{-1}<0$. Multiplying $ab>0$ by $a^{-1}$ reverses the inequality:
+      $$
+      a^{-1}(ab)<a^{-1}\cdot0
+      \quad\Longrightarrow\quad b<0.
+      $$
+      Thus $a<0$ and $b<0$.
+
+    These cases prove the forward implication.
+
+    **Reverse direction.** If $a>0$ and $b>0$, multiply $b>0$ by $a>0$ to obtain
+    $$
+    ab>a\cdot0=0.
+    $$
+    If $a<0$ and $b<0$, multiply $b<0$ by $a<0$ and reverse the inequality to obtain
+    $$
+    ab>a\cdot0=0.
+    $$
+    Hence either pair of sign conditions implies $ab>0$, completing the equivalence.
+
+---
+
+- **Exercise 6**  
+  Solve in $\mathbb{R}$.
+
+  1. $(x-7)(2x+8)>0$.
+  2. $\dfrac{x^2+3x-19}{x-5}>3$.
+
+  - **Solution 6.1 (The product inequality)**  
+    Both factors are defined for every real $x$. By Exercise 5, their product is positive exactly when both factors are positive or both are negative:
+    $$
+    \begin{aligned}
+    (x-7)(2x+8)>0
+    &\iff
+    \bigl(x-7>0\land 2x+8>0\bigr)\\
+    &\qquad\lor\bigl(x-7<0\land 2x+8<0\bigr)\\
+    &\iff
+    \bigl(x>7\land x>-4\bigr)
+    \lor\bigl(x<7\land x<-4\bigr)\\
+    &\iff x>7\lor x<-4.
+    \end{aligned}
+    $$
+    Therefore the solution set is
+    $$
+    \boxed{(-\infty,-4)\cup(7,\infty)}.
+    $$
+    The endpoints $-4$ and $7$ are excluded because the product is zero there, while the inequality is strict.
+
+  - **Solution 6.2 (The rational inequality)**
+
+    **Step 1: determine the domain.** The denominator must be nonzero, so $x\neq5$.
+
+    **Step 2: move all terms to one side and factor.** For $x\neq5$,
+    $$
+    \begin{aligned}
+    \frac{x^2+3x-19}{x-5}>3
+    &\iff \frac{x^2+3x-19}{x-5}-3>0\\
+    &\iff \frac{x^2+3x-19-3(x-5)}{x-5}>0\\
+    &\iff \frac{x^2-4}{x-5}>0\\
+    &\iff \frac{(x-2)(x+2)}{x-5}>0.
+    \end{aligned}
+    $$
+
+    **Step 3: determine the signs.** The numerator is zero at $x=-2,2$, and the denominator is zero at $x=5$. These three points split the domain into intervals on which each factor has a fixed sign. By Exercise 4, $x-5$ and its reciprocal have the same sign. Thus the sign of the quotient is the product of the signs in the first three rows:
+
+    | Expression | $(-\infty,-2)$ | $(-2,2)$ | $(2,5)$ | $(5,\infty)$ |
+    | --- | --- | --- | --- | --- |
+    | $x+2$ | $-$ | $+$ | $+$ | $+$ |
+    | $x-2$ | $-$ | $-$ | $+$ | $+$ |
+    | $x-5$ | $-$ | $-$ | $-$ | $+$ |
+    | $\dfrac{(x-2)(x+2)}{x-5}$ | $-$ | $+$ | $-$ | $+$ |
+
+    The quotient is positive exactly on $(-2,2)$ and $(5,\infty)$. At $x=-2$ or $x=2$, the original fraction equals $3$, so neither endpoint satisfies the strict inequality. The point $x=5$ is outside the domain. Therefore
+    $$
+    \boxed{(-2,2)\cup(5,\infty)}.
+    $$
+
+    **Why the denominator's sign matters.** Multiplying an inequality by $x-5$ preserves its direction when $x>5$ and reverses it when $x<5$. Factoring and using the sign table accounts for both cases.

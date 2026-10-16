@@ -12,9 +12,9 @@ image: ""
     Let  
     $$
     \begin{aligned}
-    A&=\pmatrix{3&2&4\\1&0&6}\in M_{2\times 3}(\mathbb Z_7) \\
-    B&=\pmatrix{1&5\\2&0\\4&1}\in M_{3\times 2}(\mathbb Z_7) \\
-    C&=\pmatrix{23&65 \\14&6}\in M_{2\times 2}(\mathbb Z_7)
+    A&=\begin{pmatrix}3&2&4\\1&0&6\end{pmatrix}\in M_{2\times 3}(\mathbb Z_7) \\
+    B&=\begin{pmatrix}1&5\\2&0\\4&1\end{pmatrix}\in M_{3\times 2}(\mathbb Z_7) \\
+    C&=\begin{pmatrix}23&65 \\14&6\end{pmatrix}\in M_{2\times 2}(\mathbb Z_7)
     \end{aligned}
     $$
     Calculate $AB+C$.  
@@ -23,10 +23,10 @@ image: ""
       $$
       \begin{aligned}
       
-      AB+C &= \pmatrix{3&2&4\\1&0&6}\pmatrix{1&5\\2&0\\4&1}+\pmatrix{23&65 \\14&6} \\
-      &= \pmatrix{23&19 \\25&11} + \pmatrix{23&65 \\14&6} \\
-      &= \pmatrix{46&84 \\39&17} \\
-      &=\pmatrix{4&0 \\4&3}.
+      AB+C &= \begin{pmatrix}3&2&4\\1&0&6\end{pmatrix}\begin{pmatrix}1&5\\2&0\\4&1\end{pmatrix}+\begin{pmatrix}23&65 \\14&6\end{pmatrix} \\
+      &= \begin{pmatrix}23&19 \\25&11\end{pmatrix} + \begin{pmatrix}23&65 \\14&6\end{pmatrix} \\
+      &= \begin{pmatrix}46&84 \\39&17\end{pmatrix} \\
+      &=\begin{pmatrix}4&0 \\4&3\end{pmatrix}.
       
       \end{aligned}
       $$
@@ -34,14 +34,14 @@ image: ""
 ---
 
 - **Problem 2**  
-    Show that $A=\pmatrix{4&5 \\1&6}$ has an inverse in $M_{2\times 2}(\mathbb R)$ and write it explicately.
+    Show that $A=\begin{pmatrix}4&5 \\1&6\end{pmatrix}$ has an inverse in $M_{2\times 2}(\mathbb R)$ and write it explicately.
 
     - **Solution 2.1**  
-        Suppose $A=\pmatrix{4&5 \\1&6}$. We have that $\det(A)=4\times 6-1\times 5=19\neq 0$. Thus $A$ is invertible and the formula for its inverse is 
+        Suppose $A=\begin{pmatrix}4&5 \\1&6\end{pmatrix}$. We have that $\det(A)=4\times 6-1\times 5=19\neq 0$. Thus $A$ is invertible and the formula for its inverse is 
         $$
         \begin{aligned}
-        A^{-1} &= (\det(A))^{-1}\pmatrix{6&-1 \\-5&4} \\
-        &= \pmatrix{\frac{6}{19}&-\frac{1}{19} \\ -\frac{5}{19}&\frac{4}{19}}.
+        A^{-1} &= (\det(A))^{-1}\begin{pmatrix}6&-5 \\-1&4\end{pmatrix} \\
+        &= \begin{pmatrix}\frac{6}{19}&-\frac{5}{19} \\ -\frac{1}{19}&\frac{4}{19}\end{pmatrix}.
         
         \end{aligned}
         $$
