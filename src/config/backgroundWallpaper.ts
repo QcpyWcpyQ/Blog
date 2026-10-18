@@ -1,5 +1,8 @@
 import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
 
+// 静态背景与动画共用原图，避免动画加载前显示旧壁纸。
+const keqingWallpaper = "/assets/images/keqing-water-ripple/wallpaper.png";
+
 export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	// 壁纸模式："banner" 横幅壁纸，"fullscreen" 全屏壁纸，"overlay" 覆盖透明，"none" 纯色背景无壁纸
 	mode: "fullscreen",
@@ -38,10 +41,10 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	src: {
 		// 桌面背景图片（支持单张或多张随机）
 		// desktop: "assets/images/DesktopWallpaper/d1.avif",
-		desktop: "assets/images/DesktopWallpaper/Background.jpg",
+		desktop: keqingWallpaper,
 		// 移动背景图片（支持单张或多张随机）
 		// mobile: "assets/images/MobileWallpaper/m1.avif",
-		mobile: "assets/images/DesktopWallpaper/Background.jpg",
+		mobile: keqingWallpaper,
 		// 背景视频播放地址
 		// 支持单个视频路径（字符串）或多个视频循环（数组，参考上面壁纸配置）
 		// 支持远程视频URL，本地视频请放在 public/assets/videos/ 目录下
@@ -54,7 +57,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		homeWaterRipple: {
 			enable: true,
 			showOnPostPage: true,
-			image: "/assets/images/keqing-water-ripple/wallpaper.png",
+			image: keqingWallpaper,
 			normalMap: "/assets/images/keqing-water-ripple/water-normal.png",
 			animationSpeed: 0.23,
 			scale: 0.23,
