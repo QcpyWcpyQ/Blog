@@ -293,8 +293,12 @@ body.wallpaper-transparent #navbar-wrapper #navbar[data-full-width="true"] > div
     --navbar-panel-inset: calc(1rem + max(0px, (100% - 2rem - var(--page-width)) / 2));
 }
 
-#navbar > div #search-panel,
 #navbar > div #display-setting {
+    right: var(--navbar-panel-inset);
+}
+
+#navbar > div #search-panel {
+    left: var(--navbar-panel-inset);
     right: var(--navbar-panel-inset);
 }
 
@@ -303,9 +307,9 @@ body.wallpaper-transparent #navbar-wrapper #navbar[data-full-width="true"] > div
     right: calc(var(--navbar-panel-inset) + 3rem);
 }
 
-@media (max-width: 767px) {
+@media (min-width: 768px) {
     #navbar > div #search-panel {
-        left: var(--navbar-panel-inset);
+        right: auto;
     }
 }
 

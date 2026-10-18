@@ -160,7 +160,13 @@ const logoVariants = await Promise.all(
         className,
         "overflow-visible! h-18 px-4"
     ]}>
-        <div class="mx-auto h-full w-full max-w-(--page-width) grid grid-cols-[auto_minmax(0,1fr)_auto] items-center">
+        <div class:list={[
+            "mx-auto h-full w-full max-w-(--page-width) grid items-center",
+            isNavbarMenuCentered
+                ? "grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]"
+                : "grid-cols-[auto_minmax(0,1fr)_auto]"
+        ]}>
+            <div class="flex min-w-0 items-center col-start-1 row-start-1">
             {showNavbarBrand && <a href={url('/')} class="btn-plain scale-animation rounded-lg h-13 px-3 md:px-5 font-bold active:scale-95">
                 <div class:list={[
                     "flex flex-row items-center text-md",
@@ -190,8 +196,10 @@ const logoVariants = await Promise.all(
                     {navbarTitle}
                 </div>
             </a>}
+                <Search client:load />
+            </div>
             <div class:list={[
-                "hidden lg:flex items-center space-x-1 col-start-2",
+                "hidden lg:flex items-center space-x-1 col-start-2 row-start-1",
                 isNavbarMenuCentered
                     ? "justify-center"
                     : "justify-start pl-2"
@@ -200,11 +208,7 @@ const logoVariants = await Promise.all(
                     return <DropdownMenu link={l} />;
                 })}
             </div>
-            <div class="flex col-start-3 justify-self-end">
-                <!--<SearchPanel client:load>-->
-                <Search
-                    client:load
-                />
+            <div class="flex col-start-3 row-start-1 justify-self-end">
                 {musicPlayerConfig.showInNavbar && (
                     <button aria-label={i18n(I18nKey.music)} aria-controls="music-nav-panel" aria-expanded="false" class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90" id="music-player-switch">
                         <Icon name="material-symbols:music-note-rounded" class="text-[1.25rem]"></Icon>
