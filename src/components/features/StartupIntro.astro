@@ -1,0 +1,248 @@
+---
+import { getImage } from "astro:assets";
+import { profileConfig } from "@/config/profileConfig";
+import { loadLocalImage } from "@/utils/schema-image";
+import { url } from "@/utils/url-utils";
+
+// Keep the opening portrait in sync with the sidebar profile configuration.
+const avatar = profileConfig.avatar || "";
+let avatarSrc = avatar;
+if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
+	const localAvatar = await loadLocalImage(avatar, "");
+	avatarSrc = localAvatar
+		? (await getImage({ src: localAvatar, width: 192, format: "webp", quality: 85 })).src
+		: "";
+} else if (avatar.startsWith("/")) {
+	avatarSrc = url(avatar);
+}
+---
+
+<div
+	id="startup-intro"
+	class="startup-intro"
+	data-duration="2200"
+	data-exit-duration="800"
+	role="status"
+	aria-label={`正在进入 ${profileConfig.name} 的博客`}
+	hidden
+>
+	<div class="intro-content">
+		<div class="intro-avatar" aria-hidden="true">
+			<div class="intro-avatar-glow"></div>
+			<div class="intro-avatar-frame">
+				{avatarSrc ? (
+					<img src={avatarSrc} alt="" width="96" height="96" loading="eager" fetchpriority="high" decoding="async" />
+				) : (
+					<span>{profileConfig.name.slice(0, 1)}</span>
+				)}
+			</div>
+		</div>
+		<p class="intro-name">{profileConfig.name}</p>
+		<p class="intro-status">INITIALIZING SYSTEM</p>
+		<div class="intro-progress" aria-hidden="true">
+			<div class="intro-progress-fill"></div>
+		</div>
+	</div>
+</div>
+
+<!-- Run while parsing the first body element, before the page can flash through.
+     This lives outside Swup's containers and must not run again on a visit. -->
+<script is:inline data-swup-ignore-script>
+	(() => {
+		const intro = document.getElementById("startup-intro");
+		if (!intro || intro.dataset.initialized) return;
+		intro.dataset.initialized = "true";
+		const storageKey = "cpysama:startup-intro-seen:v1";
+		let seen = false;
+		try {
+			seen = sessionStorage.getItem(storageKey) === "true";
+		} catch {
+			// The page must remain usable when browser storage is unavailable.
+		}
+		if (seen || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+			intro.remove();
+			return;
+		}
+		try {
+			sessionStorage.setItem(storageKey, "true");
+		} catch {}
+
+		const html = document.documentElement;
+		const duration = Number(intro.dataset.duration);
+		const exitDuration = Number(intro.dataset.exitDuration);
+		let closing = false;
+		let exitTimer;
+		html.setAttribute("data-startup-intro", "running");
+		intro.hidden = false;
+
+		function cleanup() {
+			window.clearTimeout(startTimer);
+			window.clearTimeout(exitTimer);
+			window.clearTimeout(safetyTimer);
+			html.removeAttribute("data-startup-intro");
+			intro.remove();
+			document.removeEventListener("keydown", onKeyDown);
+			window.removeEventListener("pagehide", cleanup);
+		}
+		function finish() {
+			if (closing) return;
+			closing = true;
+			intro.dataset.state = "leaving";
+			exitTimer = window.setTimeout(cleanup, exitDuration);
+		}
+		function onKeyDown(event) {
+			if (event.key === "Escape") finish();
+			// Keep keyboard focus out of the temporarily covered page.
+			if (event.key === "Tab") event.preventDefault();
+		}
+		const startTimer = window.setTimeout(finish, duration);
+		// Never leave a blocking opening screen behind if another script fails.
+		const safetyTimer = window.setTimeout(cleanup, duration + exitDuration + 1000);
+		document.addEventListener("keydown", onKeyDown);
+		window.addEventListener("pagehide", cleanup);
+	})();
+</script>
+
+<style>
+	.startup-intro {
+		position: fixed;
+		inset: 0;
+		z-index: 100000;
+		display: grid;
+		place-items: center;
+		background: #050818;
+		color: #f8fafc;
+		isolation: isolate;
+		touch-action: none;
+		opacity: 1;
+		transition: opacity 800ms ease-in-out;
+	}
+
+	.startup-intro[hidden] {
+		display: none;
+	}
+
+	:global(html[data-startup-intro]) {
+		overflow: hidden;
+	}
+
+	.intro-content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 2rem;
+		animation: intro-enter 600ms ease-out both;
+		transition: transform 800ms ease-in-out, filter 800ms ease-in-out;
+	}
+
+	.intro-avatar {
+		position: relative;
+		width: 96px;
+		height: 96px;
+		margin-bottom: 32px;
+	}
+
+	.intro-avatar-glow {
+		position: absolute;
+		inset: -6px;
+		border-radius: 50%;
+		background: conic-gradient(#818cf8, #c084fc, #f472b6, #38bdf8, #818cf8);
+		filter: blur(4px);
+		opacity: 0.65;
+		animation: intro-orbit 4s linear infinite;
+	}
+
+	.intro-avatar-frame {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		padding: 6px;
+		border-radius: 50%;
+		background: #0f172a;
+		box-shadow: 0 12px 32px #0005;
+	}
+
+	.intro-avatar-frame img,
+	.intro-avatar-frame span {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.intro-avatar-frame span {
+		display: grid;
+		place-items: center;
+		font-size: 2rem;
+	}
+
+	.intro-name {
+		margin: 0 0 8px;
+		font-family: Georgia, "Times New Roman", serif;
+		font-size: 24px;
+		font-weight: 900;
+		line-height: 1.4;
+		letter-spacing: 0.2em;
+		text-indent: 0.2em;
+		text-transform: uppercase;
+	}
+
+	.intro-status {
+		margin: 0 0 48px;
+		color: #94a3b8;
+		font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+		font-size: 10px;
+		font-weight: 700;
+		line-height: 1.5;
+		letter-spacing: 0.5em;
+		text-indent: 0.5em;
+		white-space: nowrap;
+	}
+
+	.intro-progress {
+		width: 160px;
+		height: 1.5px;
+		background: #1e293b;
+	}
+
+	.intro-progress-fill {
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(90deg, #f472b6, #818cf8, #38bdf8);
+		box-shadow: 0 0 12px #818cf8aa;
+		transform-origin: left;
+		animation: intro-progress 1800ms ease-in-out both;
+	}
+
+	.startup-intro[data-state="leaving"] {
+		opacity: 0;
+		pointer-events: none;
+	}
+
+	.startup-intro[data-state="leaving"] .intro-content {
+		transform: scale(1.1);
+		filter: blur(20px);
+	}
+
+	@keyframes intro-enter {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes intro-orbit {
+		to { transform: rotate(360deg); }
+	}
+
+	@keyframes intro-progress {
+		from { transform: scaleX(0); }
+		to { transform: scaleX(1); }
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.startup-intro {
+			display: none;
+		}
+	}
+</style>
