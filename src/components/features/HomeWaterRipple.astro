@@ -72,6 +72,22 @@ const active = isHomePage(Astro.url.pathname) ||
 		opacity: 1;
 	}
 
+	/* 同时模糊 WebGL 动画与静态回退图，沿用主题的滚动模糊进度。 */
+	:global(html[data-wallpaper-mode="fullscreen"]) home-water-ripple {
+		filter: blur(var(--fullscreen-blur, var(--overlay-blur, 0px)));
+		transform: scale(1.05);
+	}
+
+	:global(html[data-wallpaper-mode="fullscreen"] body.is-home) home-water-ripple {
+		filter: blur(var(--fullscreen-blur, 0px));
+	}
+
+	/* 图片已随父层统一模糊，覆盖主题仅针对 img 的规则以免叠加。 */
+	:global(html[data-wallpaper-mode="fullscreen"] body #wallpaper-wrapper) home-water-ripple :global(img) {
+		filter: none !important;
+		transform: none !important;
+	}
+
 	:global(body:not(.is-home):not(.is-post)) home-water-ripple,
 	:global(body.is-post) home-water-ripple:not([data-posts]),
 	:global([data-bg-video-playing]) home-water-ripple {

@@ -101,6 +101,7 @@ export const siteConfig: SiteConfig = {
 
 	// 导航栏配置
 	navbar: {
+		showBrand: false,
 		// 导航栏Logo
 		// 支持三种类型：
 		// 1. Astro图标库: { type: "icon", value: "material-symbols:home-pin-outline" }

@@ -67,6 +67,7 @@ export type SiteConfig = {
 	}>;
 
 	navbar: {
+		showBrand?: boolean; // 是否显示左上角站点标题和 Logo，默认 true
 		/** 导航栏Logo图标，可选类型：icon库、本地图片、网络图片链接 */
 		logo?: {
 			type: "icon" | "image" | "url";

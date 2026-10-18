@@ -16,26 +16,6 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 	// 主页
 	links.push(LinkPresets.Home);
 
-	// 文章及其子菜单
-	links.push({
-		name: "文章",
-		url: "#",
-		icon: "material-symbols:article",
-		children: [
-			// 归档
-			LinkPresets.Archive,
-
-			// 分类
-			LinkPresets.Categories,
-
-			// 标签
-			LinkPresets.Tags,
-
-			// 系列
-			LinkPresets.Series,
-		],
-	});
-
 	//社交及其子菜单
 	links.push({
 		name: "社交",
@@ -61,9 +41,6 @@ const getDynamicNavBarConfig = (): NavBarConfig => {
 
 			// 相册
 			LinkPresets.Gallery,
-
-			// 书签导航
-			LinkPresets.Booknav,
 
 			// 哔哩哔哩追番
 			LinkPresets.Bilibili,

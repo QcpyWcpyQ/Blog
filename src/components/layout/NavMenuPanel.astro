@@ -9,7 +9,9 @@ interface Props {
 }
 
 const processedLinks = Astro.props.links;
-const navTitle = siteConfig.navbar.title || siteConfig.title;
+const navTitle = siteConfig.navbar.showBrand === false
+	? "导航菜单"
+	: siteConfig.navbar.title || siteConfig.title;
 ---
 <div id="nav-menu-panel" class:list={["float-panel-closed fixed inset-0 z-1100"]} data-floating-panel data-floating-panel-trigger="nav-menu-switch" data-floating-panel-scroll-lock inert aria-hidden="true">
     <!-- 遮罩（scrim）：点击关闭 -->
