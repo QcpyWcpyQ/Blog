@@ -1,4 +1,4 @@
-import { keqingVoices, keqingVoiceSource } from "./keqingVoices";
+import { keqingVoices } from "./keqingVoices";
 import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
 
 // 静态背景与动画共用原图，避免动画加载前显示旧壁纸。
@@ -79,7 +79,6 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			titleSize: "4.5rem",
 			// 主页横幅副标题
 			subtitle: keqingVoices,
-			subtitleSource: keqingVoiceSource,
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
 			typewriter: {
