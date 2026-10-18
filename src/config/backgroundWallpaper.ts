@@ -53,6 +53,7 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 		// Mirage Workshop 3739649039「刻晴」的原始贴图与水波纹参数。
 		homeWaterRipple: {
 			enable: true,
+			showOnPostPage: true,
 			image: "/assets/images/keqing-water-ripple/wallpaper.png",
 			normalMap: "/assets/images/keqing-water-ripple/water-normal.png",
 			animationSpeed: 0.23,

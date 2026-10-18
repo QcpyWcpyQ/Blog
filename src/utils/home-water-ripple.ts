@@ -200,11 +200,14 @@ export function initHomeWaterRipple(root: HTMLElement): () => void {
 	let disposed = false;
 	let contextLost = false;
 
+	const isActivePage = () =>
+		document.body.classList.contains("is-home") ||
+		(settings.showOnPostPage && document.body.classList.contains("is-post"));
 	const canPlay = () =>
 		visible &&
 		!document.hidden &&
 		!motion.matches &&
-		document.body.classList.contains("is-home") &&
+		isActivePage() &&
 		document.documentElement.dataset.wallpaperMode !== "none" &&
 		!document.body.hasAttribute("data-bg-video-playing") &&
 		!contextLost;
@@ -249,7 +252,7 @@ export function initHomeWaterRipple(root: HTMLElement): () => void {
 
 	function sync() {
 		if (disposed) return;
-		if (document.body.classList.contains("is-home") && !image) {
+		if (isActivePage() && !image) {
 			image = new Image(3440, 1440);
 			image.alt = "";
 			image.decoding = "async";
@@ -277,7 +280,7 @@ export function initHomeWaterRipple(root: HTMLElement): () => void {
 	const resize = new ResizeObserver(sync);
 	resize.observe(root);
 	// The wallpaper persists outside Swup's replaced containers. Observe the
-	// existing home-page/mode attributes so visits in either direction work.
+	// page/mode attributes so visits in either direction work.
 	const state = new MutationObserver(sync);
 	state.observe(document.body, {
 		attributes: true,

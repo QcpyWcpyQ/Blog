@@ -83,10 +83,13 @@
   html[data-wallpaper-mode="banner"] .content-panel {
     --content-top: calc(var(--banner-height-home) - 3.5rem); /* = 65vh - 3.5rem */
   }
-  /* banner 移动端非首页：横幅隐藏，内容从导航栏下方开始 */
+  /* banner 移动端文章显示动态横幅，其余非首页从导航栏下方开始 */
   @media (max-width: 1023px) {
     html[data-wallpaper-mode="banner"] body:not(.is-home) .content-panel {
       --content-top: 5.5rem;
+    }
+    html[data-wallpaper-mode="banner"] body.is-post.post-water-ripple .content-panel {
+      --content-top: calc(var(--banner-height-non-home) - 3.5rem);
     }
   }
   /* overlay / none / fullscreen 非首页：内容从导航栏下方开始 */
@@ -111,6 +114,10 @@
   @media (max-width: 1023px) {
     html[data-wallpaper-mode="banner"] body:not(.is-home) #wallpaper-wrapper {
       display: none !important;
+    }
+    html[data-wallpaper-mode="banner"] body.is-post.post-water-ripple #wallpaper-wrapper {
+      display: block !important;
+      height: var(--banner-height-non-home) !important;
     }
   }
   /* none 模式隐藏壁纸 */

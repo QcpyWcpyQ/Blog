@@ -513,6 +513,8 @@ const ogImageAlt = propsOgImageAlt ?? pageTitle;
     class:list={[
       {
         "is-home": isHomePageCheck,
+        "is-post": !!postSlug,
+        "post-water-ripple": backgroundWallpaper.common?.homeWaterRipple?.enable && backgroundWallpaper.common.homeWaterRipple.showOnPostPage,
         "sticky-navbar": navbarMode === "fixed",
         "dynamic-navbar": navbarMode === "dynamic",
       },

@@ -16,7 +16,7 @@ import {
 	syncBannerHomeTextVisibility,
 	updateNavbarTransparency,
 } from "@/utils/setting-utils";
-import { pathsEqual, url } from "@/utils/url-utils";
+import { isArticleDetailPage, pathsEqual, url } from "@/utils/url-utils";
 
 /**
  * 进度条：WAAPI 驱动 transform/opacity（合成线程动画）。
@@ -151,14 +151,19 @@ function registerSwupHooks(): void {
 		const bodyElement = document.querySelector("body") as HTMLElement;
 		const isHomePage = pathsEqual(visit.to.url, url("/"));
 		const wasHome = bodyElement.classList.contains("is-home");
+		const isPostPage = isArticleDetailPage(
+			new URL(visit.to.url, location.href).pathname,
+		);
+		const wasPost = bodyElement.classList.contains("is-post");
 		const contentPanel = document.querySelector(
 			".content-panel",
 		) as HTMLElement | null;
-		// FLIP 只在 is-home 状态变化（首页↔非首页）时才有意义；文章↔文章、首页↔首页
+		// 首页、文章、其他页面的横幅高度不同；文章↔文章、首页↔首页
 		// 类未变 → delta 必为 0，直接短路，避免常见切页白付两次强制布局读取
-		if (isHomePage !== wasHome && contentPanel) {
+		if ((isHomePage !== wasHome || isPostPage !== wasPost) && contentPanel) {
 			const oldTop = contentPanel.getBoundingClientRect().top; // 类切换前读
 			bodyElement.classList.toggle("is-home", isHomePage);
+			bodyElement.classList.toggle("is-post", isPostPage);
 			const newTop = contentPanel.getBoundingClientRect().top; // 类切换后读
 			const delta = oldTop - newTop;
 			// 全屏首页↔非首页 delta ≈ 92vh，总是超过 0.75 视口，此前被跳过导致内容区瞬间跳变；
@@ -182,6 +187,9 @@ function registerSwupHooks(): void {
 				contentPanel.style.transition = "";
 				contentPanel.style.transform = "";
 			}
+		} else {
+			bodyElement.classList.toggle("is-home", isHomePage);
+			bodyElement.classList.toggle("is-post", isPostPage);
 		}
 
 		// Control navbar transparency based on page

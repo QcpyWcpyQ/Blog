@@ -13,9 +13,10 @@ export type BackgroundWallpaperConfig = {
 		  }; // 支持单个图片、图片数组或分别设置桌面端和移动端图片
 	// 横幅壁纸和全屏壁纸共享配置
 	common?: {
-		// 首页场景壁纸：使用原始水波纹贴图实时渲染，其他页面沿用普通壁纸。
+		// 场景壁纸：使用原始水波纹贴图实时渲染，可扩展到文章详情页。
 		homeWaterRipple?: {
 			enable: boolean;
+			showOnPostPage?: boolean;
 			image: string;
 			normalMap: string;
 			animationSpeed: number;

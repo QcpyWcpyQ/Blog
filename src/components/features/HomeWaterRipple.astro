@@ -1,7 +1,7 @@
 ---
 import { backgroundWallpaper } from "@/config";
 import { isHomePage } from "@/utils/layout-utils";
-import { url } from "@/utils/url-utils";
+import { isArticleDetailPage, url } from "@/utils/url-utils";
 
 interface Props {
 	position?: string;
@@ -9,7 +9,8 @@ interface Props {
 
 const { position = "center" } = Astro.props;
 const settings = backgroundWallpaper.common?.homeWaterRipple;
-const home = isHomePage(Astro.url.pathname);
+const active = isHomePage(Astro.url.pathname) ||
+	(settings?.showOnPostPage && isArticleDetailPage(Astro.url.pathname));
 ---
 
 {settings?.enable && (
@@ -17,10 +18,11 @@ const home = isHomePage(Astro.url.pathname);
 		data-image={url(settings.image)}
 		data-normal-map={url(settings.normalMap)}
 		data-settings={JSON.stringify(settings)}
+		data-posts={settings.showOnPostPage ? "" : undefined}
 		style={`--ripple-position: ${position}`}
 		aria-hidden="true"
 	>
-		{home && <img src={url(settings.image)} alt="" width="3440" height="1440" fetchpriority="high" decoding="async" />}
+		{active && <img src={url(settings.image)} alt="" width="3440" height="1440" fetchpriority="high" decoding="async" />}
 		<canvas></canvas>
 	</home-water-ripple>
 )}
@@ -70,7 +72,8 @@ const home = isHomePage(Astro.url.pathname);
 		opacity: 1;
 	}
 
-	:global(body:not(.is-home)) home-water-ripple,
+	:global(body:not(.is-home):not(.is-post)) home-water-ripple,
+	:global(body.is-post) home-water-ripple:not([data-posts]),
 	:global([data-bg-video-playing]) home-water-ripple {
 		display: none;
 	}
