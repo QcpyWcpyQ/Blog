@@ -2,6 +2,7 @@
 import ImageWrapper from "@/components/common/ImageWrapper.astro";
 import ScrollDownIndicator from "@/components/controls/ScrollDownIndicator.astro";
 import BackgroundPlayer from "@/components/features/BackgroundPlayer.astro";
+import HomeWaterRipple from "@/components/features/HomeWaterRipple.astro";
 import BannerHomeTextOverlay from "@/components/layout/BannerHomeTextOverlay.astro";
 import BannerPostMetaOverlay from "@/components/layout/BannerPostMetaOverlay.astro";
 import { backgroundWallpaper } from "@/config";
@@ -186,6 +187,8 @@ const wallpaperPosition = state.isFullscreenMode
         </noscript>
     </div>
     )}
+
+    <HomeWaterRipple position={wallpaperPosition} />
 
     <!-- 壁纸轮播脚本（基于 CSS transition） -->
     {state.hasMultipleImages && (

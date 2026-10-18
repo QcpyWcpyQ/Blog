@@ -50,6 +50,16 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 	},
 	// 横幅壁纸和全屏壁纸共享配置
 	common: {
+		// Mirage Workshop 3739649039「刻晴」的原始贴图与水波纹参数。
+		homeWaterRipple: {
+			enable: true,
+			image: "/assets/images/keqing-water-ripple/wallpaper.png",
+			normalMap: "/assets/images/keqing-water-ripple/water-normal.png",
+			animationSpeed: 0.23,
+			scale: 0.23,
+			strength: 0.05,
+			ratio: 1.23,
+		},
 		// 壁纸遮罩暗度，让横幅文字显示更清晰，0-1之间，值越大越暗
 		dimOpacity: 0.2,
 		// 多视频播放模式："order" 顺序循环，"random" 随机切换（仅当 playerUrl 为数组时生效）

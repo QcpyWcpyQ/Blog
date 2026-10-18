@@ -13,6 +13,16 @@ export type BackgroundWallpaperConfig = {
 		  }; // 支持单个图片、图片数组或分别设置桌面端和移动端图片
 	// 横幅壁纸和全屏壁纸共享配置
 	common?: {
+		// 首页场景壁纸：使用原始水波纹贴图实时渲染，其他页面沿用普通壁纸。
+		homeWaterRipple?: {
+			enable: boolean;
+			image: string;
+			normalMap: string;
+			animationSpeed: number;
+			scale: number;
+			strength: number;
+			ratio: number;
+		};
 		dimOpacity?: number; // 横幅文字遮罩暗度，0-1之间，值越大越暗，默认0.15
 		playerMode?: "order" | "random"; // 多视频播放模式："order" 顺序循环（默认），"random" 随机切换
 		homeText?: {

@@ -1,0 +1,89 @@
+---
+import { backgroundWallpaper } from "@/config";
+import { isHomePage } from "@/utils/layout-utils";
+import { url } from "@/utils/url-utils";
+
+interface Props {
+	position?: string;
+}
+
+const { position = "center" } = Astro.props;
+const settings = backgroundWallpaper.common?.homeWaterRipple;
+const home = isHomePage(Astro.url.pathname);
+---
+
+{settings?.enable && (
+	<home-water-ripple
+		data-image={url(settings.image)}
+		data-normal-map={url(settings.normalMap)}
+		data-settings={JSON.stringify(settings)}
+		style={`--ripple-position: ${position}`}
+		aria-hidden="true"
+	>
+		{home && <img src={url(settings.image)} alt="" width="3440" height="1440" fetchpriority="high" decoding="async" />}
+		<canvas></canvas>
+	</home-water-ripple>
+)}
+
+<script>
+	import { initHomeWaterRipple } from "@/utils/home-water-ripple";
+
+	if (!customElements.get("home-water-ripple")) {
+		customElements.define("home-water-ripple", class extends HTMLElement {
+			private cleanup?: () => void;
+
+			connectedCallback() {
+				this.cleanup ??= initHomeWaterRipple(this);
+			}
+
+			disconnectedCallback() {
+				this.cleanup?.();
+				this.cleanup = undefined;
+			}
+		});
+	}
+</script>
+
+<style>
+	home-water-ripple {
+		position: absolute;
+		inset: 0;
+		z-index: 6;
+		pointer-events: none;
+	}
+
+	home-water-ripple :global(img),
+	canvas {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: var(--ripple-position);
+	}
+
+	canvas {
+		opacity: 0;
+	}
+
+	home-water-ripple[data-animated] canvas {
+		opacity: 1;
+	}
+
+	:global(body:not(.is-home)) home-water-ripple,
+	:global([data-bg-video-playing]) home-water-ripple {
+		display: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		canvas {
+			display: none;
+		}
+	}
+
+	@media (max-width: 1023px) {
+		home-water-ripple :global(img) {
+			object-position: center;
+		}
+	}
+</style>
