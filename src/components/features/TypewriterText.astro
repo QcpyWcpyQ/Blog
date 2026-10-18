@@ -1,6 +1,7 @@
 ---
 export interface Props {
 	text: string | string[];
+	random?: boolean;
 	speed?: number;
 	deleteSpeed?: number;
 	pauseTime?: number;
@@ -9,6 +10,7 @@ export interface Props {
 
 const {
 	text,
+	random = false,
 	speed = 100,
 	deleteSpeed = 50,
 	pauseTime = 2000,
@@ -20,6 +22,7 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 <span
   class={`typewriter ${className}`}
   data-text={textData}
+  data-random={random}
   data-speed={speed}
   data-delete-speed={deleteSpeed}
   data-pause-time={pauseTime}></span>
@@ -35,6 +38,10 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
     private currentIndex: number = 0;
     private isDeleting: boolean = false;
     private timeoutId: number | null = null;
+    private random: boolean;
+    private remainingIndices: number[] = [];
+    private started = false;
+    private onIntroComplete = () => this.start();
 
     constructor(element: HTMLElement) {
       this.element = element;
@@ -52,31 +59,43 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
       this.deleteSpeed = parseInt(element.dataset.deleteSpeed || "50");
       this.pauseTime = parseInt(element.dataset.pauseTime || "2000");
 
-      // 如果有多条文本且未启用打字机效果，随机显示一条
-      if (this.texts.length > 1 && !this.isTypewriterEnabled()) {
-        this.showRandomText();
+      this.random = element.dataset.random === "true";
+      if (this.random) this.selectNextText();
+
+      // 开场内联脚本先设置状态；退场完成或跳过开场后才开始打字。
+      if (document.documentElement.hasAttribute("data-startup-intro")) {
+        document.addEventListener("startup-intro:complete", this.onIntroComplete, { once: true });
       } else {
         this.start();
       }
     }
 
-    private isTypewriterEnabled(): boolean {
-      // 检查是否有打字机相关的数据属性
-      return (
-        this.element.dataset.speed !== undefined ||
-        this.element.dataset.deleteSpeed !== undefined ||
-        this.element.dataset.pauseTime !== undefined
-      );
-    }
-
-    private showRandomText() {
-      const randomIndex = Math.floor(Math.random() * this.texts.length);
-      this.element.textContent = this.texts[randomIndex];
-    }
-
     private start() {
-      if (this.texts.length === 0) return;
+      if (this.started || this.texts.length === 0 || !this.element.isConnected) return;
+      this.started = true;
       this.type();
+    }
+
+    private selectNextText() {
+      if (!this.random) {
+        this.currentTextIndex = (this.currentTextIndex + 1) % this.texts.length;
+        return;
+      }
+      if (this.remainingIndices.length === 0) {
+        this.remainingIndices = this.texts.map((_, index) => index);
+        for (let i = this.remainingIndices.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [this.remainingIndices[i], this.remainingIndices[j]] =
+            [this.remainingIndices[j], this.remainingIndices[i]];
+        }
+        // 跨轮也不连续重复上一句。
+        const last = this.remainingIndices.length - 1;
+        if (this.started && last > 0 && this.remainingIndices[last] === this.currentTextIndex) {
+          [this.remainingIndices[0], this.remainingIndices[last]] =
+            [this.remainingIndices[last], this.remainingIndices[0]];
+        }
+      }
+      this.currentTextIndex = this.remainingIndices.pop() ?? 0;
     }
 
     private getCurrentText(): string {
@@ -84,6 +103,10 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
     }
 
     private type() {
+      if (!this.element.isConnected) {
+        this.destroy();
+        return;
+      }
       const currentText = this.getCurrentText();
       const segments = this.segmentText(currentText);
 
@@ -102,8 +125,7 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
         } else {
           // 删除完成，切换到下一条文本
           this.isDeleting = false;
-          this.currentTextIndex =
-            (this.currentTextIndex + 1) % this.texts.length;
+          this.selectNextText();
           this.timeoutId = window.setTimeout(() => this.type(), this.speed);
         }
       } else {
@@ -129,7 +151,8 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
     }
 
     public destroy() {
-      if (this.timeoutId) {
+      document.removeEventListener("startup-intro:complete", this.onIntroComplete);
+      if (this.timeoutId !== null) {
         clearTimeout(this.timeoutId);
       }
     }
@@ -145,9 +168,8 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
     const typewriterElements = document.querySelectorAll(".typewriter");
     typewriterElements.forEach((element) => {
       const el = element as HTMLElement & { __typewriterInstance?: TypewriterEffect };
-      if (el.__typewriterInstance) {
-        el.__typewriterInstance.destroy();
-      }
+      // Swup 的多个通知和延迟检查可能重复触发，保留已有实例。
+      if (el.__typewriterInstance) return;
       el.textContent = "";
       el.__typewriterInstance = new TypewriterEffect(el);
     });
@@ -185,6 +207,10 @@ const textData = Array.isArray(text) ? JSON.stringify(text) : text;
 <style>
   .typewriter {
     position: relative;
+  }
+
+  :global(html[data-startup-intro]) .typewriter::after {
+    visibility: hidden;
   }
 
   .typewriter::after {

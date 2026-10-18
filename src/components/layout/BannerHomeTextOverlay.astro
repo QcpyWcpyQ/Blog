@@ -28,6 +28,7 @@ const homeTextLinksEnable = homeText?.linksEnable !== false;
                         {homeText.typewriter?.enable ? (
                             <TypewriterText
                                 text={homeText.subtitle}
+                                random={homeText.typewriter.random}
                                 speed={homeText.typewriter.speed}
                                 deleteSpeed={homeText.typewriter.deleteSpeed}
                                 pauseTime={homeText.typewriter.pauseTime}
@@ -36,6 +37,13 @@ const homeTextLinksEnable = homeText?.linksEnable !== false;
                             initialRandomSubtitle
                         )}
                     </div>
+                )}
+                {homeText.subtitleSource && (
+                    <a href={homeText.subtitleSource.url} target="_blank" rel="noopener noreferrer"
+                        class="mt-3 self-center text-xs text-white/65 hover:text-white pointer-events-auto"
+                        title="语音文本由原神 WIKI 页面贡献者整理，CC BY-NC-SA 4.0">
+                        {homeText.subtitleSource.name}
+                    </a>
                 )}
                 {/* 横幅标题下方的链接图标（subtitle 的兄弟节点，避免被打字机/随机副标题的 textContent 覆盖清掉） */}
                 {homeTextLinksEnable && homeTextLinks && homeTextLinks.length > 0 && (

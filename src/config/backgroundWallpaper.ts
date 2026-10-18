@@ -1,3 +1,4 @@
+import { keqingVoices, keqingVoiceSource } from "./keqingVoices";
 import type { BackgroundWallpaperConfig } from "@/types/backgroundWallpaper";
 
 // 静态背景与动画共用原图，避免动画加载前显示旧壁纸。
@@ -73,27 +74,20 @@ export const backgroundWallpaper: BackgroundWallpaperConfig = {
 			// 是否启用主页横幅文字
 			enable: true,
 			// 主页横幅主标题
-			title: "Lovely Keqing!",
+			title: "霓裾翩跹",
 			// 主页横幅主标题字体大小
 			titleSize: "4.5rem",
 			// 主页横幅副标题
-			subtitle: [
-                "Sometimes I want to break all of the rules.",
-                "Sometimes I don't want to silence my youth.",
-                "Sometimes I feel like there's nothing to lose",
-                "Sometimes it's best to run wild.",
-                "We won't be silent.",
-                "We won't do what we're told.",
-                "We are still kids.",
-                "We refuse to grow old.",
-			],
+			subtitle: keqingVoices,
+			subtitleSource: keqingVoiceSource,
 			// 主页横幅副标题字体大小
 			subtitleSize: "1.5rem",
 			typewriter: {
 				// 是否启用打字机效果
-				// 打字机开启 → 循环显示所有副标题
+				// 打字机开启 → 随机轮换所有语音，每轮不重复
 				// 打字机关闭 → 每次刷新随机显示一条副标题
 				enable: true,
+				random: true,
 				// 打字速度（毫秒）
 				speed: 100,
 				// 删除速度（毫秒）

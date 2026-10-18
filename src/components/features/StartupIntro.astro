@@ -71,11 +71,14 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 		const duration = Number(intro.dataset.duration);
 		const exitDuration = Number(intro.dataset.exitDuration);
 		let closing = false;
+		let cleanedUp = false;
 		let exitTimer;
 		html.setAttribute("data-startup-intro", "running");
 		intro.hidden = false;
 
 		function cleanup() {
+			if (cleanedUp) return;
+			cleanedUp = true;
 			window.clearTimeout(startTimer);
 			window.clearTimeout(exitTimer);
 			window.clearTimeout(safetyTimer);
@@ -83,6 +86,7 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 			intro.remove();
 			document.removeEventListener("keydown", onKeyDown);
 			window.removeEventListener("pagehide", cleanup);
+			document.dispatchEvent(new Event("startup-intro:complete"));
 		}
 		function finish() {
 			if (closing) return;
