@@ -42,10 +42,10 @@ const pages = resolvePageToggles({
 
 export const siteConfig: SiteConfig = {
 	// 站点标题
-	title: "cpy",
+	title: "刻晴",
 
 	// 站点副标题
-	subtitle: "sama",
+	subtitle: "霆霓快雨",
 
 	// 站点 URL
 	site_url: "https://cpysama.com",
