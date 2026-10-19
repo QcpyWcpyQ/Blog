@@ -11,6 +11,7 @@ import {
 	updateMainGridCols,
 	updateSidebarComponentsVisibility,
 } from "@/utils/grid-layout-utils";
+import { registerGridPageTransition } from "@/utils/grid-page-transition";
 import { scrollFunction } from "@/utils/scroll-utils";
 import {
 	syncBannerHomeTextVisibility,
@@ -62,6 +63,8 @@ function finishProgressBar(): void {
  * 注册 link:click / content:replace / visit:start / page:view / visit:end 钩子。
  */
 function registerSwupHooks(): void {
+	registerGridPageTransition();
+	window.swup.hooks.on("visit:start", startProgressBar);
 	// 非首页全屏模式与 overlay 一致（内容在最上面），首页 hero 结构回顶即可，
 	// 均无需自定义 swup 回顶行为，保留默认滚动到顶部
 	// TODO: temp solution to change the height of the banner
@@ -133,10 +136,8 @@ function registerSwupHooks(): void {
 			}
 		}
 	});
-	window.swup.hooks.on("visit:start", (visit: { to: { url: string } }) => {
-		// Start progress bar（WAAPI 合成线程动画，不强制回流）
-		startProgressBar();
-
+	// 等九宫格完全覆盖后再调整布局，避免旧页面在盖幕过程中跳动。
+	window.swup.hooks.before("content:replace", (visit: { to: { url: string } }) => {
 		// 先回顶，让后续 FLIP 在 scroll=0 的坐标系内计算：
 		// 若在切页后才回顶，FLIP 的 invert 是按切页前滚动位置校准的，scroll 一复位就会导致
 		// 内容区从视口上方之外（滚动较深时 top<0）开始、再落回，表现为“冲过头再回落”。

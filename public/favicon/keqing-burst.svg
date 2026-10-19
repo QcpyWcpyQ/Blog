@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" color="#c8c5f4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" class="keqing-burst-emblem">
+  <title>刻晴 · 天街巡游</title>
+  <g data-burst-ring="" stroke-width="2.2">
+    <circle cx="50" cy="50" r="36" />
+    <path d="M16 37A39 39 0 0 1 66 14M84 63A39 39 0 0 1 34 86" />
+    <path d="M20 15l2 8-8-2M80 85l-2-8 8 2M87 24l-7 2 2-8M13 76l7-2-2 8" />
+  </g>
+  <path data-burst-star="" pathLength="1" stroke-width="3.4" d="M72 17 24 76 81 46 24 34 64 80 72 17Z" />
+</svg>

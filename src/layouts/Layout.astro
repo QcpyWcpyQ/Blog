@@ -10,6 +10,7 @@ import GithubCardManager from "@components/features/GithubCardManager.astro";
 import MusicManager from "@components/features/MusicManager.astro";
 import MusicPlayerView from "@components/features/MusicPlayerView.astro";
 import SakuraEffect from "@components/features/SakuraEffect.astro";
+import GridPageTransition from "@components/features/GridPageTransition.astro";
 import StartupIntro from "@components/features/StartupIntro.astro";
 import WavesEffect from "@components/features/WavesEffect.astro";
 import ConfigCarrier from "@components/layout/ConfigCarrier.astro";
@@ -521,6 +522,7 @@ const ogImageAlt = propsOgImageAlt ?? pageTitle;
     ]}
   >
     <StartupIntro />
+    <GridPageTransition />
 
     <!-- 首帧前按运行时壁纸模式翻转卡片透明类（布局已由 data-wallpaper-mode 属性规则接管） -->
     <script is:inline>
