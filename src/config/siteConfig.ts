@@ -91,14 +91,13 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		{
 			// 图标文件路径
-			src: "/favicon/keqing-burst.svg",
-			sizes: "any",
+			src: "/favicon/keqing-emblem.png",
+			sizes: "512x512",
 			// 可选，指定主题 'light' | 'dark'
 			// theme: "light",
 			// 可选，图标大小
 			// sizes: "32x32",
 		},
-		{ src: "/favicon/keqing-burst-180.png", sizes: "180x180" },
 	],
 
 	// 导航栏配置
@@ -115,7 +114,7 @@ export const siteConfig: SiteConfig = {
 		// 使用 Astro 图标库时不需要设置 valueDark，图标会自动跟随主题亮暗色切换
 		logo: {
 			type: "image",
-			value: "/favicon/keqing-burst.svg",
+			value: "/favicon/keqing-emblem.png",
 			alt: "刻晴 · 天街巡游",
 		},
 		// 导航栏标题

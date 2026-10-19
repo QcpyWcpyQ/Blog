@@ -1,12 +1,16 @@
 ---
-import burstEmblem from "../../../public/favicon/keqing-burst.svg?raw";
+import { url } from "@/utils/url-utils";
 ---
 
 <div id="grid-page-transition" data-phase="idle" aria-hidden="true" inert>
 	<div class="page-transition-grid">
 		{Array.from({ length: 9 }, (_, index) => (
 			<div class="page-transition-tile" data-tile={index}>
-				{index === 4 && <div class="page-transition-emblem" set:html={burstEmblem} />}
+				{index === 4 && (
+					<div class="page-transition-emblem">
+						<img data-transition-emblem src={url("/favicon/keqing-emblem.png")} width="512" height="512" alt="" />
+					</div>
+				)}
 			</div>
 		))}
 	</div>
@@ -16,7 +20,6 @@ import burstEmblem from "../../../public/favicon/keqing-burst.svg?raw";
 	#grid-page-transition {
 		--grid-surface: #141e39;
 		--grid-line: #a7a9d51c;
-		--grid-symbol: #c8c5f4;
 		position: fixed;
 		inset: 0;
 		z-index: 99990;
@@ -60,18 +63,14 @@ import burstEmblem from "../../../public/favicon/keqing-burst.svg?raw";
 		aspect-ratio: 1;
 	}
 
-	.page-transition-emblem :global(svg) {
+	.page-transition-emblem img {
 		display: block;
 		width: 100%;
 		height: 100%;
-		color: var(--grid-symbol);
+		object-fit: contain;
 		filter: drop-shadow(0 0 14px #aaa2e529);
 	}
 
-	.page-transition-emblem :global([data-burst-star]) {
-		stroke-dasharray: 1;
-		stroke-dashoffset: 1;
-	}
 
 	:global(html[data-grid-transition]) .transition-main,
 	:global(html[data-grid-transition]) .transition-leaving,

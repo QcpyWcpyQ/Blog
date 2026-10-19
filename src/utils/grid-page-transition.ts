@@ -7,9 +7,10 @@ export function registerGridPageTransition(): void {
 	curtain.dataset.initialized = "true";
 
 	const tiles = [...curtain.querySelectorAll<HTMLElement>("[data-tile]")];
-	const star = curtain.querySelector<SVGPathElement>("[data-burst-star]");
-	const ring = curtain.querySelector<SVGGElement>("[data-burst-ring]");
-	if (tiles.length !== 9 || !star || !ring) return;
+	const emblem = curtain.querySelector<HTMLImageElement>(
+		"[data-transition-emblem]",
+	);
+	if (tiles.length !== 9 || !emblem) return;
 
 	const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 	const hooks = window.swup.hooks;
@@ -60,11 +61,7 @@ export function registerGridPageTransition(): void {
 					easing: "cubic-bezier(0.76, 0, 0.24, 1)",
 				}),
 			),
-			play(ring, [{ opacity: 0 }, { opacity: 1 }], {
-				duration: 320,
-				delay: 160,
-			}),
-			play(star, [{ strokeDashoffset: "1" }, { strokeDashoffset: "0" }], {
+			play(emblem, [{ opacity: 0 }, { opacity: 1 }], {
 				duration: 520,
 				delay: 180,
 				easing: "cubic-bezier(0.45, 0, 0.55, 1)",
