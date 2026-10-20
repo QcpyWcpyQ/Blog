@@ -365,7 +365,7 @@ image: ""
   - **Solution 8.1 (The supremum of a union)**
     Set
     $$
-    a:=\sup A,\qquad b:=\sup B,qquad m:=\max\{a,b\}.
+    a:=\sup A,\qquad b:=\sup B,\qquad m:=\max\{a,b\}.
     $$
     We first show that $m$ is an upper bound of $A\cup B$. Let $x\in A\cup B$. If $x\in A$, then
     $$

@@ -1,5 +1,5 @@
 ---
-title: "Methods of Proving"
+title: "Methods of Proving(1)"
 published: 2026-10-14
 description: "Induction proofs for coin representations, exponential inequalities, and tiling a deficient chessboard with L-trominoes."
 tags: [MCS]
