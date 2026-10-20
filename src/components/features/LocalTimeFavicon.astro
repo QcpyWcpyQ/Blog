@@ -1,0 +1,35 @@
+---
+import { url } from "@/utils/url-utils";
+---
+
+<script is:inline define:vars={{ dayIcon: url("/favicon/keqing-day.png"), nightIcon: url("/favicon/keqing-night.png") }}>
+	(() => {
+		// Swup may run this script again; keep one timer and one set of listeners.
+		if (window.__localTimeFavicon) {
+			window.__localTimeFavicon();
+			return;
+		}
+
+		let timer;
+		const update = () => {
+			window.clearTimeout(timer);
+			// getHours uses the visitor's device timezone, including daylight saving.
+			const now = new Date();
+			const hour = now.getHours();
+			const icon = hour >= 8 && hour < 20 ? dayIcon : nightIcon;
+			for (const link of document.querySelectorAll("link[data-local-time-icon]")) {
+				if (link.getAttribute("href") !== icon) link.setAttribute("href", icon);
+			}
+			// Align with the next minute to cover 08:00/20:00 and timezone changes.
+			timer = window.setTimeout(update, 60000 - now.getSeconds() * 1000 - now.getMilliseconds());
+		};
+
+		window.__localTimeFavicon = update;
+		window.addEventListener("focus", update);
+		window.addEventListener("pageshow", update);
+		document.addEventListener("visibilitychange", update);
+		document.addEventListener("swup:content:replace", update);
+		document.addEventListener("swup:page:view", update);
+		update();
+	})();
+</script>

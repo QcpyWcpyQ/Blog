@@ -91,8 +91,8 @@ export const siteConfig: SiteConfig = {
 	favicon: [
 		{
 			// 图标文件路径
-			src: "/favicon/keqing-emblem.png",
-			sizes: "512x512",
+			src: "/favicon/keqing-day.png",
+			sizes: "256x256",
 			// 可选，指定主题 'light' | 'dark'
 			// theme: "light",
 			// 可选，图标大小

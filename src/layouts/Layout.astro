@@ -12,6 +12,7 @@ import MusicPlayerView from "@components/features/MusicPlayerView.astro";
 import SakuraEffect from "@components/features/SakuraEffect.astro";
 import GridPageTransition from "@components/features/GridPageTransition.astro";
 import StartupIntro from "@components/features/StartupIntro.astro";
+import LocalTimeFavicon from "@components/features/LocalTimeFavicon.astro";
 import WavesEffect from "@components/features/WavesEffect.astro";
 import ConfigCarrier from "@components/layout/ConfigCarrier.astro";
 
@@ -260,12 +261,14 @@ const ogImageAlt = propsOgImageAlt ?? pageTitle;
       favicons.map((favicon) => (
         <link
           rel="icon"
+          data-local-time-icon
           href={favicon.src.startsWith("/") ? url(favicon.src) : favicon.src}
           sizes={favicon.sizes}
           media={favicon.theme && `(prefers-color-scheme: ${favicon.theme})`}
         />
       ))
     }
+    <LocalTimeFavicon />
     {appleTouchIcon && (
       <link
         rel="apple-touch-icon"
