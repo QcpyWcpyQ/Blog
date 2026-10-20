@@ -7,10 +7,10 @@ export function registerGridPageTransition(): void {
 	curtain.dataset.initialized = "true";
 
 	const tiles = [...curtain.querySelectorAll<HTMLElement>("[data-tile]")];
-	const emblem = curtain.querySelector<HTMLImageElement>(
-		"[data-transition-emblem]",
-	);
-	if (tiles.length !== 9 || !emblem) return;
+	const emblemStrokes = [
+		...curtain.querySelectorAll<SVGPathElement>("[data-emblem-stroke]"),
+	];
+	if (tiles.length !== 9 || emblemStrokes.length === 0) return;
 
 	const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 	const hooks = window.swup.hooks;
@@ -61,10 +61,17 @@ export function registerGridPageTransition(): void {
 					easing: "cubic-bezier(0.76, 0, 0.24, 1)",
 				}),
 			),
-			play(emblem, [{ opacity: 0 }, { opacity: 1 }], {
-				duration: 520,
-				delay: 180,
-				easing: "cubic-bezier(0.45, 0, 0.55, 1)",
+			...emblemStrokes.map((stroke, index) => {
+				const length = Number(stroke.dataset.length ?? 100);
+				return play(
+					stroke,
+					[{ strokeDashoffset: "1" }, { strokeDashoffset: "0" }],
+					{
+						duration: Math.min(460, Math.max(180, length * 2.4)),
+						delay: 120 + index * 5,
+						easing: "cubic-bezier(0.45, 0, 0.55, 1)",
+					},
+				);
 			}),
 		]).then(() => {
 			if (activeVisit === visit) curtain.dataset.phase = "covered";
