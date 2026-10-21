@@ -1,48 +1,46 @@
 ---
 title: "Data Types and Programming"
 published: 2026-10-20
-description: "C types, conversions, overflow, Boolean expressions, integer division, leap years, real roots, divisibility, and fixed-calendar date conversions."
+description: "C types, conversions, overflow, Boolean expressions, characters, floating-point arithmetic, and integer division."
 tags: [MCS]
 category: MCS
 draft: false
 image: ""
 ---
 
-Source: the supplied tutorial folders *C_Types_Demo*, *01 - Leap Year*, *02 - Roots*, *03 - Divisible*, and *04 - International Fixed Calendar*. The exercise source headers credit Valentin Cassano and Santiago Figueira, Introduction to Computer Science, GTIIT, Winter 2025. The blog's folder records the term in which these notes are studied.
+Source: the supplied *C_Types_Demo* folder. The teaching functions are in `examples.c`; `main.c` parses command-line arguments, dispatches calls, and prints their results.
 
-The type demonstrations and the leap-year and roots functions below come from the supplied code, with formatting adjusted. **Supplementary solutions** are provided for the missing `divisible.c` and `calendar.c`; they are not supplied official solutions. The calendar solution explicitly covers the 364 ordinary days.
+The goal is to observe how operand types determine arithmetic, conversions, comparisons, and return values in C. Some prepared calls intentionally demonstrate undefined or implementation-defined behavior, so their output is not a portable answer.
 
 ## Project structure and compilation
 
-The programs separate the calculation from input and output:
+The project separates function declarations, implementations, and input/output:
 
 | File | Role |
 | --- | --- |
-| A header such as `leapyear.h` | Declares the function's name, parameter types, and return type |
-| An implementation such as `leapyear.c` | Defines the function's calculation |
-| `main.c`, or a named driver | Reads command-line arguments, calls the function, and prints the result |
+| `examples.h` | Declares each function's name, parameter types, and return type |
+| `examples.c` | Defines the small teaching functions |
+| `main.c` | Parses arguments, selects a function, and prints its result |
 | `README.md` | Explains the intended task and how to build and run it |
 
 For example:
 
 ```c
-/* Declaration in leapyear.h */
-int leapyear(int year);
+/* Declarations in examples.h */
+int add(int a, int b);
+double divide_cast(int a, int b);
 ```
 
-This declaration makes the function's interface available to other source files. The function body belongs in the implementation file. A header declaration alone does not supply the implementation: the implementation must also be compiled and linked.
-
-**Corrections to the supplied README files.** The supplied drivers are `.c` files, although several README passages refer to `main.o`, `date2days.o`, or `days2date.o`. The calendar README also interchanges its two compilation headings. The commands in these notes use the files actually supplied. The Divisible and Calendar projects need their missing implementation files before they can be built.
+These declarations make the interfaces available to `main.c`. The function bodies remain in `examples.c`; both source files must be compiled and linked.
 
 | Option | Meaning |
 | --- | --- |
-| `-I.` | Search the current directory for headers, including the supplied `<leapyear.h>`-style includes |
-| `-std=c11` / `-std=c99` | Select the language standard used by the example |
+| `-std=c11` | Compile according to the C11 language standard |
 | `-Wall -Wextra` | Enable useful compiler warnings |
 | `-O0` | Disable most optimizations for the live type demonstration |
 | `-o name` | Name the resulting executable |
 
-Run each command from its corresponding project directory.
+Run the build command from the `C_Types_Demo` directory.
 
 ## C types: read the operands before predicting the result
 
@@ -285,370 +283,41 @@ gcc -std=c11 -O0 -Wall -Wextra -o demo main.c examples.c
 
 Calling a function without arguments runs its prepared examples. `./demo all` runs all prepared calls, including intentional undefined-behavior and implementation-defined demonstrations. Use individual defined calls when checking expected results; the output of the entire demo is not a portable answer sheet.
 
-## Exercise 1: leap years
+## Suggested experiments
 
-**Problem.** Determine whether a given year is a leap year, returning `1` for yes and `0` for no.
+Run the functions individually before using `./demo all`. This keeps each observation tied to one language rule and avoids treating undefined behavior as a predictable result.
 
-A year is a leap year if it is divisible by $4$, except that a century year must also be divisible by $400$:
-
-$$
-\boxed{
-(4\mid y)\land\bigl((100\nmid y)\lor(400\mid y)\bigr).
-}
-$$
-
-Equivalently:
-
-$$
-\bigl((4\mid y)\land(100\nmid y)\bigr)\lor(400\mid y).
-$$
-
-The equivalence uses the fact that divisibility by $400$ already implies divisibility by $4$.
-
-**Supplied implementation (`leapyear.c`).**
-
-```c
-#include <leapyear.h>
-
-int leapyear(int year)
-{
-    int result;
-    result = (year % 4 == 0)
-          && (year % 100 != 0 || year % 400 == 0);
-    return result;
-}
-```
-
-This illustrates the sequence **declaration → assignment → return**. The assignment stores a Boolean result represented as an `int`.
-
-| Year | Divisible by 4? | Divisible by 100? | Divisible by 400? | Result |
-| --- | --- | --- | --- | --- |
-| 2023 | No | No | No | `0` |
-| 2024 | Yes | No | No | `1` |
-| 1900 | Yes | Yes | No | `0` |
-| 2000 | Yes | Yes | Yes | `1` |
-| 2100 | Yes | Yes | No | `0` |
-| 2400 | Yes | Yes | Yes | `1` |
-
-For `1900`, the final expression is `1 && (0 || 0)`, hence `0`. For `2000`, it is `1 && (0 || 1)`, hence `1`.
-
-```bash
-gcc -I. -std=c99 -Wall -Wextra leapyear.c main.c -o leapyear
-./leapyear 1900
-./leapyear 2000
-```
-
-The two calls print `0` and `1`. For the calendar interpretation, use a positive year. The supplied function applies its arithmetic test to any `int` without validating the historical meaning of the input.
-
-## Exercise 2: does a quadratic have real roots?
-
-**Problem.** For the quadratic equation
-
-$$
-ax^2+bx+c=0,\qquad a\ne0,
-$$
-
-determine whether there is at least one real root.
-
-The discriminant is
-
-$$
-\Delta=b^2-4ac.
-$$
-
-| Discriminant | Real roots | Boolean result |
+| Topic | Commands | What to observe |
 | --- | --- | --- |
-| $\Delta>0$ | Two distinct real roots | `1` |
-| $\Delta=0$ | One repeated real root | `1` |
-| $\Delta<0$ | No real roots | `0` |
-
-Thus the required condition is $\Delta\ge0$, rather than $\Delta>0$. There is no need to compute a square root just to answer whether real roots exist.
-
-**Supplied implementation (`hasroots.c`).**
-
-```c
-#include <hasroots.h>
-
-int hasroots(float a, float b, float c)
-{
-    return b * b - 4 * a * c >= 0;
-}
-```
-
-`b * b` expresses $b^2$. In C, `^` is bitwise XOR, not exponentiation.
-
-| $(a,b,c)$ | Equation | $\Delta$ | Result |
-| --- | --- | --- | --- |
-| $(1,-3,2)$ | $x^2-3x+2=0$ | $1$ | `1` |
-| $(1,2,1)$ | $(x+1)^2=0$ | $0$ | `1` |
-| $(1,0,1)$ | $x^2+1=0$ | $-4$ | `0` |
-
-```bash
-gcc -I. -std=c99 -Wall -Wextra hasroots.c main.c -o hasroots
-./hasroots 1 -3 2
-./hasroots 1 2 1
-./hasroots 1 0 1
-```
-
-**Precondition and numerical limitation.** The quadratic argument requires `a != 0`. For instance, `(0, 0, 1)` describes the impossible equation $1=0$, but the supplied discriminant-only function returns `1`. Also, the C function tests a computed `float` discriminant; rounding near zero and extreme magnitudes can make that differ from an exact-real calculation.
-
-**Supplementary extension: allowing non-quadratic equations.** If the specification is widened to all equations $ax^2+bx+c=0$, handle `a == 0` separately:
-
-```c
-int hasroots_general(float a, float b, float c)
-{
-    if (a == 0.0f)
-        return b != 0.0f || c == 0.0f;
-    return b * b - 4 * a * c >= 0;
-}
-```
-
-When `a == 0` and `b != 0`, the linear equation has a root. When both are zero, every real number is a solution if `c == 0`; otherwise none is. This extension does not eliminate floating-point rounding issues.
-
-## Exercise 3: divisibility
-
-**Problem.** Determine whether `dividend` is divisible by `divisor`.
-
-For a nonzero divisor $d$, divisibility means
-
-$$
-d\mid n
-\iff
-\exists k\in\mathbb Z:\ n=kd
-\iff
-\text{the remainder is }0.
-$$
-
-The supplied folder contains `divisible.h` and `main.c`, but no `divisible.c`.
-
-**Basic solution under a precondition.** If the divisor is nonzero and the integer quotient is representable, the calculation is simply:
-
-```c
-return dividend % divisor == 0;
-```
-
-Negative inputs do not invalidate the zero-remainder test: `-12` is divisible by `3`, and `12` is divisible by `-3`. Zero is divisible by every nonzero integer.
-
-**Supplementary reference implementation (`divisible.c`).** The driver only expects a yes/no result, so this version defines a zero divisor to return false. It also handles `-1` before evaluating `%`, avoiding the exceptional `INT_MIN % -1` case on the classroom system.
-
-```c
-#include <divisible.h>
-
-int divisible(int dividend, int divisor)
-{
-    if (divisor == 0)
-        return 0;
-    if (divisor == -1)
-        return 1;
-    return dividend % divisor == 0;
-}
-```
-
-The zero-divisor behavior is an explicit convention added by this solution, not a requirement stated in the supplied header.
-
-| Dividend | Divisor | Result |
-| --- | --- | --- |
-| `12` | `3` | `1` |
-| `13` | `3` | `0` |
-| `0` | `5` | `1` |
-| `-12` | `3` | `1` |
-| `12` | `-3` | `1` |
-| `INT_MIN` | `-1` | `1` |
-| `12` | `0` | `0`, by this implementation's convention |
-| `0` | `0` | `0`, by the same convention |
-
-Save the function as `divisible.c` beside the supplied header and driver:
-
-```bash
-gcc -I. -std=c99 -Wall -Wextra divisible.c main.c -o divisible
-./divisible 12 3
-./divisible 13 3
-```
-
-Unlike the first two drivers, this driver prints a sentence, such as `Number 12 is divisible by 3`.
-
-## Exercise 4: fixed-calendar date conversions
-
-The supplied material describes 13 months of 28 days each:
-
-$$
-13\cdot28=364.
-$$
-
-The programming task connects a day number with a month/day pair using integer division and remainder.
-
-**Scope of this solution.** The README also mentions Year Day and Leap Day, but the provided header has no year argument and specifies no special-day encoding. Its special-day description is insufficient to implement a complete calendar. The functions below therefore handle only the 364 ordinary days; they do not claim to implement every rule of the full International Fixed Calendar.
-
-### Input and output conventions
-
-Use **one-based** numbering:
-
-$$
-1\le n\le364,\qquad1\le m\le13,\qquad1\le d\le28.
-$$
-
-Here $n$ is the ordinal day number, $m$ is the month, and $d$ is the day of that month. Although the README says “days elapsed,” its range table and command description use day 1 for the first day. This solution follows that convention, rather than a zero-based elapsed count.
-
-Encode a date as the integer
-
-$$
-\textit{date}=100m+d.
-$$
-
-Examples: month 1, day 1 is `101`; month 7, day 5 is `705`; month 13, day 28 is `1328`. Because month 13 has two digits, this is more precisely an `M(M)DD` integer encoding than a fixed-width string.
-
-### Converting a date to a day number
-
-Recover the month and day:
-
-$$
-m=\textit{date}\mathbin{\mathrm{div}}100,\qquad
-d=\textit{date}\bmod100.
-$$
-
-There are $m-1$ complete months before the current one, each contributing 28 days. Therefore:
-
-$$
-\boxed{n=28(m-1)+d.}
-$$
-
-For `705`, the calculation is
-
-$$
-m=7,\quad d=5,\quad n=28\cdot6+5=173.
-$$
-
-### Converting a day number to a date
-
-First switch to zero-based numbering by subtracting one:
-
-$$
-n-1=28q+r,\qquad0\le r<28.
-$$
-
-The quotient counts complete months, and the remainder counts days within the current month, both starting from zero. Convert back:
-
-$$
-\boxed{
-m=(n-1)\mathbin{\mathrm{div}}28+1,\qquad
-d=(n-1)\bmod28+1.
-}
-$$
-
-Finally return $100m+d$.
-
-**Why subtract one first?** At $n=28$, `n / 28 + 1` would incorrectly say month 2, while `n % 28` would give day 0. With `n - 1`, we obtain quotient 0 and remainder 27, giving month 1, day 28.
-
-| Day number $n$ | $n-1$ | Quotient by 28 | Remainder | $(m,d)$ | Encoded date |
-| --- | --- | --- | --- | --- | --- |
-| 1 | 0 | 0 | 0 | $(1,1)$ | `101` |
-| 28 | 27 | 0 | 27 | $(1,28)$ | `128` |
-| 29 | 28 | 1 | 0 | $(2,1)$ | `201` |
-| 56 | 55 | 1 | 27 | $(2,28)$ | `228` |
-| 57 | 56 | 2 | 0 | $(3,1)$ | `301` |
-| 173 | 172 | 6 | 4 | $(7,5)$ | `705` |
-| 337 | 336 | 12 | 0 | $(13,1)$ | `1301` |
-| 364 | 363 | 12 | 27 | $(13,28)$ | `1328` |
-
-### Supplementary reference implementation
-
-The supplied folder contains `calendar.h`, `days2date.c`, and `date2days.c`, but no `calendar.c`. Both existing `.c` files are drivers containing `main`; neither implements the conversion functions.
-
-Save the following as `calendar.c`. This reference solution returns `-1` for an invalid or unsupported input; that error convention is supplementary.
-
-```c
-#include <calendar.h>
-
-int days2date(int days)
-{
-    if (days < 1 || days > 364)
-        return -1;
-
-    int month = (days - 1) / 28 + 1;
-    int day = (days - 1) % 28 + 1;
-    return 100 * month + day;
-}
-
-int date2days(int date)
-{
-    if (date < 101 || date > 1328)
-        return -1;
-
-    int month = date / 100;
-    int day = date % 100;
-    if (month < 1 || month > 13 || day < 1 || day > 28)
-        return -1;
-
-    return 28 * (month - 1) + day;
-}
-```
-
-The outer range check alone does not validate a date: for example, `129` is numerically between `101` and `1328`, but day 29 does not exist in an ordinary 28-day month.
-
-Build the two drivers **separately**, because each defines its own `main`:
-
-```bash
-gcc -I. -std=c99 -Wall -Wextra calendar.c days2date.c -o days2date
-gcc -I. -std=c99 -Wall -Wextra calendar.c date2days.c -o date2days
-./days2date 173
-./date2days 705
-```
-
-The outputs are `705` and `173`.
-
-### Why the two conversions are inverses
-
-For a valid date, set $n=28(m-1)+d$. Then
-
-$$
-n-1=28(m-1)+(d-1).
-$$
-
-Since $0\le d-1<28$, division by 28 returns quotient $m-1$ and remainder $d-1$. Thus `days2date` recovers the original month and day.
-
-Conversely, if $n-1=28q+r$, then `days2date` produces $m=q+1$ and $d=r+1$. Applying `date2days` gives
-
-$$
-28(m-1)+d=28q+r+1=n.
-$$
-
-This gives two useful testing properties:
-
-```c
-date2days(days2date(n)) == n
-days2date(date2days(date)) == date
-```
-
-The first applies to all 364 valid day numbers; the second applies to all $13\cdot28$ valid month/day pairs. Also test rejection of `0`, `365`, `366`, `100`, `129`, `1300`, and `1401` in their appropriate functions.
-
-## Input handling and testing
-
-The supplied small drivers illustrate calling functions, rather than complete input validation:
-
-- Leap Year, Roots, and both Calendar drivers access `argv` without first checking the argument count. Supply the required arguments.
-- Divisible checks that exactly two arguments were supplied.
-- These exercise drivers use `atoi` or `atof`; they do not fully validate malformed input or representability. The type demo uses more careful `strtol`, `strtoul`, and `strtod` parsing.
-- A successful parse does not guarantee a safe arithmetic operation. For example, two individually valid `int` arguments may still overflow when added.
-
-| Topic | Useful tests | What they distinguish |
-| --- | --- | --- |
-| Integer average | Small values and two `INT_MAX` inputs | Safe result versus unsafe intermediate sum |
-| Division | `7 / 2` and `-7 / 2`, with and without a cast | Operand types and truncation toward zero |
-| Leap year | 2023, 2024, 1900, 2000 | Ordinary, divisible-by-4, and century cases |
-| Roots | Positive, zero, and negative discriminant | Two, repeated, and absent real roots |
-| Divisibility | Exact, non-exact, negative, zero dividend | Correct remainder test |
-| Calendar | First/last days of months and all valid round trips | One-based indexing and inverse formulas |
-
-**Review questions.**
+| Integer arithmetic | `./demo add 5 7` | Ordinary `int` addition |
+| Intermediate overflow | `./demo average_bad`, `./demo average_safe` | Widening must occur before addition |
+| Signed and unsigned | `./demo to_unsigned -1`, `./demo signed_less_unsigned -1 1` | Conversion can change the represented value and comparison |
+| Narrow integer casts | `./demo to_uchar 257`, `./demo to_short 100000` | Unsigned reduction is defined; an out-of-range signed conversion is implementation-defined |
+| Characters | `./demo char_code A`, `./demo next_char A` | A `char` participates in arithmetic through its numeric code |
+| Boolean expressions | `./demo is_positive -3`, `./demo is_even 8` | Comparisons return `0` or `1` |
+| Floating point | `./demo add_double 0.1 0.2`, `./demo add_double 1e16 1` | Binary representation and rounding affect results |
+| Conversion to `int` | `./demo to_int 3.9`, `./demo to_int -3.9` | The fractional part is discarded toward zero |
+| Division | `./demo divide_ints 7 2`, `./demo divide_cast 7 2` | Operand types determine whether division is integral or floating-point |
+
+Useful review questions follow.
 
 1. Why does returning `double` not make `a / b` floating-point division when both operands are `int`?
 2. Why must the cast in `average_safe` occur before addition?
 3. Why can `-1 < 1U` be false?
-4. Why does the roots test use `>= 0` instead of `> 0`?
-5. Why does the calendar formula divide `n - 1` rather than `n`?
+4. Which conversions have a guaranteed modulo rule, and which depend on the implementation?
+5. Why can `0.1 + 0.2` differ from the exact decimal value `0.3`?
 
-**Answers.** (1) The operands determine the division before the result is converted. (2) A later cast cannot undo signed overflow. (3) The signed operand is converted to unsigned. (4) A zero discriminant still gives a real repeated root. (5) Subtracting one makes the quotient and remainder align with one-based month/day numbering.
+**Answers.** (1) The operand types determine the division before the result is converted. (2) A later cast cannot undo signed overflow. (3) The signed operand is converted to `unsigned int`. (4) Conversion to an unsigned integer uses modular reduction, while an out-of-range conversion to a signed integer is implementation-defined. (5) Most decimal fractions do not have finite binary floating-point representations.
+
+## Key conclusions
+
+- The type of an expression is determined before assignment or return-value conversion.
+- Signed integer overflow is undefined behavior; unsigned arithmetic is modular.
+- Integer division truncates toward zero.
+- Cast before an operation when the operation itself must use the new type.
+- Comparisons and logical operators produce `int` values `0` or `1`.
+- Floating-point values are approximations with finite precision.
 
 ## Source attribution
 
-The supplied exercise files and README notices identify their course code as copyright © 2025 Valentin Cassano and Santiago Figueira, licensed under GNU GPL version 3 or later. Those notices apply to the quoted course code; the blog's general article license does not replace them. The type-demo folder provides no explicit license notice. Explanations, test organization, and sections labelled supplementary were added for these notes.
+The functions, dispatcher, and README material summarized here come from the supplied `C_Types_Demo` folder. That folder contains no explicit license notice. Explanations, tables, and experiment organization were added for these notes.
