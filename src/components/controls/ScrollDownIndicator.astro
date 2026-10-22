@@ -2,13 +2,26 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<div
+<button
+  type="button"
+  aria-label="进入文章列表"
   id="scroll-down-indicator"
   class="scroll-down-indicator"
-  onclick="document.getElementById('main-grid')?.scrollIntoView({ behavior: 'smooth' })"
+  onclick="document.getElementById('main-grid')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })"
 >
   <Icon name="material-symbols:keyboard-arrow-down-rounded" class="scroll-down-icon" />
-</div>
+  <span>向下阅读</span>
+</button>
+
+<style>
+  .scroll-down-indicator {
+    flex-direction: column; align-items: center;
+    min-width: 44px; min-height: 44px; padding: 0.25rem 0.75rem;
+    border-radius: 0.75rem; border: 0; background: transparent;
+  }
+  .scroll-down-indicator span { font-size: 0.75rem; letter-spacing: 0.1em; }
+  .scroll-down-indicator:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 4px; }
+</style>
 
 <script is:inline>
   (function () {

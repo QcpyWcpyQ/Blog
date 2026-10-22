@@ -5,17 +5,21 @@ import keqingEmblem from "../../../public/favicon/keqing-emblem.svg?raw";
 <div id="grid-page-transition" data-phase="idle" aria-hidden="true" inert>
 	<div class="page-transition-grid">
 		{Array.from({ length: 9 }, (_, index) => (
-			<div class="page-transition-tile" data-tile={index}>
-				{index === 4 && <div class="page-transition-emblem" set:html={keqingEmblem} />}
-			</div>
+			<div class="page-transition-tile" data-tile={index} />
 		))}
 	</div>
+	<div class="page-transition-emblem" set:html={keqingEmblem} />
+</div>
+<!-- Outside the inert curtain, above it, so loading and retry remain accessible. -->
+<div id="page-transition-feedback" role="status" aria-live="polite" hidden>
+	<p data-message></p>
+	<div class="transition-loading-line" aria-hidden="true"></div>
+	<a data-retry data-no-swup hidden>重试</a>
+	<button data-dismiss type="button" aria-label="关闭提示" hidden>关闭</button>
 </div>
 
 <style>
 	#grid-page-transition {
-		--grid-surface: #141e39;
-		--grid-line: #a7a9d51c;
 		position: fixed;
 		inset: 0;
 		z-index: 99990;
@@ -23,69 +27,77 @@ import keqingEmblem from "../../../public/favicon/keqing-emblem.svg?raw";
 		pointer-events: none;
 		contain: layout paint;
 	}
-
-	#grid-page-transition[data-phase="covering"],
-	#grid-page-transition[data-phase="covered"],
-	#grid-page-transition[data-phase="revealing"] {
+	#grid-page-transition:not([data-phase="idle"]) {
 		visibility: visible;
 		pointer-events: auto;
 	}
-
 	.page-transition-grid {
 		display: grid;
 		grid-template: repeat(3, 1fr) / repeat(3, 1fr);
 		width: 100%;
 		height: 100%;
 	}
-
 	.page-transition-tile {
-		display: grid;
-		place-items: center;
 		min-width: 0;
 		min-height: 0;
 		margin: -0.5px;
-		background: var(--grid-surface);
-		box-shadow: inset 0 0 0 1px var(--grid-line);
+		background: #141e39;
+		box-shadow: inset 0 0 0 1px #a7a9d509;
 		transform: scale(0);
 		transform-origin: center;
 	}
-
-	.page-transition-tile:nth-child(even) { background: #17223e; }
-	.page-transition-tile:nth-child(5) { background: #1d2846; }
-
+	.page-transition-tile:nth-child(even) { background: #151f3a; }
+	.page-transition-tile:nth-child(5) { background: #17213c; }
 	.page-transition-emblem {
-		width: clamp(64px, 12vmin, 136px);
-		max-width: 72%;
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: clamp(128px, 24vmin, 272px);
 		aspect-ratio: 1;
-		transform: scale(2);
-		transform-origin: 50% 50%;
+		height: fit-content;
+		opacity: 0;
 	}
-
 	.page-transition-emblem :global(svg) {
 		display: block;
 		width: 100%;
 		height: 100%;
 		filter: drop-shadow(0 0 14px #aaa2e529);
 	}
-
-	.page-transition-emblem :global([data-emblem-stroke]) {
-		stroke-dasharray: 1;
-		stroke-dashoffset: 1;
+	.page-transition-emblem :global([data-emblem-stroke]) { stroke-dashoffset: 0; }
+	#page-transition-feedback {
+		position: fixed;
+		z-index: 99995;
+		bottom: max(2rem, env(safe-area-inset-bottom));
+		left: 50%;
+		transform: translateX(-50%);
+		width: max-content;
+		max-width: calc(100vw - 2rem);
+		padding: 1rem 1.5rem;
+		border: 1px solid #c4b5fd33;
+		border-radius: 1rem;
+		background: #141e39;
+		color: #e9e4ff;
+		text-align: center;
+		box-shadow: 0 6px 24px #0003;
 	}
-
-	:global(html[data-grid-transition]) .transition-main,
-	:global(html[data-grid-transition]) .transition-leaving,
-	:global(html[data-grid-transition]) .content-panel,
-	:global(html[data-grid-transition]) .onload-animation {
-		transition: none !important;
-		animation: none !important;
-		transform: none !important;
-		opacity: 1 !important;
+	#page-transition-feedback[hidden], [data-retry][hidden], [data-dismiss][hidden] { display: none; }
+	#page-transition-feedback p { margin: 0; }
+	[data-retry], [data-dismiss] {
+		display: inline-flex; align-items: center; justify-content: center;
+		min-width: 44px; min-height: 44px; margin: 0.5rem 0.5rem 0;
+		color: #d8c9ff; text-decoration: underline; cursor: pointer;
 	}
-
-	:global(html[data-grid-transition]) #progress-bar { opacity: 0 !important; }
-
+	[data-retry]:focus-visible, [data-dismiss]:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 3px; }
+	.transition-loading-line { height: 2px; overflow: hidden; background: #c4b5fd22; margin-top: 0.75rem; }
+	.transition-loading-line::after {
+		content: ""; display: block; width: 40%; height: 100%; background: #c4b5fd;
+		animation: loading-line 1.2s ease-in-out infinite;
+	}
+	#page-transition-feedback[data-error] .transition-loading-line { display: none; }
+	@keyframes loading-line { from { transform: translateX(-100%); } to { transform: translateX(350%); } }
+	:global(html[data-page-transition="grid"]) #progress-bar { opacity: 0 !important; }
 	@media (prefers-reduced-motion: reduce) {
 		#grid-page-transition { display: none; }
+		.transition-loading-line::after { animation: none; width: 100%; opacity: 0.6; }
 	}
 </style>

@@ -115,3 +115,27 @@ html.is-animating .transition-swup-fade {
     /* 提升到合成层：切页期间主线程忙碌时进度条仍由合成线程平滑推进 */
     will-change: transform;
 }
+/* A single transition owner: keep the old page intact until replacement. */
+html[data-page-transition][data-page-transition] :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation) {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1;
+}
+html[data-page-transition] .banner-home-text-overlay { transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation, .banner-title, .banner-subtitle, .banner-links, .scroll-down-indicator, .scroll-down-icon) {
+        animation: none !important;
+        transition: none !important;
+    }
+    :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation, .banner-title, .banner-subtitle, .banner-links, .scroll-down-icon) {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+html[data-page-transition="grid"][data-page-phase="covering"] #banner-overlay-container {
+    opacity: var(--page-overlay-opacity, 1) !important;
+    transform: var(--page-overlay-transform, none) !important;
+}

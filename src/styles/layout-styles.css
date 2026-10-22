@@ -13,15 +13,12 @@ html[data-banner-title-enabled="false"] #wallpaper-wrapper .banner-home-text-ove
     display: none !important;
 }
 
-/* 页面切换期间隐藏首页横幅文案，避免与文章元信息层重叠闪现 */
-html.is-page-transitioning .banner-home-text-overlay {
-    display: none !important;
-}
+/* 首页文案保持到 Swup 在幕布覆盖后替换内容。 */
 
 /* Banner text styles */
 .banner-title {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    animation: banner-fadeInUp 0.3s ease-out;
+    animation: banner-fadeInUp 260ms ease-out both;
     font-weight: bold;
     /* 防止大字体标题溢出容器 */
     overflow-wrap: break-word;
@@ -30,18 +27,32 @@ html.is-page-transitioning .banner-home-text-overlay {
 
 .banner-subtitle {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    animation: banner-fadeInUp 0.3s ease-out 0.3s both;
+    animation: banner-fadeInUp 260ms ease-out 100ms both;
+    min-height: 2.6em;
+    width: 100%;
+    max-width: 40ch;
+    margin-inline: auto;
 }
 
 @keyframes banner-fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(8px);
     }
     to {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+html[data-startup-intro] .banner-title,
+html[data-startup-intro] .banner-subtitle {
+    animation: none;
+    opacity: 0;
+}
+@media (max-width: 767px) {
+    .banner-subtitle { min-height: 3.9em; }
+    #banner-subtitle { font-size: clamp(1rem, 4vw, 1.5rem) !important; }
 }
 
 /* 移动端无侧边栏布局优化 */

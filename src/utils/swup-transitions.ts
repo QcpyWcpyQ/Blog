@@ -161,7 +161,11 @@ function registerSwupHooks(): void {
 		) as HTMLElement | null;
 		// 首页、文章、其他页面的横幅高度不同；文章↔文章、首页↔首页
 		// 类未变 → delta 必为 0，直接短路，避免常见切页白付两次强制布局读取
-		if ((isHomePage !== wasHome || isPostPage !== wasPost) && contentPanel) {
+		if (
+			(isHomePage !== wasHome || isPostPage !== wasPost) && contentPanel &&
+			!document.documentElement.hasAttribute("data-page-transition") &&
+			!window.matchMedia("(prefers-reduced-motion: reduce)").matches
+		) {
 			const oldTop = contentPanel.getBoundingClientRect().top; // 类切换前读
 			bodyElement.classList.toggle("is-home", isHomePage);
 			bodyElement.classList.toggle("is-post", isPostPage);

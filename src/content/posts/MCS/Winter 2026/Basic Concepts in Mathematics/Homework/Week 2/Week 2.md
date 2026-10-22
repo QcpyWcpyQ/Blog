@@ -8,8 +8,6 @@ draft: false
 image: ""
 ---
 
-<!-- Source: the supplied *2nd homework* screenshot, containing eight problems. The statements below preserve the mathematical conditions while normalizing wording and notation. Here $\mathbb N=\{0,1,2,\ldots\}$, as indicated explicitly in Problem 2. -->
-
 - **Problem 1**  
   Prove by induction that $6$ divides $7^n-1$ for every integer $n\ge1$.
 

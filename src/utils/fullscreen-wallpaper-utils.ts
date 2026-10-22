@@ -9,8 +9,6 @@ let parallaxTicking = false;
 let cachedMaxBlur: number | null = null; // 缓存的 --overlay-blur 解析值（仅在加载/滑块变化时刷新）
 let lastWrittenBlur = ""; // 上次实际写入的 --fullscreen-blur，值未变则跳过写入
 // 标题视差记忆化：上次写入的 transform/opacity，值未变则跳过，避免滚动已越淡出区/顶部静止时每帧重写合成层属性
-let lastTitleTransform = "";
-let lastTitleOpacity = "";
 
 /** 仅当 transform/opacity 实际变化时才写入，减少对含标题文字的合成层的无谓逐帧更新 */
 function setTitleParallaxStyle(
@@ -18,9 +16,11 @@ function setTitleParallaxStyle(
 	transform: string,
 	opacity: string,
 ): void {
-	if (transform === lastTitleTransform && opacity === lastTitleOpacity) return;
-	lastTitleTransform = transform;
-	lastTitleOpacity = opacity;
+	if (
+		overlay.style.transform === transform &&
+		overlay.style.opacity === opacity
+	)
+		return;
 	overlay.style.transform = transform;
 	overlay.style.opacity = opacity;
 }
@@ -35,6 +35,17 @@ export function updateFullscreenTitleParallax(): void {
 	const html = document.documentElement;
 	const overlay = document.getElementById("banner-overlay-container");
 	if (!overlay) return;
+	// 盖幕时保留旧页面的滚动位置和文字透明度。
+	if (
+		html.getAttribute("data-page-transition") === "grid" &&
+		html.getAttribute("data-page-phase") === "covering"
+	)
+		return;
+	if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		overlay.style.transform = "";
+		overlay.style.opacity = "";
+		return;
+	}
 	// 非全屏或页面过渡中：复位（让 transition-swup-fade 的 CSS 生效）
 	if (
 		html.getAttribute("data-wallpaper-mode") !== "fullscreen" ||
@@ -151,6 +162,9 @@ function setBlurIfChanged(wrapper: HTMLElement, value: string): void {
 
 /** 注册监听并做初始同步（从 Layout.astro 迁出） */
 export function initFullscreenWallpaper(): void {
+	window
+		.matchMedia("(prefers-reduced-motion: reduce)")
+		.addEventListener("change", updateFullscreenTitleParallax);
 	window.addEventListener("scroll", requestFullscreenTitleParallax, {
 		passive: true,
 	});
