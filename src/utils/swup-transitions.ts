@@ -163,7 +163,7 @@ function registerSwupHooks(): void {
 		// 类未变 → delta 必为 0，直接短路，避免常见切页白付两次强制布局读取
 		if (
 			(isHomePage !== wasHome || isPostPage !== wasPost) && contentPanel &&
-			!document.documentElement.hasAttribute("data-page-transition") &&
+			!document.documentElement.hasAttribute("data-grid-transition") &&
 			!window.matchMedia("(prefers-reduced-motion: reduce)").matches
 		) {
 			const oldTop = contentPanel.getBoundingClientRect().top; // 类切换前读

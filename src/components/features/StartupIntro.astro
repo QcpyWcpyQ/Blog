@@ -28,6 +28,7 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 	style={`--intro-hold: ${introHold}ms; --intro-exit: ${introExit}ms`}
 	role="dialog"
 	aria-modal="true"
+	tabindex="-1"
 	aria-label={`正在进入 ${profileConfig.name} 的博客`}
 	hidden
 >
@@ -48,7 +49,6 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 			<div class="intro-progress-fill"></div>
 		</div>
 	</div>
-	<button class="intro-skip" type="button">跳过开场</button>
 </div>
 
 <!-- Run while parsing the first body element, before the page can flash through.
@@ -73,7 +73,6 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 			sessionStorage.setItem(storageKey, "true");
 		} catch {}
 
-		const skip = intro.querySelector(".intro-skip");
 		const previousFocus = document.activeElement;
 		const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
 		const html = document.documentElement;
@@ -84,7 +83,7 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 		let exitTimer;
 		html.setAttribute("data-startup-intro", "running");
 		intro.hidden = false;
-		skip.focus({ preventScroll: true });
+		intro.focus({ preventScroll: true });
 
 		function cleanup() {
 			if (cleanedUp) return;
@@ -112,13 +111,12 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 			// Keep keyboard focus out of the temporarily covered page.
 			if (event.key === "Tab") {
 				event.preventDefault();
-				skip.focus();
+				intro.focus({ preventScroll: true });
 			}
 		}
 		const startTimer = window.setTimeout(finish, duration);
 		// Never leave a blocking opening screen behind if another script fails.
 		const safetyTimer = window.setTimeout(cleanup, duration + exitDuration + 1000);
-		skip.addEventListener("click", finish);
 		motion.addEventListener("change", cleanup);
 		document.addEventListener("keydown", onKeyDown);
 		window.addEventListener("pagehide", cleanup);
@@ -248,19 +246,6 @@ if (avatar && !/^(?:https?:\/\/|\/|data:)/.test(avatar)) {
 		filter: blur(5px);
 	}
 
-	.intro-skip {
-		position: absolute;
-		right: max(1.5rem, env(safe-area-inset-right));
-		bottom: max(1.5rem, env(safe-area-inset-bottom));
-		min-height: 44px;
-		padding: 0.65rem 1rem;
-		border: 1px solid #c4b5fd66;
-		border-radius: 999px;
-		background: #141e39;
-		color: #e9e4ff;
-		cursor: pointer;
-	}
-	.intro-skip:focus-visible { outline: 2px solid #c4b5fd; outline-offset: 4px; }
 
 	@keyframes intro-enter {
 		from { opacity: 0; }

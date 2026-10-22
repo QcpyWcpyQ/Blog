@@ -37,8 +37,8 @@ export function updateFullscreenTitleParallax(): void {
 	if (!overlay) return;
 	// 盖幕时保留旧页面的滚动位置和文字透明度。
 	if (
-		html.getAttribute("data-page-transition") === "grid" &&
-		html.getAttribute("data-page-phase") === "covering"
+		html.hasAttribute("data-grid-transition") &&
+		document.getElementById("grid-page-transition")?.dataset.phase === "covering"
 	)
 		return;
 	if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {

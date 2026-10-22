@@ -2,7 +2,6 @@
 import { Icon } from "astro-icon/components";
 import TypewriterText from "@/components/features/TypewriterText.astro";
 import { backgroundWallpaper } from "@/config";
-import { splitHeroQuotes } from "@/utils/hero-quotes";
 import { encodeMailto, MAILTO_ONCLICK_SCRIPT } from "@/utils/email-utils";
 
 interface Props {
@@ -28,7 +27,7 @@ const homeTextLinksEnable = homeText?.linksEnable !== false;
                     <div id="banner-subtitle" class="banner-subtitle text-white/90 leading-snug" style={{ fontSize: homeText.subtitleSize || "1.5rem" }} data-subtitles={JSON.stringify(homeText.subtitle)}>
                         {homeText.typewriter?.enable ? (
                             <TypewriterText
-                                text={splitHeroQuotes(homeText.subtitle)}
+                                text={homeText.subtitle}
                                 random={homeText.typewriter.random}
                                 speed={homeText.typewriter.speed}
                                 deleteSpeed={homeText.typewriter.deleteSpeed}

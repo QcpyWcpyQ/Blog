@@ -116,13 +116,13 @@ html.is-animating .transition-swup-fade {
     will-change: transform;
 }
 /* A single transition owner: keep the old page intact until replacement. */
-html[data-page-transition][data-page-transition] :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation) {
+html[data-grid-transition][data-grid-transition] :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation) {
     transition: none !important;
     animation: none !important;
     transform: none !important;
     opacity: 1;
 }
-html[data-page-transition] .banner-home-text-overlay { transition: none !important; }
+html[data-grid-transition] .banner-home-text-overlay { transition: none !important; }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto !important; }
     :is(.transition-main, .transition-leaving, .transition-swup-fade, .content-panel, .onload-animation, .banner-title, .banner-subtitle, .banner-links, .scroll-down-indicator, .scroll-down-icon) {
@@ -133,9 +133,4 @@ html[data-page-transition] .banner-home-text-overlay { transition: none !importa
         transform: none !important;
         opacity: 1 !important;
     }
-}
-
-html[data-page-transition="grid"][data-page-phase="covering"] #banner-overlay-container {
-    opacity: var(--page-overlay-opacity, 1) !important;
-    transform: var(--page-overlay-transform, none) !important;
 }
