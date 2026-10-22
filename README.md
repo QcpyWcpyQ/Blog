@@ -1,4 +1,8 @@
-[cpysama.com](https://cpysama.com/)
+[cpysama.com](https://cpysama.com/)  
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/chart?repos=qcpywcpyq/blog&type=date&legend=top-left)](https://www.star-history.com/?repos=qcpywcpyq%2Fblog&type=date&legend=top-left)
 
 <img src="./docs/images/1131.png" width = "350" height = "500" alt="Firefly" align=right />
 
