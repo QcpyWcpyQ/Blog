@@ -6,8 +6,7 @@ if (!commentConfig?.giscus) {
 }
 
 const giscus = commentConfig.giscus;
-const lightTheme = "light";
-const darkTheme = "dark";
+const theme = "dark";
 ---
 
 <!-- 
@@ -25,45 +24,18 @@ const darkTheme = "dark";
   reactionsEnabled={giscus.reactionsEnabled}
   emitMetadata={giscus.emitMetadata}
   inputPosition={giscus.inputPosition}
-  theme={lightTheme}
+  theme={theme}
   lang={giscus.lang}
   loading={giscus.loading}
 />
 
-<script is:inline define:vars={{ lightTheme, darkTheme }}>
+<script is:inline>
   const requestedPath = new URLSearchParams(window.location.search).get("path");
-  const widget = document.querySelector("giscus-widget");
+  const widget = document.querySelector("#post-comments giscus-widget");
   if (requestedPath && widget) {
     widget.setAttribute("mapping", "specific");
     widget.setAttribute("term", requestedPath);
   }
 
   import("https://esm.sh/giscus");
-
-  function updateGiscusTheme() {
-    const isDark = document.documentElement.classList.contains('dark');
-    const theme = isDark ? darkTheme : lightTheme;
-    if (widget) {
-      widget.setAttribute('theme', theme);
-    }
-  }
-
-  // Initial update
-  updateGiscusTheme();
-
-  // Clean up previous observer if exists
-  if (window.giscusThemeObserver) {
-    window.giscusThemeObserver.disconnect();
-  }
-
-  // Create new observer
-  window.giscusThemeObserver = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-        updateGiscusTheme();
-      }
-    });
-  });
-
-  window.giscusThemeObserver.observe(document.documentElement, { attributes: true });
 </script>
