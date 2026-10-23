@@ -346,7 +346,7 @@ image: ""
     The third row becomes
 
     $$
-    \begin{bmatrix}0&0&0&\vline&q-2\end{bmatrix},
+    \begin{bmatrix}0&0&0&|&q-2\end{bmatrix},
     $$
 
     which asserts $0=q-2\neq0$. This is impossible, so the system has no solution.
