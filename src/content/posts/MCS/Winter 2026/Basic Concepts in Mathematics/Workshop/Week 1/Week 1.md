@@ -1,5 +1,5 @@
 ---
-title: "Methods of Proving(1)"
+title: "Week 1"
 published: 2026-10-14
 description: "Complete parity and invariant proofs for coins, gears, permutations, number operations, domino chains, polygons, and cup flipping."
 tags: [MCS]
