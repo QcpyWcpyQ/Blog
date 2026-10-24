@@ -78,4 +78,3 @@ image: ""
     $$
     \forall \varepsilon>0,\exists n_0\in\mathbb N,\forall n>n_0,\left\vert a_n-l\right\rvert<\varepsilon.
     $$
-    
