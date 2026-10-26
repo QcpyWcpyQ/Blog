@@ -292,3 +292,149 @@ image: ""
     X'=A^{-1}AX'=A^{-1}b=X,
     $$
     so the solution is unique. Conversely, if $AX=b$ has a unique solution for every $b$, then it has a solution for every $b$. Theorem 3.4 therefore implies that $A$ is invertible.
+
+---
+
+- **Observation 4**
+  $$
+  AX=b\longrightarrow(A\mid b)\longrightarrow(R\mid b')
+  \longrightarrow RX=b'.
+  $$
+  The systems $AX=b$ and $RX=b'$ have exactly the same solutions.
+
+  - **Remark 4.1**
+    $R$ is unique.
+
+---
+
+- **Theorem 5**
+  The matrix $R$ has $t$ pivots in columns $j_1,j_2,\ldots,j_t$. The corresponding unknowns $x_{j_1},x_{j_2},\ldots,x_{j_t}$ are called pivot variables.
+
+  The other unknowns $x_{k_1},x_{k_2},\ldots,x_{k_s}$ are the free variables. Note that $t+s=n$.
+
+  The system $RX=b'$ is
+  $$
+  (\#)\qquad
+  \begin{cases}
+  x_{j_1}+a_{1k_1}x_{k_1}+\cdots+a_{1k_s}x_{k_s}=b_1',\\
+  x_{j_2}+a_{2k_1}x_{k_1}+\cdots+a_{2k_s}x_{k_s}=b_2',\\
+  \vdots\\
+  x_{j_t}+a_{tk_1}x_{k_1}+\cdots+a_{tk_s}x_{k_s}=b_t',\\
+  0=b_{t+1}',\\
+  \vdots\\
+  0=b_m'.
+  \end{cases}
+  $$
+
+  It follows that $(\alpha_1,\alpha_2,\ldots,\alpha_n)$ is a solution of $(\#)$ if and only if
+  $$
+  b_{t+1}'=\cdots=b_m'=0
+  $$
+  and
+  $$
+  \begin{aligned}
+  \alpha_{j_1}
+  &=b_1'-(a_{1k_1}\alpha_{k_1}+\cdots+a_{1k_s}\alpha_{k_s}),\\
+  &\ \vdots\\
+  \alpha_{j_t}
+  &=b_t'-(a_{tk_1}\alpha_{k_1}+\cdots+a_{tk_s}\alpha_{k_s}).
+  \end{aligned}
+  $$
+
+  Hence, if $b_{t+1}'=\cdots=b_m'=0$, then in the case $s=0$ and $t=n$,
+  $$
+  x_{j_1}=b_1',\ldots,x_{j_t}=b_t'.
+  $$
+  In the case $s\geqslant1$, the solution set of $(\#)$ is in bijection with $\mathbb F^s$ via
+  $$
+  (\lambda_1,\ldots,\lambda_s)
+  \longmapsto
+  \begin{cases}
+  \alpha_{k_i}=\lambda_i,\\
+  \alpha_{j_l}=b_l'-(a_{lk_1}\lambda_1+\cdots+a_{lk_s}\lambda_s).
+  \end{cases}
+  $$
+
+  - **Corollaries 5.1**
+    1. The system
+       $$
+       AX=0
+       $$
+       has a nontrivial solution if and only if $s\geqslant1$.
+
+    2. The system
+       $$
+       AX=b
+       $$
+       has a solution if and only if $b_{t+1}'=\cdots=b_m'=0$.
+
+    3. The system
+       $$
+       AX=b
+       $$
+       has a unique solution if and only if $b_{t+1}'=\cdots=b_m'=0$ and $s=0$.
+
+    4. The system
+       $$
+       AX=b
+       $$
+       has more than one solution if and only if $b_{t+1}'=\cdots=b_m'=0$ and $s\geqslant1$.
+
+---
+
+- **Observation 6**
+  $$
+  e(A)=EA,
+  \qquad\text{where }E=e(I).
+  $$
+  For $R\in M_{n\times n}(\mathbb F)$,
+  $$
+  t=n\iff s=0\iff R=I.
+  $$
+
+---
+
+- **Theorem 7**
+  Let $A\in M_{n\times n}(\mathbb F)$. The matrix $A$ is invertible if and only if any of the following equivalent conditions holds.
+
+  1. $A$ is row-equivalent to $I$.
+  2. $A$ is a product of elementary matrices.
+  3. $AX=0$ has only the trivial solution.
+  4. $AX=b$ has a solution for every $b$.
+  5. $AX=b$ has a unique solution for every $b$.
+
+  - **Corollary 7.1**
+    If $A$ has a left inverse or a right inverse, then $A$ is invertible.
+
+    - **Proof 7.1.1**
+      Assume $BA=I$. Consider $AX=0$. Then $BAX=0$, so $X=0$. Therefore, $A$ is invertible.
+
+      Assume $AC=I$. Then $C$ has a left inverse $A$. Hence, $C$ is invertible. It follows that
+      $$
+      AC=I\implies A=C^{-1},
+      $$
+      so $A$ is invertible.
+
+  - **Corollary 7.2**
+    Let
+    $$
+    A=A_1\cdots A_k.
+    $$
+    Then $A$ is invertible if and only if every $A_i$ is invertible.
+
+    - **Proof 7.2.1**
+      **$(\Longleftarrow)$.** This direction is immediate.
+
+      **$(\Longrightarrow)$.** Consider $A_kX=0$. If it had a nontrivial solution $X_0$, then
+      $$
+      A_kX_0=0
+      \qquad\text{and}\qquad
+      AX_0=0.
+      $$
+      This is a contradiction because $A$ is invertible. Hence, $A_kX=0$ has only the trivial solution, and therefore $A_k$ is invertible.
+
+      Now consider
+      $$
+      AA_k^{-1}=A_1\cdots A_{k-1},
+      $$
+      which is invertible. As before, we deduce that $A_{k-1}$ is invertible. Repeating this argument, after $k$ steps we conclude that all the matrices $A_i$ are invertible.
