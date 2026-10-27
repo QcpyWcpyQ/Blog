@@ -252,3 +252,38 @@ image: ""
     $$
     \lim_{n\to\infty}\sqrt{a_n}=\sqrt{L}.
     $$
+
+---
+
+- **Exercise 7**
+  Prove that
+  $$
+  \lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}=+\infty.
+  $$
+
+  - **Solution 7.1**
+    We need to prove that, for every $M>0$, there exists $N\in\mathbb{N}$ such that
+    $$
+    n>N
+    \implies
+    \frac{3n^2+2n+2}{5n+4}>M.
+    $$
+    Let $M>0$, and choose
+    $$
+    N=\left\lceil3M\right\rceil+1.
+    $$
+    For every $n\geqslant1$, we have $5n+4\leqslant9n$. Therefore, if $n>N$,
+    $$
+    \begin{aligned}
+    \frac{3n^2+2n+2}{5n+4}
+      &\geqslant\frac{3n^2}{5n+4}\\
+      &\geqslant\frac{3n^2}{9n}\\
+      &=\frac{n}{3}\\
+      &>\frac{N}{3}\\
+      &>M.
+    \end{aligned}
+    $$
+    Hence,
+    $$
+    \lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}=+\infty.
+    $$
