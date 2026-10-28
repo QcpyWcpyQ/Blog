@@ -13,6 +13,10 @@ export interface TocInput {
 	slug: string;
 	/** 标题纯文本 */
 	text: string;
+	/** 来源：普通标题或正文中带编号的粗体列表标签 */
+	kind?: "heading" | "list-item";
+	/** Markdown 列表嵌套层级；仅 list-item 使用 */
+	listDepth?: number;
 }
 
 export interface TocItem {
@@ -60,7 +64,9 @@ export function computeTocItems(
 
 		let badgeKind: "index" | "dot" | "dot-sm";
 		let badgeIndex: number | undefined;
-		if (depth === minDepth) {
+		if (h.kind === "list-item") {
+			badgeKind = (h.listDepth ?? 1) <= 1 ? "dot" : "dot-sm";
+		} else if (depth === minDepth) {
 			badgeKind = "index";
 			badgeIndex = indexCount;
 			indexCount++;

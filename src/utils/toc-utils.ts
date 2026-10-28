@@ -47,7 +47,7 @@ export class TOCManager {
 	}
 
 	/**
-	 * 查找所有标题
+	 * 查找所有目录目标：标题，以及构建期标记的编号列表标签
 	 */
 	private getAllHeadings(): HTMLElement[] {
 		const contentContainer = this.getContentContainer();
@@ -55,7 +55,9 @@ export class TOCManager {
 			return [];
 		}
 		return Array.from(
-			contentContainer.querySelectorAll("h1, h2, h3, h4, h5, h6"),
+			contentContainer.querySelectorAll(
+				"h1, h2, h3, h4, h5, h6, [data-toc-entry='list-item']",
+			),
 		);
 	}
 
@@ -91,7 +93,14 @@ export class TOCManager {
 	 */
 	private domHeadingsToInputs(headings: HTMLElement[]): TocInput[] {
 		return headings.map((heading) => {
-			const depth = Number.parseInt(heading.tagName.charAt(1), 10);
+			const preservedDepth = Number.parseInt(
+				heading.dataset.tocDepth ?? "",
+				10,
+			);
+			const tagDepth = Number.parseInt(heading.tagName.charAt(1), 10);
+			const depth = Number.isFinite(preservedDepth)
+				? preservedDepth
+				: tagDepth;
 			let text = this.getCleanTextContent(heading)
 				.replace(/#+\s*$/, "")
 				.trim();
@@ -109,7 +118,19 @@ export class TOCManager {
 				}
 			}
 
-			return { depth, slug: heading.id, text };
+			return {
+				depth,
+				slug: heading.id,
+				text,
+				kind:
+					heading.dataset.tocEntry === "list-item"
+						? "list-item"
+						: "heading",
+				listDepth: Number.parseInt(
+					heading.dataset.tocListDepth ?? "0",
+					10,
+				),
+			};
 		});
 	}
 
