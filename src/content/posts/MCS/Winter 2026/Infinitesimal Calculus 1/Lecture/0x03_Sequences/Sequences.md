@@ -475,3 +475,202 @@ image: ""
     =\lvert c\rvert\left\lvert a_n-a\right\rvert
     <\varepsilon.
     $$
+
+---
+
+- **Theorem 7**
+  Let $(a_n)$ be a sequence.
+
+  1. If $(a_n)$ is convergent, then $(a_n)$ is bounded.
+  2. If
+     $$
+     \lim_{n\to\infty}a_n=l
+     $$
+     and $c<l$, then there exists $n_0\in\mathbb{N}$ such that $a_n>c$ for every $n>n_0$.
+  3. If
+     $$
+     \lim_{n\to\infty}a_n=l
+     $$
+     and $c>l$, then there exists $n_0\in\mathbb{N}$ such that $a_n<c$ for every $n>n_0$.
+
+  - **Proof 7.1**
+    **1. Boundedness.** Since $(a_n)$ is convergent, there exists $l\in\mathbb{R}$ such that
+    $$
+    \lim_{n\to\infty}a_n=l.
+    $$
+    Taking $\varepsilon=1$, there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    \left\lvert a_n-l\right\rvert<1.
+    $$
+    Hence,
+    $$
+    \left\lvert a_n\right\rvert
+    \leqslant\left\lvert a_n-l\right\rvert+\lvert l\rvert
+    <1+\lvert l\rvert.
+    $$
+    Let
+    $$
+    M=\max\left\{\lvert a_1\rvert,\ldots,\lvert a_{n_0}\rvert,1+\lvert l\rvert\right\}.
+    $$
+    Then $\lvert a_n\rvert\leqslant M$ for every $n\in\mathbb{N}$, so $(a_n)$ is bounded.
+
+    **2. Eventual lower bound.** Suppose that $c<l$, and let
+    $$
+    \varepsilon=l-c>0.
+    $$
+    Since $a_n\to l$, there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    \left\lvert a_n-l\right\rvert<\varepsilon.
+    $$
+    Therefore,
+    $$
+    a_n>l-\varepsilon=l-(l-c)=c.
+    $$
+
+    **3. Eventual upper bound.** Suppose that $c>l$, and let
+    $$
+    \varepsilon=c-l>0.
+    $$
+    Since $a_n\to l$, there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    \left\lvert a_n-l\right\rvert<\varepsilon.
+    $$
+    Therefore,
+    $$
+    a_n<l+\varepsilon=l+(c-l)=c.
+    $$
+
+- **Corollary 7.2**
+  If $(a_n)$ is convergent and
+  $$
+  \lim_{n\to\infty}a_n=l\neq0,
+  $$
+  then there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+  $$
+  \left\lvert a_n\right\rvert>\frac{\lvert l\rvert}{2}.
+  $$
+
+  - **Proof 7.2.1**
+    Suppose first that $l>0$. Then
+    $$
+    \frac{l}{2}<l.
+    $$
+    By Theorem 7, there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    a_n>\frac{l}{2}>0.
+    $$
+    Therefore,
+    $$
+    \left\lvert a_n\right\rvert=a_n>\frac{l}{2}=\frac{\lvert l\rvert}{2}.
+    $$
+
+    Now suppose that $l<0$. Then
+    $$
+    \frac{l}{2}>l.
+    $$
+    By Theorem 7, there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    a_n<\frac{l}{2}<0.
+    $$
+    Hence,
+    $$
+    \left\lvert a_n\right\rvert=-a_n>-\frac{l}{2}=\frac{\lvert l\rvert}{2}.
+    $$
+
+- **Example 7.3**
+  Find
+  $$
+  \lim_{n\to\infty}\frac{3n^2+2n-1}{-2n^2+3n-8}.
+  $$
+
+  - **Solution 7.3.1**
+    Dividing the numerator and denominator by $n^2$ gives
+    $$
+    \begin{aligned}
+    \lim_{n\to\infty}\frac{3n^2+2n-1}{-2n^2+3n-8}
+      &=\lim_{n\to\infty}
+        \frac{3+\frac{2}{n}-\frac{1}{n^2}}
+        {-2+\frac{3}{n}-\frac{8}{n^2}}\\
+      &=-\frac{3}{2}.
+    \end{aligned}
+    $$
+    Indeed, $1/n\to0$ and $1/n^2\to0$. Hence, the numerator converges to $3$, while the denominator converges to $-2\neq0$, so the result follows from the quotient rule.
+
+---
+
+- **Theorem 8 (Inequality theorem)**
+  Suppose that $a_n\to a$ and $b_n\to b$. If there exists $n_0\in\mathbb{N}$ such that
+  $$
+  a_n\leqslant b_n
+  $$
+  for every $n>n_0$, then $a\leqslant b$.
+
+  - **Proof 8.1**
+    Suppose, for contradiction, that $a>b$. Since
+    $$
+    a>\frac{a+b}{2},
+    $$
+    and $a_n\to a$, Theorem 7 gives an $n_1\in\mathbb{N}$ such that
+    $$
+    a_n>\frac{a+b}{2}
+    $$
+    for every $n>n_1$. Similarly, since
+    $$
+    \frac{a+b}{2}>b
+    $$
+    and $b_n\to b$, there exists $n_2\in\mathbb{N}$ such that
+    $$
+    b_n<\frac{a+b}{2}
+    $$
+    for every $n>n_2$. Taking $n>\max\{n_0,n_1,n_2\}$ gives
+    $$
+    b_n<\frac{a+b}{2}<a_n,
+    $$
+    which contradicts $a_n\leqslant b_n$. Therefore, $a\leqslant b$.
+
+---
+
+- **Theorem 9 (Sandwich theorem)**
+  Suppose that $a_n\to l$ and $b_n\to l$. If there exists $n_0\in\mathbb{N}$ such that
+  $$
+  a_n\leqslant x_n\leqslant b_n
+  $$
+  for every $n>n_0$, then
+  $$
+  \lim_{n\to\infty}x_n=l.
+  $$
+
+  - **Proof 9.1**
+    Let $\varepsilon>0$. Since $a_n\to l$, there exists $n_1\in\mathbb{N}$ such that, for every $n>n_1$,
+    $$
+    l-\varepsilon<a_n<l+\varepsilon.
+    $$
+    Since $b_n\to l$, there exists $n_2\in\mathbb{N}$ such that, for every $n>n_2$,
+    $$
+    l-\varepsilon<b_n<l+\varepsilon.
+    $$
+    Therefore, for every $n>\max\{n_0,n_1,n_2\}$,
+    $$
+    l-\varepsilon<a_n\leqslant x_n\leqslant b_n<l+\varepsilon.
+    $$
+    Hence,
+    $$
+    \left\lvert x_n-l\right\rvert<\varepsilon,
+    $$
+    so $x_n\to l$.
+
+  - **Example 9.2**
+    Find
+    $$
+    \lim_{n\to\infty}\frac{1}{n^2}.
+    $$
+
+    - **Solution 9.2.1**
+      For every $n\geqslant1$,
+      $$
+      0\leqslant\frac{1}{n^2}\leqslant\frac{1}{n}.
+      $$
+      The constant zero sequence converges to $0$, and $1/n\to0$. Therefore, by the sandwich theorem,
+      $$
+      \lim_{n\to\infty}\frac{1}{n^2}=0.
+      $$
