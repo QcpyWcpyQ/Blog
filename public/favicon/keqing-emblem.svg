@@ -1,56 +1,56 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Keqing emblem">
-<g fill="none" stroke="#cc80fe" stroke-opacity="0.65" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
-	<path data-emblem-stroke="0" data-length="185.3" pathLength="1" d="M305 84 L307 77 L306 62 L298 45 L289 36 L277 29 L256 26 L236 33 L223 45 L218 53 L214 66 L215 86" />
-	<path data-emblem-stroke="1" data-length="86.1" pathLength="1" d="M226 81 L244 77 L268 76 L305 84" />
+<g fill="none" stroke="#cc80fe" stroke-opacity="1" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+	<path data-emblem-stroke="0" data-length="185.3" pathLength="1" d="M305 84 L306 80.5 Q307 77 306.758 73.368 L306.5 69.5 Q306 62 302.799 55.199 L300.71 50.758 Q298 45 293.5 40.5 L293.5 40.5 Q289 36 283.503 32.793 L283 32.5 Q277 29 270.124 28.018 L266.488 27.498 Q256 26 246 29.5 L244.349 30.078 Q236 33 229.5 39 L226.466 41.801 Q223 45 220.5 49 L220.5 49 Q218 53 216.613 57.508 L216 59.5 Q214 66 214.34 72.792 L215 86" />
+	<path data-emblem-stroke="1" data-length="86.1" pathLength="1" d="M226 81 L235 79 Q244 77 253.212 76.616 L256.01 76.5 Q268 76 279.729 78.536 L305 84" />
 	<path data-emblem-stroke="2" data-length="2.0" pathLength="1" d="M305 84 L305 86" />
-	<path data-emblem-stroke="3" data-length="108.9" pathLength="1" d="M305 86 L311 87 L324 94 L340 106 L359 127 L371 150" />
-	<path data-emblem-stroke="4" data-length="104.8" pathLength="1" d="M215 86 L197 94 L182 105 L162 127 L149 150" />
-	<path data-emblem-stroke="5" data-length="71.8" pathLength="1" d="M305 86 L298 101 L261 139" />
-	<path data-emblem-stroke="6" data-length="36.0" pathLength="1" d="M215 86 L224 102 L234 113" />
-	<path data-emblem-stroke="7" data-length="81.2" pathLength="1" d="M261 139 L317 195 L319 195" />
+	<path data-emblem-stroke="3" data-length="108.9" pathLength="1" d="M305 86 L308 86.5 Q311 87 313.678 88.442 L317.5 90.5 Q324 94 329.906 98.429 L332 100 Q340 106 346.709 113.415 L350.949 118.102 Q359 127 364.551 137.639 L371 150" />
+	<path data-emblem-stroke="4" data-length="104.8" pathLength="1" d="M215 86 L205.499 90.223 Q197 94 189.5 99.5 L189.5 99.5 Q182 105 175.744 111.882 L170.072 118.121 Q162 127 156.095 137.447 L149 150" />
+	<path data-emblem-stroke="5" data-length="71.8" pathLength="1" d="M305 86 L301.5 93.5 Q298 101 292.226 106.93 L261 139" />
+	<path data-emblem-stroke="6" data-length="36.0" pathLength="1" d="M215 86 L220.356 95.522 Q224 102 229 107.5 L234 113" />
+	<path data-emblem-stroke="7" data-length="81.2" pathLength="1" d="M261 139 L316.293 194.293 Q317 195 318 195 L319 195" />
 	<path data-emblem-stroke="8" data-length="79.8" pathLength="1" d="M261 139 L204 194" />
-	<path data-emblem-stroke="9" data-length="192.0" pathLength="1" d="M149 150 L135 149 L124 151 L107 160 L93 179 L90 191 L90 202 L97 221 L112 236 L127 242 L152 241" />
-	<path data-emblem-stroke="10" data-length="187.6" pathLength="1" d="M371 150 L386 149 L397 151 L408 156 L423 170 L430 187 L430 206 L428 213 L424 221 L413 233 L394 242 L373 241" />
-	<path data-emblem-stroke="11" data-length="84.7" pathLength="1" d="M371 150 L353 161 L319 195" />
+	<path data-emblem-stroke="9" data-length="192.0" pathLength="1" d="M149 150 L140.576 149.398 Q135 149 129.5 150 L129.5 150 Q124 151 119.059 153.616 L115.5 155.5 Q107 160 101.295 167.743 L96.669 174.021 Q93 179 91.5 185 L91.334 185.664 Q90 191 90 196.5 L90 196.5 Q90 202 91.901 207.161 L93.5 211.5 Q97 221 104.159 228.159 L106.288 230.288 Q112 236 119.5 239 L119.5 239 Q127 242 135.071 241.677 L152 241" />
+	<path data-emblem-stroke="10" data-length="187.6" pathLength="1" d="M371 150 L380.422 149.372 Q386 149 391.5 150 L391.5 150 Q397 151 402.089 153.313 L402.5 153.5 Q408 156 412.417 160.122 L416.28 163.728 Q423 170 426.5 178.5 L426.5 178.5 Q430 187 430 196.192 L430 202.36 Q430 206 429 209.5 L429 209.5 Q428 213 426.372 216.256 L426 217 Q424 221 420.978 224.297 L418.5 227 Q413 233 405.644 236.484 L403.5 237.5 Q394 242 383.5 241.5 L373 241" />
+	<path data-emblem-stroke="11" data-length="84.7" pathLength="1" d="M371 150 L362 155.5 Q353 161 345.542 168.458 L319 195" />
 	<path data-emblem-stroke="12" data-length="2.0" pathLength="1" d="M149 150 L149 152" />
-	<path data-emblem-stroke="13" data-length="89.5" pathLength="1" d="M149 152 L144 164 L140 185 L140 211 L145 231" />
-	<path data-emblem-stroke="14" data-length="78.3" pathLength="1" d="M149 152 L157 154 L176 167 L204 194" />
-	<path data-emblem-stroke="15" data-length="85.7" pathLength="1" d="M376 163 L380 180 L381 203 L378 225 L373 241" />
-	<path data-emblem-stroke="16" data-length="87.4" pathLength="1" d="M204 194 L228 230 L242 261" />
-	<path data-emblem-stroke="17" data-length="77.3" pathLength="1" d="M319 195 L355 233 L372 241" />
-	<path data-emblem-stroke="18" data-length="44.0" pathLength="1" d="M182 217 L165 233 L152 241" />
-	<path data-emblem-stroke="19" data-length="79.6" pathLength="1" d="M296 219 L270 243 L248 259 L242 261" />
-	<path data-emblem-stroke="20" data-length="104.1" pathLength="1" d="M372 241 L363 260 L343 265 L329 265 L327 267 L331 278 L332 301" />
-	<path data-emblem-stroke="21" data-length="97.5" pathLength="1" d="M152 241 L154 246 L164 256 L177 264 L200 269 L230 267" />
-	<path data-emblem-stroke="22" data-length="238.6" pathLength="1" d="M242 261 L244 271 L244 296 L242 304 L234 319 L222 331 L214 337 L196 345 L176 346 L162 341 L151 327 L151 315 L157 307 L168 305 L174 310 L175 320 L172 323 L168 323" />
-	<path data-emblem-stroke="23" data-length="89.0" pathLength="1" d="M364 268 L368 283 L372 290 L372 295 L356 298 L330 310 L326 310" />
-	<path data-emblem-stroke="24" data-length="85.0" pathLength="1" d="M263 285 L265 289 L271 289 L274 286 L276 276 L272 271 L266 269 L255 275 L250 285 L250 296" />
-	<path data-emblem-stroke="25" data-length="82.4" pathLength="1" d="M250 296 L283 297 L309 303 L326 310" />
-	<path data-emblem-stroke="26" data-length="8.8" pathLength="1" d="M250 296 L250 302 L252 304" />
-	<path data-emblem-stroke="27" data-length="29.5" pathLength="1" d="M252 304 L255 314 L263 326" />
+	<path data-emblem-stroke="13" data-length="89.5" pathLength="1" d="M149 152 L146.5 158 Q144 164 142.784 170.385 L142 174.5 Q140 185 140 195.689 L140 200.692 Q140 211 142.5 221 L145 231" />
+	<path data-emblem-stroke="14" data-length="78.3" pathLength="1" d="M149 152 L153 153 Q157 154 160.403 156.328 L166.5 160.5 Q176 167 184.286 174.99 L204 194" />
+	<path data-emblem-stroke="15" data-length="85.7" pathLength="1" d="M376 163 L378 171.5 Q380 180 380.379 188.724 L380.518 191.909 Q381 203 379.5 214 L379.132 216.695 Q378 225 375.5 233 L373 241" />
+	<path data-emblem-stroke="16" data-length="87.4" pathLength="1" d="M204 194 L221.344 220.015 Q228 230 232.939 240.936 L242 261" />
+	<path data-emblem-stroke="17" data-length="77.3" pathLength="1" d="M319 195 L348.539 226.18 Q355 233 363.5 237 L372 241" />
+	<path data-emblem-stroke="18" data-length="44.0" pathLength="1" d="M182 217 L170.558 227.769 Q165 233 158.5 237 L152 241" />
+	<path data-emblem-stroke="19" data-length="79.6" pathLength="1" d="M296 219 L278.818 234.861 Q270 243 260.295 250.058 L250.557 257.14 Q248 259 245 260 L242 261" />
+	<path data-emblem-stroke="20" data-length="104.1" pathLength="1" d="M372 241 L367.413 250.684 Q363 260 353 262.5 L349.791 263.302 Q343 265 336 265 L330.414 265 Q329 265 328 266 L328 266 Q327 267 327.483 268.329 L329 272.5 Q331 278 331.254 283.847 L332 301" />
+	<path data-emblem-stroke="21" data-length="97.5" pathLength="1" d="M152 241 L153 243.5 Q154 246 155.904 247.904 L159 251 Q164 256 170.022 259.706 L170.5 260 Q177 264 184.458 265.621 L188.5 266.5 Q200 269 211.743 268.217 L230 267" />
+	<path data-emblem-stroke="22" data-length="238.6" pathLength="1" d="M242 261 L243 266 Q244 271 244 276.099 L244 291.877 Q244 296 243 300 L243 300 Q242 304 240.06 307.638 L237.993 311.513 Q234 319 228 325 L225.536 327.464 Q222 331 218 334 L218 334 Q214 337 209.431 339.031 L205 341 Q196 345 186.163 345.492 L183.424 345.629 Q176 346 169 343.5 L169 343.5 Q162 341 157.408 335.155 L154.707 331.718 Q151 327 151 321 L151 320 Q151 315 154 311 L154 311 Q157 307 161.919 306.106 L164.158 305.699 Q168 305 171 307.5 L171 307.5 Q174 310 174.389 313.886 L174.789 317.889 Q175 320 173.5 321.5 L173.414 321.586 Q172 323 170 323 L168 323" />
+	<path data-emblem-stroke="23" data-length="89.0" pathLength="1" d="M364 268 L366.961 279.105 Q368 283 370 286.5 L370.76 287.829 Q372 290 372 292.5 L372 292.5 Q372 295 369.543 295.461 L364 296.5 Q356 298 348.61 301.411 L331.816 309.162 Q330 310 328 310 L326 310" />
+	<path data-emblem-stroke="24" data-length="85.0" pathLength="1" d="M263 285 L264 287 Q265 289 267.236 289 L268.879 289 Q271 289 272.5 287.5 L272.5 287.5 Q274 286 274.416 283.92 L275.372 279.139 Q276 276 274 273.5 L273.975 273.469 Q272 271 269 270 L269 270 Q266 269 263.224 270.514 L259.908 272.323 Q255 275 252.5 280 L252.46 280.081 Q250 285 250 290.5 L250 296" />
+	<path data-emblem-stroke="25" data-length="82.4" pathLength="1" d="M250 296 L271.006 296.637 Q283 297 294.693 299.698 L300.043 300.933 Q309 303 317.5 306.5 L326 310" />
+	<path data-emblem-stroke="26" data-length="8.8" pathLength="1" d="M250 296 L250 300.586 Q250 302 251 303 L252 304" />
+	<path data-emblem-stroke="27" data-length="29.5" pathLength="1" d="M252 304 L253.5 309 Q255 314 257.896 318.343 L263 326" />
 	<path data-emblem-stroke="28" data-length="14.4" pathLength="1" d="M252 304 L266 305" />
-	<path data-emblem-stroke="29" data-length="72.5" pathLength="1" d="M266 305 L284 308 L311 319 L316 319 L326 310" />
-	<path data-emblem-stroke="30" data-length="32.2" pathLength="1" d="M266 305 L269 317 L277 328" />
-	<path data-emblem-stroke="31" data-length="111.6" pathLength="1" d="M331 328 L333 316 L338 317 L364 347 L379 377" />
-	<path data-emblem-stroke="32" data-length="99.2" pathLength="1" d="M331 328 L322 325 L305 339 L287 346 L286 383" />
-	<path data-emblem-stroke="33" data-length="177.7" pathLength="1" d="M263 326 L262 355 L257 387 L248 418 L226 477" />
+	<path data-emblem-stroke="29" data-length="72.5" pathLength="1" d="M266 305 L275 306.5 Q284 308 292.45 311.443 L308.685 318.057 Q311 319 313.5 319 L313.5 319 Q316 319 317.858 317.328 L326 310" />
+	<path data-emblem-stroke="30" data-length="32.2" pathLength="1" d="M266 305 L267.5 311 Q269 317 272.638 322.002 L277 328" />
+	<path data-emblem-stroke="31" data-length="111.6" pathLength="1" d="M331 328 L332.581 318.515 Q333 316 335.5 316.5 L335.5 316.5 Q338 317 339.67 318.927 L356.141 337.932 Q364 347 369.367 357.733 L379 377" />
+	<path data-emblem-stroke="32" data-length="99.2" pathLength="1" d="M331 328 L326.5 326.5 Q322 325 318.338 328.015 L312.454 332.861 Q305 339 296 342.5 L296 342.5 Q287 346 286.739 355.653 L286 383" />
+	<path data-emblem-stroke="33" data-length="177.7" pathLength="1" d="M263 326 L262.414 343.007 Q262 355 260.147 366.856 L258.853 375.144 Q257 387 253.654 398.524 L251.346 406.476 Q248 418 243.807 429.244 L226 477" />
 	<path data-emblem-stroke="34" data-length="14.8" pathLength="1" d="M263 326 L275 330" />
-	<path data-emblem-stroke="35" data-length="65.7" pathLength="1" d="M331 328 L332 332 L341 338 L359 357 L363 363 L363 367" />
+	<path data-emblem-stroke="35" data-length="65.7" pathLength="1" d="M331 328 L331.5 330 Q332 332 333.715 333.144 L336.5 335 Q341 338 344.72 341.926 L356.52 354.383 Q359 357 361 360 L361.891 361.336 Q363 363 363 365 L363 367" />
 	<path data-emblem-stroke="36" data-length="3.4" pathLength="1" d="M277 328 L275 330" />
 	<path data-emblem-stroke="37" data-length="2.0" pathLength="1" d="M277 328 L277 330" />
-	<path data-emblem-stroke="38" data-length="27.7" pathLength="1" d="M302 329 L295 332 L282 332 L277 330" />
+	<path data-emblem-stroke="38" data-length="27.7" pathLength="1" d="M302 329 L298.5 330.5 Q295 332 291.192 332 L284.693 332 Q282 332 279.5 331 L277 330" />
 	<path data-emblem-stroke="39" data-length="2.0" pathLength="1" d="M275 330 L277 330" />
-	<path data-emblem-stroke="40" data-length="83.0" pathLength="1" d="M384 361 L379 359 L378 354 L380 350 L388 345 L394 347 L398 352 L398 362 L391 372 L384 377 L379 377" />
-	<path data-emblem-stroke="41" data-length="27.5" pathLength="1" d="M328 346 L330 358 L338 367" />
-	<path data-emblem-stroke="42" data-length="94.8" pathLength="1" d="M302 364 L301 356 L318 348 L319 367 L307 371 L286 383" />
+	<path data-emblem-stroke="40" data-length="83.0" pathLength="1" d="M384 361 L381.367 359.947 Q379 359 378.5 356.5 L378.439 356.193 Q378 354 379 352 L379 352 Q380 350 381.896 348.815 L385.318 346.676 Q388 345 391 346 L391 346 Q394 347 395.975 349.469 L396 349.5 Q398 352 398 355.202 L398 357 Q398 362 395.133 366.096 L393.467 368.476 Q391 372 387.5 374.5 L386.034 375.547 Q384 377 381.5 377 L379 377" />
+	<path data-emblem-stroke="41" data-length="27.5" pathLength="1" d="M328 346 L329.01 352.061 Q330 358 334 362.5 L338 367" />
+	<path data-emblem-stroke="42" data-length="94.8" pathLength="1" d="M302 364 L301.5 360 Q301 356 304.647 354.284 L309.5 352 Q318 348 318.494 357.381 L318.668 360.684 Q319 367 313 369 L313 369 Q307 371 301.509 374.138 L286 383" />
 	<path data-emblem-stroke="43" data-length="23.8" pathLength="1" d="M340 367 L363 367" />
-	<path data-emblem-stroke="44" data-length="18.2" pathLength="1" d="M363 367 L368 370 L371 379" />
+	<path data-emblem-stroke="44" data-length="18.2" pathLength="1" d="M363 367 L365.5 368.5 Q368 370 368.922 372.766 L371 379" />
 	<path data-emblem-stroke="45" data-length="3.0" pathLength="1" d="M338 367 L339 369" />
 	<path data-emblem-stroke="46" data-length="2.4" pathLength="1" d="M340 367 L339 369" />
 	<path data-emblem-stroke="47" data-length="2.0" pathLength="1" d="M338 367 L340 367" />
 	<path data-emblem-stroke="48" data-length="15.1" pathLength="1" d="M339 369 L347 379" />
-	<path data-emblem-stroke="49" data-length="9.4" pathLength="1" d="M379 377 L378 379 L371 379" />
-	<path data-emblem-stroke="50" data-length="171.7" pathLength="1" d="M347 379 L326 390 L295 412 L229 479" />
+	<path data-emblem-stroke="49" data-length="9.4" pathLength="1" d="M379 377 L378.5 378 Q378 379 376.882 379 L371 379" />
+	<path data-emblem-stroke="50" data-length="171.7" pathLength="1" d="M347 379 L336.5 384.5 Q326 390 316.334 396.86 L304.786 405.055 Q295 412 286.579 420.549 L229 479" />
 	<path data-emblem-stroke="51" data-length="25.4" pathLength="1" d="M347 379 L371 379" />
 	<path data-emblem-stroke="52" data-length="11.5" pathLength="1" d="M286 383 L280 392" />
 	<path data-emblem-stroke="53" data-length="6.4" pathLength="1" d="M226 477 L224 482" />
