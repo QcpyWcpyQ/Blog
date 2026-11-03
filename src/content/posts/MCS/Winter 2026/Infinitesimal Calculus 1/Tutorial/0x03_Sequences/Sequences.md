@@ -287,3 +287,187 @@ image: ""
     $$
     \lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}=+\infty.
     $$
+
+---
+
+- **Exercise 8**
+  1. Compute
+     $$
+     \lim_{n\to\infty}\sqrt[n]{n}.
+     $$
+  2. Compute
+     $$
+     \lim_{n\to\infty}\sqrt[n]{2+(-1)^n}.
+     $$
+  3. Compute
+     $$
+     \lim_{n\to\infty}\sqrt[n]{2^n+3^n}.
+     $$
+
+  - **Solution 8.1**
+
+    **1.** Let $a_n=n$. Then
+    $$
+    \lim_{n\to\infty}\frac{a_{n+1}}{a_n}
+      =\lim_{n\to\infty}\frac{n+1}{n}
+      =1.
+    $$
+    By the root-ratio theorem,
+    $$
+    \lim_{n\to\infty}\sqrt[n]{n}=1.
+    $$
+
+    **2.** For every $n\in\mathbb{N}$,
+    $$
+    1\leqslant2+(-1)^n\leqslant3.
+    $$
+    Hence,
+    $$
+    1\leqslant\sqrt[n]{2+(-1)^n}\leqslant\sqrt[n]{3}.
+    $$
+    Since $\sqrt[n]{3}\to1$, the sandwich theorem gives
+    $$
+    \lim_{n\to\infty}\sqrt[n]{2+(-1)^n}=1.
+    $$
+
+    **3.** Since $2^n\leqslant3^n$, we have
+    $$
+    3^n\leqslant2^n+3^n\leqslant2\cdot3^n.
+    $$
+    Taking $n$th roots gives
+    $$
+    3\leqslant\sqrt[n]{2^n+3^n}\leqslant3\sqrt[n]{2}.
+    $$
+    Since $\sqrt[n]{2}\to1$, the sandwich theorem gives
+    $$
+    \lim_{n\to\infty}\sqrt[n]{2^n+3^n}=3.
+    $$
+
+---
+
+- **Exercise 9**
+
+  1. Compute
+     $$
+     \lim_{n\to\infty}\left(1+\frac{1}{2n}\right)^n.
+     $$
+
+  2. Compute
+     $$
+     \lim_{n\to\infty}\left(\frac{n-3}{n+1}\right)^n.
+     $$
+
+  3. Compute
+     $$
+     \lim_{n\to\infty}\left(1+\frac{1}{n^2}\right)^n.
+     $$
+
+  - **Solution 9.1**
+
+    **1.** Using the standard limit that defines $e$,
+    $$
+    \begin{aligned}
+    \lim_{n\to\infty}\left(1+\frac{1}{2n}\right)^n
+      &=\lim_{n\to\infty}
+        \left(\left(1+\frac{1}{2n}\right)^{2n}\right)^{1/2}\\
+      &=e^{1/2}.
+    \end{aligned}
+    $$
+
+    **2.** Using the corresponding standard limit,
+    $$
+    \begin{aligned}
+    \lim_{n\to\infty}\left(\frac{n-3}{n+1}\right)^n
+      &=\lim_{n\to\infty}\left(1-\frac{4}{n+1}\right)^n\\
+      &=e^{-4}.
+    \end{aligned}
+    $$
+
+    **3.** Write $n=n^2/n$. Then
+    $$
+    \begin{aligned}
+    \lim_{n\to\infty}\left(1+\frac{1}{n^2}\right)^n
+      &=\lim_{n\to\infty}
+        \left(\left(1+\frac{1}{n^2}\right)^{n^2}\right)^{1/n}\\
+      &=e^0\\
+      &=1.
+    \end{aligned}
+    $$
+
+---
+
+- **Exercise 10**
+  Let $(a_n)$ and $(b_n)$ be Cauchy sequences. Using the definition, prove that $(a_n+b_n)$ and $(a_nb_n)$ are Cauchy sequences.
+
+  - **Solution 10.1**
+    First, we show that every Cauchy sequence is bounded. Since $(a_n)$ is Cauchy, there exists $N_a\in\mathbb{N}$ such that
+    $$
+    m,n>N_a
+    \implies
+    \left\lvert a_m-a_n\right\rvert<1.
+    $$
+    Fix $n=N_a+1$. For every $m>N_a$,
+    $$
+    \lvert a_m\rvert
+      \leqslant\left\lvert a_m-a_{N_a+1}\right\rvert
+        +\left\lvert a_{N_a+1}\right\rvert
+      <1+\left\lvert a_{N_a+1}\right\rvert.
+    $$
+    The remaining terms $a_1,\ldots,a_{N_a}$ form a finite set, so $(a_n)$ is bounded. The same argument shows that $(b_n)$ is bounded. Hence, there exists $M\geqslant1$ such that
+    $$
+    \lvert a_n\rvert\leqslant M
+    \qquad\text{and}\qquad
+    \lvert b_n\rvert\leqslant M
+    $$
+    for every $n\in\mathbb{N}$.
+
+    Let $\varepsilon>0$. Since $(a_n)$ and $(b_n)$ are Cauchy sequences, there exist $N_1,N_2\in\mathbb{N}$ such that
+    $$
+    m,n>N_1
+    \implies
+    \left\lvert a_m-a_n\right\rvert<\frac{\varepsilon}{2}
+    $$
+    and
+    $$
+    m,n>N_2
+    \implies
+    \left\lvert b_m-b_n\right\rvert<\frac{\varepsilon}{2}.
+    $$
+    Set $N=\max\{N_1,N_2\}$. If $m,n>N$, then
+    $$
+    \begin{aligned}
+    \left\lvert(a_m+b_m)-(a_n+b_n)\right\rvert
+      &\leqslant\left\lvert a_m-a_n\right\rvert
+        +\left\lvert b_m-b_n\right\rvert\\
+      &<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+      &=\varepsilon.
+    \end{aligned}
+    $$
+    Therefore, $(a_n+b_n)$ is a Cauchy sequence.
+
+    For the product, choose $N_3,N_4\in\mathbb{N}$ such that
+    $$
+    m,n>N_3
+    \implies
+    \left\lvert a_m-a_n\right\rvert<\frac{\varepsilon}{2M}
+    $$
+    and
+    $$
+    m,n>N_4
+    \implies
+    \left\lvert b_m-b_n\right\rvert<\frac{\varepsilon}{2M}.
+    $$
+    Set $N'=\max\{N_3,N_4\}$. If $m,n>N'$, then
+    $$
+    \begin{aligned}
+    \left\lvert a_mb_m-a_nb_n\right\rvert
+      &=\left\lvert a_m(b_m-b_n)+b_n(a_m-a_n)\right\rvert\\
+      &\leqslant\lvert a_m\rvert\left\lvert b_m-b_n\right\rvert
+        +\lvert b_n\rvert\left\lvert a_m-a_n\right\rvert\\
+      &\leqslant M\left\lvert b_m-b_n\right\rvert
+        +M\left\lvert a_m-a_n\right\rvert\\
+      &<M\frac{\varepsilon}{2M}+M\frac{\varepsilon}{2M}\\
+      &=\varepsilon.
+    \end{aligned}
+    $$
+    Therefore, $(a_nb_n)$ is a Cauchy sequence.
