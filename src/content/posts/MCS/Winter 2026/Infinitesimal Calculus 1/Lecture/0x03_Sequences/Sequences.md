@@ -1,7 +1,7 @@
 ---
 title: "Sequences"
 published: 2026-10-22
-description: ""
+description: "Sequences, convergence, monotonicity, boundedness, algebra of limits, inequalities, the sandwich theorem, and the definition of e."
 tags: [MCS]
 category: MCS
 draft: false
@@ -674,3 +674,133 @@ image: ""
       $$
       \lim_{n\to\infty}\frac{1}{n^2}=0.
       $$
+
+  - **Example 9.3**
+    Let $x\in\mathbb{R}$. Find a sequence in $\mathbb{Q}$ that converges to $x$.
+
+    - **Solution 9.3.1**
+      Since $\mathbb{Q}$ is dense in $\mathbb{R}$, for every $n\in\mathbb{N}$ there exists $q_n\in\mathbb{Q}$ such that
+      $$
+      x-\frac{1}{n}<q_n<x.
+      $$
+      We have
+      $$
+      \lim_{n\to\infty}\left(x-\frac{1}{n}\right)=x
+      \qquad\text{and}\qquad
+      \lim_{n\to\infty}x=x.
+      $$
+      Hence, by the sandwich theorem,
+      $$
+      \lim_{n\to\infty}q_n=x.
+      $$
+
+  - **Example 9.4**
+    Let $\alpha\in\mathbb{R}$ satisfy $0<\alpha<1$, and let $a_k=\alpha^k$. Compute
+    $$
+    \lim_{k\to\infty}a_k.
+    $$
+
+    - **Solution 9.4.1**
+      For every $k\in\mathbb{N}$,
+      $$
+      0<a_{k+1}=\alpha a_k<a_k,
+      $$
+      because $0<\alpha<1$. Thus, $(a_k)$ is decreasing and bounded below by $0$. By the monotone convergence theorem, $(a_k)$ is convergent.
+
+      Let
+      $$
+      l=\lim_{k\to\infty}a_k.
+      $$
+      Since $a_{k+1}=\alpha a_k$, the algebra of limits gives
+      $$
+      l
+      =\lim_{k\to\infty}a_{k+1}
+      =\lim_{k\to\infty}\alpha a_k
+      =\alpha l.
+      $$
+      Therefore,
+      $$
+      (1-\alpha)l=0.
+      $$
+      Since $1-\alpha\neq0$, we conclude that
+      $$
+      \lim_{k\to\infty}\alpha^k=0.
+      $$
+
+  - **Example 9.5**
+    Let
+    $$
+    a_n=\left(1+\frac{1}{n}\right)^n.
+    $$
+    Prove that $(a_n)$ is convergent.
+
+    - **Proof 9.5.1**
+      First, we prove that $(a_n)$ is increasing. For $n\geqslant2$, since $a_n>0$ and $a_{n-1}>0$, it is enough to show that
+      $$
+      \frac{a_n}{a_{n-1}}\geqslant1.
+      $$
+      We have
+      $$
+      \begin{aligned}
+      \frac{a_n}{a_{n-1}}
+        &=\frac{\left(1+\frac{1}{n}\right)^n}
+          {\left(1+\frac{1}{n-1}\right)^{n-1}}\\
+        &=\frac{\left(\frac{n+1}{n}\right)^n}
+          {\left(\frac{n}{n-1}\right)^{n-1}}\\
+        &=\frac{(n+1)^n(n-1)^{n-1}}{n^{2n-1}}\\
+        &=\left(1-\frac{1}{n^2}\right)^n\frac{n}{n-1}.
+      \end{aligned}
+      $$
+
+      Recall Bernoulli's inequality:
+      $$
+      x>-1
+      \implies
+      (1+x)^n\geqslant1+nx.
+      $$
+      It follows by induction. The case $n=1$ is an equality. If it holds for $n$, then, since $1+x>0$,
+      $$
+      \begin{aligned}
+      (1+x)^{n+1}
+        &\geqslant(1+nx)(1+x)\\
+        &=1+(n+1)x+nx^2\\
+        &\geqslant1+(n+1)x.
+      \end{aligned}
+      $$
+      Applying this inequality with $x=-1/n^2$ gives
+      $$
+      \frac{a_n}{a_{n-1}}
+      \geqslant
+      \left(1-\frac{1}{n}\right)\frac{n}{n-1}
+      =1.
+      $$
+      Hence, $(a_n)$ is increasing.
+
+      It remains to prove that $(a_n)$ is bounded above. By the binomial theorem,
+      $$
+      \begin{aligned}
+      a_n
+        &=\sum_{k=0}^{n}\binom{n}{k}\frac{1}{n^k}\\
+        &=\sum_{k=0}^{n}
+          \frac{n(n-1)\cdots(n-k+1)}{k!\,n^k}\\
+        &\leqslant\sum_{k=0}^{n}\frac{1}{k!}.
+      \end{aligned}
+      $$
+      For every $k\geqslant2$, we have $k!\geqslant k(k-1)$, and therefore
+      $$
+      \begin{aligned}
+      a_n
+        &\leqslant2+\sum_{k=2}^{n}\frac{1}{k(k-1)}\\
+        &=2+\sum_{k=2}^{n}
+          \left(\frac{1}{k-1}-\frac{1}{k}\right)\\
+        &=3-\frac{1}{n}<3.
+      \end{aligned}
+      $$
+      Thus, $(a_n)$ is increasing and bounded above. By the monotone convergence theorem, $(a_n)$ is convergent.
+
+  - **Definition 9.6**
+    The limit
+    $$
+    e:=\lim_{n\to\infty}\left(1+\frac{1}{n}\right)^n
+    $$
+    is denoted by $e$.
