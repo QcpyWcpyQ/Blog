@@ -376,7 +376,7 @@ image: ""
     belong to $W$. Then
     $$
     x+y
-    =(\lambda_1+\mu_1)v_1+cdots
+    =(\lambda_1+\mu_1)v_1+\cdots
       +(\lambda_k+\mu_k)v_k
     \in W.
     $$
@@ -487,7 +487,7 @@ image: ""
     then
     $$
     x+y
-    =(\lambda_1+\mu_1)v_1+cdots
+    =(\lambda_1+\mu_1)v_1+\cdots
       +(\lambda_k+\mu_k)v_k
     \in W_2.
     $$
@@ -549,7 +549,227 @@ image: ""
     $$
     Then $(x,y,z)=av_1+bv_2$. Therefore,
     $$
-    \boxed{
     \operatorname{span}(v_1,v_2,v_3)
-    =\left\{(x,y,z)\in\mathbb R^3:x-3y+2z=0\right\}.}
+    =\left\{(x,y,z)\in\mathbb R^3:x-3y+2z=0\right\}.
+    $$
+
+---
+
+- **Definition 3**
+  Let $W_1,\ldots,W_k$ be subsets of an $\mathbb F$-vector space $V$. Their sum is
+  $$
+  W_1+\cdots+W_k
+  =\left\{w_1+\cdots+w_k:w_i\in W_i\right\}.
+  $$
+
+- **Remark 3.1**
+  If $W_1,\ldots,W_k$ are subspaces, then $W_1+\cdots+W_k$ is a subspace. Moreover,
+  $$
+  W_1+\cdots+W_k
+  =\left\langle W_1\cup\cdots\cup W_k\right\rangle.
+  $$
+
+  - **Proof 3.1.1**
+    Since $0\in W_i$ for every $i$, we have $0\in W_1+\cdots+W_k$.
+
+    Let
+    $$
+    x=x_1+\cdots+x_k
+    \qquad\text{and}\qquad
+    y=y_1+\cdots+y_k
+    $$
+    belong to $W_1+\cdots+W_k$, where $x_i,y_i\in W_i$. Then
+    $$
+    x+y=(x_1+y_1)+\cdots+(x_k+y_k)
+    \in W_1+\cdots+W_k.
+    $$
+    For every $\lambda\in\mathbb F$,
+    $$
+    \lambda x=\lambda x_1+\cdots+\lambda x_k
+    \in W_1+\cdots+W_k.
+    $$
+    Hence $W_1+\cdots+W_k$ is a subspace.
+
+    This subspace contains every $W_i$, so
+    $$
+    \left\langle W_1\cup\cdots\cup W_k\right\rangle
+    \subseteq W_1+\cdots+W_k.
+    $$
+    Conversely, every element of $W_1+\cdots+W_k$ is a linear combination of elements of $W_1\cup\cdots\cup W_k$. Therefore,
+    $$
+    W_1+\cdots+W_k
+    \subseteq\left\langle W_1\cup\cdots\cup W_k\right\rangle.
+    $$
+    Thus the two subspaces are equal.
+
+- **Example 3.2**
+  Let
+  $$
+  V=\mathbb R^2,
+  \qquad
+  v_1=(1,1),
+  \qquad
+  v_2=(-1,1).
+  $$
+  Then
+
+  1. $\{v_1\}\cup\{v_2\}=\{v_1,v_2\}$.
+  2. $\{v_1\}+\{v_2\}=\{v_1+v_2\}$.
+  3. $\langle v_1\rangle\cup\langle v_2\rangle$ is the union of two lines.
+  4. $\langle v_1\rangle+\langle v_2\rangle=\mathbb R^2$.
+
+- **Example 3.3**
+  Let
+  $$
+  W_1=\langle(1,1)\rangle,
+  \qquad
+  W_2=\langle(-1,1)\rangle,
+  \qquad
+  W_3=\langle(1,2)\rangle.
+  $$
+  Then
+
+  1. $W_1+W_2+W_3=\mathbb R^2$.
+  2. $W_i+W_j=\mathbb R^2$ whenever $i\ne j$.
+
+  - **Proof 3.3.1**
+    The determinants formed by the three pairs of generating vectors are
+    $$
+    \begin{vmatrix}1&-1\\1&1\end{vmatrix}=2,
+    \qquad
+    \begin{vmatrix}1&1\\1&2\end{vmatrix}=1,
+    \qquad
+    \begin{vmatrix}-1&1\\1&2\end{vmatrix}=-3.
+    $$
+    Since all three determinants are nonzero, every pair of generating vectors spans $\mathbb R^2$. Hence $W_i+W_j=\mathbb R^2$ for $i\ne j$, and consequently $W_1+W_2+W_3=\mathbb R^2$.
+
+- **Example 3.4**
+  Let $\mathbb F$ be a field of characteristic different from $2$, and let
+  $$
+  V=M_{n\times n}(\mathbb F),
+  \qquad
+  V^+=\left\{A\in V:A^{\mathsf T}=A\right\},
+  \qquad
+  V^-=\left\{A\in V:A^{\mathsf T}=-A\right\}.
+  $$
+  Thus $V^+$ is the subspace of symmetric matrices and $V^-$ is the subspace of anti-symmetric matrices. Then
+  $$
+  V^++V^-=V.
+  $$
+
+  - **Proof 3.4.1**
+    Let $A\in V$. Then
+    $$
+    A
+    =\frac{A+A^{\mathsf T}}{2}
+     +\frac{A-A^{\mathsf T}}{2},
+    $$
+    where
+    $$
+    \frac{A+A^{\mathsf T}}{2}\in V^+
+    \qquad\text{and}\qquad
+    \frac{A-A^{\mathsf T}}{2}\in V^-.
+    $$
+    Therefore, $V^++V^-=V$.
+
+    Moreover, this decomposition is unique. Suppose
+    $$
+    A=A^++A^-=B^++B^-,
+    $$
+    where $A^+,B^+\in V^+$ and $A^-,B^-\in V^-$. Then
+    $$
+    B^--A^-=A^+-B^+.
+    $$
+    The left-hand side belongs to $V^-$, while the right-hand side belongs to $V^+$. If $C\in V^+\cap V^-$, then
+    $$
+    C^{\mathsf T}=C
+    \qquad\text{and}\qquad
+    C^{\mathsf T}=-C,
+    $$
+    so $2C=0$. Since the characteristic of $\mathbb F$ is not $2$, we obtain $C=0$. Hence
+    $$
+    B^--A^-=A^+-B^+=0,
+    $$
+    and the decomposition is unique.
+
+- **Example 3.5**
+  Let
+  $$
+  V=\mathbb C^4,
+  $$
+  $$
+  W_1
+  =\left\langle(0,1,0,i),(1,1,0,0)\right\rangle,
+  \qquad
+  W_2
+  =\left\langle(-1,i,1,\lambda),(0,0,1,1)\right\rangle.
+  $$
+  Find $W_1+W_2$ and $W_1\cap W_2$.
+
+  - **Solution 3.5.1**
+    Set
+    $$
+    u_1=(0,1,0,i),
+    \quad
+    u_2=(1,1,0,0),
+    \quad
+    v_1=(-1,i,1,\lambda),
+    \quad
+    v_2=(0,0,1,1).
+    $$
+    Consider a linear relation
+    $$
+    au_1+bu_2+cv_1+dv_2=0.
+    $$
+    Comparing coordinates gives
+    $$
+    b-c=0,
+    \qquad
+    a+b+ic=0,
+    \qquad
+    c+d=0,
+    \qquad
+    ia+\lambda c+d=0.
+    $$
+    Hence
+    $$
+    b=c,
+    \qquad
+    a=-(1+i)c,
+    \qquad
+    d=-c,
+    \qquad
+    (\lambda-i)c=0.
+    $$
+
+    If $\lambda\ne i$, then $c=0$, and consequently $a=b=d=0$. Thus $u_1,u_2,v_1,v_2$ are linearly independent, so
+    $$
+    W_1+W_2=\mathbb C^4
+    \qquad\text{and}\qquad
+    W_1\cap W_2=\{0\}.
+    $$
+
+    If $\lambda=i$, then
+    $$
+    -(1+i)u_1+u_2+v_1-v_2=0.
+    $$
+    The vectors $u_1,u_2,v_1$ are linearly independent, so $W_1+W_2$ is three-dimensional. More precisely,
+    $$
+    \begin{aligned}
+    W_1+W_2
+    &=\langle u_1,u_2,v_1\rangle\\
+    &=\left\{(x_1,x_2,x_3,x_4)\in\mathbb C^4:
+      ix_1-ix_2-x_3+x_4=0\right\}.
+    \end{aligned}
+    $$
+    Furthermore,
+    $$
+    u_2-(1+i)u_1
+    =v_2-v_1
+    =(1,-i,0,1-i),
+    $$
+    so
+    $$
+    W_1\cap W_2
+    =\left\langle(1,-i,0,1-i)\right\rangle.
     $$

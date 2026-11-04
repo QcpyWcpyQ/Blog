@@ -1,17 +1,17 @@
 ---
 title: "Week 2"
 published: 2026-10-30
-description: "Complete solutions on limits proved from the definition, recursive sequences, and monotone convergence."
+description: "Complete solutions on sequence limits, recursive sequences, and monotone convergence."
 tags: [MCS]
 category: MCS
 draft: false
 image: ""
 ---
 
-## Limits from the definition
+## Computing limits
 
 - **Problem 1**
-  Compute the following limits, proving them by definition.
+  Compute the following limits.
 
   1. $\displaystyle\lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}$.
   2. $\displaystyle\lim_{n\to\infty}\left(n-\sqrt{n^2+2n}\right)$.
@@ -21,33 +21,15 @@ image: ""
   6. $\displaystyle\lim_{n\to\infty}\sin\left(\frac{2+5n}{8n+2n^2}\right)$.
 
   - **Solution 1.1 (Part a)**
-    We prove that
+    Dividing the numerator and denominator by $n$ gives
     $$
-    \lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}=+\infty.
+    \begin{aligned}
+    \lim_{n\to\infty}\frac{3n^2+2n+2}{5n+4}
+      &=\lim_{n\to\infty}
+        \frac{3n+2+\frac{2}{n}}{5+\frac{4}{n}}\\
+      &=+\infty.
+    \end{aligned}
     $$
-    Let $M>0$. For every $n\geqslant1$,
-    $$
-    3n^2+2n+2\geqslant3n^2
-    $$
-    and
-    $$
-    5n+4\leqslant9n.
-    $$
-    Therefore,
-    $$
-    \frac{3n^2+2n+2}{5n+4}
-    \geqslant
-    \frac{3n^2}{9n}
-    =\frac{n}{3}.
-    $$
-    By the Archimedean property, choose $n_0\in\mathbb N$ such that $n_0>3M$. Then, for every $n>n_0$,
-    $$
-    \frac{3n^2+2n+2}{5n+4}
-    \geqslant\frac{n}{3}
-    >\frac{n_0}{3}
-    >M.
-    $$
-    Hence the sequence tends to $+\infty$ by definition.
 
   - **Solution 1.2 (Part b)**
     Rationalizing gives
@@ -58,151 +40,60 @@ image: ""
       &=-\frac{2}{1+\sqrt{1+\frac{2}{n}}}.
     \end{aligned}
     $$
-    We prove that the limit is $-1$. Let $\varepsilon>0$. Since
-    $$
-    \sqrt{1+\frac{2}{n}}\geqslant1,
-    $$
-    we have
-    $$
-    \begin{aligned}
-    \left\lvert
-    n-\sqrt{n^2+2n}+1
-    \right\rvert
-      &=\left\lvert
-        1-\frac{2}{1+\sqrt{1+\frac{2}{n}}}
-        \right\rvert\\
-      &=\frac{\sqrt{1+\frac{2}{n}}-1}
-        {\sqrt{1+\frac{2}{n}}+1}\\
-      &=\frac{\frac{2}{n}}
-        {\left(\sqrt{1+\frac{2}{n}}+1\right)^2}\\
-      &\leqslant\frac{1}{2n}.
-    \end{aligned}
-    $$
-    Choose $n_0\in\mathbb N$ such that
-    $$
-    n_0>\frac{1}{2\varepsilon}.
-    $$
-    Then, for every $n>n_0$,
-    $$
-    \left\lvert
-    n-\sqrt{n^2+2n}-(-1)
-    \right\rvert
-    \leqslant\frac{1}{2n}
-    <\varepsilon.
-    $$
     Therefore,
     $$
-    \boxed{\displaystyle
-    \lim_{n\to\infty}\left(n-\sqrt{n^2+2n}\right)=-1}.
+    \begin{aligned}
+    \lim_{n\to\infty}\left(n-\sqrt{n^2+2n}\right)
+      &=\lim_{n\to\infty}
+        \left(-\frac{2}{1+\sqrt{1+\frac{2}{n}}}\right)\\
+      &=-1.
+    \end{aligned}
     $$
 
   - **Solution 1.3 (Part c)**
-    We prove that the limit is $3$. Let $\varepsilon>0$. For every $n\geqslant2$,
     $$
     \begin{aligned}
-    \left\lvert\frac{3n^2+2n}{n^2+1}-3\right\rvert
-      &=\frac{\lvert2n-3\rvert}{n^2+1}\\
-      &\leqslant\frac{2n}{n^2}\\
-      &=\frac{2}{n}.
+    \lim_{n\to\infty}\frac{3n^2+2n}{n^2+1}
+      &=\lim_{n\to\infty}
+        \frac{3+\frac{2}{n}}{1+\frac{1}{n^2}}\\
+      &=3.
     \end{aligned}
-    $$
-    Choose $n_0\in\mathbb N$ such that
-    $$
-    n_0>\max\left\{2,\frac{2}{\varepsilon}\right\}.
-    $$
-    Then, for every $n>n_0$,
-    $$
-    \left\lvert\frac{3n^2+2n}{n^2+1}-3\right\rvert
-    \leqslant\frac{2}{n}
-    <\varepsilon.
-    $$
-    Hence
-    $$
-    \boxed{\displaystyle
-    \lim_{n\to\infty}\frac{3n^2+2n}{n^2+1}=3}.
     $$
 
   - **Solution 1.4 (Part d)**
-    We prove that the limit is $5/2$. Let $\varepsilon>0$. For every $n\geqslant1$,
     $$
     \begin{aligned}
-    \left\lvert\frac{5n^3-n}{2n^3+3}-\frac{5}{2}\right\rvert
-      &=\frac{2n+15}{4n^3+6}\\
-      &\leqslant\frac{17n}{4n^3}\\
-      &=\frac{17}{4n^2}\\
-      &\leqslant\frac{17}{4n}.
+    \lim_{n\to\infty}\frac{5n^3-n}{2n^3+3}
+      &=\lim_{n\to\infty}
+        \frac{5-\frac{1}{n^2}}{2+\frac{3}{n^3}}\\
+      &=\frac{5}{2}.
     \end{aligned}
-    $$
-    Choose $n_0\in\mathbb N$ such that
-    $$
-    n_0>\frac{17}{4\varepsilon}.
-    $$
-    Then, for every $n>n_0$,
-    $$
-    \left\lvert\frac{5n^3-n}{2n^3+3}-\frac{5}{2}\right\rvert
-    \leqslant\frac{17}{4n}
-    <\varepsilon.
-    $$
-    Thus
-    $$
-    \boxed{\displaystyle
-    \lim_{n\to\infty}\frac{5n^3-n}{2n^3+3}=\frac{5}{2}}.
     $$
 
   - **Solution 1.5 (Part e)**
-    We prove that the limit is $1/2$. Let $\varepsilon>0$. For every $n\geqslant1$,
     $$
     \begin{aligned}
-    \left\lvert\frac{n-1}{2n+3}-\frac{1}{2}\right\rvert
-      &=\frac{5}{4n+6}\\
-      &<\frac{5}{4n}.
+    \lim_{n\to\infty}\frac{n-1}{2n+3}
+      &=\lim_{n\to\infty}
+        \frac{1-\frac{1}{n}}{2+\frac{3}{n}}\\
+      &=\frac{1}{2}.
     \end{aligned}
-    $$
-    Choose $n_0\in\mathbb N$ such that
-    $$
-    n_0>\frac{5}{4\varepsilon}.
-    $$
-    Then, for every $n>n_0$,
-    $$
-    \left\lvert\frac{n-1}{2n+3}-\frac{1}{2}\right\rvert
-    <\frac{5}{4n}
-    <\varepsilon.
-    $$
-    Therefore,
-    $$
-    \boxed{\displaystyle
-    \lim_{n\to\infty}\frac{n-1}{2n+3}=\frac{1}{2}}.
     $$
 
   - **Solution 1.6 (Part f)**
-    We prove that the limit is $0$. Using $\lvert\sin x\rvert\leqslant\lvert x\rvert$, for every $n\geqslant1$ we have
+    First,
     $$
     \begin{aligned}
-    \left\lvert
-    \sin\left(\frac{2+5n}{8n+2n^2}\right)
-    \right\rvert
-      &\leqslant\frac{2+5n}{8n+2n^2}\\
-      &\leqslant\frac{7n}{2n^2}\\
-      &=\frac{7}{2n}.
+    \lim_{n\to\infty}\frac{2+5n}{8n+2n^2}
+      &=\lim_{n\to\infty}
+        \frac{\frac{2}{n}+5}{8+2n}\\
+      &=0.
     \end{aligned}
     $$
-    Let $\varepsilon>0$, and choose $n_0\in\mathbb N$ such that
+    Using $\lvert\sin x\rvert\leqslant\lvert x\rvert$ and the sandwich theorem,
     $$
-    n_0>\frac{7}{2\varepsilon}.
-    $$
-    Then, for every $n>n_0$,
-    $$
-    \left\lvert
-    \sin\left(\frac{2+5n}{8n+2n^2}\right)-0
-    \right\rvert
-    \leqslant\frac{7}{2n}
-    <\varepsilon.
-    $$
-    Hence
-    $$
-    \boxed{\displaystyle
     \lim_{n\to\infty}
-    \sin\left(\frac{2+5n}{8n+2n^2}\right)=0}.
+    \sin\left(\frac{2+5n}{8n+2n^2}\right)=0.
     $$
 
 ---
@@ -293,7 +184,7 @@ image: ""
     $$
     Since $L\leqslant1$, only the first value is possible. Hence
     $$
-    \boxed{\displaystyle\lim_{n\to\infty}x_n=2-\sqrt3}.
+    \lim_{n\to\infty}x_n=2-\sqrt3.
     $$
 
 ---
@@ -301,24 +192,24 @@ image: ""
 ## A decreasing sequence bounded below
 
 - **Problem 3**
-  Let $(a_n)_{n\in\mathbb N}$ be a decreasing sequence that is bounded below. Prove that
+  Let $(a_n)_{n\in\mathbb{N}}$ be a decreasing sequence that is bounded below. Prove that
   $$
   \lim_{n\to\infty}a_n
-  =\inf\{a_n:n\in\mathbb N\}.
+  =\inf\{a_n:n\in\mathbb{N}\}.
   $$
 
   - **Proof 3.1**
     Let
     $$
-    l=\inf\{a_n:n\in\mathbb N\}.
+    l=\inf\{a_n:n\in\mathbb{N}\}.
     $$
     Since $l$ is a lower bound,
     $$
     l\leqslant a_n
     $$
-    for every $n\in\mathbb N$.
+    for every $n\in\mathbb{N}$.
 
-    Let $\varepsilon>0$. Since $l+\varepsilon>l$ and $l$ is the greatest lower bound, $l+\varepsilon$ is not a lower bound of the set $\{a_n:n\in\mathbb N\}$. Therefore, there exists $n_0\in\mathbb N$ such that
+    Let $\varepsilon>0$. Since $l+\varepsilon>l$ and $l$ is the greatest lower bound, $l+\varepsilon$ is not a lower bound of the set $\{a_n:n\in\mathbb{N}\}$. Therefore, there exists $n_0\in\mathbb{N}$ such that
     $$
     a_{n_0}<l+\varepsilon.
     $$
@@ -332,7 +223,6 @@ image: ""
     $$
     Thus $a_n\to l$, and therefore
     $$
-    \boxed{\displaystyle
     \lim_{n\to\infty}a_n
-    =\inf\{a_n:n\in\mathbb N\}}.
+    =\inf\{a_n:n\in\mathbb{N}\}.
     $$
