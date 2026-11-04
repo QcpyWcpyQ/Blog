@@ -1,5 +1,5 @@
 ---
-title: "Data Types and Programming"
+title: "Week 2"
 published: 2026-10-14
 description: "C workshop exercises on leap years, quadratic roots, divisibility, fixed-calendar conversion, and polynomial evaluation."
 tags: [MCS]

@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Week 1"
 published: 2026-10-14
 description: ""
 tags: [MCS]
