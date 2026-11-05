@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 380" role="img" aria-labelledby="title description">
+  <title id="title">Euler–Venn diagrams for Exercise 3</title>
+  <desc id="description">The left diagram shades the intersection of A and B outside C. The right diagram shades the part of A outside both B and C.</desc>
+  <defs>
+    <clipPath id="left-a">
+      <circle cx="160" cy="175" r="90" />
+    </clipPath>
+    <mask id="left-not-c" maskUnits="userSpaceOnUse" x="0" y="0" width="460" height="380">
+      <rect width="460" height="380" fill="white" />
+      <circle cx="205" cy="245" r="90" fill="black" />
+    </mask>
+    <mask id="right-not-bc" maskUnits="userSpaceOnUse" x="460" y="0" width="460" height="380">
+      <rect x="460" width="460" height="380" fill="white" />
+      <circle cx="700" cy="175" r="90" fill="black" />
+      <circle cx="655" cy="245" r="90" fill="black" />
+    </mask>
+  </defs>
+
+  <rect width="920" height="380" rx="24" fill="#111827" />
+  <line x1="460" y1="24" x2="460" y2="356" stroke="#374151" stroke-width="2" />
+
+  <text x="230" y="40" fill="#f9fafb" font-family="sans-serif" font-size="22" text-anchor="middle">(A ∩ B) ∖ C</text>
+  <circle cx="245" cy="175" r="90" fill="#8b5cf6" fill-opacity="0.9" clip-path="url(#left-a)" mask="url(#left-not-c)" />
+  <g fill="none" stroke="#e5e7eb" stroke-width="3">
+    <circle cx="160" cy="175" r="90" />
+    <circle cx="245" cy="175" r="90" />
+    <circle cx="205" cy="245" r="90" />
+  </g>
+  <g fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">
+    <text x="92" y="98">A</text>
+    <text x="300" y="98">B</text>
+    <text x="200" y="350">C</text>
+  </g>
+
+  <text x="690" y="40" fill="#f9fafb" font-family="sans-serif" font-size="22" text-anchor="middle">(A ∖ C) ∩ (A ∖ B)</text>
+  <circle cx="615" cy="175" r="90" fill="#8b5cf6" fill-opacity="0.9" mask="url(#right-not-bc)" />
+  <g fill="none" stroke="#e5e7eb" stroke-width="3">
+    <circle cx="615" cy="175" r="90" />
+    <circle cx="700" cy="175" r="90" />
+    <circle cx="655" cy="245" r="90" />
+  </g>
+  <g fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">
+    <text x="547" y="98">A</text>
+    <text x="755" y="98">B</text>
+    <text x="650" y="350">C</text>
+  </g>
+</svg>

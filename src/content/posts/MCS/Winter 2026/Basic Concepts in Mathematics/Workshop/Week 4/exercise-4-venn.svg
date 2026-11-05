@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" role="img" aria-labelledby="title description">
+  <title id="title">Euler–Venn diagram for Exercise 4</title>
+  <desc id="description">The diagram shades all of A outside C together with the intersection of A, B, and C. The outline of D does not affect the shaded region.</desc>
+  <defs>
+    <clipPath id="set-a">
+      <circle cx="210" cy="210" r="130" />
+    </clipPath>
+    <clipPath id="set-b">
+      <circle cx="305" cy="195" r="112" />
+    </clipPath>
+    <mask id="not-c" maskUnits="userSpaceOnUse" x="0" y="0" width="600" height="460">
+      <rect width="600" height="460" fill="white" />
+      <circle cx="255" cy="285" r="115" fill="black" />
+    </mask>
+  </defs>
+
+  <rect width="600" height="460" rx="24" fill="#111827" />
+  <text x="300" y="38" fill="#f9fafb" font-family="sans-serif" font-size="21" text-anchor="middle">A ∩ (B ∪ Cᶜ)</text>
+
+  <circle cx="210" cy="210" r="130" fill="#8b5cf6" fill-opacity="0.9" mask="url(#not-c)" />
+  <g clip-path="url(#set-a)">
+    <g clip-path="url(#set-b)">
+      <circle cx="255" cy="285" r="115" fill="#8b5cf6" fill-opacity="0.9" />
+    </g>
+  </g>
+
+  <g fill="none" stroke="#e5e7eb" stroke-width="3">
+    <circle cx="210" cy="210" r="130" />
+    <circle cx="305" cy="195" r="112" />
+    <circle cx="255" cy="285" r="115" />
+    <circle cx="385" cy="285" r="95" />
+  </g>
+  <g fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">
+    <text x="95" y="112">A</text>
+    <text x="355" y="105">B</text>
+    <text x="190" y="415">C</text>
+    <text x="455" y="360">D</text>
+  </g>
+</svg>

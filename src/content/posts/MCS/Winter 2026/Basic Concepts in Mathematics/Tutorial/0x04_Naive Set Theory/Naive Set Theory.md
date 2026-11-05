@@ -105,3 +105,41 @@ image: ""
       \cap(A\cup D)\cap(B\cup D).
     \end{aligned}
     $$
+
+---
+
+- **Exercise 4**
+  Express $\cup$ and $\setminus$ using $\cap$ and $\Delta$.
+
+  - **Solution 4.1**
+    We have
+    $$
+    A\cup B
+    =(A\mathbin{\Delta}B)\mathbin{\Delta}(A\cap B)
+    $$
+    and
+    $$
+    A\setminus B
+    =A\mathbin{\Delta}(A\cap B).
+    $$
+
+    To verify the first identity, observe that $A\mathbin{\Delta}B$ and $A\cap B$ are disjoint. Hence, for every $x$,
+    $$
+    \begin{aligned}
+    x\in(A\mathbin{\Delta}B)\mathbin{\Delta}(A\cap B)
+    &\iff x\in A\mathbin{\Delta}B
+      \text{ or }x\in A\cap B\\
+    &\iff x\in A\text{ or }x\in B\\
+    &\iff x\in A\cup B.
+    \end{aligned}
+    $$
+
+    Since $A\cap B\subseteq A$, for the second identity we have
+    $$
+    \begin{aligned}
+    x\in A\mathbin{\Delta}(A\cap B)
+    &\iff x\in A\text{ and }x\notin A\cap B\\
+    &\iff x\in A\text{ and }x\notin B\\
+    &\iff x\in A\setminus B.
+    \end{aligned}
+    $$
