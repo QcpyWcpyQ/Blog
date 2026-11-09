@@ -213,3 +213,45 @@ image: ""
     z=\frac{b+c}{2}
     $$
     satisfies $x<z<y$ and does not belong to $(a,b)\cup(c,d)$. Hence the union cannot be an interval.
+
+---
+
+- **Problem 7**  
+    A straight path in a park is completely illuminated by several lamps, each of which illuminates a certain segment. Prove that it is possible to turn off some of them so that the path remains completely illuminated, but no part of it is illuminated by three lamps at once.
+
+    - **Solution 7.1**
+        Identify the path with the interval $[a,b]$, and write the illuminated segment of each lamp as $I=[l,r]$.
+
+        Among all intervals containing $a$, choose an interval $I_1=[l_1,r_1]$ whose right endpoint $r_1$ is the largest. Suppose that $I_k=[l_k,r_k]$ has already been chosen. If $r_k<b$, then among all intervals $I=[l,r]$ satisfying
+        $$
+        l\leqslant r_k<r,
+        $$
+        choose an interval $I_{k+1}$ whose right endpoint is the largest.
+
+        Such an interval always exists. Otherwise, since there are only finitely many lamps, a point immediately to the right of $r_k$ would not be illuminated. The right endpoints of the chosen intervals strictly increase, so the process eventually produces intervals
+        $$
+        I_1,I_2,\ldots,I_m
+        $$
+        with $r_m\geqslant b$. Moreover, $l_{k+1}\leqslant r_k$ for every $k<m$. Hence these intervals still cover the whole path $[a,b]$.
+
+        It remains to show that no point is illuminated by three of the chosen lamps. For every $k\leqslant m-2$, we must have
+        $$
+        l_{k+2}>r_k.
+        $$
+        Indeed, if $l_{k+2}\leqslant r_k$, then $I_{k+2}$ would have been available when $I_{k+1}$ was chosen. Since
+        $$
+        r_{k+2}>r_{k+1},
+        $$
+        this would contradict the choice of $I_{k+1}$ as an interval with the largest right endpoint.
+
+        Thus $I_k\cap I_{k+2}=\varnothing$ for every $k\leqslant m-2$. More generally, any two chosen intervals with at least one chosen interval between them are disjoint. Therefore, every point of the path belongs to at most two chosen intervals. Turning off all the other lamps gives the required illumination.
+
+---
+
+- **Problem 8**  
+    Is it possible to cover an equilateral triangle with two smaller equilateral triangles?
+
+    - **Solution 8.1**
+        No. Let the side length of the original equilateral triangle be $s$. The distance between any two of its vertices is $s$.
+
+        The greatest distance between two points in an equilateral triangle is its side length. Therefore, an equilateral triangle with side length strictly less than $s$ cannot contain two vertices of the original triangle. Each smaller triangle can cover at most one of the three vertices, so two smaller equilateral triangles can cover at most two vertices. Hence they cannot cover the original triangle.
