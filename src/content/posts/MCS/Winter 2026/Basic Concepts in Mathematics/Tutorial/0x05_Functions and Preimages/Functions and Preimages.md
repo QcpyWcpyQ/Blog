@@ -73,4 +73,3 @@ image: ""
         $$
         (f\circ f)\circ (f\circ f)=f\circ f\left(\dfrac 1x\right)=\dfrac{1}{\frac 1x}=x.
         $$
-        
