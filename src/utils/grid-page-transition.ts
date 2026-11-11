@@ -18,8 +18,19 @@ export function registerGridPageTransition(): void {
 	let animations: Animation[] = [];
 	let covered: Promise<unknown> = Promise.resolve();
 	let watchdog: number | undefined;
-	// Center first, then edges, then corners: each tile scales around its center.
+	// Keep the center's scale animation; outer tiles travel inward from their edges.
 	const delays = [120, 60, 120, 60, 0, 60, 120, 60, 120];
+	const tileFrames: Keyframe[][] = tiles.map((_, index) => {
+		if (index === 4) {
+			return [{ transform: "scale(0)" }, { transform: "scale(1)" }];
+		}
+		const x = ((index % 3) - 1) * 100;
+		const y = (Math.floor(index / 3) - 1) * 100;
+		return [
+			{ transform: `translate(${x}%, ${y}%)` },
+			{ transform: "translate(0%, 0%)" },
+		];
+	});
 
 	const reset = (): void => {
 		activeVisit = null;
@@ -55,7 +66,7 @@ export function registerGridPageTransition(): void {
 		watchdog = window.setTimeout(reset, 10000);
 		covered = Promise.all([
 			...tiles.map((tile, index) =>
-				play(tile, [{ transform: "scale(0)" }, { transform: "scale(1)" }], {
+				play(tile, tileFrames[index], {
 					duration: 440,
 					delay: delays[index],
 					easing: "cubic-bezier(0.76, 0, 0.24, 1)",
@@ -95,10 +106,11 @@ export function registerGridPageTransition(): void {
 			node.style.animation = "none";
 			node.style.opacity = "1";
 		}
+		// `covered` includes every emblem stroke; only then retrace the tile paths.
 		curtain.dataset.phase = "revealing";
 		await Promise.all(
 			tiles.map((tile, index) =>
-				play(tile, [{ transform: "scale(1)" }, { transform: "scale(0)" }], {
+				play(tile, [...tileFrames[index]].reverse(), {
 					duration: 420,
 					delay: 120 - delays[index],
 					easing: "cubic-bezier(0.76, 0, 0.24, 1)",

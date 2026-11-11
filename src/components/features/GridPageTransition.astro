@@ -14,7 +14,7 @@ import keqingEmblem from "../../../public/favicon/keqing-emblem.svg?raw";
 
 <style>
 	#grid-page-transition {
-		--grid-surface: #141e39;
+		--grid-surface: var(--page-bg, #141e39);
 		--grid-line: #a7a9d51c;
 		position: fixed;
 		inset: 0;
@@ -49,9 +49,6 @@ import keqingEmblem from "../../../public/favicon/keqing-emblem.svg?raw";
 		transform: scale(0);
 		transform-origin: center;
 	}
-
-	.page-transition-tile:nth-child(even) { background: #17223e; }
-	.page-transition-tile:nth-child(5) { background: #1d2846; }
 
 	.page-transition-emblem {
 		width: clamp(64px, 12vmin, 136px);
