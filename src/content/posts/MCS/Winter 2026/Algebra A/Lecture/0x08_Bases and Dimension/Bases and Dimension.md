@@ -403,3 +403,121 @@ image: ""
   $$
   B^\top A=I_n.
   $$
+
+- **Summary 2.16**
+  Let $V$ be a finite-dimensional vector space with
+  $$
+  \dim V=n.
+  $$
+
+  1. If $v_1,\ldots,v_m$ generate $V$, then
+     $$
+     m\geqslant n.
+     $$
+     Moreover, the generating family can be reduced to a basis of $V$.
+
+  2. If $v_1,\ldots,v_m$ are linearly independent, then
+     $$
+     m\leqslant n.
+     $$
+     Moreover, the family can be extended to a basis of $V$.
+
+- **Example 2.17**
+  1. Let $V=\mathbb C^3$, and consider
+     $$
+     \begin{aligned}
+     v_1&=(i,0,i),&
+     v_2&=(-1,i,0),\\
+     v_3&=(0,i,1),&
+     v_4&=(0,i,i).
+     \end{aligned}
+     $$
+     Do $v_1,v_2,v_3,v_4$ generate $V$? Can the linearly independent set $\{v_1,v_2\}$ be extended to a basis of $V$?
+
+     First,
+     $$
+     v_3=-iv_1+v_2,
+     $$
+     so the family $v_1,v_2,v_3,v_4$ is linearly dependent.
+
+     The vectors $v_1$ and $v_2$ are linearly independent. Indeed, if
+     $$
+     \lambda_1v_1+\lambda_2v_2=0,
+     $$
+     then the second coordinate gives
+     $$
+     i\lambda_2=0,
+     $$
+     so $\lambda_2=0$. The first coordinate then gives
+     $$
+     i\lambda_1=0,
+     $$
+     so $\lambda_1=0$.
+
+     To extend this set, choose $w=v_4$. Placing $v_1,v_2,v_4$ as the columns of a matrix gives
+     $$
+     A
+     =
+     \begin{pmatrix}
+       i&-1&0\\
+       0&i&i\\
+       i&0&i
+     \end{pmatrix}.
+     $$
+     Its determinant is
+     $$
+     \det A=1-i\ne0.
+     $$
+     Hence $v_1,v_2,v_4$ are linearly independent. Since $\dim\mathbb C^3=3$, they form a basis of $\mathbb C^3$. Therefore, the original family $v_1,v_2,v_3,v_4$ generates $V$, because it contains the basis
+     $$
+     \{v_1,v_2,v_4\}.
+     $$
+     In particular, for every $(a,b,c)\in V$, there exist $\lambda_1,\lambda_2,\lambda_3,\lambda_4\in\mathbb C$ such that
+     $$
+     (a,b,c)
+     =\lambda_1v_1+\lambda_2v_2+\lambda_3v_3+\lambda_4v_4.
+     $$
+
+  2. Consider the vector space
+     $$
+     V=\mathcal F(\mathbb N,\mathbb R).
+     $$
+     Is $V$ finite-dimensional?
+
+     For every $n\in\mathbb N$, let
+     $$
+     W_n=\mathcal F(\{1,\ldots,n\},\mathbb R).
+     $$
+     Define an embedding
+     $$
+     \iota_n\colon W_n\longrightarrow V
+     $$
+     by
+     $$
+     \iota_n(f)(m)
+     =
+     \widetilde f(m)
+     =
+     \begin{cases}
+       f(m),&m\leqslant n,\\
+       0,&m>n.
+     \end{cases}
+     $$
+     The image $\iota_n(W_n)$ is a subspace of $V$, and
+     $$
+     \dim\iota_n(W_n)=\dim W_n=n.
+     $$
+
+     Suppose, for contradiction, that $V$ is finite-dimensional, and let
+     $$
+     \dim V=d.
+     $$
+     Every subspace of $V$ then has dimension at most $d$. Taking $n>d$ gives
+     $$
+     \dim\iota_n(W_n)=n>d,
+     $$
+     which is a contradiction. Therefore,
+     $$
+     \mathcal F(\mathbb N,\mathbb R)
+     $$
+     is infinite-dimensional.
