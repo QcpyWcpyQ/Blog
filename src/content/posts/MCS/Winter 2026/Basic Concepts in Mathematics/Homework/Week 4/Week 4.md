@@ -104,10 +104,10 @@ image: ""
   and
 
 
-  $$
+$$
   \left(\bigcap_{i\in I}A_i\right)^{\mathsf c}
   =\bigcup_{i\in I}A_i^{\mathsf c},
-  $$
+$$
 
   where $A^{\mathsf c}$ denotes the complement of $A$ in the universal set $U$.
 

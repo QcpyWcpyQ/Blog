@@ -1,0 +1,124 @@
+#math-source-menu {
+	position: fixed;
+	z-index: 1200;
+	width: 13rem;
+	max-width: calc(100vw - 1rem);
+	padding: 0.375rem;
+	border: 1px solid var(--line-divider);
+	border-radius: 0.75rem;
+	background: var(--card-bg);
+	color: var(--content-meta);
+	box-shadow: var(--shadow-lg);
+}
+
+#math-source-menu[hidden] {
+	display: none;
+}
+
+#math-source-menu button,
+.math-source-dialog button {
+	min-height: 2.75rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	font: inherit;
+	cursor: pointer;
+}
+
+#math-source-menu button {
+	display: block;
+	width: 100%;
+	text-align: left;
+}
+
+#math-source-menu button:hover,
+#math-source-menu button:focus-visible,
+.math-source-dialog button:hover {
+	background: var(--btn-regular-bg);
+	color: var(--btn-content);
+}
+
+#math-source-menu button:focus-visible,
+.math-source-dialog :focus-visible {
+	outline: 2px solid var(--primary);
+	outline-offset: -2px;
+}
+
+.math-source-dialog {
+	position: fixed;
+	inset: 0;
+	width: min(42rem, calc(100vw - 2rem));
+	max-height: calc(100dvh - 2rem);
+	margin: auto;
+	padding: 1.25rem;
+	border: 1px solid var(--line-divider);
+	border-radius: 1rem;
+	background: var(--card-bg);
+	color: var(--content-meta);
+	overflow: auto;
+}
+
+.math-source-dialog::backdrop {
+	background: rgb(0 0 0 / 0.45);
+}
+
+.math-source-dialog header,
+.math-source-dialog footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem;
+}
+
+.math-source-dialog h2 {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+.math-source-dialog textarea {
+	display: block;
+	width: 100%;
+	min-height: 10rem;
+	max-height: 50dvh;
+	margin-block: 0.75rem;
+	padding: 0.75rem;
+	resize: vertical;
+	border: 1px solid var(--line-divider);
+	border-radius: 0.5rem;
+	background: var(--page-bg);
+	color: inherit;
+	font-family: var(--font-code, monospace);
+	font-size: 0.95rem;
+	line-height: 1.6;
+	tab-size: 2;
+}
+
+.math-source-dialog footer p {
+	flex: 1;
+	font-size: 0.875rem;
+}
+
+.math-source-dialog footer button {
+	flex-shrink: 0;
+	background: var(--btn-regular-bg);
+	color: var(--btn-content);
+}
+
+#math-copy-status {
+	position: fixed;
+	z-index: 1300;
+	left: 50%;
+	bottom: 2rem;
+	transform: translateX(-50%);
+	max-width: calc(100vw - 2rem);
+	padding: 0.75rem 1rem;
+	border: 1px solid var(--line-divider);
+	border-radius: 0.75rem;
+	background: var(--card-bg);
+	color: var(--content-meta);
+	box-shadow: var(--shadow-md);
+	pointer-events: none;
+}
+
+#math-copy-status:empty {
+	display: none;
+}

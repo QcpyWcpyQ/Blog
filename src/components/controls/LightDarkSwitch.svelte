@@ -131,7 +131,8 @@ onMount(() => {
             onclick={() => switchScheme(LIGHT_MODE)}
         >
             <Icon icon="material-symbols:wb-sunny-outline-rounded" class="text-[1.25rem] mr-3"></Icon>
-            {i18n(I18nKey.lightMode)}
+            <span class="standard-theme-label">{i18n(I18nKey.lightMode)}</span>
+            <span class="reading-theme-label">白底</span>
         </DropdownItem>
         <DropdownItem
             role="menuitem"
@@ -140,7 +141,8 @@ onMount(() => {
             onclick={() => switchScheme(DARK_MODE)}
         >
             <Icon icon="material-symbols:dark-mode-outline-rounded" class="text-[1.25rem] mr-3"></Icon>
-            {i18n(I18nKey.darkMode)}
+            <span class="standard-theme-label">{i18n(I18nKey.darkMode)}</span>
+            <span class="reading-theme-label">黑底</span>
         </DropdownItem>
         <DropdownItem
             role="menuitem"

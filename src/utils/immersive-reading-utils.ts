@@ -17,14 +17,37 @@ if (typeof window.ImmersiveReading === "undefined") {
 }
 
 const IR = window.ImmersiveReading;
+let controlsPlaceholder: Comment | null = null;
+let readingPath = "";
+
+// 保留同一组阅读/主题控件，移到 body 避免被隐藏的导航栏或 transform 裁切。
+function moveReadingControls(outsideNavbar: boolean): void {
+	const controls = document.getElementById("reading-controls");
+	if (!controls) return;
+	if (outsideNavbar && !controlsPlaceholder) {
+		controlsPlaceholder = document.createComment("reading-controls");
+		controls.before(controlsPlaceholder);
+		document.body.append(controls);
+	} else if (!outsideNavbar && controlsPlaceholder) {
+		controlsPlaceholder.replaceWith(controls);
+		controlsPlaceholder = null;
+	}
+}
+
+function updateReadingButton(): void {
+	const label = IR.isImmersive ? "退出纯净阅读" : "进入纯净阅读";
+	IR.btn?.setAttribute("title", label);
+	IR.btn?.setAttribute("aria-label", label);
+	IR.btn?.setAttribute("aria-pressed", String(IR.isImmersive));
+}
 
 /** 用内联 !important 强制内容面板贴顶到 1rem——内联 important 优先于一切样式表规则 */
 function clampContentTop(): void {
 	const panel = document.querySelector<HTMLElement>(".content-panel");
 	if (!panel) return;
-	panel.style.setProperty("top", "1rem", "important");
-	panel.style.setProperty("min-height", "calc(100vh - 1rem)", "important");
-	panel.style.setProperty("--content-top", "1rem", "important");
+	panel.style.setProperty("top", "5rem", "important");
+	panel.style.setProperty("min-height", "calc(100vh - 5rem)", "important");
+	panel.style.setProperty("--content-top", "5rem", "important");
 }
 
 function clearContentTop(): void {
@@ -33,10 +56,6 @@ function clearContentTop(): void {
 	panel.style.removeProperty("top");
 	panel.style.removeProperty("min-height");
 	panel.style.removeProperty("--content-top");
-}
-
-function isDesktop(): boolean {
-	return window.innerWidth >= 1024;
 }
 
 function immersiveConfig(): ImmersiveReadingConfig {
@@ -56,11 +75,16 @@ function setupImmersiveTOC(): void {
 	const content = document.getElementById("immersive-toc-content");
 	if (cfg.tocEnabled !== false && content) {
 		IR.tocBtn?.classList.remove("hide");
-		// 默认展开目录（桌面/移动一致）；关闭后由 CSS 释放文章让位空间
-		IR.toc?.classList.add("open");
-		IR.tocBtn?.classList.add("toggled"); // 目录打开时按钮切到「关闭」图标
-		IR.tocBtn?.setAttribute("title", i18n(I18nKey.tocCollapse));
-		document.body.classList.add("immersive-toc-open");
+		// 初次进入时收起目录，跨文章导航保留当前的展开状态。
+		const open = document.body.classList.contains("immersive-toc-open");
+		IR.toc?.classList.toggle("open", open);
+		IR.tocBtn?.classList.toggle("toggled", open);
+		IR.tocBtn?.setAttribute(
+			"title",
+			i18n(open ? I18nKey.tocCollapse : I18nKey.tocExpand),
+		);
+		IR.toc?.setAttribute("inert", "");
+		if (open) IR.toc?.removeAttribute("inert");
 		try {
 			if (IR.manager) IR.manager.cleanup();
 			IR.manager = new TOCManager({
@@ -86,11 +110,12 @@ function setupImmersiveTOC(): void {
 
 function enterImmersiveReading(): void {
 	if (IR.isImmersive) return;
-	// 仅在桌面端提供沉浸阅读
-	if (!isPostPage() || !isDesktop()) return;
+	if (!isPostPage() || !document.getElementById("post-container")) return;
 	IR.isImmersive = true;
 	IR.prevScroll = window.scrollY;
+	readingPath = window.location.pathname;
 
+	moveReadingControls(true);
 	document.body.classList.add("immersive-reading");
 	clampContentTop();
 	const cfg = immersiveConfig();
@@ -102,7 +127,7 @@ function enterImmersiveReading(): void {
 	// 进/出按钮：去掉 .hide，切换为退出图标
 	IR.btn?.classList.remove("hide");
 	IR.btn?.classList.add("toggled");
-	IR.btn?.setAttribute("title", i18n(I18nKey.exitImmersiveReading));
+	updateReadingButton();
 
 	// 目录栏 & 移动端目录开关
 	setupImmersiveTOC();
@@ -115,13 +140,14 @@ function enterImmersiveReading(): void {
 	);
 }
 
-function exitImmersiveReading(): void {
+function exitImmersiveReading(restoreScroll = true): void {
 	if (!IR.isImmersive) return;
 	IR.isImmersive = false;
 
 	document.body.classList.remove("immersive-reading");
 	document.body.classList.remove("immersive-toc-right");
 	document.body.classList.remove("immersive-toc-open");
+	moveReadingControls(false);
 	clearContentTop();
 
 	// 侧边栏恢复显示后重新测量 top 容器可见性，恢复 mb-4（sticky 与 top 组件之间间距）
@@ -131,17 +157,21 @@ function exitImmersiveReading(): void {
 	IR.manager = null;
 
 	IR.btn?.classList.remove("toggled");
-	IR.btn?.setAttribute("title", i18n(I18nKey.enterImmersiveReading));
+	updateReadingButton();
 	IR.tocBtn?.classList.add("hide");
 	IR.tocBtn?.classList.remove("toggled");
 	IR.tocBtn?.setAttribute("title", i18n(I18nKey.tocExpand));
 	IR.toc?.classList.remove("open");
+	IR.toc?.setAttribute("inert", "");
 
 	// 重新计算按钮可见性：文章页 + 桌面端应恢复「进入」按钮
 	updateImmersiveReadingVisibility();
 
 	// 恢复进入前的滚动位置
-	window.scrollTo({ top: IR.prevScroll || 0, behavior: "instant" });
+	if (restoreScroll && readingPath === window.location.pathname) {
+		window.scrollTo({ top: IR.prevScroll || 0, behavior: "instant" });
+		IR.btn?.focus({ preventScroll: true });
+	}
 
 	document.dispatchEvent(
 		new CustomEvent("immersiveReadingChange", { detail: { on: false } }),
@@ -159,6 +189,7 @@ function toggleImmersiveTOC(): void {
 	if (!toc) return;
 	const isOpen = toc.classList.contains("open");
 	toc.classList.toggle("open", !isOpen);
+	toc.toggleAttribute("inert", isOpen);
 	document.body.classList.toggle("immersive-toc-open", !isOpen);
 	IR.tocBtn?.classList.toggle("toggled", !isOpen);
 	// 悬停提示跟随目录开关状态
@@ -171,7 +202,8 @@ function toggleImmersiveTOC(): void {
 // 目录项点击标记为内部导航，避免误触其它「外部链接自动关闭」逻辑
 function bindImmersiveTOCNav(): void {
 	const tocContent = document.getElementById("immersive-toc-content");
-	if (!tocContent) return;
+	if (!tocContent || tocContent.dataset.readingNavBound) return;
+	tocContent.dataset.readingNavBound = "true";
 	tocContent.addEventListener(
 		"click",
 		(e) => {
@@ -187,8 +219,8 @@ function updateImmersiveReadingVisibility(): void {
 	if (!IR.btn) return;
 	const enabled = immersiveConfig().enable !== false;
 
-	if (!enabled || !isPostPage() || !isDesktop()) {
-		if (IR.isImmersive) exitImmersiveReading();
+	if (!enabled || !isPostPage() || !document.getElementById("post-container")) {
+		if (IR.isImmersive) exitImmersiveReading(false);
 		IR.btn.classList.add("hide");
 		IR.tocBtn?.classList.add("hide");
 		return;
@@ -201,11 +233,20 @@ export function initImmersiveReading(): void {
 	IR.btn = document.getElementById("immersive-reading-btn");
 	IR.tocBtn = document.getElementById("immersive-toc-toggle-btn");
 	IR.toc = document.getElementById("immersive-toc");
+	if (!IR.isImmersive) IR.toc?.setAttribute("inert", "");
 	bindImmersiveTOCNav();
 	updateImmersiveReadingVisibility();
 
-	// 跨 Swup 切到另一篇文章时若仍在沉浸态，重建目录（SSR 锚点已过期）
-	if (IR.isImmersive) setupImmersiveTOC();
+	// 跨 Swup 切到另一篇文章时，重建目录，并重新约束页面布局。
+	if (IR.isImmersive) {
+		if (readingPath !== window.location.pathname) {
+			readingPath = window.location.pathname;
+			IR.prevScroll = 0;
+		}
+		clampContentTop();
+		setupImmersiveTOC();
+	}
+	updateReadingButton();
 
 	// 默认开启
 	const cfg = immersiveConfig();
@@ -227,14 +268,21 @@ export function initImmersiveReading(): void {
 			setTimeout(initImmersiveReading, 200);
 		});
 
-		// 视口变化：离开桌面端时隐藏按钮并退出沉浸态
+		// 桌面与移动端使用相同的阅读入口。
 		window.addEventListener("resize", () => {
 			updateImmersiveReadingVisibility();
 		});
 
 		// Esc 退出沉浸阅读
 		window.addEventListener("keydown", (e) => {
-			if (e.key === "Escape") exitImmersiveReading();
+			if (
+				e.key === "Escape" &&
+				!e.defaultPrevented &&
+				!document.querySelector(
+					"dialog[open], #math-source-menu:not([hidden]), #theme-mode-panel:not(.float-panel-closed)",
+				)
+			)
+				exitImmersiveReading();
 		});
 
 		// 密码解密后重建沉浸目录

@@ -17,6 +17,7 @@ import {
 } from "@/utils/grid-layout-utils";
 import { initIconLoader } from "@/utils/icon-loader";
 import { initImageLoadFadeIn } from "@/utils/lqip-utils";
+import { initMathSourceMenu } from "@/utils/math-source-menu";
 import { initScroll } from "@/utils/scroll-utils";
 import { initThemeListener, initWallpaperMode } from "@/utils/setting-utils";
 import { setupSwupTransitions } from "@/utils/swup-transitions";
@@ -58,6 +59,7 @@ export function initLayout(): void {
 	refreshSidebarStickyState();
 	initScroll();
 	initTouchCodeCopyReveal();
+	initMathSourceMenu();
 
 	// 页面加载完成后初始化banner和内容溢出容器
 	if (document.readyState === "loading") {

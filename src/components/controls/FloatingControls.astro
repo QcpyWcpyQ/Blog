@@ -5,7 +5,6 @@ import BackToComment from "./BackToComment.astro";
 import BackToHome from "./BackToHome.astro";
 import BackToTop from "./BackToTop.astro";
 import FloatingTOC from "./FloatingTOC.astro";
-import ImmersiveReading from "./ImmersiveReading.astro";
 import ImmersiveTOC from "./ImmersiveTOC.astro";
 
 interface Props {
@@ -22,7 +21,6 @@ const immersiveReadingEnabled =
   <FloatingTOC headings={headings ?? []} encrypted={encrypted} />
   {immersiveReadingEnabled && (
     <>
-      <ImmersiveReading />
       <ImmersiveTOC headings={headings ?? []} encrypted={encrypted} />
     </>
   )}

@@ -5,6 +5,7 @@ import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
 import DisplaySettings from "@/components/controls/DisplaySettingsIntegrated.svelte";
 import LightDarkSwitch from "@/components/controls/LightDarkSwitch.svelte";
+import ImmersiveReading from "@/components/controls/ImmersiveReading.astro";
 import Search from "@/components/controls/Search.svelte";
 import MusicPlayer from "@/components/features/MusicPlayer.astro";
 import {
@@ -231,8 +232,12 @@ const logoVariants = await Promise.all(
                             <Icon name="material-symbols:palette-outline" class="text-[1.25rem]"></Icon>
                         </button>
                 )}
-                {/* @ts-ignore */}
-                <LightDarkSwitch client:load></LightDarkSwitch>
+                <div id="reading-controls" class="flex items-center">
+                    {siteConfig.post.immersiveReading?.enable !== false && <ImmersiveReading />}
+                    <span class="reading-mode-label">纯净阅读</span>
+                    {/* @ts-ignore */}
+                    <LightDarkSwitch client:load></LightDarkSwitch>
+                </div>
                 <button aria-label="Menu" aria-controls="nav-menu-panel" aria-expanded="false" name="Nav Menu" class="btn-plain scale-animation rounded-lg w-11 h-11 active:scale-90 lg:hidden!" id="nav-menu-switch">
                     <Icon name="material-symbols:menu-rounded" class="text-[1.25rem]"></Icon>
                 </button>

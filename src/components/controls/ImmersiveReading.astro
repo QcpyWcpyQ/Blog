@@ -1,17 +1,19 @@
 ---
-import FloatingButton from "@/components/common/FloatingButton.astro";
-import I18nKey from "@/i18n/i18nKey";
-import { i18n } from "@/i18n/translation";
+import { Icon } from "astro-icon/components";
 ---
 
-<FloatingButton
+<button
   id="immersive-reading-btn"
-  icon="material-symbols:auto-stories"
-  toggleIcon="material-symbols:logout"
-  ariaLabel={i18n(I18nKey.enterImmersiveReading)}
+  type="button"
+  title="进入纯净阅读"
+  aria-label="进入纯净阅读"
+  aria-pressed="false"
   onclick="window.toggleImmersiveReading()"
-  class="hide"
-/>
+  class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 hide"
+>
+  <Icon name="material-symbols:auto-stories" class="text-[1.25rem] reading-enter-icon" />
+  <Icon name="material-symbols:logout" class="text-[1.25rem] reading-exit-icon" />
+</button>
 
 <script>
   import { initImmersiveReading } from "@/utils/immersive-reading-utils";
