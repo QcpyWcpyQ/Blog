@@ -143,3 +143,61 @@ image: ""
     &\iff x\in A\setminus B.
     \end{aligned}
     $$
+
+---
+
+- **Exercise 5**  
+  Show that the following equalities hold.
+
+  1. $(A\mathbin{\Delta}B)\setminus C=(A\cup C)\mathbin{\Delta}(B\cup C)$.
+  2. $A\setminus(B\mathbin{\Delta}C)=[A\setminus(B\cup C)]\cup(A\cap B\cap C)$.
+
+  - **Solution 5.1**
+
+    **(a)** Let $x$ be arbitrary. Then
+
+    $$
+    \begin{aligned}
+    x\in(A\cup C)\mathbin{\Delta}(B\cup C)
+    &\iff
+    \bigl(x\in A\cup C\text{ and }x\notin B\cup C\bigr)\\
+    &\qquad\text{or }
+    \bigl(x\in B\cup C\text{ and }x\notin A\cup C\bigr)\\
+    &\iff
+    \bigl(x\in A,\ x\notin B,\text{ and }x\notin C\bigr)\\
+    &\qquad\text{or }
+    \bigl(x\in B,\ x\notin A,\text{ and }x\notin C\bigr)\\
+    &\iff x\in(A\mathbin{\Delta}B)\setminus C.
+    \end{aligned}
+    $$
+
+    Therefore,
+
+    $$
+    (A\mathbin{\Delta}B)\setminus C
+    =(A\cup C)\mathbin{\Delta}(B\cup C).
+    $$
+
+    **(b)** Let $x$ be arbitrary. Then
+
+    $$
+    \begin{aligned}
+    x\in A\setminus(B\mathbin{\Delta}C)
+    &\iff x\in A\text{ and }x\notin B\mathbin{\Delta}C\\
+    &\iff x\in A\text{ and }
+    \bigl((x\notin B\text{ and }x\notin C)
+    \text{ or }(x\in B\text{ and }x\in C)\bigr)\\
+    &\iff
+    \bigl(x\in A\setminus(B\cup C)\bigr)
+    \text{ or }\bigl(x\in A\cap B\cap C\bigr)\\
+    &\iff
+    x\in[A\setminus(B\cup C)]\cup(A\cap B\cap C).
+    \end{aligned}
+    $$
+
+    Therefore,
+
+    $$
+    A\setminus(B\mathbin{\Delta}C)
+    =[A\setminus(B\cup C)]\cup(A\cap B\cap C).
+    $$
