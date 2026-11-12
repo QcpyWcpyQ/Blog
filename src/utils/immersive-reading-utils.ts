@@ -20,6 +20,148 @@ const IR = window.ImmersiveReading;
 let controlsPlaceholder: Comment | null = null;
 let readingPath = "";
 
+interface ReadingPosition {
+	path: string;
+	atPageTop: boolean;
+	viewportY: number;
+	range: Range | null;
+	fallbackElement: Element;
+	fallbackRatio: number;
+}
+
+type DocumentWithCaret = {
+	caretPositionFromPoint?: (
+		x: number,
+		y: number,
+	) => { offsetNode: Node; offset: number } | null;
+	caretRangeFromPoint?: (x: number, y: number) => Range | null;
+};
+
+function rangeAnchorY(range: Range): number | null {
+	const rect = Array.from(range.getClientRects()).find(
+		(item) => item.height > 0 || item.width > 0,
+	);
+	if (rect) return rect.top;
+
+	// Chromium/WebKit occasionally returns an empty rectangle for a collapsed
+	// caret. Measure the adjacent character without changing the saved caret.
+	const node = range.startContainer;
+	if (node.nodeType !== Node.TEXT_NODE || !node.textContent?.length) return null;
+	const probe = range.cloneRange();
+	const offset = Math.min(range.startOffset, node.textContent.length);
+	if (offset < node.textContent.length) {
+		probe.setEnd(node, offset + 1);
+	} else if (offset > 0) {
+		probe.setStart(node, offset - 1);
+	}
+	const probeRect = Array.from(probe.getClientRects()).find(
+		(item) => item.height > 0 || item.width > 0,
+	);
+	return probeRect?.top ?? null;
+}
+
+function caretRangeAtPoint(x: number, y: number): Range | null {
+	const caretDocument = document as unknown as DocumentWithCaret;
+	const position = caretDocument.caretPositionFromPoint?.(x, y);
+	if (position) {
+		const range = document.createRange();
+		range.setStart(position.offsetNode, position.offset);
+		range.collapse(true);
+		return range;
+	}
+	return caretDocument.caretRangeFromPoint?.(x, y) ?? null;
+}
+
+/**
+ * Capture the text currently being read, rather than only window.scrollY.
+ * The article width changes in pure reading mode, so an absolute scroll value
+ * would point to a different paragraph after line wrapping is recalculated.
+ */
+function captureReadingPosition(): ReadingPosition | null {
+	const post = document.getElementById("post-container");
+	if (!post) return null;
+
+	const article = post.querySelector<HTMLElement>(".custom-md");
+	const referenceY = Math.min(
+		window.innerHeight - 24,
+		Math.max(96, window.innerHeight * 0.22),
+	);
+	const articleRect = article?.getBoundingClientRect();
+	const root =
+		article &&
+		articleRect &&
+		articleRect.top <= referenceY &&
+		articleRect.bottom >= referenceY
+			? article
+			: post;
+	const rootRect = root.getBoundingClientRect();
+	const sampleY = Math.min(
+		Math.max(referenceY, rootRect.top + 1),
+		rootRect.bottom - 1,
+	);
+	const sampleX = Math.min(
+		Math.max(window.innerWidth / 2, rootRect.left + 2),
+		rootRect.right - 2,
+	);
+
+	let range: Range | null = null;
+	for (const yOffset of [0, 16, -16, 32, -32]) {
+		const candidate = caretRangeAtPoint(sampleX, sampleY + yOffset);
+		const startElement =
+			candidate?.startContainer.nodeType === Node.ELEMENT_NODE
+				? (candidate.startContainer as Element)
+				: candidate?.startContainer.parentElement;
+		if (candidate && startElement && root.contains(startElement)) {
+			range = candidate;
+			break;
+		}
+	}
+
+	const measuredY = range ? rangeAnchorY(range) : null;
+	const viewportY = measuredY ?? sampleY;
+	const fallbackRatio =
+		rootRect.height > 0
+			? Math.min(1, Math.max(0, (viewportY - rootRect.top) / rootRect.height))
+			: 0;
+
+	return {
+		path: window.location.pathname,
+		atPageTop: window.scrollY <= 2,
+		viewportY,
+		range,
+		fallbackElement: root,
+		fallbackRatio,
+	};
+}
+
+function restoreReadingPosition(position: ReadingPosition | null): void {
+	if (!position || position.path !== window.location.pathname) return;
+
+	const correctScroll = (): void => {
+		if (position.atPageTop) {
+			window.scrollTo(0, 0);
+			return;
+		}
+
+		let currentY: number | null = null;
+		if (position.range && position.range.startContainer.isConnected) {
+			currentY = rangeAnchorY(position.range);
+		}
+		if (currentY === null && position.fallbackElement.isConnected) {
+			const rect = position.fallbackElement.getBoundingClientRect();
+			currentY = rect.top + rect.height * position.fallbackRatio;
+		}
+		if (currentY !== null && Number.isFinite(currentY)) {
+			window.scrollBy(0, currentY - position.viewportY);
+		}
+	};
+
+	// Correct immediately to avoid a visible jump, then once more after the
+	// browser has completed the layout caused by moving the reading controls.
+	correctScroll();
+	requestAnimationFrame(correctScroll);
+}
+
 // 保留同一组阅读/主题控件，移到 body 避免被隐藏的导航栏或 transform 裁切。
 function moveReadingControls(outsideNavbar: boolean): void {
 	const controls = document.getElementById("reading-controls");
@@ -111,6 +253,7 @@ function setupImmersiveTOC(): void {
 function enterImmersiveReading(): void {
 	if (IR.isImmersive) return;
 	if (!isPostPage() || !document.getElementById("post-container")) return;
+	const readingPosition = captureReadingPosition();
 	IR.isImmersive = true;
 	IR.prevScroll = window.scrollY;
 	readingPath = window.location.pathname;
@@ -132,8 +275,8 @@ function enterImmersiveReading(): void {
 	// 目录栏 & 移动端目录开关
 	setupImmersiveTOC();
 
-	// 类 PDF：回到文章顶部开始阅读
-	window.scrollTo({ top: 0, behavior: "instant" });
+	// 版心宽度改变会重新换行；按正文字符锚点恢复到同一句，而不是跳到页首。
+	restoreReadingPosition(readingPosition);
 
 	document.dispatchEvent(
 		new CustomEvent("immersiveReadingChange", { detail: { on: true } }),
@@ -142,6 +285,10 @@ function enterImmersiveReading(): void {
 
 function exitImmersiveReading(restoreScroll = true): void {
 	if (!IR.isImmersive) return;
+	const readingPosition =
+		restoreScroll && readingPath === window.location.pathname
+			? captureReadingPosition()
+			: null;
 	IR.isImmersive = false;
 
 	document.body.classList.remove("immersive-reading");
@@ -167,11 +314,10 @@ function exitImmersiveReading(restoreScroll = true): void {
 	// 重新计算按钮可见性：文章页 + 桌面端应恢复「进入」按钮
 	updateImmersiveReadingVisibility();
 
-	// 恢复进入前的滚动位置
-	if (restoreScroll && readingPath === window.location.pathname) {
-		window.scrollTo({ top: IR.prevScroll || 0, behavior: "instant" });
+	// 切回普通模式时同样保留当前正在阅读的文字位置。
+	restoreReadingPosition(readingPosition);
+	if (restoreScroll && readingPath === window.location.pathname)
 		IR.btn?.focus({ preventScroll: true });
-	}
 
 	document.dispatchEvent(
 		new CustomEvent("immersiveReadingChange", { detail: { on: false } }),
