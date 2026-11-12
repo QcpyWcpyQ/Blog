@@ -654,3 +654,422 @@ image: ""
   \sum_{k=1}^{\infty}\frac1{\sqrt{k}}=+\infty.
   $$
   Therefore, the series is divergent.
+
+---
+
+- **Theorem 9 (Limit Comparison Theorem)**
+  Suppose that $(a_n)$ and $(b_n)$ are sequences such that $b_n\ne0$ for every $n\in\mathbb{N}$ and
+  $$
+  \lim_{n\to\infty}\frac{a_n}{b_n}=l\ne0.
+  $$
+  Then
+  $$
+  \sum_{k=1}^{\infty}\lvert a_k\rvert<\infty
+  \quad\Longleftrightarrow\quad
+  \sum_{k=1}^{\infty}\lvert b_k\rvert<\infty.
+  $$
+
+  - **Proof 9.1**
+    Since
+    $$
+    \lim_{n\to\infty}\frac{\lvert a_n\rvert}{\lvert b_n\rvert}
+    =\lvert l\rvert>0,
+    $$
+    there exists $n_0\in\mathbb{N}$ such that, for every $n>n_0$,
+    $$
+    \left\lvert
+    \frac{\lvert a_n\rvert}{\lvert b_n\rvert}-\lvert l\rvert
+    \right\rvert
+    <\frac{\lvert l\rvert}{2}.
+    $$
+    Hence
+    $$
+    \frac{\lvert l\rvert}{2}
+    <\frac{\lvert a_n\rvert}{\lvert b_n\rvert}
+    <\frac{3\lvert l\rvert}{2},
+    $$
+    and therefore
+    $$
+    \frac{\lvert l\rvert}{2}\lvert b_n\rvert
+    <\lvert a_n\rvert
+    <\frac{3\lvert l\rvert}{2}\lvert b_n\rvert.
+    $$
+
+    Suppose first that
+    $$
+    \sum_{k=1}^{\infty}\lvert b_k\rvert<\infty.
+    $$
+    For every $n>n_0$,
+    $$
+    0\leqslant\lvert a_n\rvert
+    \leqslant\frac{3\lvert l\rvert}{2}\lvert b_n\rvert.
+    $$
+    The Comparison Theorem implies that
+    $$
+    \sum_{k=n_0+1}^{\infty}\lvert a_k\rvert<\infty.
+    $$
+    Adding the finitely many preceding terms gives
+    $$
+    \sum_{k=1}^{\infty}\lvert a_k\rvert<\infty.
+    $$
+
+    Conversely, suppose that
+    $$
+    \sum_{k=1}^{\infty}\lvert a_k\rvert<\infty.
+    $$
+    For every $n>n_0$,
+    $$
+    0\leqslant\lvert b_n\rvert
+    <\frac{2}{\lvert l\rvert}\lvert a_n\rvert.
+    $$
+    Again, the Comparison Theorem implies that
+    $$
+    \sum_{k=n_0+1}^{\infty}\lvert b_k\rvert<\infty.
+    $$
+    Adding the finitely many preceding terms gives
+    $$
+    \sum_{k=1}^{\infty}\lvert b_k\rvert<\infty.
+    $$
+    This proves the equivalence.
+
+- **Example 9.2**
+  Let
+  $$
+  a_n=\frac{3n^2+4}{n^2 2^n}
+  \qquad\text{and}\qquad
+  b_n=\left(\frac12\right)^n.
+  $$
+  Then
+  $$
+  \begin{aligned}
+  \lim_{n\to\infty}\frac{a_n}{b_n}
+  &=\lim_{n\to\infty}
+    \frac{3n^2+4}{n^2 2^n}
+    \cdot2^n\\
+  &=\lim_{n\to\infty}\left(3+\frac4{n^2}\right)\\
+  &=3.
+  \end{aligned}
+  $$
+  Since
+  $$
+  \sum_{n=1}^{\infty}b_n
+  =\sum_{n=1}^{\infty}\left(\frac12\right)^n
+  $$
+  is a convergent geometric series, the Limit Comparison Theorem implies that
+  $$
+  \sum_{n=1}^{\infty}a_n
+  =\sum_{n=1}^{\infty}\frac{3n^2+4}{n^2 2^n}
+  $$
+  is also convergent.
+
+---
+
+- **Theorem 10 (Cauchy's Root Test)**
+  Let $(a_n)$ be a sequence, and suppose that
+  $$
+  \lim_{n\to\infty}\sqrt[n]{\lvert a_n\rvert}=l\geqslant0.
+  $$
+  Then the following statements hold.
+
+  1. If $l<1$, then
+     $$
+     \sum_{n=1}^{\infty}a_n
+     $$
+     converges absolutely.
+
+  2. If $l>1$, then
+     $$
+     \sum_{n=1}^{\infty}\lvert a_n\rvert=+\infty,
+     $$
+     and hence $\sum_{n=1}^{\infty}a_n$ is divergent.
+
+  3. If $l=1$, no conclusion can be drawn.
+
+  - **Proof 10.1**
+    Suppose first that $l<1$. Choose $c\in\mathbb{R}$ such that
+    $$
+    l<c<1.
+    $$
+    Since
+    $$
+    \sqrt[n]{\lvert a_n\rvert}\to l,
+    $$
+    there exists $n_0\in\mathbb{N}$ such that
+    $$
+    n>n_0
+    \implies
+    \sqrt[n]{\lvert a_n\rvert}<c.
+    $$
+    Therefore,
+    $$
+    \lvert a_n\rvert<c^n
+    $$
+    for every $n>n_0$. Since $0<c<1$, the geometric series
+    $$
+    \sum_{n=1}^{\infty}c^n
+    $$
+    is convergent. The Comparison Theorem implies that
+    $$
+    \sum_{n=n_0+1}^{\infty}\lvert a_n\rvert
+    $$
+    is convergent. Adding the finitely many preceding terms shows that
+    $$
+    \sum_{n=1}^{\infty}\lvert a_n\rvert<\infty.
+    $$
+    Hence $\sum_{n=1}^{\infty}a_n$ converges absolutely.
+
+    Now suppose that $l>1$. Choose $c\in\mathbb{R}$ such that
+    $$
+    1<c<l.
+    $$
+    There exists $n_0\in\mathbb{N}$ such that
+    $$
+    n>n_0
+    \implies
+    \sqrt[n]{\lvert a_n\rvert}>c.
+    $$
+    Thus,
+    $$
+    \lvert a_n\rvert>c^n>1
+    $$
+    for every $n>n_0$. In particular, $a_n\not\to0$, so Proposition 5 implies that
+    $$
+    \sum_{n=1}^{\infty}a_n
+    $$
+    is divergent. Moreover, the partial sums of $\sum\lvert a_n\rvert$ tend to $+\infty$.
+
+    Finally, when $l=1$, both convergence and divergence are possible. Indeed,
+    $$
+    \sqrt[n]{\frac1n}=\frac1{\sqrt[n]{n}}\to1
+    \qquad\text{and}\qquad
+    \sqrt[n]{\frac1{n^2}}=\frac1{\left(\sqrt[n]{n}\right)^2}\to1,
+    $$
+    while
+    $$
+    \sum_{n=1}^{\infty}\frac1n
+    $$
+    is divergent and
+    $$
+    \sum_{n=1}^{\infty}\frac1{n^2}
+    $$
+    is convergent. Therefore, no conclusion can be drawn when $l=1$.
+
+- **Example 10.1**
+  Let
+  $$
+  a_n=r^n,
+  \qquad 0<r<1.
+  $$
+  Then
+  $$
+  \lim_{n\to\infty}\sqrt[n]{\lvert a_n\rvert}
+  =\lim_{n\to\infty}\sqrt[n]{r^n}
+  =r<1.
+  $$
+  By Cauchy's Root Test,
+  $$
+  \sum_{n=1}^{\infty}r^n
+  $$
+  converges absolutely.
+
+- **Example 10.2**
+  Let
+  $$
+  a_n=\left(\frac12\right)^{n+(-1)^n}.
+  $$
+  The first few terms are
+  $$
+  1,
+  \quad
+  \left(\frac12\right)^3,
+  \quad
+  \left(\frac12\right)^2,
+  \quad
+  \left(\frac12\right)^5,
+  \quad
+  \left(\frac12\right)^4,
+  \quad
+  \left(\frac12\right)^7,
+  \quad\ldots
+  $$
+  We have
+  $$
+  \begin{aligned}
+  \sqrt[n]{\lvert a_n\rvert}
+  &=\sqrt[n]{\left(\frac12\right)^{n+(-1)^n}}\\
+  &=\frac12\left(\frac12\right)^{\frac{(-1)^n}{n}}\\
+  &\longrightarrow\frac12<1.
+  \end{aligned}
+  $$
+  Therefore, Cauchy's Root Test implies that
+  $$
+  \sum_{n=1}^{\infty}\left(\frac12\right)^{n+(-1)^n}
+  $$
+  converges absolutely.
+
+---
+
+- **Theorem 11 (D'Alembert's Ratio Test)**
+  Let $(a_n)$ be a sequence, and suppose that
+  $$
+  \lim_{n\to\infty}\frac{\lvert a_{n+1}\rvert}{\lvert a_n\rvert}=l\geqslant0.
+  $$
+  Then the following statements hold.
+
+  1. If $l<1$, then
+     $$
+     \sum_{n=1}^{\infty}a_n
+     $$
+     converges absolutely.
+
+  2. If $l>1$, then
+     $$
+     \sum_{n=1}^{\infty}\lvert a_n\rvert=+\infty,
+     $$
+     and hence $\sum_{n=1}^{\infty}a_n$ is divergent.
+
+  3. If $l=1$, no conclusion can be drawn.
+
+  - **Proof 11.1**
+    Suppose first that $l<1$. Choose $c\in\mathbb{R}$ such that
+    $$
+    l<c<1.
+    $$
+    By the definition of a limit, there exists $N\in\mathbb{N}$ such that
+    $$
+    n\geqslant N
+    \implies
+    \frac{\lvert a_{n+1}\rvert}{\lvert a_n\rvert}<c.
+    $$
+    Therefore,
+    $$
+    \lvert a_{n+1}\rvert<c\lvert a_n\rvert
+    $$
+    for every $n\geqslant N$. Repeated application of this inequality gives
+    $$
+    \lvert a_{N+k}\rvert\leqslant c^k\lvert a_N\rvert
+    $$
+    for every $k\geqslant0$. Hence, for every $n\geqslant N$,
+    $$
+    \lvert a_n\rvert
+    \leqslant c^{n-N}\lvert a_N\rvert
+    =Kc^n,
+    \qquad
+    K=\frac{\lvert a_N\rvert}{c^N}.
+    $$
+    Since $0<c<1$, the geometric series
+    $$
+    \sum_{n=1}^{\infty}Kc^n
+    $$
+    is convergent. The Comparison Theorem implies that
+    $$
+    \sum_{n=N}^{\infty}\lvert a_n\rvert
+    $$
+    is convergent. Adding the finitely many preceding terms shows that
+    $$
+    \sum_{n=1}^{\infty}\lvert a_n\rvert<\infty.
+    $$
+    Thus, $\sum_{n=1}^{\infty}a_n$ converges absolutely.
+
+    Now suppose that $l>1$. Choose $c\in\mathbb{R}$ such that
+    $$
+    1<c<l.
+    $$
+    There exists $N\in\mathbb{N}$ such that
+    $$
+    n\geqslant N
+    \implies
+    \frac{\lvert a_{n+1}\rvert}{\lvert a_n\rvert}>c.
+    $$
+    Thus,
+    $$
+    \lvert a_{N+k}\rvert\geqslant c^k\lvert a_N\rvert
+    $$
+    for every $k\geqslant0$. Since $c>1$, it follows that $\lvert a_n\rvert\not\to0$.
+    Therefore, Proposition 5 implies that
+    $$
+    \sum_{n=1}^{\infty}a_n
+    $$
+    is divergent. Moreover, the partial sums of $\sum\lvert a_n\rvert$ tend to $+\infty$.
+
+    Finally, when $l=1$, both convergence and divergence are possible. Indeed,
+    $$
+    \frac{\frac1{n+1}}{\frac1n}
+    =\frac{n}{n+1}
+    \longrightarrow1
+    $$
+    and
+    $$
+    \frac{\frac1{(n+1)^2}}{\frac1{n^2}}
+    =\left(\frac{n}{n+1}\right)^2
+    \longrightarrow1,
+    $$
+    while
+    $$
+    \sum_{n=1}^{\infty}\frac1n
+    $$
+    is divergent and
+    $$
+    \sum_{n=1}^{\infty}\frac1{n^2}
+    $$
+    is convergent. Therefore, no conclusion can be drawn when $l=1$.
+
+- **Example 11.1**
+  Let
+  $$
+  a_n=r^n,
+  \qquad 0<r<1.
+  $$
+  Then
+  $$
+  \frac{\lvert a_{n+1}\rvert}{\lvert a_n\rvert}
+  =\frac{r^{n+1}}{r^n}
+  =r<1.
+  $$
+  By D'Alembert's Ratio Test,
+  $$
+  \sum_{n=1}^{\infty}r^n
+  $$
+  converges absolutely.
+
+- **Example 11.2**
+  Let
+  $$
+  a_n=\left(\frac12\right)^{n+(-1)^n}.
+  $$
+  Then
+  $$
+  \frac{a_{n+1}}{a_n}
+  =
+  \begin{cases}
+  \dfrac18, & n\text{ is odd},\\[4pt]
+  2, & n\text{ is even}.
+  \end{cases}
+  $$
+  Therefore,
+  $$
+  \lim_{n\to\infty}\frac{a_{n+1}}{a_n}
+  $$
+  does not exist, so D'Alembert's Ratio Test cannot be applied.
+
+- **Example 11.3**
+  Consider
+  $$
+  \sum_{n=1}^{\infty}\frac{n}{2^n}.
+  $$
+  Let
+  $$
+  a_n=\frac{n}{2^n}.
+  $$
+  Then
+  $$
+  \frac{a_{n+1}}{a_n}
+  =\frac{\frac{n+1}{2^{n+1}}}{\frac{n}{2^n}}
+  =\frac{n+1}{n}\cdot\frac12
+  \longrightarrow\frac12<1.
+  $$
+  Hence, D'Alembert's Ratio Test implies that
+  $$
+  \sum_{n=1}^{\infty}\frac{n}{2^n}
+  $$
+  is convergent.
