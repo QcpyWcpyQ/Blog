@@ -240,3 +240,20 @@ image: ""
     1.
     $$
     Therefore, $\lvert a_n\rvert\geqslant\lvert a_{100}\rvert>0$ for every $n\geqslant100$, so $a_n$ does not converge to $0$. Since convergence of a series requires its terms to converge to $0$, the given series is divergent.
+
+---
+
+- **Exercise 7**  
+    Prove that the alternating harmonic series converges.  
+    $$
+    \sum_{n=1}^\infty\dfrac{(-1)^n}{n}.
+    $$
+
+---
+
+- **Exercise 8**  
+    Decide the convergence of the following series for each $t\in \mathbb R$.  
+    $$
+    \sum_{n=1}^\infty \dfrac{nt^n}{2^n}.
+    $$
+    

@@ -1,0 +1,23 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<button
+	id="answer-mask-btn"
+	type="button"
+	title="遮盖答案"
+	aria-label="遮盖答案"
+	aria-pressed="false"
+	class="btn-plain scale-animation rounded-lg h-11 w-11 active:scale-90 hide"
+>
+	<Icon
+		name="material-symbols:lightbulb-outline-rounded"
+		class="text-[1.25rem]"
+	/>
+</button>
+
+<script>
+	import { initAnswerMask } from "@/utils/answer-mask-utils";
+
+	initAnswerMask();
+</script>

@@ -1,0 +1,38 @@
+/* Answer masking for Solution / Proof blocks. The labels remain readable. */
+
+#answer-mask-btn.hide {
+	display: none !important;
+}
+
+#answer-mask-btn.toggled {
+	color: var(--primary);
+	background-color: var(--btn-plain-bg-hover);
+}
+
+#answer-mask-btn:focus-visible {
+	outline: 2px solid var(--primary);
+	outline-offset: 2px;
+}
+
+.custom-md .answer-mask-inline-content,
+.custom-md .answer-mask-content {
+	transition:
+		filter 180ms ease,
+		opacity 180ms ease;
+}
+
+body.answers-masked .custom-md .answer-mask-inline-content,
+body.answers-masked .custom-md .answer-mask-content {
+	filter: blur(0.38rem);
+	opacity: 0.52;
+	pointer-events: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.custom-md .answer-mask-inline-content,
+	.custom-md .answer-mask-content {
+		transition: none;
+	}
+}

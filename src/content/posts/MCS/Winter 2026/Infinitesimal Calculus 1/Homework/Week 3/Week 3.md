@@ -13,34 +13,40 @@ image: ""
 - **Problem 1**
   Compute the following limits. You do not need to use the definition.
 
-  1. $$
-     \lim_{n\to\infty}
-     \sqrt[n]{\frac{7^n+3^n}{2^n+4^n}}.
-     $$
+  (a)
+  $$
+  \lim_{n\to\infty}
+  \sqrt[n]{\frac{7^n+3^n}{2^n+4^n}}.
+  $$
 
-  2. $$
-     \lim_{n\to\infty}\sqrt[n]{n^2+n}.
-     $$
+  (b)
+  $$
+  \lim_{n\to\infty}\sqrt[n]{n^2+n}.
+  $$
 
-  3. $$
-     \lim_{n\to\infty}
-     \left(\frac{2n+6}{2n}\right)^{3n+2}.
-     $$
+  (c)
+  $$
+  \lim_{n\to\infty}
+  \left(\frac{2n+6}{2n}\right)^{3n+2}.
+  $$
 
-  4. $$
-     \lim_{n\to\infty}
-     \left(\frac{n^2+1}{n^2+4}\right)^{6n^2}.
-     $$
+  (d)
+  $$
+  \lim_{n\to\infty}
+  \left(\frac{n^2+1}{n^2+4}\right)^{6n^2}.
+  $$
 
-  5. $$
-     \lim_{n\to\infty}
-     \sqrt[n]{\frac{2n}{n+1}}.
-     $$
+  (e)
+  $$
+  \lim_{n\to\infty}
+  \sqrt[n]{\frac{2n}{n+1}}.
+  $$
 
-  6. $$
-     \lim_{n\to\infty}
-     \frac{2^n+(-1)^n}{n\left(2^n+(-1)^n\right)}.
-     $$
+  (f)
+  $$
+  \lim_{n\to\infty}
+  \frac{2^n+(-1)^n}{n\left(2^n+(-1)^n\right)}.
+  $$
 
   - **Solution 1.1 (Part a)**
     Factoring out the dominant powers gives
@@ -170,17 +176,17 @@ image: ""
 
 - **Problem 2**
 
-  1. Show that
-     $$
-     \sum_{i=0}^{n}r^i=\frac{1-r^{n+1}}{1-r}
-     $$
-     for every $r\neq1$.
+  (a) Show that
+  $$
+  \sum_{i=0}^{n}r^i=\frac{1-r^{n+1}}{1-r}
+  $$
+  for every $r\neq1$.
 
-  2. Let $(x_n)$ be a sequence. Prove that if $0\leqslant r<1$, $C>0$, and
-     $$
-     \lvert x_{n+1}-x_n\rvert<Cr^n,
-     $$
-     then $(x_n)$ is a Cauchy sequence.
+  (b) Let $(x_n)$ be a sequence. Prove that if $0\leqslant r<1$, $C>0$, and
+  $$
+  \lvert x_{n+1}-x_n\rvert<Cr^n,
+  $$
+  then $(x_n)$ is a Cauchy sequence.
 
   - **Proof 2.1 (Part a)**
     Let

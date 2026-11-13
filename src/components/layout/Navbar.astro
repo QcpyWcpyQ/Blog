@@ -3,6 +3,7 @@ import { Picture } from "astro:assets";
 import * as path from "node:path";
 import type { ImageMetadata } from "astro";
 import { Icon } from "astro-icon/components";
+import AnswerMask from "@/components/controls/AnswerMask.astro";
 import DisplaySettings from "@/components/controls/DisplaySettingsIntegrated.svelte";
 import LightDarkSwitch from "@/components/controls/LightDarkSwitch.svelte";
 import ImmersiveReading from "@/components/controls/ImmersiveReading.astro";
@@ -233,6 +234,7 @@ const logoVariants = await Promise.all(
                         </button>
                 )}
                 <div id="reading-controls" class="flex items-center">
+                    <AnswerMask />
                     {siteConfig.post.immersiveReading?.enable !== false && <ImmersiveReading />}
                     <span class="reading-mode-label">纯净阅读</span>
                     {/* @ts-ignore */}
