@@ -243,17 +243,91 @@ image: ""
 
 ---
 
-- **Exercise 7**  
-    Prove that the alternating harmonic series converges.  
+- **Exercise 7**
+  Prove that the alternating harmonic series
+  $$
+  \sum_{n=1}^{\infty}\frac{(-1)^n}{n}
+  $$
+  converges.
+
+  - **Solution 7.1**
+    Let
     $$
-    \sum_{n=1}^\infty\dfrac{(-1)^n}{n}.
+    S_N=\sum_{n=1}^{N}\frac{(-1)^n}{n}.
     $$
+    For every $N\in\mathbb{N}$,
+    $$
+    \begin{aligned}
+    S_{2N}
+    &=\sum_{n=1}^{N}
+      \left(-\frac1{2n-1}+\frac1{2n}\right)\\
+    &=-\sum_{n=1}^{N}\frac1{(2n-1)2n}.
+    \end{aligned}
+    $$
+    Hence,
+    $$
+    S_{2N+2}-S_{2N}
+    =-\frac1{(2N+1)(2N+2)}<0,
+    $$
+    so $(S_{2N})$ is decreasing. Moreover,
+    $$
+    \begin{aligned}
+    S_{2N}
+    &=-1+\sum_{n=1}^{N-1}
+      \left(\frac1{2n}-\frac1{2n+1}\right)
+      +\frac1{2N}\\
+    &>-1.
+    \end{aligned}
+    $$
+    Therefore, $(S_{2N})$ is bounded below and decreasing, so it converges to some $S\in\mathbb{R}$.
+
+    Since
+    $$
+    S_{2N+1}=S_{2N}-\frac1{2N+1}
+    $$
+    and $1/(2N+1)\to0$, we also have $S_{2N+1}\to S$. Thus both the even and odd subsequences of $(S_N)$ converge to $S$, and hence $(S_N)$ converges to $S$. Therefore, the alternating harmonic series is convergent.
 
 ---
 
-- **Exercise 8**  
-    Decide the convergence of the following series for each $t\in \mathbb R$.  
+- **Exercise 8**
+  Determine the convergence of the series
+  $$
+  \sum_{n=1}^{\infty}\frac{nt^n}{2^n}
+  $$
+  for every $t\in\mathbb{R}$.
+
+  - **Solution 8.1**
+    Let
     $$
-    \sum_{n=1}^\infty \dfrac{nt^n}{2^n}.
+    a_n=\frac{nt^n}{2^n}.
     $$
-    
+    Suppose first that $t\neq0$. Then
+    $$
+    \frac{\lvert a_{n+1}\rvert}{\lvert a_n\rvert}
+    =\frac{n+1}{n}\frac{\lvert t\rvert}{2}
+    \longrightarrow\frac{\lvert t\rvert}{2}.
+    $$
+    If $\lvert t\rvert<2$, D'Alembert's Ratio Test shows that
+    $$
+    \sum_{n=1}^{\infty}\lvert a_n\rvert
+    $$
+    is convergent. Therefore, the given series is absolutely convergent. This also includes $t=0$, for which every term is zero.
+
+    If $\lvert t\rvert>2$, then $\lvert a_n\rvert$ does not converge to $0$, so the series is divergent. At the boundary points,
+    $$
+    a_n=n
+    \qquad\text{when }t=2,
+    $$
+    and
+    $$
+    a_n=(-1)^n n
+    \qquad\text{when }t=-2.
+    $$
+    In either case, $a_n\not\to0$, so the series is divergent.
+
+    Hence, the series is convergent exactly when
+    $$
+    \lvert t\rvert<2.
+    $$
+
+---

@@ -295,7 +295,7 @@ image: ""
     **Case 3: $a=2$ and $b\neq7$.** The final row becomes
 
     $$
-    \begin{bmatrix}0&0&0&\vline&b-7\end{bmatrix},
+    \begin{bmatrix}0&0&0&\mid&b-7\end{bmatrix},
     $$
 
     which asserts $0=b-7\neq0$. Hence the system has no solution.
