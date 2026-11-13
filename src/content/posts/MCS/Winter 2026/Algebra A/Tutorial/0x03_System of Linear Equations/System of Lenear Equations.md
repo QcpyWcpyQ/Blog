@@ -145,25 +145,23 @@ image: ""
     $$
     Set $x_3=s$ and $x_4=t$. Then
     $$
-    \boxed{
-    S_0=left\{
+    S_0=\left\{
     s\begin{bmatrix}5\\-2\\1\\0\end{bmatrix}
     +t\begin{bmatrix}1\\-1\\0\\1\end{bmatrix}
     :s,t\in\mathbb R
-    \right\}.}
+    \right\}
     $$
-
+    
     When $r=p+q$, Exercise 1 gives $S_b=x_0+S_0$. Therefore,
     $$
-    \boxed{
-    S_b=left\{
+    S_b=\left\{
     \begin{bmatrix}
     5p-2q+5s+t\\
     q-2p-2s-t\\
     s\\t
     \end{bmatrix}
     :s,t\in\mathbb R
-    \right\}.}
+    \right\}.
     $$
     When $r\neq p+q$, the solution set is empty.
 
