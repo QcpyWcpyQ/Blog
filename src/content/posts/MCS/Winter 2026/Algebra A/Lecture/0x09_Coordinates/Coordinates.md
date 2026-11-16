@@ -333,3 +333,209 @@ image: ""
   =
   P_{\mathcal B'\leftarrow\mathcal B}[v]_{\mathcal B}.
   $$
+
+- **Effective computations 2.2**
+  Let
+  $$
+  V=\mathbb F^n,
+  \qquad
+  \{v_1,\ldots,v_m\}\subseteq V.
+  $$
+
+  1. Does $\{v_1,\ldots,v_m\}$ generate $V$? If so, how can it be refined to a basis?
+  2. Is $\{v_1,\ldots,v_m\}$ linearly independent? If so, how can it be extended to a basis?
+
+  - **Solution 2.2.1**
+    Let
+    $$
+    A=
+    \begin{pmatrix}
+      \vert&&\vert\\
+      v_1&\cdots&v_m\\
+      \vert&&\vert
+    \end{pmatrix}
+    \in M_{n\times m}(\mathbb F)
+    $$
+    and
+    $$
+    X=
+    \begin{pmatrix}
+      \lambda_1\\
+      \vdots\\
+      \lambda_m
+    \end{pmatrix}.
+    $$
+    The linear combinations of $v_1,\ldots,v_m$ are exactly the vectors $b\in\mathbb F^n$ for which the system
+    $$
+    AX=b
+    $$
+    is consistent. Therefore,
+    $$
+    \{v_1,\ldots,v_m\}\text{ generates }V
+    $$
+    if and only if $AX=b$ is consistent for every $b\in\mathbb F^n$.
+
+    Suppose that row reduction gives
+    $$
+    (A\mid b)\sim(R\mid b').
+    $$
+    The system is consistent for every $b\in\mathbb F^n$ if and only if $R$ has no zero rows. Equivalently, $A$ has a pivot in every row, so
+    $$
+    \operatorname{rank}(A)=n.
+    $$
+
+    Assume that the $n$ pivots occur in columns
+    $$
+    i_1,\ldots,i_n.
+    $$
+    We claim that
+    $$
+    \{v_{i_1},\ldots,v_{i_n}\}
+    $$
+    is a basis of $V$.
+
+    Let
+    $$
+    A'=
+    \begin{pmatrix}
+      \vert&&\vert\\
+      v_{i_1}&\cdots&v_{i_n}\\
+      \vert&&\vert
+    \end{pmatrix}.
+    $$
+    Applying to $A'$ the same row operations used to reduce $A$ produces the pivot columns of $R$. Since there is one pivot in every row, these columns form $I_n$. Hence
+    $$
+    A'\sim I_n.
+    $$
+    Thus $A'Y=0$, with $Y\in\mathbb F^n$, has only the trivial solution, so $v_{i_1},\ldots,v_{i_n}$ are linearly independent. Moreover, $A'Y=b$ is consistent for every $b\in\mathbb F^n$, so these vectors generate $V$. Therefore,
+    $$
+    \{v_{i_1},\ldots,v_{i_n}\}
+    $$
+    is a basis of $V$.
+
+  - **Solution 2.2.2**
+    Let
+    $$
+    A=
+    \begin{pmatrix}
+      \vert&&\vert\\
+      u_1&\cdots&u_m\\
+      \vert&&\vert
+    \end{pmatrix}
+    \in M_{n\times m}(\mathbb F).
+    $$
+    The set $\{u_1,\ldots,u_m\}$ is linearly independent if and only if the homogeneous system
+    $$
+    AX=0
+    $$
+    has only the trivial solution. This is equivalent to having a pivot in every column of $A$, and hence to
+    $$
+    \operatorname{rank}(A)=m.
+    $$
+
+    Suppose that $\{u_1,\ldots,u_m\}$ is linearly independent. Let
+    $$
+    \mathcal E=(e_1,\ldots,e_n)
+    $$
+    be the canonical basis of $\mathbb F^n$. The set
+    $$
+    \{u_1,\ldots,u_m,e_1,\ldots,e_n\}
+    $$
+    generates $\mathbb F^n$. Apply Solution 2.2.1 to the matrix
+    $$
+    \begin{pmatrix}
+      \vert&&\vert&\vert&&\vert\\
+      u_1&\cdots&u_m&e_1&\cdots&e_n\\
+      \vert&&\vert&\vert&&\vert
+    \end{pmatrix}.
+    $$
+    Since $u_1,\ldots,u_m$ are linearly independent, the first $m$ columns are pivot columns. Selecting all pivot columns therefore produces a basis containing $u_1,\ldots,u_m$. Thus the linearly independent set $\{u_1,\ldots,u_m\}$ can be extended to a basis of $\mathbb F^n$ by adding suitable vectors from the canonical basis.
+
+- **Example 2.3**
+  Let $V=\mathbb R^3$ and
+  $$
+  \begin{aligned}
+  u_1&=(1,1,1),&
+  u_2&=(1,0,-1),\\
+  u_3&=(2,1,0),&
+  u_4&=(0,0,1).
+  \end{aligned}
+  $$
+  To refine the generating set $\{u_1,u_2,u_3,u_4\}$ to a basis, row-reduce the matrix whose columns are these vectors
+  $$
+  \begin{pmatrix}
+    1&1&2&0\\
+    1&0&1&0\\
+    1&-1&0&1
+  \end{pmatrix}
+  \sim
+  \begin{pmatrix}
+    1&0&1&0\\
+    0&1&1&0\\
+    0&0&0&1
+  \end{pmatrix}.
+  $$
+  The pivot columns are columns $1$, $2$, and $4$. Therefore,
+  $$
+  \{u_1,u_2,u_4\}
+  =
+  \{(1,1,1),(1,0,-1),(0,0,1)\}
+  $$
+  is a basis of $\mathbb R^3$.
+
+- **Example 2.4**
+  Let $V=\mathbb C^3$ and
+  $$
+  \begin{aligned}
+  v_1&=(0,i,-i),&
+  v_2&=(0,-1,1),\\
+  v_3&=(1,i,1),&
+  v_4&=(1,0,1+i).
+  \end{aligned}
+  $$
+
+  First, determine whether $\{v_1,v_2,v_3,v_4\}$ generates $V$. Row reduction gives
+  $$
+  \begin{pmatrix}
+    0&0&1&1\\
+    i&-1&i&0\\
+    -i&1&1&1+i
+  \end{pmatrix}
+  \sim
+  \begin{pmatrix}
+    1&i&0&-1\\
+    0&0&1&1\\
+    0&0&0&0
+  \end{pmatrix}.
+  $$
+  There are only two pivots, in columns $1$ and $3$, so the four vectors do not generate $\mathbb C^3$. If
+  $$
+  W=\operatorname{span}\{v_1,v_2,v_3,v_4\},
+  $$
+  then
+  $$
+  \dim W=2
+  $$
+  and
+  $$
+  \{v_1,v_3\}
+  =
+  \{(0,i,-i),(1,i,1)\}
+  $$
+  is a basis of $W$.
+
+  To extend this basis to a basis of $V$, append the canonical basis vectors $e_1,e_2,e_3$ and row-reduce
+  $$
+  \begin{pmatrix}
+    0&0&1&1&1&0&0\\
+    i&-1&i&0&0&1&0\\
+    -i&1&1&1+i&0&0&1
+  \end{pmatrix}.
+  $$
+  The pivot columns are columns $1$, $3$, and $5$. Hence
+  $$
+  \{v_1,v_3,e_1\}
+  =
+  \{(0,i,-i),(1,i,1),(1,0,0)\}
+  $$
+  is a basis of $\mathbb C^3$ extending the basis $\{v_1,v_3\}$ of $W$.
