@@ -491,6 +491,17 @@ export const zh_TW: Translation = {
 	[Key.copyLink]: "複製連結",
 	[Key.savePoster]: "保存海報",
 	[Key.scanToRead]: "掃碼閱讀文章",
+	[Key.exportMarkdown]: "匯出 .md",
+	[Key.exportPdf]: "匯出 .pdf",
+	[Key.postNotes]: "記筆記",
+	[Key.notePlaceholder]: "記錄閱讀這篇文章時的想法...",
+	[Key.saveNote]: "保存筆記",
+	[Key.noteSaved]: "筆記已保存",
+	[Key.noteSaveError]: "保存失敗，請檢查瀏覽器儲存權限。",
+	[Key.closeNotes]: "關閉筆記",
+	[Key.noteStorageInfo]: "筆記僅保存在目前瀏覽器，匯出 PDF 時會一併包含。",
+	[Key.pdfPrintHint]: "在列印對話框中選擇「另存為 PDF」",
+	[Key.unlockToExportPdf]: "請先解鎖文章，再匯出 PDF",
 
 	// 代碼區塊折疊配置
 	[Key.codeCollapsibleShowMore]: "展開",

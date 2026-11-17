@@ -489,6 +489,17 @@ export const zh_CN: Translation = {
 	[Key.copyLink]: "复制链接",
 	[Key.savePoster]: "保存海报",
 	[Key.scanToRead]: "扫码阅读文章",
+	[Key.exportMarkdown]: "导出 .md",
+	[Key.exportPdf]: "导出 .pdf",
+	[Key.postNotes]: "记笔记",
+	[Key.notePlaceholder]: "记录阅读这篇文章时的想法...",
+	[Key.saveNote]: "保存笔记",
+	[Key.noteSaved]: "笔记已保存",
+	[Key.noteSaveError]: "保存失败，请检查浏览器存储权限。",
+	[Key.closeNotes]: "关闭笔记",
+	[Key.noteStorageInfo]: "笔记仅保存在当前浏览器，导出 PDF 时会一并包含。",
+	[Key.pdfPrintHint]: "在打印对话框中选择“另存为 PDF”",
+	[Key.unlockToExportPdf]: "请先解锁文章，再导出 PDF",
 
 	// 代码块折叠配置
 	[Key.codeCollapsibleShowMore]: "展开",

@@ -497,6 +497,19 @@ export const ja: Translation = {
 	[Key.copyLink]: "リンクをコピー",
 	[Key.savePoster]: "ポスターを保存",
 	[Key.scanToRead]: "QRコードで読む",
+	[Key.exportMarkdown]: ".md を書き出す",
+	[Key.exportPdf]: ".pdf を書き出す",
+	[Key.postNotes]: "ノート",
+	[Key.notePlaceholder]: "この記事を読んだ感想や考えを記録...",
+	[Key.saveNote]: "ノートを保存",
+	[Key.noteSaved]: "ノートを保存しました",
+	[Key.noteSaveError]:
+		"保存できませんでした。ブラウザのストレージ権限を確認してください。",
+	[Key.closeNotes]: "ノートを閉じる",
+	[Key.noteStorageInfo]:
+		"ノートはこのブラウザにのみ保存され、PDF にも含まれます。",
+	[Key.pdfPrintHint]: "印刷ダイアログで「PDF として保存」を選択してください",
+	[Key.unlockToExportPdf]: "PDF を書き出す前に記事のロックを解除してください",
 
 	// コードブロック折りたたみ設定
 	[Key.codeCollapsibleShowMore]: "展開する",

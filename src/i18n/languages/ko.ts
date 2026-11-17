@@ -497,6 +497,19 @@ export const ko: Translation = {
 	[Key.copyLink]: "링크 복사",
 	[Key.savePoster]: "포스터 저장",
 	[Key.scanToRead]: "스캔하여 읽기",
+	[Key.exportMarkdown]: ".md 다운로드",
+	[Key.exportPdf]: ".pdf 다운로드",
+	[Key.postNotes]: "노트",
+	[Key.notePlaceholder]: "이 글을 읽으며 든 생각을 기록하세요...",
+	[Key.saveNote]: "노트 저장",
+	[Key.noteSaved]: "노트가 저장되었습니다",
+	[Key.noteSaveError]:
+		"저장하지 못했습니다. 브라우저 저장소 권한을 확인하세요.",
+	[Key.closeNotes]: "노트 닫기",
+	[Key.noteStorageInfo]:
+		"노트는 현재 브라우저에만 저장되며 PDF에도 함께 포함됩니다.",
+	[Key.pdfPrintHint]: "인쇄 대화 상자에서 “PDF로 저장”을 선택하세요",
+	[Key.unlockToExportPdf]: "PDF를 다운로드하려면 먼저 글의 잠금을 해제하세요",
 
 	// Code Block Collapsible Configuration
 	[Key.codeCollapsibleShowMore]: "더 보기",

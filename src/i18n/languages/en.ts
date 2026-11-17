@@ -500,6 +500,19 @@ export const en: Translation = {
 	[Key.copyLink]: "Copy Link",
 	[Key.savePoster]: "Save Poster",
 	[Key.scanToRead]: "Scan to Read",
+	[Key.exportMarkdown]: "Export .md",
+	[Key.exportPdf]: "Export .pdf",
+	[Key.postNotes]: "Notes",
+	[Key.notePlaceholder]: "Write down your thoughts about this article...",
+	[Key.saveNote]: "Save Note",
+	[Key.noteSaved]: "Note saved",
+	[Key.noteSaveError]:
+		"Could not save. Check your browser storage permissions.",
+	[Key.closeNotes]: "Close notes",
+	[Key.noteStorageInfo]:
+		"Notes stay in this browser and are included in PDF exports.",
+	[Key.pdfPrintHint]: "Choose “Save as PDF” in the print dialog",
+	[Key.unlockToExportPdf]: "Unlock the article before exporting its PDF",
 
 	// Code Block Collapsible Configuration
 	[Key.codeCollapsibleShowMore]: "Show more",

@@ -483,6 +483,17 @@ enum I18nKey {
 	copyLink = "copyLink",
 	savePoster = "savePoster",
 	scanToRead = "scanToRead",
+	exportMarkdown = "exportMarkdown",
+	exportPdf = "exportPdf",
+	postNotes = "postNotes",
+	notePlaceholder = "notePlaceholder",
+	saveNote = "saveNote",
+	noteSaved = "noteSaved",
+	noteSaveError = "noteSaveError",
+	closeNotes = "closeNotes",
+	noteStorageInfo = "noteStorageInfo",
+	pdfPrintHint = "pdfPrintHint",
+	unlockToExportPdf = "unlockToExportPdf",
 
 	// 代码块折叠配置
 	codeCollapsibleShowMore = "codeCollapsibleShowMore",

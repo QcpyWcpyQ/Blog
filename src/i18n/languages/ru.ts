@@ -501,6 +501,19 @@ export const ru: Translation = {
 	[Key.copyLink]: "Копировать ссылку",
 	[Key.savePoster]: "Сохранить постер",
 	[Key.scanToRead]: "Сканируйте, чтобы прочитать",
+	[Key.exportMarkdown]: "Экспорт .md",
+	[Key.exportPdf]: "Экспорт .pdf",
+	[Key.postNotes]: "Заметки",
+	[Key.notePlaceholder]: "Запишите свои мысли об этой статье...",
+	[Key.saveNote]: "Сохранить заметку",
+	[Key.noteSaved]: "Заметка сохранена",
+	[Key.noteSaveError]:
+		"Не удалось сохранить. Проверьте разрешения хранилища браузера.",
+	[Key.closeNotes]: "Закрыть заметки",
+	[Key.noteStorageInfo]:
+		"Заметки хранятся только в этом браузере и включаются в PDF.",
+	[Key.pdfPrintHint]: "В диалоге печати выберите «Сохранить как PDF»",
+	[Key.unlockToExportPdf]: "Разблокируйте статью перед экспортом PDF",
 
 	// Конфигурация блоков коллапсируемого кода
 	[Key.codeCollapsibleShowMore]: "Развернуть",

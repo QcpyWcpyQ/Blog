@@ -4,6 +4,7 @@ import Comment from "@components/comment/index.astro";
 import Markdown from "@components/common/Markdown.astro";
 import EncryptedPost from "@components/features/EncryptedPost.astro";
 import KatexManager from "@components/features/KatexManager.astro";
+import PostTools from "@components/features/PostTools.svelte";
 import License from "@components/misc/License.astro";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
@@ -46,6 +47,7 @@ import {
 	toAbsoluteUrl,
 } from "@/utils/schema-utils";
 import { url } from "@/utils/url-utils";
+import "@/styles/post-export.css";
 
 const showSponsorButton =
 	sponsorConfig.showButtonInPost && siteConfig.pages.sponsor;
@@ -77,6 +79,10 @@ const bannerPostMeta = {
 	words: remarkPluginFrontmatter.words,
 	minutes: remarkPluginFrontmatter.minutes,
 };
+const postSlug = removeFileExtension(entry.id);
+const postSourceUrl = entry.data.password
+	? undefined
+	: url(`/api/post-source/${postSlug}/`);
 
 // 处理随机图：如果image为"api"，则从配置的API获取随机图
 const processedImage = processCoverImageSync(entry.data.image, entry.id);
@@ -251,6 +257,9 @@ const seriesData = await getSeriesPosts(entry);
         {},
       ]}
     >
+      <header class="post-print-header">
+        <h1>{entry.data.title}</h1>
+      </header>
       {
         usePostCoverOverlay && processedImage && (
           <div class="-mx-6 md:-mx-9 -mt-6 mb-6 h-48 md:h-64 relative onload-animation">
@@ -284,6 +293,14 @@ const seriesData = await getSeriesPosts(entry);
                   <span>{i18n(I18nKey.postEncrypted)}</span>
                 </div>
               )}
+              <PostTools
+                client:load
+                slug={postSlug}
+                title={entry.data.title}
+                sourceUrl={postSourceUrl}
+                encrypted={!!entry.data.password}
+                variant="cover"
+              />
             </div>
             <div class="absolute inset-x-0 bottom-0 px-6 md:px-9 pt-10 pb-3 bg-gradient-to-t from-black/80 via-black/45 to-transparent">
               <div
@@ -312,7 +329,7 @@ const seriesData = await getSeriesPosts(entry);
       {
         !usePostCoverOverlay && (
           <div
-            class="flex flex-row text-black/30 dark:text-white/30 gap-5 mb-3 transition onload-animation"
+            class="flex flex-row flex-wrap items-center text-black/30 dark:text-white/30 gap-5 mb-3 transition onload-animation"
           >
             <div class="flex flex-row items-center">
               <div
@@ -355,6 +372,13 @@ const seriesData = await getSeriesPosts(entry);
                 </div>
               </div>
             )}
+            <PostTools
+              client:load
+              slug={postSlug}
+              title={entry.data.title}
+              sourceUrl={postSourceUrl}
+              encrypted={!!entry.data.password}
+            />
           </div>
         )
       }
@@ -608,6 +632,15 @@ const seriesData = await getSeriesPosts(entry);
           }
         </>
       )}
+      <section
+        class="post-print-notes"
+        data-post-print-notes
+        data-has-note="false"
+        aria-hidden="true"
+      >
+        <h2>{i18n(I18nKey.postNotes)}</h2>
+        <p data-post-print-notes-content></p>
+      </section>
     </div>
   </div>
 
