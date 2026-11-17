@@ -3,6 +3,32 @@
   display: none;
 }
 
+.post-annotation {
+  text-decoration-line: underline;
+  text-decoration-color: var(--primary);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.22em;
+  cursor: pointer;
+}
+
+.post-annotation-math {
+  border-bottom: 2px solid var(--primary);
+  cursor: pointer;
+}
+
+.post-annotation-number {
+  color: var(--primary);
+  cursor: pointer;
+  font: 600 0.65rem/1.2 sans-serif;
+  vertical-align: super;
+  margin-inline: 0.15em;
+}
+
+.post-annotation-number:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
 @media print {
   @page {
     size: A4;
@@ -74,6 +100,55 @@
     box-shadow: none !important;
     --card-bg: white;
     --card-bg-transparent: white;
+  }
+
+  body.immersive-reading #post-container {
+    max-width: none !important;
+    padding: 0 !important;
+    background: white !important;
+  }
+
+  html[data-wallpaper-mode] body.immersive-reading #content-panel {
+    top: 0 !important;
+    min-height: 0 !important;
+  }
+
+  body.immersive-reading #main-grid {
+    padding: 0 !important;
+  }
+
+  #post-container .post-annotation {
+    text-decoration: underline solid #333 1.2px !important;
+    text-underline-offset: 0.2em !important;
+  }
+
+  #post-container .post-annotation-math {
+    border-bottom: 1.2px solid #333 !important;
+  }
+
+  #post-container .post-annotation-number {
+    color: #333 !important;
+  }
+
+  #post-container .katex,
+  #post-container .katex * {
+    color: #292b2e !important;
+  }
+
+  /* Print the full answers even when the on-screen study mask is enabled. */
+  body.answers-masked #post-container .answer-mask-content,
+  body.answers-masked #post-container .answer-mask-inline-content {
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  #post-container .expressive-code,
+  #post-container pre,
+  #post-container code,
+  #post-container pre span {
+    background: white !important;
+    color: #292b2e !important;
+    text-shadow: none !important;
   }
 
   #post-container > :not(.post-print-header):not(.post-print-notes):not(.markdown-content):not(#encrypted-container) {
@@ -154,6 +229,25 @@
     margin: 0 0 0.875rem;
     color: #202124;
     font-size: 1.375rem;
+  }
+
+  .post-print-notes ol {
+    list-style: decimal;
+    padding-left: 1.5rem;
+    color: #292b2e;
+  }
+
+  .post-print-notes li {
+    margin-top: 1.25rem;
+  }
+
+  .post-print-notes blockquote {
+    margin: 0 0 0.5rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid #999;
+    color: #555;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
   }
 
   .post-print-notes p {
