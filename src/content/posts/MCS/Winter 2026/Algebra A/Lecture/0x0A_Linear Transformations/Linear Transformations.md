@@ -205,6 +205,39 @@ image: ""
        \end{aligned}
        $$
        Thus $S=T$, proving uniqueness.
+  
+- **Example 2.2**  
 
+  1. $V=\mathbb R^3,W=\mathbb R[x],\mathcal B=\{(1,0,0),(1,1,0),(1,1,1)\},p_1(x)=2-x^3,p_2(x)=1-x+x^2,p_3(x)=x-x^4$. Then $\exists ! T\colon V \to W,T(v_i)=p_1(x)$. We have  
+      $$
+      T(a,b,c)=T((a-b)v_1+(b-c)v_2+cv_3)=(a-b)Tv_1+(b-c)Tv_2+cTv_3=(a-b)p_1(x)+(b-c)p_2(x)+cp_3(x).
+      $$
+      Then $T(e_1)=T(v_1)=p_1(x)=2-x^3,T(e_2)=-p_1(x)+p_2(x)=-1-x+x^2+x^3,T(e_3)=-p_2(x)+p_3(x)=-1+2x-x^2-x^4$.
 
+  2. $V=\mathbb C^3,W=M_{2\times 2}(\mathbb C),v_1=(1,0,i),v_2=(-i,i,0),v_3=(0,1,i),A_1=\begin{pmatrix}1&0\\0&1\end{pmatrix},A_2=\begin{pmatrix}0&1\\0&0\end{pmatrix},A_3=\begin{pmatrix}0&0\\1&0\end{pmatrix}$. Is there a linear map $T\colon V\to W$ such that $T(v_i)=A_i$?
 
+      Let's compute $T(v_1-iv_2-v_3)=\begin{pmatrix}1&0\\0&1\end{pmatrix}-\begin{pmatrix}0&i\\0&0\end{pmatrix}-\begin{pmatrix}0&0\\1&0\end{pmatrix}=\begin{pmatrix}1&-i\\-1&1\end{pmatrix}$ No. Since $v_1,v_2,v_3$ are not bases. Let's change $A_3=\begin{pmatrix}1&-i\\0&1\end{pmatrix}$.
+
+---
+
+- **Proposition 3**  
+    Given a linear map $T\colon V\to W$. Consider  
+    $$
+    \ker T=\{v\in V:T(v)=0\}\subseteq V.
+    $$
+
+    $$
+    \Im T=\{w\in W:\exists v\in V,T(v)=w\}.
+    $$
+
+    Both $\ker T$ and $\Im T$ are subspaces of $V$ and $W$ respectively.
+
+    - **Proof 3.1**   
+
+- **Remark 3.2**  
+    $T$ is surjective if and only if $\Im T=W$. $T$ is injective if and only if $\ker T=0$.
+
+---
+
+- **Theorem 4**  
+    Let $V$ and $W$ be finite-dimmensional $\mathbb F$-vector spaces and let $T\colon V\to W$ be a linear map. Then $\dim\ker T+\dim \Im T=\dim T$.

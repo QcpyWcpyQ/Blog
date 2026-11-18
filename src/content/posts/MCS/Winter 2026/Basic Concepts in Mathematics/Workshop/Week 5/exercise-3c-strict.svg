@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="title description">
+  <title id="title">Strict inclusion for the image of a set difference</title>
+  <desc id="description">The set B is contained in A. The point outside B and the point inside B both map to zero.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#c4b5fd" />
+    </marker>
+  </defs>
+  <rect width="920" height="420" rx="24" fill="#111827" />
+  <text x="460" y="42" fill="#f9fafb" font-family="sans-serif" font-size="24" text-anchor="middle">f(A ∖ B) = {0} ⊋ ∅ = f(A) ∖ f(B)</text>
+
+  <rect x="54" y="82" width="470" height="286" rx="22" fill="none" stroke="#e5e7eb" stroke-width="3" />
+  <text x="78" y="116" fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">X</text>
+  <ellipse cx="296" cy="226" rx="176" ry="112" fill="#7c3aed" fill-opacity="0.22" stroke="#a78bfa" stroke-width="3" />
+  <circle cx="388" cy="226" r="68" fill="#8b5cf6" fill-opacity="0.34" stroke="#c4b5fd" stroke-width="3" />
+  <text x="149" y="151" fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">A</text>
+  <text x="427" y="177" fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">B</text>
+  <circle cx="220" cy="226" r="10" fill="#f9fafb" />
+  <circle cx="388" cy="226" r="10" fill="#f9fafb" />
+  <text x="220" y="265" fill="#f9fafb" font-family="sans-serif" font-size="21" text-anchor="middle">1</text>
+  <text x="388" y="265" fill="#f9fafb" font-family="sans-serif" font-size="21" text-anchor="middle">2</text>
+
+  <rect x="690" y="122" width="176" height="206" rx="22" fill="none" stroke="#e5e7eb" stroke-width="3" />
+  <text x="714" y="156" fill="#f9fafb" font-family="sans-serif" font-size="22" font-weight="600">Y</text>
+  <circle cx="778" cy="226" r="12" fill="#f9fafb" />
+  <text x="778" y="266" fill="#f9fafb" font-family="sans-serif" font-size="21" text-anchor="middle">0</text>
+
+  <path d="M230 218 C370 116, 610 118, 764 216" fill="none" stroke="#c4b5fd" stroke-width="4" marker-end="url(#arrow)" />
+  <path d="M398 232 C520 310, 650 304, 764 236" fill="none" stroke="#c4b5fd" stroke-width="4" marker-end="url(#arrow)" />
+</svg>
+
