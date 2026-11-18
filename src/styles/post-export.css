@@ -35,9 +35,11 @@
     margin: 16mm 14mm;
   }
 
-  html,
-  body {
+  html:root,
+  html:root body,
+  html:root body.immersive-reading {
     background: white !important;
+    color-scheme: light;
   }
 
   body {
@@ -56,6 +58,7 @@
   }
 
   #content-panel-inner {
+    position: static !important;
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
@@ -87,9 +90,12 @@
     transform: none !important;
     animation: none !important;
     opacity: 1 !important;
+    overflow: visible !important;
   }
 
   #post-container {
+    position: static !important;
+    overflow: visible !important;
     width: 100% !important;
     max-width: none !important;
     margin: 0 !important;
@@ -114,6 +120,12 @@
   }
 
   body.immersive-reading #main-grid {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  body.immersive-reading.immersive-toc-open #main-grid,
+  body.immersive-reading.immersive-toc-right.immersive-toc-open #main-grid {
     padding: 0 !important;
   }
 
@@ -193,7 +205,7 @@
     overflow-wrap: anywhere;
   }
 
-  #post-container .markdown-content :where(img, table, pre, blockquote) {
+  #post-container .markdown-content :where(img, table, pre, blockquote, .katex-display) {
     break-inside: avoid;
   }
 

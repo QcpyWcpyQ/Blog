@@ -147,8 +147,13 @@ function closeNotes() {
 
 function deleteAnnotation(annotation: PostAnnotation) {
 	const index = annotations.findIndex((item) => item.id === annotation.id);
+	if (index < 0) return;
 	removed = { item: annotation, index };
 	annotations = annotations.filter((item) => item.id !== annotation.id);
+	if (editing?.id === annotation.id) {
+		editing = null;
+		comment = "";
+	}
 	persistAnnotations();
 }
 
@@ -283,7 +288,8 @@ async function exportMarkdown() {
 	busy = true;
 	exportError = "";
 	try {
-		const response = await fetch(sourceUrl);
+		// Prerendered endpoints are files; a trailing slash can produce a 404 on static hosts.
+		const response = await fetch(sourceUrl.replace(/\/+$/, ""));
 		if (!response.ok) throw new Error("Source unavailable");
 		const source = await response.text();
 		if (
@@ -401,7 +407,12 @@ function modal(node: HTMLDialogElement) {
 			<label class="note-label" for="annotation-comment">注释（留空则只保留下划线）</label>
 			<textarea id="annotation-comment" bind:this={textarea} bind:value={comment} class="note-textarea comment"
 				placeholder="记录你对这段文字的理解、疑问或补充…" oninput={() => (saveState = "")}></textarea>
-			<button type="button" class="note-save" onclick={() => { commitEditor(); }}>保存批注</button>
+			<div class="note-editor-actions">
+				<button type="button" class="note-save" onclick={() => { commitEditor(); }}>保存批注</button>
+				{#if annotations.some((annotation) => annotation.id === editing?.id)}
+					<button type="button" class="note-delete" onclick={() => { if (editing) deleteAnnotation(editing); }}>删除批注</button>
+				{/if}
+			</div>
 		{:else}
 			<p class="note-help">在正文中选中文字，点击“划线并批注”。点击下划线或编号可编辑；支持普通阅读和纯净阅读。</p>
 			<label class="note-label" for="general-note">整篇笔记</label>
@@ -510,8 +521,9 @@ function modal(node: HTMLDialogElement) {
 
 	.note-dialog {
 		position: relative;
-		width: min(42rem, 100%);
+		width: min(42rem, calc(100vw - 2rem));
 		max-height: calc(100vh - 2rem);
+		max-height: calc(100dvh - 2rem);
 		overflow-y: auto;
 		padding: 1.25rem;
 		border: 1px solid var(--line-divider);
@@ -560,7 +572,7 @@ function modal(node: HTMLDialogElement) {
 		overflow: hidden;
 		color: var(--deep-text);
 		font-size: 0.8125rem;
-		opacity: 0.55;
+		opacity: 0.7;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
@@ -605,7 +617,7 @@ function modal(node: HTMLDialogElement) {
 
 	.note-storage-info {
 		color: var(--deep-text);
-		opacity: 0.45;
+		opacity: 0.7;
 	}
 
 	.note-status {
@@ -640,6 +652,25 @@ function modal(node: HTMLDialogElement) {
 		color: rgb(0 0 0 / 0.7);
 	}
 
+	.note-editor-actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.625rem;
+		margin-top: 0.5rem;
+	}
+
+	.note-delete {
+		padding: 0.625rem 1rem;
+		border: 1px solid currentColor;
+		border-radius: 0.625rem;
+		color: #ba3033;
+		background: transparent;
+		font-size: 0.875rem;
+		cursor: pointer;
+	}
+
+	:global(.dark) .note-delete { color: #ff999b; }
+
 	@media (max-width: 480px) {
 		.note-footer {
 			align-items: stretch;
@@ -655,6 +686,12 @@ function modal(node: HTMLDialogElement) {
 		margin: auto;
 		color: var(--deep-text);
 	}
+	:global(.dark) .note-dialog,
+	:global(.dark) .selection-note {
+		--deep-text: oklch(0.92 0.01 var(--hue));
+	}
+	:global(.dark) .note-status.saved { color: #67d99a; }
+	:global(.dark) .note-status.error { color: #ff999b; }
 	.note-dialog::backdrop { background: rgb(0 0 0 / 0.55); backdrop-filter: blur(4px); }
 	.note-help, .note-label { color: var(--deep-text); font-size: 0.875rem; line-height: 1.65; }
 	.note-help { opacity: 0.75; margin-bottom: 1rem; }
