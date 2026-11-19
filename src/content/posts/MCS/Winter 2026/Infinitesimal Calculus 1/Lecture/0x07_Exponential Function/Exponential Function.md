@@ -187,7 +187,14 @@ image: ""
      $$
      \exp(n)=\exp(1)^n=e^n.
      $$
-     This follows by induction from Theorem 1.1.
+     Indeed, the statement holds when $n=1$. If it holds for some $n\in\mathbb N$, then Theorem 1.1 gives
+     $$
+     \exp(n+1)
+     =\exp(n)\exp(1)
+     =e^n e
+     =e^{n+1}.
+     $$
+     Therefore, the result follows by induction.
 
   2. By the definition of the exponential function,
      $$
