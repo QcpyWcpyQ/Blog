@@ -146,7 +146,7 @@ image: ""
   $$
   Prove that $\inf A$ exists in $\mathbb{R}$ and
   $$
-  \boxed{\inf A=-\sup(-A)}.
+  \inf A=-\sup(-A).
   $$
 
   - **Proof 3.1**  
@@ -216,7 +216,7 @@ image: ""
     $$
     Thus both equivalences hold:
     $$
-    \boxed{a>0\iff a^{-1}>0,\qquad a<0\iff a^{-1}<0}.
+    a>0\iff a^{-1}>0,\qquad a<0\iff a^{-1}<0.
     $$
 
 ---
@@ -281,7 +281,7 @@ image: ""
     $$
     Therefore the solution set is
     $$
-    \boxed{(-\infty,-4)\cup(7,\infty)}.
+    (-\infty,-4)\cup(7,\infty).
     $$
     The endpoints $-4$ and $7$ are excluded because the product is zero there, while the inequality is strict.
 
@@ -311,7 +311,7 @@ image: ""
 
     The quotient is positive exactly on $(-2,2)$ and $(5,\infty)$. At $x=-2$ or $x=2$, the original fraction equals $3$, so neither endpoint satisfies the strict inequality. The point $x=5$ is outside the domain. Therefore
     $$
-    \boxed{(-2,2)\cup(5,\infty)}.
+    (-2,2)\cup(5,\infty).
     $$
 
     **Why the denominator's sign matters.** Multiplying an inequality by $x-5$ preserves its direction when $x>5$ and reverses it when $x<5$. Factoring and using the sign table accounts for both cases.

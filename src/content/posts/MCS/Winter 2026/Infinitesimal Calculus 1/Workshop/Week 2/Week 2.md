@@ -32,7 +32,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Since $(k-3)^2\geqslant0$ for every integer $k$, every element of $A$ is at least $-10$. Equality is attained at $k=3$, so
     $$
-    \boxed{\inf A=\min A=-10}.
+    \inf A=\min A=-10.
     $$
 
     The set is unbounded above. Indeed, given any $M\in\mathbb{R}$, choose an integer $k>3+\sqrt{\max\{M+10,0\}}$. Then
@@ -41,7 +41,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Hence $A$ has neither a supremum in $\mathbb{R}$ nor a maximum:
     $$
-    \boxed{\sup A\text{ does not exist in }\mathbb{R},\qquad \max A\text{ does not exist}.}
+    \sup A\text{ does not exist in }\mathbb{R},\qquad \max A\text{ does not exist}.
     $$
 
   - **Solution 1.2 (Set $B$)**  
@@ -69,8 +69,8 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
 
     Every odd-indexed term is negative and every even-indexed term is positive, so these two observations give
     $$
-    \boxed{\inf B=\min B=-\frac12,\qquad
-    \sup B=\max B=\frac15}.
+    \inf B=\min B=-\frac12,\qquad
+    \sup B=\max B=\frac15.
     $$
 
   - **Solution 1.3 (Set $C$)**  
@@ -93,24 +93,24 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     All terms with $n\geqslant3$ are positive, whereas $c_1$ and $c_2$ are negative. Comparing the two exceptional negative terms gives
     $$
-    \boxed{\inf C=\min C=-10,\qquad
-    \sup C=\max C=7}.
+    \inf C=\min C=-10,\qquad
+    \sup C=\max C=7.
     $$
 
   - **Solution 1.4 (Set $D$)**  
     Since $n\geqslant1$, we have $2^n\geqslant2$, and equality holds at $n=1$. Hence
     $$
-    \boxed{\inf D=\min D=2}.
+    \inf D=\min D=2.
     $$
     The powers of $2$ are unbounded above. For example, Bernoulli's inequality gives $2^n=(1+1)^n\geqslant n+1$, so for every $M\in\mathbb{R}$ we can choose $n>M$ and obtain $2^n>M$. Therefore
     $$
-    \boxed{\sup D\text{ does not exist in }\mathbb{R},\qquad \max D\text{ does not exist}.}
+    \sup D\text{ does not exist in }\mathbb{R},\qquad \max D\text{ does not exist}.
     $$
 
   - **Solution 1.5 (Set $E$)**  
     The sequence $2^{-n}$ is strictly decreasing, and its first term is $1/2$. Thus
     $$
-    \boxed{\sup E=\max E=\frac12}.
+    \sup E=\max E=\frac12.
     $$
 
     Every element of $E$ is positive, so $0$ is a lower bound. To show that it is the greatest lower bound, let $\varepsilon>0$. Choose $n\in\mathbb{N}$ so large that $n+1>1/\varepsilon$. Bernoulli's inequality yields $2^n\geqslant n+1$, and hence
@@ -122,7 +122,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Thus elements of $E$ occur arbitrarily close to $0$ from above, so $\inf E=0$. Since $2^{-n}>0$ for every $n$, the value $0$ is not attained. Therefore
     $$
-    \boxed{\inf E=0,\qquad \min E\text{ does not exist}.}
+    \inf E=0,\qquad \min E\text{ does not exist}.
     $$
 
   - **Results 1.6**
@@ -161,7 +161,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Because $a$ is a lower bound, we also have $a\leqslant x_0$. Combining the two inequalities gives
     $$
-    \boxed{a\leqslant x_0<a+\varepsilon}.
+    a\leqslant x_0<a+\varepsilon.
     $$
     Thus both conditions hold.
 
@@ -182,7 +182,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
 
     Therefore every lower bound $\ell$ of $A$ satisfies $\ell\leqslant a$. Since $a$ is itself a lower bound, it is the greatest lower bound. Hence
     $$
-    \boxed{\inf(A)=a}.
+    \inf(A)=a.
     $$
 
 ## Infimum of a union
@@ -217,7 +217,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Hence no lower bound of $A\cup B$ is larger than $m$. Since $m$ is itself a lower bound, it is the greatest lower bound, and
     $$
-    \boxed{\inf(A\cup B)=\min\{\inf(A),\inf(B)\}}.
+    \inf(A\cup B)=\min\{\inf(A),\inf(B)\}.
     $$
 
 ## Limits proved from the definition
@@ -244,7 +244,7 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Thus, for every $\varepsilon>0$, all terms with $n\geqslant N$ lie within $\varepsilon$ of $0$. By the definition of convergence,
     $$
-    \boxed{\lim_{n\to\infty}\frac{2n^2}{n^3+3}=0}.
+    \lim_{n\to\infty}\frac{2n^2}{n^3+3}=0.
     $$
 
   - **Proof 4.2 (Part b)**  
@@ -279,5 +279,5 @@ Throughout, we use $\mathbb{N}=\{1,2,3,\ldots\}$. When a set is unbounded above,
     $$
     Hence, by the definition of convergence,
     $$
-    \boxed{\lim_{n\to\infty}\frac{6+3n}{4-5n}=-\frac35}.
+    \lim_{n\to\infty}\frac{6+3n}{4-5n}=-\frac35.
     $$

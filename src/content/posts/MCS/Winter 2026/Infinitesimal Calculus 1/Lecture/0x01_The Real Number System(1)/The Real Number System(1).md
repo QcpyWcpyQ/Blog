@@ -544,7 +544,7 @@ The axioms assert the existence of identities and inverses; the next properties 
 
     In the two middle rows, if $ab=0$, the formula $|ab|=-ab=0$ still holds. The cases cover every pair of real numbers, so
     $$
-    \boxed{|ab|=|a|\,|b|}.
+    |ab|=|a|\,|b|.
     $$
 
     **4. Comparison with a positive number.** First observe from the definition that

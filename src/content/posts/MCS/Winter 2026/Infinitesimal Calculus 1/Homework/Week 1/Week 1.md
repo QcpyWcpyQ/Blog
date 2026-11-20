@@ -53,7 +53,7 @@ $$
 
     The inequality is strict, so the three zeros are excluded. Therefore, the solution set is
     $$
-    \boxed{(-5,3)\cup(\pi,\infty)}.
+    (-5,3)\cup(\pi,\infty).
     $$
 
   - **Solution 1.2 (Part b)**
@@ -82,7 +82,7 @@ $$
 
     The points $-3$ and $3$ are outside the domain, and $x=36$ gives equality rather than a strict inequality. Hence the solution set is
     $$
-    \boxed{(-\infty,-3)\cup(3,36)}.
+    (-\infty,-3)\cup(3,36).
     $$
 
   - **Solution 1.3 (Part c)**
@@ -108,7 +108,7 @@ $$
     $$
     Therefore, the solution set is
     $$
-    \boxed{(-\infty,0)\cup(1,\infty)}.
+    (-\infty,0)\cup(1,\infty).
     $$
 
   - **Results 1.4**
@@ -218,7 +218,7 @@ $$
 
     Therefore, $a$ is the greatest lower bound of $A$, and
     $$
-    \boxed{a=\inf A}.
+    a=\inf A.
     $$
 
 ## Suprema, infima, maxima, and minima
@@ -258,7 +258,7 @@ $$
     $$
     Equality holds when $n=1$, so
     $$
-    \boxed{\sup A=\max A=\frac32}.
+    \sup A=\max A=\frac32.
     $$
 
     **Infimum and minimum.** Every term satisfies $a_n>1$, so $1$ is a lower bound of $A$. To show that it is the greatest lower bound, let $\varepsilon>0$. By the Archimedean property, choose $n\in\mathbb N$ such that
@@ -279,7 +279,7 @@ $$
     $$
     By the characterization in Problem 3,
     $$
-    \boxed{\inf A=1}.
+    \inf A=1.
     $$
     Since $a_n>1$ for every $n$, the infimum is not attained, so $A$ has no minimum.
 
@@ -299,7 +299,7 @@ $$
     $$
     Therefore,
     $$
-    \boxed{\sup B=\max B=\frac32}.
+    \sup B=\max B=\frac32.
     $$
 
     **Infimum and minimum.** Every even-indexed term is greater than $1$, and every odd-indexed term satisfies
@@ -322,7 +322,7 @@ $$
     $$
     Problem 3 therefore gives
     $$
-    \boxed{\inf B=-1}.
+    \inf B=-1.
     $$
     Since $b_n>-1$ for every $n$, the infimum is not attained, so $B$ has no minimum.
 
@@ -341,7 +341,7 @@ $$
     $$
     Equality holds when $n=1$, so
     $$
-    \boxed{\inf C=\min C=\frac14}.
+    \inf C=\min C=\frac14.
     $$
 
     **Supremum and maximum.** We have
@@ -369,7 +369,7 @@ $$
     $$
     It follows that
     $$
-    \boxed{\sup C=\frac13}.
+    \sup C=\frac13.
     $$
     Since $c_n<1/3$ for every $n$, the supremum is not attained, so $C$ has no maximum.
 

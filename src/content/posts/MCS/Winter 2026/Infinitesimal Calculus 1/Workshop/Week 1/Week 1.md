@@ -26,14 +26,14 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Combining this with $a>1$ gives
     $$
-    \boxed{a^2>a>1}.
+    a^2>a>1.
     $$
     In particular, $a^2>1$.
 
   - **Proof 1.2 (Part b)**  
     Since $a>0$, multiplying $a<1$ by $a$ preserves the inequality:
     $$
-    \boxed{a^2<a\cdot1=a}.
+    a^2<a\cdot1=a.
     $$
     Thus the conclusion follows directly from compatibility of multiplication with order.
 
@@ -65,7 +65,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Hence the solution set is
     $$
-    \boxed{(-\infty,-3)\cup(3,\infty)}.
+    (-\infty,-3)\cup(3,\infty).
     $$
     The endpoints $-3$ and $3$ are excluded because they give $x^2=9$.
 
@@ -83,7 +83,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     The first pair of conditions is impossible. The second gives $-1<x<1$, so
     $$
-    \boxed{(-1,1)}.
+    (-1,1).
     $$
     The point $-1$ is outside the domain, and $x=1$ gives zero, which does not satisfy the strict inequality.
 
@@ -113,7 +113,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Therefore
     $$
-    \boxed{(-\infty,0)\cup(1,\infty)}.
+    (-\infty,0)\cup(1,\infty).
     $$
     Neither $0$ nor $1$ is included: both are excluded by the original denominators. There is no equality case even though the original inequality uses $\leqslant$.
 
@@ -140,7 +140,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
 
     The quotient is positive on $(-2,-1)$ and $(2,\infty)$. It is zero at $x=-2,2$, both of which are in the domain and satisfy the non-strict inequality. The point $x=-1$ remains excluded. Hence
     $$
-    \boxed{[-2,-1)\cup[2,\infty)}.
+    [-2,-1)\cup[2,\infty).
     $$
 
   - **Results 2.5**
@@ -172,7 +172,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Thus $1/3$ is a lower bound of $A$. Moreover, $a_1=1/3\in A$, so every lower bound $\ell$ must satisfy $\ell\leqslant a_1=1/3$. Therefore
     $$
-    \boxed{\inf A=\min A=\frac13}.
+    \inf A=\min A=\frac13.
     $$
 
     **Supremum: first establish an upper bound.** For every $n\in\mathbb{N}$,
@@ -203,7 +203,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     We have found an element of $A$ greater than every proposed upper bound $y<1/2$. Therefore
     $$
-    \boxed{\sup A=\frac12}.
+    \sup A=\frac12.
     $$
     Since every $a_n<1/2$, the supremum does not belong to $A$. The set has no maximum: a maximum would necessarily equal the supremum, as proved in Problem 4.
 
@@ -214,7 +214,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
 
     **Supremum.** Every $x\in B$ is either in $(4,5)$ or equal to $8$, so $x\leqslant8$. Hence $8$ is an upper bound. Because $8\in B$, any upper bound $u$ must satisfy $8\leqslant u$. Thus
     $$
-    \boxed{\sup B=\max B=8}.
+    \sup B=\max B=8.
     $$
 
     **Infimum.** Every $x\in B$ satisfies $x>4$, so $4$ is a lower bound. Let $\ell>4$; we show that $\ell$ cannot be a lower bound.
@@ -228,7 +228,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
 
     In either case, $B$ contains an element below $\ell$. Thus no number greater than $4$ is a lower bound, proving
     $$
-    \boxed{\inf B=4}.
+    \inf B=4.
     $$
     Since $4\notin B$, there is no minimum: a minimum would equal the infimum by Problem 4.
 
@@ -259,7 +259,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Thus $M$ is an upper bound that is no greater than any other upper bound. By the definition of the least upper bound,
     $$
-    \boxed{M=\sup A}.
+    M=\sup A.
     $$
     Because $M\in A$ as well, it is also the maximum of $A$.
 
@@ -274,7 +274,7 @@ All variables are real unless stated otherwise. As in the lecture and tutorial n
     $$
     Thus $m$ is a lower bound that is at least as large as any other lower bound. By the definition of the greatest lower bound,
     $$
-    \boxed{m=\inf A}.
+    m=\inf A.
     $$
     Because $m\in A$ as well, it is also the minimum of $A$.
 

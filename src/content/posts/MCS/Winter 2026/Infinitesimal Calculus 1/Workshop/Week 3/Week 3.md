@@ -46,7 +46,7 @@ image: ""
     This is precisely the definition of divergence to $+\infty$. Hence
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{2n^4-6n^3}{3n-4}=+\infty}.
+    \lim_{n\to\infty}\frac{2n^4-6n^3}{3n-4}=+\infty.
     $$
 
   - **Proof 1.2 (Part b)**  
@@ -69,7 +69,7 @@ image: ""
     Therefore
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{n-1}{n+1}=1}.
+    \lim_{n\to\infty}\frac{n-1}{n+1}=1.
     $$
 
   - **Proof 1.3 (Part c)**  
@@ -100,7 +100,7 @@ image: ""
     Thus
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{6n^2-7n-1}{4n^2+8}=\frac32}.
+    \lim_{n\to\infty}\frac{6n^2-7n-1}{4n^2+8}=\frac32.
     $$
 
   - **Proof 1.4 (Part d)**  
@@ -130,7 +130,7 @@ image: ""
     If $n\geqslant N$, then $3/(2n)<\varepsilon$. Therefore
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{2n+1}{-4n^2+4}=0}.
+    \lim_{n\to\infty}\frac{2n+1}{-4n^2+4}=0.
     $$
 
   - **Proof 1.5 (Part e)**  
@@ -151,7 +151,7 @@ image: ""
     If $n\geqslant N$, then $n>1/\sqrt\varepsilon$, so $1/n^2<\varepsilon$. Consequently,
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{\sin(n^3)}{n^2+2}=0}.
+    \lim_{n\to\infty}\frac{\sin(n^3)}{n^2+2}=0.
     $$
 
   - **Proof 1.6 (Part f)**  
@@ -173,7 +173,7 @@ image: ""
     If $n\geqslant N$, then $2/n<\varepsilon$. Hence
 
     $$
-    \boxed{\lim_{n\to\infty}\frac{n^2+1}{n^3+2}=0}.
+    \lim_{n\to\infty}\frac{n^2+1}{n^3+2}=0.
     $$
 
 ## Recursive sequences
@@ -207,7 +207,7 @@ image: ""
     The equation $y=3-y$ only shows that **if** the sequence had a limit, that limit would have to be $3/2$. A fixed point of the recurrence is a necessary condition for a limit, not a proof that the sequence converges. Therefore
 
     $$
-    \boxed{(y_n)\text{ diverges; it alternates between }1\text{ and }2.}
+    (y_n)\text{ diverges; it alternates between }1\text{ and }2.
     $$
 
   - **Solution 2.2**  
@@ -273,7 +273,7 @@ image: ""
     so $L$ is either $\alpha$ or $\beta$. Since $L\geqslant1$ but $\beta<1$, only $L=\alpha$ is possible. Therefore
 
     $$
-    \boxed{\lim_{n\to\infty}y_n=\frac{3+\sqrt5}{2}}.
+    \lim_{n\to\infty}y_n=\frac{3+\sqrt5}{2}.
     $$
 
 ## Limit of a sum
@@ -331,5 +331,5 @@ image: ""
     This is exactly the definition of convergence. Hence
 
     $$
-    \boxed{\lim_{n\to\infty}(a_n+b_n)=a+b}.
+    \lim_{n\to\infty}(a_n+b_n)=a+b.
     $$
