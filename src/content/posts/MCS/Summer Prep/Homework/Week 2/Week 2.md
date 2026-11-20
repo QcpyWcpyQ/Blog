@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Week 2
 
 - **Problem 1**  
@@ -86,8 +87,10 @@ image: ""
 
   - **Solution 2.3**  
     **Part (c)**
+
     **Proof**
-    By definitidon of evaluation, any polynomial $f \in \mathbb{R}[x]$ can be written uniquely as $f(x) = x \cdot q_1(x) + f(0)$ for some polynomial $q_1 \in \mathbb{R}[x]$. Similarly, $g(x) = x \cdot q_2(x) + g(0)$.  
+
+    By the definition of evaluation, any polynomial $f \in \mathbb{R}[x]$ can be written uniquely as $f(x) = x \cdot q_1(x) + f(0)$ for some polynomial $q_1 \in \mathbb{R}[x]$. Similarly, $g(x) = x \cdot q_2(x) + g(0)$.\
     Subtracting $g$ from $f$ yields
     $$
     f(x) - g(x) = x(q_1(x) - q_2(x)) + (f(0) - g(0))
@@ -151,7 +154,9 @@ image: ""
 
   - **Solution 3.3**  
     **Part (c)**
+
     **Proof**
+
     To show that the relation is well-defined, we must prove that if we choose different representatives for the same equivalence classes, the definition yields the same result.  
     Let $f_1, f_2, g_1, g_2 \in \mathbb{R}[x] \setminus \{0\}$ such that $[f_1] = [f_2]$ and $[g_1] = [g_2]$.  
     By definition of equivalence classes
@@ -173,7 +178,9 @@ image: ""
 
   - **Solution 3.4**  
     **Part (d)**
+
     **Proof**
+
     Let the set of all equivalence classes be denoted by $E = \{[f] \mid f \in \mathbb{R}[x] \setminus \{0\}\}$.
     * **Reflexive:** Let $[f] \in E$. Since $\deg f \le \deg f$ is always true for any integer $\deg f \in \mathbb{N} \cup \{0\}$, it follows by definition that $[f] \preceq [f]$.
     * **Antisymmetric:** Let $[f], [g] \in E$ such that $[f] \preceq [g]$ and $[g] \preceq [f]$. By definition, this implies $\deg f \le \deg g$ and $\deg g \le \deg f$. By the properties of the standard order relation on integers, this means $\deg f = \deg g$. By definition of the equivalence relation, $f \sim g$, which implies $[f] = [g]$.

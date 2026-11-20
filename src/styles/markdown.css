@@ -206,32 +206,12 @@
   }
 
   th {
-    @apply bg-(--btn-regular-bg) font-semibold text-(--btn-content) border-b border-(--line-color);
+    @apply font-semibold text-(--btn-content) border-b border-(--line-color);
   }
 
-  td {
-    @apply bg-(--card-bg);
-  }
-
-  tr:nth-child(even) td {
-    @apply bg-(--btn-plain-bg-active);
-  }
 }
 
-body.wallpaper-transparent .custom-md {
-  .horizontal-scroll-container {
-    background-color: var(--card-bg-transparent);
-  }
-
-  th {
-    background-color: color-mix(in oklch, var(--btn-regular-bg) 72%, transparent);
-  }
-
-  td {
-    background-color: color-mix(in oklch, var(--card-bg-transparent) 92%, transparent);
-  }
-
-  tr:nth-child(even) td {
-    background-color: color-mix(in oklch, var(--btn-plain-bg-active) 68%, transparent);
-  }
+.custom-md :is(table, thead, tbody, tfoot, tr, th, td),
+.custom-md .horizontal-scroll-container:has(> table) {
+  background: transparent;
 }

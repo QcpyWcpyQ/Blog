@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Arithmetic and Order
 
 - **Exercise 1 (Additive Cancellation)**  

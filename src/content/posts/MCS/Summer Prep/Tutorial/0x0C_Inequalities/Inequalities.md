@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Inequalities
 
 - **Exercise 1**  
@@ -197,7 +198,7 @@ image: ""
     -\dfrac{1}{2} < x-1 < \dfrac{1}{2} \implies \dfrac{1}{2} < x < \dfrac{3}{2}.
     $$
     From $\dfrac{1}{2} < x$, we have $x^2 > \dfrac{1}{4} \implies \dfrac{1}{x^2} < 4$. Also, from $x < \dfrac{3}{2}$, we have $\vert x+1\vert \leqslant \vert x\vert + 1 < \dfrac{3}{2} + 1 = \dfrac{5}{2}$.  
-    Now, we algebraicly simplify and factor the target expression
+    Now, we simplify algebraically and factor the target expression
     $$
     \left\vert \dfrac{1}{x^2}-1\right\vert = \left\vert \dfrac{1-x^2}{x^2}\right\vert = \dfrac{\vert 1-x\vert \cdot \vert 1+x\vert}{x^2} = \vert x-1\vert \cdot \dfrac{\vert x+1\vert}{x^2}.
     $$

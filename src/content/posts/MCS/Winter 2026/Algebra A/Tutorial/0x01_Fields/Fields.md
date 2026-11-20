@@ -53,7 +53,7 @@ image: ""
     $$
     Therefore $(-a)+(-b)$ is an additive inverse of $a+b$. By uniqueness of the additive inverse,
     $$
-    \boxed{-(a+b)=(-a)+(-b)}.
+    -(a+b)=(-a)+(-b).
     $$
 
     **4. The inverse of a product.** Suppose $a,b\neq0$. Part 2 implies $ab\neq0$, so $(ab)^{-1}$ exists. By associativity and commutativity of multiplication,
@@ -62,7 +62,7 @@ image: ""
     $$
     Commutativity also gives $(a^{-1}b^{-1})(ab)=1$. Thus $a^{-1}b^{-1}$ is the multiplicative inverse of $ab$. By uniqueness,
     $$
-    \boxed{(ab)^{-1}=a^{-1}b^{-1}}.
+    (ab)^{-1}=a^{-1}b^{-1}.
     $$
 
 ## Testing modified operations
@@ -206,7 +206,7 @@ image: ""
 
     All field axioms hold, proving
     $$
-    \boxed{\mathbb{Z}_m\text{ is a field}\iff m\text{ is prime}\qquad(m\geqslant2)}.
+    \mathbb{Z}_m\text{ is a field}\iff m\text{ is prime}\qquad(m\geqslant2).
     $$
 
     **Computing inverses.** In Bézout's identity $au+pv=1$, the coefficient $u$ supplies the inverse of $a$ modulo $p$: $\overline{a}^{\,-1}=\overline{u}$.
@@ -234,7 +234,7 @@ image: ""
     $$
     Thus
     $$
-    \boxed{E=4\quad\text{in }\mathbb{F}_5}.
+    E=4\quad\text{in }\mathbb{F}_5.
     $$
 
   - **Solution 5.2 (In $\mathbb{F}_{13}$)**  
@@ -249,7 +249,7 @@ image: ""
     $$
     Thus
     $$
-    \boxed{E=1\quad\text{in }\mathbb{F}_{13}}.
+    E=1\quad\text{in }\mathbb{F}_{13}.
     $$
 
   - **Results 5.3**

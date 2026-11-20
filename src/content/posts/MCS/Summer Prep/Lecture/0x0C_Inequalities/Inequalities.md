@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Inequalities
 
 - **Definition 1**  

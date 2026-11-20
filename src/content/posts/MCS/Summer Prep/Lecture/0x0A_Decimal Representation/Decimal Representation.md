@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Decimal Representation
 
 - **Definition 1**  

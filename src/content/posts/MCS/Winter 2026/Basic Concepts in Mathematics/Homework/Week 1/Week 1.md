@@ -122,7 +122,7 @@ The uncovered square $(3,2)$ has no available neighbor. The same is true of $(3,
 The three cases exhaust every possible arrangement in the top row, and each leads to an uncovered square that cannot be covered. Hence:
 
 $$
-\boxed{\text{The mutilated }4\times4\text{ board has no domino tiling.}}
+\text{The mutilated }4\times4\text{ board has no domino tiling.}
 $$
 
 This proof uses only adjacency, exhaustive cases, and forced placements. The letters in the diagrams identify dominoes; they are not a coloring argument.
@@ -156,7 +156,7 @@ Suppose a tiling existed. The remaining board has $64-2=62$ squares, so it would
 Thus:
 
 $$
-\boxed{\text{The mutilated }8\times8\text{ board has no domino tiling.}}
+\text{The mutilated }8\times8\text{ board has no domino tiling.}
 $$
 
 If the removed opposite corners are white instead, the two counts are interchanged and the same contradiction follows.
@@ -261,7 +261,7 @@ Equivalently, use strong induction. The cases $7,8,9$ hold. For any $n\ge10$, we
 Therefore:
 
 $$
-\boxed{\text{For every integer }n>6,\text{ a square admits a dissection into exactly }n\text{ squares.}}
+\text{For every integer }n>6,\text{ a square admits a dissection into exactly }n\text{ squares.}
 $$
 
 **Why all three initial constructions matter.** Starting only from seven squares and repeatedly adding three gives $7,10,13,\ldots$, but misses integers such as $8$ and $9$. The three base cases ensure that every residue class is covered.
@@ -287,7 +287,7 @@ $$
 Thus $S'$ differs from $S$ by an even integer:
 
 $$
-\boxed{S'\equiv S\pmod2.}
+S'\equiv S\pmod2.
 $$
 
 If the difference is written in the other order, the new sum is $S-2a$, so the same conclusion holds. If “difference” means the nonnegative difference $|a-b|$, then
@@ -318,7 +318,7 @@ $$
 Hence $z$ is odd. Since zero is even,
 
 $$
-\boxed{z\ne0.}
+z\ne0.
 $$
 
 **What is invariant?** The numerical sum need not remain fixed. Its **parity** remains fixed. The final number can depend on the chosen operations, but it must always be odd.

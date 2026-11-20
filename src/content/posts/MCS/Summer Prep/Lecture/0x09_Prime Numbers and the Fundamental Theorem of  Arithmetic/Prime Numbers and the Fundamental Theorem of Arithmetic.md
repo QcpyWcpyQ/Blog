@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Prime Numbers and the Fundamental Theorem of Arithmetic
 
 - **Definition 1**  

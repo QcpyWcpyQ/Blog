@@ -19,9 +19,17 @@
 
 /* Tailwind v4 配置 - 从 tailwind.config.cjs 迁移 */
 @theme {
+  --default-font-family:
+    Georgia, 'Times New Roman', 'Liberation Serif', 'Noto Serif',
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC', serif;
   --font-sans:
     'Roboto', 'sans-serif', ui-sans-serif, system-ui, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+:where([data-id="file-tree"], [data-id="sidebar-toc"], #floating-toc-panel,
+       #immersive-toc, #search-bar, #search-panel, .advanced-search) {
+  font-family: var(--font-navigation, inherit);
 }
 
 /* 自定义工具类 - Tailwind v4 使用 @utility 定义 */

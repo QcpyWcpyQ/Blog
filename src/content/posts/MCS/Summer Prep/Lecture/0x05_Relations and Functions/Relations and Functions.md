@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Relations and Functions  
 - **Definition 1**  
   Let $X$ be a set. A **relation** $\sim$ on $X$ is a rule that determines for every $x,y\in X$ whether the statement   
@@ -218,16 +219,20 @@ image: ""
 
     - **Solution 8.5.1**  
       $$
+      \begin{gathered}
       g\colon X\to X \\
       g(1)=1,\quad g(2)=2, \quad g(3)=5,\quad g(4)=4,\quad g(5)=3.
+      \end{gathered}
       $$
       Then
       $$
+      \begin{gathered}
       (g\circ f)(1)=g(f(1))=g(2)=2=f(1), \\
       (g\circ f)(2)=g(f(2))=g(2)=2=f(2), \\
       (g\circ f)(3)=g(f(3))=g(4)=4=f(3), \\
       (g\circ f)(4)=g(f(4))=g(4)=4=f(4), \\
       (g\circ f)(5)=g(f(5))=g(4)=4=f(5).
+      \end{gathered}
       $$
       Therefore $g\circ f=f$. Similarly, we can prove $f\circ g=f$ and $f\circ f=f$.
 
@@ -261,6 +266,7 @@ image: ""
     Suppose that $f \colon A \rightarrow B$ and $g \colon B \rightarrow C$ are functions. Prove that if $g \circ f$ is injective then $f$ is injective, and if $g \circ f$ is surjective then $g$ is surjective.
 
     - **Solution 9.4.1**  
+
       **Proof**
 
       * **First Part (If $g \circ f$ is injective, then $f$ is injective)**
@@ -330,31 +336,41 @@ image: ""
     Let $X=\{1,2,3,4\},Y=\{a,b,c,d\}$ and $f\colon X\to Y$ defined by $f(1)=a,f(2)=c,f(3)=c,f(4)=a$.
     Consider $A=\left\{1,2,4\right\}\subseteq X$ and $B=\left\{a,b\right\}\subseteq Y$. Then
     $$
+    \begin{gathered}
     f(A)=\left\{a,c\right\},\quad f^{-1}(B)=\left\{1,4\right\} \\
     f^{-1}(\left\{c\right\})=\left\{2,3\right\},\quad f^{-1}(\left\{d\right\})=\varnothing
+    \end{gathered}
     $$
 
   - **Proposition 10.2**  
     Let $f\colon X\to Y$ a function, $A,B\subseteq X$ and $C,D\subseteq Y$.
 
     1. $f(A\cap B)\subseteq f(A)\cap f(B)$.
+
        **Proof**
+
        Let $y\in f(A\cap B)$ then $y=f(x)$ for some $x\in A\cap B$. Since $x\in A\cap B$ then $x\in A$ and $x\in B$, that is, $y=f(x)\in f(A)$ and $y=f(x)\in f(B)$. Hence $y\in f(A)\cap f(B)$ and thus $f(A\cap B)\subseteq f(A)\cap f(B)$.
 
     2. $f(A\cup B)=f(A)\cup f(B)$.
+
        **Proof**
+
        ($\subseteq$) Let $y\in f(A\cup B)$ then $y=f(x)$ for some $x\in A\cup B$. Since $x\in A\cup B$ then $x\in A$ or $x\in B$, that is, $y=f(x)\in f(A)$ or $y=f(x)\in f(B)$ hence $y\in f(A)\cup f(B)$ and thus $f(A\cup B)\subseteq f(A)\cup f(B)$.
 
        ($\supseteq$) Let $y\in f(A)\cup f(B)$ then $y\in f(A)$ or $y\in f(B)$, that is, $y=f(a)$ for some $a\in A$ or $y=f(b)$ for some $b\in B$. Therefore $y\in f(A\cup B)$ since $a,b\in A\cup B$ and thus $f(A)\cup f(B)\subseteq f(A\cup B)$.
 
     3. $f^{-1}(C\cap D)=f^{-1}(C)\cap f^{-1}(D)$.
+
        **Proof**
+
        ($\subseteq$) Let $x\in f^{-1}(C\cap D)$ then $f(x)\in C\cap D$, that is, $f(x)\in C$ and $f(x)\in D$ hence $x\in f^{-1}(C)$ and $x\in f^{-1}(D)$ therefore $x\in f^{-1}(C)\cap f^{-1}(D)$ and thus $f^{-1}(C\cap D)\subseteq f^{-1}(C)\cap f^{-1}(D)$.
 
        ($\supseteq$) Let $x\in f^{-1}(C)\cap f^{-1}(D)$ then $x\in f^{-1}(C)$ and $x\in f^{-1}(D)$, that is, $f(x)\in C$ and $f(x)\in D$ hence $f(x)\in C\cap D$, that is, $x\in f^{-1}(C\cap D)$ and thus $f^{-1}(C)\cap f^{-1}(D)\subseteq f^{-1}(C\cap D)$.
 
     4. $f^{-1}(C\cup D)=f^{-1}(C)\cup f^{-1}(D)$.
+
        **Proof**
+
        ($\subseteq$) Let $x\in f^{-1}(C\cup D)$ then $f(x)\in C\cup D$, that is, $f(x)\in C$ or $f(x)\in D$ hence $x\in f^{-1}(C)$ or $x\in f^{-1}(D)$ therefore $x\in f^{-1}(C)\cup f^{-1}(D)$ and thus $f^{-1}(C\cup D)\subseteq f^{-1}(C)\cup f^{-1}(D)$.
 
        ($\supseteq$) Let $x\in f^{-1}(C)\cup f^{-1}(D)$ then $x\in f^{-1}(C)$ or $x\in f^{-1}(D)$, that is, $f(x)\in C$ or $f(x)\in D$ hence $f(x)\in C\cup D$, that is, $x\in f^{-1}(C\cup D)$ and thus $f^{-1}(C)\cup f^{-1}(D)\subseteq f^{-1}(C\cup D)$.
@@ -431,8 +447,10 @@ image: ""
       ($\Longleftarrow$) Suppose that $f$ is bijective. Let $y\in Y$ then $y\in\text{Ran}(f)$ because $f$ is surjective and since $f$ is injective then by the previous theorem there exists a unique $x\in X$ such that $y=f(x)$.
       Define $g\colon Y\to X$ by $g(y)=x$ where $x$ is the unique element in $X$ such that $y=f(x)$ then
       $$
+      \begin{gathered}
       g\circ f=g(f(x))=x=\text{id}_X(x) \\
       f\circ g=f(g(x))=y=\text{id}_Y(y)
+      \end{gathered}
       $$
 
       therefore $g\circ f=\text{id}_X,f\circ g=\text{id}_Y$ and thus $f$ is invertible.

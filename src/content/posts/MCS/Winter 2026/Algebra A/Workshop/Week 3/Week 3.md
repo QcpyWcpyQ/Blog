@@ -83,16 +83,14 @@ image: ""
     $$
     Thus the unique solution is
     $$
-    \boxed{
-    (x,y,z)=left(0,1-\frac{c-3}{t},\frac{c-3}{t}\right),
-    \qquad t\neq0.}
+    (x,y,z)=\left(0,1-\frac{c-3}{t},\frac{c-3}{t}\right),
+    \qquad t\neq0.
     $$
 
     If $t=0$ and $c=3$, let $z=s$, where $s\in\mathbb R$. Then
     $$
-    \boxed{
     (x,y,z)=(0,1-s,s),
-    \qquad s\in\mathbb R.}
+    \qquad s\in\mathbb R.
     $$
 
     If $t=0$ and $c\neq3$, the solution set is empty.
@@ -110,9 +108,8 @@ image: ""
 
     If $t=0$, let $z=s$. Then $y=-s$ and $x=0$, so all homogeneous solutions are
     $$
-    \boxed{
     (x,y,z)=s(0,-1,1),
-    \qquad s\in\mathbb R.}
+    \qquad s\in\mathbb R.
     $$
     The solutions are nonzero exactly when $s\neq0$.
 
@@ -152,28 +149,27 @@ image: ""
     0&0&1\\0&1&2\\1&0&0
     \end{bmatrix}\\[1ex]
     &\xrightarrow{R_3\leftarrow R_3-R_2}
-    \boxed{
     \begin{bmatrix}
     0&0&1\\0&1&2\\1&-1&-2
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
     Therefore,
     $$
-    A=egin{bmatrix}0&0&1\\0&1&2\\1&-1&-2\end{bmatrix}.
+    A=\begin{bmatrix}0&0&1\\0&1&2\\1&-1&-2\end{bmatrix}.
     $$
 
     The elementary matrices are
     $$
-    E_1=egin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix},
+    E_1=\begin{bmatrix}0&0&1\\0&1&0\\1&0&0\end{bmatrix},
     \qquad
-    E_2=egin{bmatrix}1&0&0\\2&1&0\\0&0&1\end{bmatrix},
+    E_2=\begin{bmatrix}1&0&0\\2&1&0\\0&0&1\end{bmatrix},
     \qquad
-    E_3=egin{bmatrix}1&0&0\\0&1&0\\0&-1&1\end{bmatrix}.
+    E_3=\begin{bmatrix}1&0&0\\0&1&0\\0&-1&1\end{bmatrix}.
     $$
     Since the operations are performed in the order $E_1,E_2,E_3$,
     $$
-    \boxed{A=E_3E_2E_1}.
+    A=E_3E_2E_1.
     $$
 
   - **Solution 2.2 (The inverse)**
@@ -182,9 +178,9 @@ image: ""
     E_1^{-1}=E_1,
     $$
     $$
-    E_2^{-1}=egin{bmatrix}1&0&0\\-2&1&0\\0&0&1\end{bmatrix},
+    E_2^{-1}=\begin{bmatrix}1&0&0\\-2&1&0\\0&0&1\end{bmatrix},
     \qquad
-    E_3^{-1}=egin{bmatrix}1&0&0\\0&1&0\\0&1&1\end{bmatrix}.
+    E_3^{-1}=\begin{bmatrix}1&0&0\\0&1&0\\0&1&1\end{bmatrix}.
     $$
     Since $A=E_3E_2E_1$,
     $$
@@ -192,13 +188,12 @@ image: ""
     $$
     Thus
     $$
-    \boxed{
     A^{-1}=
     \begin{bmatrix}
     0&1&1\\
     -2&1&0\\
     1&0&0
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
   - **Solution 2.3 (Solving the system)**
@@ -207,9 +202,9 @@ image: ""
     \begin{aligned}
     x
     &=A^{-1}\begin{bmatrix}1\\0\\2\end{bmatrix}\\[1ex]
-    &=egin{bmatrix}0&1&1\\-2&1&0\\1&0&0\end{bmatrix}
+    &=\begin{bmatrix}0&1&1\\-2&1&0\\1&0&0\end{bmatrix}
       \begin{bmatrix}1\\0\\2\end{bmatrix}\\[1ex]
-    &=\boxed{\begin{bmatrix}2\\-2\\1\end{bmatrix}}.
+    &=\begin{bmatrix}2\\-2\\1\end{bmatrix}.
     \end{aligned}
     $$
 
@@ -257,7 +252,7 @@ image: ""
     $$
     so $b=0$. Therefore,
     $$
-    \boxed{U\cap W=\{a:a\in\mathbb R\}=\operatorname{span}\{1\}.}
+    U\cap W=\{a:a\in\mathbb R\}=\operatorname{span}\{1\}.
     $$
     In particular, $U\cap W$ is a vector space.
 
@@ -282,7 +277,7 @@ image: ""
     $$
     Thus $U\cup W$ is not closed under addition, so
     $$
-    \boxed{U\cup W\text{ is not a vector space}.}
+    U\cup W\text{ is not a vector space}.
     $$
 
 ---
@@ -348,16 +343,16 @@ image: ""
     $$
     Therefore,
     $$
-    \boxed{B\in\operatorname{span}\{A_1,A_2,A_3\}
-    \iff a+c=b+d.}
+    B\in\operatorname{span}\{A_1,A_2,A_3\}
+    \iff a+c=b+d.
     $$
 
   - **Solution 4.2 (The coefficients)**
     Whenever $a+c=b+d$, the coefficients are
     $$
-    \boxed{\alpha=d,
+    \alpha=d,
     \qquad\beta=c,
-    \qquad\gamma=a-d.}
+    \qquad\gamma=a-d.
     $$
     Hence
     $$
@@ -371,7 +366,7 @@ image: ""
     $$
     Its coefficients are $\alpha=1$, $\beta=0$, and $\gamma=1$. Therefore,
     $$
-    \boxed{B_1=A_1+A_3.}
+    B_1=A_1+A_3.
     $$
 
     For $B_2$,
@@ -382,7 +377,7 @@ image: ""
     $$
     The condition fails, so
     $$
-    \boxed{B_2\notin\operatorname{span}\{A_1,A_2,A_3\}.}
+    B_2\notin\operatorname{span}\{A_1,A_2,A_3\}.
     $$
 
 ---
@@ -434,6 +429,6 @@ image: ""
     $$
     Taking $t=1$ gives
     $$
-    \boxed{-2v_1-v_2+v_3=0,}
+    -2v_1-v_2+v_3=0,
     $$
     which is nontrivial. Therefore, the vectors $v_1,v_2,v_3$ are linearly dependent.

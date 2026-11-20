@@ -56,7 +56,7 @@ The **specification determines what counts as a correct result**. Design the alg
     $$
     **Postcondition (`ensure`):**
     $$
-    \boxed{D=qd+r\qquad\text{and}\qquad0\leqslant r<d}.
+    D=qd+r\qquad\text{and}\qquad0\leqslant r<d.
     $$
 
     The precondition states which inputs the algorithm promises to handle. The postcondition states what every result for a valid input must satisfy.

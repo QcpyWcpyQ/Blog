@@ -7,13 +7,16 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Sets
 
 - **Exercise 1**  
   Suppose $A,B,D\subseteq X$. Prove the following properties
 
   1. $\left(A\setminus B\right)^\complement=A^\complement\cup B$.
+
      **Proof**
+
      $$
      \begin{aligned}
      x\in\left(A\setminus B\right)^\complement&\iff x\not\in\left(A\setminus B\right)\iff\text{It is false that } x\in A\setminus B \\
@@ -26,7 +29,9 @@ image: ""
      Thus $\left(A\setminus B\right)^\complement=A^\complement\cup B$.
 
   2. $A\cap\left(B\setminus D\right)=\left(A\cap B\right)\setminus\left(A\cap D\right)$.
+
      **Proof**
+
      $$
      \begin{aligned}
      x\in A\cap\left(B\setminus D\right)&\iff x\in A \land x\in B\setminus D \\
@@ -72,7 +77,7 @@ image: ""
     As $n$ increases, the intervals $A_n$ become nested, meaning $A_1 \supseteq A_2 \supseteq A_3 \supseteq \dots$  
     For $n=1$, we have $A_1 = [-1, 2]$.  We have $A_1=\bigcup\limits_{n\in\mathbb N}$ because
     $$
-    A_1\subseteq\bigcup_{n\in\mathbb N}A_n=A_1\bigcup_{n\in\mathbb N\\n\geqslant 2}A_n
+    A_1\subseteq\bigcup_{n\in\mathbb N}A_n=A_1\bigcup_{\substack{n\in\mathbb N\\n\geqslant 2}}A_n
     $$
     and
     $$
@@ -250,7 +255,9 @@ image: ""
   Let $A, B, C$ be subsets of a universal set $X$. Prove the implication: If $A \cap B \subseteq C$ and $C \subseteq A \cup B$, then $C \setminus A \subseteq B$.
 
   - **Solution 6.1**  
+
     **Proof**
+
     Let $x \in C \setminus A$. By definition of set difference, this means
     $$
     x \in C \quad \text{and} \quad x \notin A
@@ -301,7 +308,9 @@ image: ""
   Let $A, B \subseteq X$. Prove that $A \subseteq B$ if and only if for every set $C$, $A \cap C \subseteq B \cap C$.
 
   - **Solution 8.1**  
+
     **Proof**
+
     $(\Longrightarrow)$ Assume $A \subseteq B$. Let $C$ be any arbitrary set, and let $x \in A \cap C$. By definition of intersection, this means
     $$
     x \in A \quad \text{and} \quad x \in C
@@ -383,7 +392,9 @@ image: ""
   Let $A, B, C \subseteq X$. Prove: $(A \setminus B) \setminus C = A \setminus (B \cup C)$.
 
   - **Solution 11.1**  
+
     **Proof**
+
     We show that an element $x$ belongs to the left-hand side if and only if it belongs to the right-hand side using basic definition of set-membership
     $$
     \begin{aligned}
@@ -403,7 +414,9 @@ image: ""
   Let $A, B, C \subseteq X$. Show that $A \cap (B \Delta C) = (A \cap B) \Delta (A \cap C)$, where $\Delta$ denotes symmetric difference: $X \Delta Y = (X \setminus Y) \cup (Y \setminus X)$.
 
   - **Solution 12.1**  
+
     **Proof**
+
     By definition of symmetric difference, $B \Delta C = (B \setminus C) \cup (C \setminus B)$. We unpack the condition $x \in A \cap (B \Delta C)$ step by step
     $$
     \begin{aligned}
@@ -439,7 +452,9 @@ image: ""
   $$
 
   - **Solution 13.1**  
+
     **Proof**
+
     We apply the logical definitions of indexed intersection, union, and complement to show element-hood equivalence
     $$
     \begin{aligned}

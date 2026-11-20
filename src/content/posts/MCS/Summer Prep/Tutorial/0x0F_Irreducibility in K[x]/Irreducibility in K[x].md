@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Irreducibility in $\K[x]$.
 
 - **Exercise 1**  

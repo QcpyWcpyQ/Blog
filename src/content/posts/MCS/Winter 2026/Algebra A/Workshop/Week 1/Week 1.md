@@ -87,7 +87,7 @@ image: ""
       =\overline{ab+ac}
       =\overline{a}\,\overline{b}+\overline{a}\,\overline{c}.
     $$
-    The other distributive law follows by commutativity of multiplication. Thus all field axioms hold, and $\boxed{\mathbb{Z}_5\text{ is a field}}$.
+    The other distributive law follows by commutativity of multiplication. Thus all field axioms hold, and $\mathbb{Z}_5\text{ is a field}$.
 
 ## Why $\mathbb{Z}_6$ is not a field
 
@@ -99,7 +99,7 @@ image: ""
     $$
     0,\ 2,\ 4,\ 0,\ 2,\ 4.
     $$
-    None is $1$. Therefore $2$ has no multiplicative inverse, so the inverse axiom fails and $\boxed{\mathbb{Z}_6\text{ is not a field}}$.
+    None is $1$. Therefore $2$ has no multiplicative inverse, so the inverse axiom fails and $\mathbb{Z}_6\text{ is not a field}$.
 
     Equivalently, $2\neq0$ and $3\neq0$, but $2\cdot3=0$ in $\mathbb{Z}_6$. If $2^{-1}$ existed, multiplying by it would give $3=0$, a contradiction. Thus this nonzero zero divisor also proves that $\mathbb{Z}_6$ is not a field.
 
@@ -299,7 +299,7 @@ image: ""
     $$
     Since $-2\equiv5$ and $-7\equiv0\pmod7$,
     $$
-    \boxed{p(x)q(x)=x^5+2x^4+5x^3+6\quad\text{in }\mathbb{Z}_7[x]}.
+    p(x)q(x)=x^5+2x^4+5x^3+6\quad\text{in }\mathbb{Z}_7[x].
     $$
 
   - **Solution 5.2 (In $\mathbb{R}[x]$)**  
@@ -317,7 +317,7 @@ image: ""
     $$
     Therefore
     $$
-    \boxed{p(x)q(x)=x^5-12x^4+54x^3-105x^2+77x-15\quad\text{in }\mathbb{R}[x]}.
+    p(x)q(x)=x^5-12x^4+54x^3-105x^2+77x-15\quad\text{in }\mathbb{R}[x].
     $$
 
     **Check.** All coefficients here are integers, so reducing the expanded product modulo $7$ gives

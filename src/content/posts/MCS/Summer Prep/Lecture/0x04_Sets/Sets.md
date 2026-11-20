@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Sets
 
 - **Definition 1**  
@@ -131,7 +132,8 @@ image: ""
 
     $5, 6$ are De Morgan's laws.  
 
-    **Proof**  
+    **Proof**
+
     - Let $x\in A$, then $x\in A$ or $x\in B$, that is,  
        $$
        x\in A\cup B\implies A\subseteq A\cup B.

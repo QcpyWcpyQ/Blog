@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Mathematical Logic
 
 - **Exercise 1**  
@@ -177,16 +178,20 @@ image: ""
 - **Exercise 11**  
   Let $p$ stand for the proposition "$x^2 + 2x - 3$ is $0$" and $q$ for "$x^2 - x - 2$ is $0$". Express the following as natural sentences in English
   $$
+  \begin{gathered}
   \neg p. \\
   p \land q. \\
   p \lor q.
+  \end{gathered}
   $$
 
   - **Solution 11.1**  
     $$
+    \begin{gathered}
     x^2 + 2x - 3 \text{ is not } 0. \\
     x^2 + 2x - 3 \text{ is } 0 \text{ and } x^2 - x - 2 \text{ is } 0. \\
     x^2 + 2x - 3 \text{ is } 0 \text{ or } x^2 - x - 2 \text{ is } 0.
+    \end{gathered}
     $$
 
 ---

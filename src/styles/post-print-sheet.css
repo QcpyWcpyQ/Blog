@@ -1,0 +1,47 @@
+@page { size: A4; margin: 0; }
+:root { color-scheme: light; background: white; }
+body { margin: 0; background: white; color: #202124; font: 11pt/1.5 Georgia, "Times New Roman", serif; }
+.sheet {
+  box-sizing: border-box;
+  width: 210mm;
+  height: 297mm;
+  padding-inline: 15mm;
+  display: grid;
+  grid-template-rows: 17mm minmax(0, 1fr) 16mm;
+  background: white;
+  break-inside: avoid;
+}
+.sheet + .sheet { break-before: page; }
+.sheet > header, .sheet > footer {
+  align-self: center;
+  text-align: center;
+  font: 9pt/1.3 system-ui, sans-serif;
+  color: #414141;
+}
+a { color: inherit; }
+.flow { display: flow-root; min-width: 0; overflow-wrap: anywhere; }
+.staging { width: 180mm; }
+h1, h2, h3, h4, h5, h6 { margin: .85em 0 .4em; line-height: 1.25; }
+h1 { font-size: 20pt; }
+h2 { font-size: 16pt; }
+h3 { font-size: 13pt; }
+p, ul, ol, pre, figure, blockquote { margin: .5em 0; }
+ul, ol { padding-inline-start: 1.6em; }
+li > :first-child, .flow > :first-child { margin-top: 0; }
+li.continued { list-style: none; }
+img, figure svg { max-width: 100%; height: auto; max-height: 247mm; object-fit: contain; }
+figure, pre { max-width: 100%; }
+pre, code { white-space: pre-wrap; overflow-wrap: anywhere; font: 9pt/1.45 ui-monospace, monospace; }
+.ec-line { display: block; }
+table { border-collapse: collapse; max-width: 100%; }
+table, thead, tbody, tfoot, tr, th, td { background: transparent !important; }
+th, td { border: 1px solid #aaa; padding: .25em .55em; }
+hr { border: 0; border-top: 1px solid #bbb; }
+.katex-display, .katex-display-container, .horizontal-scroll-container { overflow: visible !important; }
+.katex-display { margin: .65em 0; }
+.katex-display > .katex > .katex-html { min-width: max-content; text-align: center; }
+.post-annotation { text-decoration: underline; text-decoration-skip-ink: none; text-underline-offset: .2em; }
+.post-annotation-math { border-bottom: 1px solid; }
+.post-annotation-number { vertical-align: super; font: 8pt sans-serif; }
+.post-print-notes blockquote, .post-print-notes p { white-space: pre-wrap; }
+.katex-mathml { display: none !important; }

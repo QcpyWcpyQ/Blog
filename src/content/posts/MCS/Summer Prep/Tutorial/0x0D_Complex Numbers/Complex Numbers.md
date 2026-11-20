@@ -7,10 +7,11 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Complex Numbers
 
 - **Exercise 1**  
-  Comupute
+  Compute
   $$
   1+ \operatorname i+\operatorname i^2+\cdots+\operatorname i^{2026}.
   $$

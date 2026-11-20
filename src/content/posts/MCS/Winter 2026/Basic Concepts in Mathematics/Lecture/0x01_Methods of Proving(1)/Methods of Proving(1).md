@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Parity
 
 - **Problem 1 (Domino tiling)**  
@@ -165,7 +166,7 @@ image: ""
     $$
     and hence
     $$
-    \boxed{S_n=\frac{n(n+1)}{2}}.
+    S_n=\frac{n(n+1)}{2}.
     $$
 
     For example, when $n=5$, the two staircases form a $5\times6$ rectangle, so
@@ -221,8 +222,8 @@ image: ""
     $$
     Thus the statement for $k$ implies the statement for $k+1$. By mathematical induction,
     $$
-    \boxed{1^3+2^3+\cdots+n^3=\left(1+2+\cdots+n\right)^2
-    =\left(\frac{n(n+1)}{2}\right)^2}
+    1^3+2^3+\cdots+n^3=\left(1+2+\cdots+n\right)^2
+    =\left(\frac{n(n+1)}{2}\right)^2
     $$
     for every integer $n\geqslant1$.
 
@@ -291,7 +292,7 @@ image: ""
 
     By mathematical induction, $3^k\mid N_{3^k}$ for every $k\geqslant1$. Taking $k=5$ gives
     $$
-    \boxed{243\mid\underbrace{11\cdots1}_{243\text{ ones}}}.
+    243\mid\underbrace{11\cdots1}_{243\text{ ones}}.
     $$
 
 ---
@@ -339,7 +340,7 @@ image: ""
     $$
     Hence
     $$
-    \boxed{T_{n+1}=T_nT_1-T_{n-1}=kT_n-T_{n-1}}.
+    T_{n+1}=T_nT_1-T_{n-1}=kT_n-T_{n-1}.
     $$
     Thus, if two consecutive terms $T_{n-1}$ and $T_n$ are integers, the next term $T_{n+1}$ is also an integer.
 
@@ -355,7 +356,7 @@ image: ""
     $$
     Therefore the pair $(T_{n-1},T_n)$ being integral implies that $(T_n,T_{n+1})$ is integral. Starting from $(T_1,T_2)$, mathematical induction yields
     $$
-    \boxed{x^n+\frac{1}{x^n}\in\mathbb{Z}\qquad\text{for every integer }n\geqslant1}.
+    x^n+\frac{1}{x^n}\in\mathbb{Z}\qquad\text{for every integer }n\geqslant1.
     $$
 
   - **Remark 4.4 (Why two base cases are needed)**  

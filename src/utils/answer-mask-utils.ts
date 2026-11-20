@@ -1,6 +1,7 @@
 const STORAGE_KEY = "answer-mask-enabled";
 const MASK_CLASS = "answers-masked";
-const ANSWER_TITLE = /^(solution|proof)\b/i;
+const ANSWER_TITLE = /^(?:supplementary\s+)?(?:solutions?|proof|answers?|results?|counterexample)(?:\s+\d+(?:\.\d+)*)?(?:\s*\(.*\)|\s+of\s+.+)?[.:\s]*$/i;
+const QUESTION_TITLE = /^(?:problem|question|exercise|example|definition|theorem|lemma|proposition|remark|corollary)\b/i;
 
 let button: HTMLButtonElement | null = null;
 let enabled = false;
@@ -28,83 +29,71 @@ function isAnswerTitle(text: string | null | undefined): boolean {
 	return ANSWER_TITLE.test(text?.trim() ?? "");
 }
 
-function directChildContaining(parent: Element, child: Element): HTMLElement | null {
-	let current: HTMLElement | null = child.parentElement;
-	while (current && current.parentElement !== parent) {
-		current = current.parentElement;
-	}
-	return current?.parentElement === parent ? current : null;
+const BLOCK = "p,ul,ol,div,section,pre,table,blockquote,figure,hr,h1,h2,h3,h4,h5,h6";
+const HEADING = "h1,h2,h3,h4,h5,h6";
+
+function leadingLabel(element: Element): Element | null {
+	return element.querySelector(":scope > strong:first-child, :scope > p:first-child > strong:first-child");
 }
 
-function prepareListAnswers(article: Element): void {
-	const markers = article.querySelectorAll<HTMLElement>(
-		"strong[data-toc-entry][id]",
-	);
-	for (const marker of markers) {
-		if (!isAnswerTitle(marker.textContent)) continue;
+function isBoundary(element: Element): boolean {
+	if (element.matches("hr," + HEADING)) return true;
+	const marker = element.matches("strong") ? element : leadingLabel(element);
+	const label = marker?.textContent?.trim() ?? "";
+	if (element.matches("section")) {
+		const heading = element.firstElementChild;
+		return !!heading?.matches(HEADING) && QUESTION_TITLE.test(heading.textContent?.trim() ?? "");
+	}
+	return QUESTION_TITLE.test(label) || /^part\s+\([a-z0-9]+\)/i.test(label) || isAnswerTitle(label);
+}
 
-		const item = marker.closest("li");
-		if (!item || !article.contains(item)) continue;
-		if (item.dataset.answerMaskBlock === "list") continue;
-
-		const headingContainer = directChildContaining(item, marker);
-		if (!headingContainer) continue;
-
-		item.dataset.answerMaskBlock = "list";
-		headingContainer.classList.add("answer-mask-heading");
-
-		// Markdown commonly places the label and the first sentence in one <p>.
-		// Keep the label sharp and wrap only the nodes that follow it.
-		if (!headingContainer.dataset.answerMaskInlineReady) {
-			headingContainer.dataset.answerMaskInlineReady = "true";
-			const inlineContent = document.createElement("span");
-			inlineContent.className = "answer-mask-inline-content";
-			while (marker.nextSibling) inlineContent.append(marker.nextSibling);
-			if (inlineContent.childNodes.length > 0) {
-				headingContainer.append(inlineContent);
+// Tight Markdown lists may interleave bare text, inline math and block elements.
+function maskFollowing(start: Element): void {
+	let inline: HTMLElement | null = null;
+	for (let node = start.nextSibling; node;) {
+		const next = node.nextSibling;
+		if (node instanceof Element && isBoundary(node)) break;
+		if (node instanceof HTMLElement && node.matches(BLOCK)) {
+			inline = null;
+			if (node.matches("ul,ol") && Array.from(node.children).some(isBoundary)) {
+				for (const item of node.children) {
+					if (isBoundary(item)) break;
+					item.classList.add("answer-mask-content");
+				}
+				break;
 			}
+			node.classList.add("answer-mask-content");
+		} else if (inline || node.nodeType !== Node.TEXT_NODE || node.textContent?.trim()) {
+			if (!inline) {
+				inline = document.createElement("span");
+				inline.className = "answer-mask-inline-content";
+				node.before(inline);
+			}
+			inline.append(node);
 		}
-
-		let sibling = headingContainer.nextElementSibling;
-		while (sibling) {
-			sibling.classList.add("answer-mask-content");
-			sibling = sibling.nextElementSibling;
-		}
-	}
-}
-
-function headingLevel(element: Element): number | null {
-	const match = /^H([1-6])$/.exec(element.tagName);
-	return match ? Number(match[1]) : null;
-}
-
-function prepareHeadingAnswers(article: Element): void {
-	const headings = article.querySelectorAll<HTMLElement>("h1, h2, h3, h4, h5, h6");
-	for (const heading of headings) {
-		if (!isAnswerTitle(heading.textContent)) continue;
-		if (heading.dataset.answerMaskBlock === "heading") continue;
-
-		const level = headingLevel(heading);
-		if (level === null) continue;
-		heading.dataset.answerMaskBlock = "heading";
-		heading.classList.add("answer-mask-heading");
-
-		let sibling = heading.nextElementSibling;
-		while (sibling) {
-			const siblingLevel = headingLevel(sibling);
-			if (siblingLevel !== null && siblingLevel <= level) break;
-			sibling.classList.add("answer-mask-content");
-			sibling = sibling.nextElementSibling;
-		}
+		node = next;
 	}
 }
 
 function prepareAnswerBlocks(): number {
 	const article = document.querySelector("#post-container .custom-md");
 	if (!article) return 0;
-
-	prepareListAnswers(article);
-	prepareHeadingAnswers(article);
+	for (const marker of article.querySelectorAll<HTMLElement>("strong,h1,h2,h3,h4,h5,h6")) {
+		if (marker.dataset.answerMaskBlock || !isAnswerTitle(marker.dataset.tocText ?? marker.textContent)) continue;
+		if (marker.matches("strong")) {
+			const container = marker.parentElement;
+			if (!container?.matches("p,li")) continue;
+			// A bold term inside a sentence is not a section label.
+			let previous = marker.previousSibling;
+			while (previous?.nodeType === Node.TEXT_NODE && !previous.textContent?.trim()) previous = previous.previousSibling;
+			if (previous && !(previous instanceof HTMLBRElement)) continue;
+			maskFollowing(marker);
+			if (container.matches("p")) maskFollowing(container);
+		} else {
+			maskFollowing(marker);
+		}
+		marker.dataset.answerMaskBlock = "true";
+	}
 	return article.querySelectorAll("[data-answer-mask-block]").length;
 }
 

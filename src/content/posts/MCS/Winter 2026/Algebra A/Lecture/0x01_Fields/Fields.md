@@ -380,7 +380,7 @@ image: ""
     $$
     Accordingly, multiplication on pairs is defined by
     $$
-    \boxed{(a,b)\cdot(c,d)=(ac-bd,ad+bc)}.
+    (a,b)\cdot(c,d)=(ac-bd,ad+bc).
     $$
     It is **not coordinatewise multiplication**. In particular,
     $$
@@ -413,8 +413,8 @@ image: ""
     $$
     so
     $$
-    \boxed{z^{-1}=\frac{\overline{z}}{|z|^2}
-    =\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i}.
+    z^{-1}=\frac{\overline{z}}{|z|^2}
+    =\frac{a}{a^2+b^2}-\frac{b}{a^2+b^2}i.
     $$
     Thus every nonzero complex number has a multiplicative inverse. Together with the other field axioms, which follow from the addition and multiplication formulas, this gives the field $\mathbb{C}$.
 
@@ -473,8 +473,8 @@ image: ""
 
     Consequently, for $z=a+b\sqrt2\neq0$, the rational number $a^2-2b^2$ is nonzero, and
     $$
-    \boxed{z^{-1}=\frac{\overline{z}}{a^2-2b^2}
-    =\frac{a}{a^2-2b^2}-\frac{b}{a^2-2b^2}\sqrt2}.
+    z^{-1}=\frac{\overline{z}}{a^2-2b^2}
+    =\frac{a}{a^2-2b^2}-\frac{b}{a^2-2b^2}\sqrt2.
     $$
     Both coefficients are rational, so $z^{-1}\in\mathbb{Q}[\sqrt2]$. Direct multiplication gives
     $$

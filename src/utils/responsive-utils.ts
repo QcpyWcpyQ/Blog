@@ -112,6 +112,8 @@ export interface GridColumnVars {
 	"--grid-sidebar-width": string;
 	/** 内容栏占包裹层总宽的比例（无单位，1 = 不收窄），按断点各自判定 */
 	"--content-ratio-md": number;
+	"--sidebar-count-md": number;
+	"--sidebar-count-xl": number;
 	"--content-ratio-xl": number;
 }
 
@@ -156,6 +158,8 @@ export function computeGridColumns(input: GridColumnsInput): GridColumnVars {
 	const ratioXl = input.enabled && !leftIn && !rightIn ? ratio : 1;
 
 	return {
+		"--sidebar-count-md": Number(mdLeft) + Number(mdRight),
+		"--sidebar-count-xl": Number(leftIn) + Number(rightIn),
 		"--cols-md": trackSegments(mdLeft, mdRight),
 		"--cols-xl": trackSegments(leftIn, rightIn),
 		"--left-display-md": mdLeft ? "contents" : "none",

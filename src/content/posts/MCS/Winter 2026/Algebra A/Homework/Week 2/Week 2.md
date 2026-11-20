@@ -76,7 +76,7 @@ image: ""
     Thus every equation of either system is a linear combination of the equations of the other. Hence
 
     $$
-    \boxed{S\text{ and }T\text{ are equivalent}.}
+    S\text{ and }T\text{ are equivalent}.
     $$
 
     To find their common solution set, use $T$. From $3x+y=0$,
@@ -98,10 +98,8 @@ image: ""
     Let $x=t$, where $t\in\mathbb R$. Then
 
     $$
-    \boxed{
     (x,y,z)=(t,-3t,-5t)
     =t(1,-3,-5),\qquad t\in\mathbb R.
-    }
     $$
 
 ---
@@ -186,7 +184,6 @@ image: ""
     Hence all solutions are
 
     $$
-    \boxed{
     X=
     \begin{bmatrix}
     2s-3t\\-s+t\\s\\t
@@ -194,7 +191,6 @@ image: ""
     =s\begin{bmatrix}2\\-1\\1\\0\end{bmatrix}
     +t\begin{bmatrix}-3\\1\\0\\1\end{bmatrix},
     \qquad s,t\in\mathbb R.
-    }
     $$
 
 ---
@@ -261,7 +257,6 @@ image: ""
     to obtain the echelon form
 
     $$
-    \boxed{
     \left[
     \begin{array}{ccc|c}
     1&0&2&1\\
@@ -270,7 +265,6 @@ image: ""
     0&0&0&0
     \end{array}
     \right].
-    }
     $$
 
     The third row represents
@@ -312,7 +306,6 @@ image: ""
     Therefore
 
     $$
-    \boxed{
     (x,y,z)=
     \left(
     1-2\frac{q-2}{p-1},
@@ -320,7 +313,6 @@ image: ""
     \frac{q-2}{p-1}
     \right),
     \quad p\neq1.
-    }
     $$
 
     **Case 2: $p=1$ and $q=2$.**  
@@ -333,11 +325,9 @@ image: ""
     and hence
 
     $$
-    \boxed{
     (x,y,z)=(1-2t,1+t,t)
     =(1,1,0)+t(-2,1,1),
     \qquad t\in\mathbb R.
-    }
     $$
 
     Thus the system has infinitely many solutions.
@@ -393,7 +383,7 @@ image: ""
     Hence
 
     $$
-    \boxed{E=\begin{bmatrix}1&0\\2&1\end{bmatrix}.}
+    E=\begin{bmatrix}1&0\\2&1\end{bmatrix}.
     $$
 
     Now multiply:
@@ -410,11 +400,10 @@ image: ""
     2(1)+(-1)&2(0)+3&2(2)+1
     \end{bmatrix}\\[1ex]
     &=
-    \boxed{
     \begin{bmatrix}
     1&0&2\\
     1&3&5
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -503,14 +492,12 @@ image: ""
     Therefore
 
     $$
-    \boxed{
     C^{-1}=
     \begin{bmatrix}
     1&-2&2\\
     0&1&-1\\
     0&0&1
     \end{bmatrix}.
-    }
     $$
 
     For verification,
@@ -565,8 +552,7 @@ image: ""
     1
     \end{bmatrix}
     =
-    \boxed{
-    \begin{bmatrix}-2\\2\\1\end{bmatrix}}.
+    \begin{bmatrix}-2\\2\\1\end{bmatrix}.
     \end{aligned}
     $$
 

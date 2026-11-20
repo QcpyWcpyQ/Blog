@@ -48,9 +48,7 @@ The compiler must receive both the implementation and the driver. The `-I.` opti
 The function returns `1` when `year` is a leap year and `0` otherwise. A year is a leap year precisely when it is divisible by $4$, except that a century year must also be divisible by $400$.
 
 $$
-\boxed{
 (4\mid y)\land\bigl((100\nmid y)\lor(400\mid y)\bigr)
-}
 $$
 
 ### Supplied implementation
@@ -210,16 +208,14 @@ Thus month 1, day 1 is `101`, month 7, day 5 is `705`, and month 13, day 28 is `
 For a valid encoded date,
 
 $$
-\boxed{n=28(m-1)+d.}
+n=28(m-1)+d.
 $$
 
 For a valid day number, first subtract one and apply integer quotient and remainder.
 
 $$
-\boxed{
 m=(n-1)\mathbin{\mathrm{div}}28+1,qquad
 d=(n-1)\bmod28+1
-}
 $$
 
 Subtracting one is essential. Without it, day 28 would be interpreted as month 2, day 0 rather than month 1, day 28.

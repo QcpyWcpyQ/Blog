@@ -53,7 +53,7 @@ image: ""
     These are all one hundred numbers. Hence
 
     $$
-    \boxed{a_1=a_2=\cdots=a_{100}.}
+    a_1=a_2=\cdots=a_{100}.
     $$
 
 ---
@@ -81,7 +81,7 @@ image: ""
     it does not have enough edges to be connected. Therefore
 
     $$
-    \boxed{\text{every graph with }n\text{ vertices and }n-2\text{ edges is disconnected}.}
+    \text{every graph with }n\text{ vertices and }n-2\text{ edges is disconnected}.
     $$
 
 ---
@@ -149,10 +149,8 @@ image: ""
     By mathematical induction,
 
     $$
-    \boxed{
     1\cdot3+3\cdot5+\cdots+(2n-1)(2n+1)
     =\frac{n(4n^2+6n-1)}3
-    }
     $$
 
     for every integer $n\geqslant1$.
@@ -217,7 +215,7 @@ image: ""
     Dividing by the total number $B+G$ of students, we conclude that
 
     $$
-    \boxed{\frac{B}{B+G}\leqslant\frac47.}
+    \frac{B}{B+G}\leqslant\frac47.
     $$
 
 ---
@@ -272,5 +270,5 @@ image: ""
     Consequently,
 
     $$
-    \boxed{\text{the process cannot continue indefinitely}.}
+    \text{the process cannot continue indefinitely}.
     $$

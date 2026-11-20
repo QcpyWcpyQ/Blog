@@ -240,4 +240,4 @@ image: ""
 ---
 
 - **Theorem 4**  
-    Let $V$ and $W$ be finite-dimmensional $\mathbb F$-vector spaces and let $T\colon V\to W$ be a linear map. Then $\dim\ker T+\dim \Im T=\dim T$.
+    Let $V$ and $W$ be finite-dimensional $\mathbb F$-vector spaces and let $T\colon V\to W$ be a linear map. Then $\dim\ker T+\dim \Im T=\dim T$.

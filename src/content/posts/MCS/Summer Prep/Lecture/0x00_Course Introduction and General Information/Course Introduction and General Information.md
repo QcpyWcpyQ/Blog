@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Course Introduction and General Information
 
 - **Joan Felipe Herrera Granada (Lecturer)**

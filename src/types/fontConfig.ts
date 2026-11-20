@@ -67,6 +67,8 @@ export type FontSelectionConfig = {
 	bannerTitleFont?: string;
 	bannerSubtitleFont?: string;
 	navbarTitleFont?: string;
+	/** 文件树、文章目录和搜索栏的字体（留空则继承正文） */
+	navigationFont?: string;
 	/** 代码块字体 CSS 变量名（用于代码高亮和等宽字体场景） */
 	codeFont?: string;
 	/**

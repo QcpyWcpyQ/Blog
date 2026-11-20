@@ -108,7 +108,7 @@ The recurring goal is to make calculations and information processing faster and
   $$
   The output consists of nonnegative integers $q$ and $r$ such that
   $$
-  \boxed{D=qd+r\qquad\text{and}\qquad0\leqslant r<d}.
+  D=qd+r\qquad\text{and}\qquad0\leqslant r<d.
   $$
   Here $q$ is the **quotient**, $r$ is the **remainder**, and `nat` in the pseudocode includes $0$.
   

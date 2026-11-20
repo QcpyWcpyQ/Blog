@@ -22,7 +22,7 @@ image: ""
         $$
         contradicting the fact that the sum of all exterior angles is $360^\circ$. Hence
         $$
-        \boxed{\text{a convex polygon can have at most three acute angles}.}
+        \text{a convex polygon can have at most three acute angles}.
         $$
 
 ---
@@ -128,7 +128,7 @@ image: ""
 
         This is impossible because $d>1$. Thus $m$ cannot be composite, and so
         $$
-        \boxed{m\text{ is prime}.}
+        m\text{ is prime}.
         $$
 
         This is the converse direction of Wilson's theorem; the proof above does not require the full theorem.
@@ -156,7 +156,7 @@ image: ""
         $$
         pupils. Hence
         $$
-        \boxed{\text{three pupils made the same number of mistakes}.}
+        \text{three pupils made the same number of mistakes}.
         $$
 
 ---
@@ -179,7 +179,7 @@ image: ""
 
         Assign each person to the second in which that person was born. By the pigeonhole principle, at least one second contains at least two people. Therefore
         $$
-        \boxed{\text{two people were born at exactly the same second}.}
+        \text{two people were born at exactly the same second}.
         $$
 
 ---
@@ -209,7 +209,7 @@ image: ""
 
         The two lines bordering this gap form an angle equal to that gap. Consequently,
         $$
-        \boxed{\text{some two of the lines form an angle of at most }15^\circ.}
+        \text{some two of the lines form an angle of at most }15^\circ.
         $$
 
         If two of the lines are parallel, their angle is $0^\circ$, and the conclusion holds immediately; this case is also included by a zero gap above.
@@ -227,19 +227,19 @@ image: ""
         **1. Two socks of the same colour: $4$.**  
         It is possible for the first three socks to be one black, one blue, and one white, so three socks do not guarantee a matching pair. With four socks and only three colours, the pigeonhole principle guarantees that at least two have the same colour. Thus the minimum is
         $$
-        \boxed{4}.
+        4.
         $$
 
         **2. Two socks of different colours: $11$.**  
         The first ten socks could all have the same colour, so ten socks are insufficient. No colour occurs more than ten times. Therefore, after drawing eleven socks, they cannot all have the same colour, and at least two have different colours. Thus the minimum is
         $$
-        \boxed{11}.
+        11.
         $$
 
         **3. Two black socks: $22$.**  
         In the worst case, one may first draw all $20$ nonblack socks and then one black sock. Hence $21$ socks can be drawn while containing only one black sock. The next draw, the twenty-second, must be black, so the minimum is
         $$
-        \boxed{22}.
+        22.
         $$
 
 ---
@@ -277,5 +277,5 @@ image: ""
         $$
         stones, but there are $36$ stones. Hence
         $$
-        \boxed{\text{it is impossible to transport all the stones using seven trucks}.}
+        \text{it is impossible to transport all the stones using seven trucks}.
         $$

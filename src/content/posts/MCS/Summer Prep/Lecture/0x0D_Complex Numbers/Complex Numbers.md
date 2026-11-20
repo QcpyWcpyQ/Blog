@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Complex Numbers
 
 - **Definition 1**  
@@ -204,10 +205,12 @@ image: ""
   $$
   We have that
   $$
+  \begin{gathered}
   \dfrac ba=\dfrac{r\sin\theta}{r\cos\theta}=\tan\theta\implies \theta=\tan^{-1}\left(\dfrac ba\right). \\
   a^2+b^2=r^2. \\
   r=\vert z\vert \geqslant 0. \\
   \cos \theta=\dfrac{a}{\sqrt{a^2+b^2}}, \quad \sin \theta=\dfrac{b}{\sqrt{a^2+b^2}}.
+  \end{gathered}
   $$
   Note that
   $$

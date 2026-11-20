@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Basics of Polynomials
 
 - **Exercise 1**  

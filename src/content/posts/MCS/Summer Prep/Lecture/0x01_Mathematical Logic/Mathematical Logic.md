@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Mathematical Logic
 
 In this chapter, we cover some of the foundational logical concepts that underlie mathematical reasoning.
@@ -18,7 +19,7 @@ A mathematical statement is the most basic unit of meaning in mathematical reaso
 $$
 "x>0"\qquad"\text{3 is a prime number}"\qquad "f(x)=0".
 $$
-More complex statements are formed by combining basic propositions using a small collection of logical connectives—such as conjunctions, disjunctions, implications, equivalences (if and only ifs), and negations—as well as quantifiers such as "for all" and "there exists".
+More complex statements are formed by combining basic propositions using a small collection of logical connectives—such as conjunctions, disjunctions, implications, equivalences (“if and only if” statements), and negations—as well as quantifiers such as "for all" and "there exists".
 
 ---
 
@@ -102,7 +103,9 @@ The third logical connective that allows us to combine and form new mathematical
     $$
     can be written as
     $$
+    \begin{gathered}
     \text{if }f\text{ is differentiable, then }f\text{ is continuous}.\\ f\text{ is continuous if }f\text{ is differentiable}.\\ f\text{ is continuous whenever }f\text{ is differentiable}.
+    \end{gathered}
     $$
 
 These different formulations don't change the logical structure, that is, it is always clear which is the antecedent and which is the consequent.

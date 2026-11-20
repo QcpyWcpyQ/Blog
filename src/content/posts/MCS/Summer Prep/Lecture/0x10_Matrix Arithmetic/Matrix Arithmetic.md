@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Matrix Arithmetic
 
 Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R$ or $\mathbb C$.

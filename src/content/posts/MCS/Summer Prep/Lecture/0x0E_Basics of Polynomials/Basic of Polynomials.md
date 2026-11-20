@@ -7,7 +7,8 @@ category: MCS
 draft: false
 image: ""
 ---
-## Basic of Polynomials
+
+## Basics of Polynomials
 
 Let $S$ be one of the sets $\mathbb Z, \mathbb Q, \mathbb R, \mathbb C$.
 

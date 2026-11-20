@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Relations and Functions  
 
 - **Exercise 1**  
@@ -303,7 +304,9 @@ image: ""
   Consider the relation $\subseteq$ on $\mathscr{P}(X)$. Prove that $\subseteq$ is a partial order.
 
   - **Solution 11.1**  
+
     **Proof**
+
     * **Reflexive:** Let $A \in \mathscr{P}(X)$. For any $x \in A$, the statement $x \in A$ is true, so $A \subseteq A$ holds by definition of subset.
     * **Antisymmetric:** Let $A, B \in \mathscr{P}(X)$ such that $A \subseteq B$ and $B \subseteq A$. By definition of subset, $A \subseteq B \implies (\forall x \in A \implies x \in B)$ and $B \subseteq A \implies (\forall x \in B \implies x \in A)$. Thus $x \in A \iff x \in B$, which implies $A = B$.
     * **Transitive:** Let $A, B, C \in \mathscr{P}(X)$ such that $A \subseteq B$ and $B \subseteq C$. Let $x \in A$. Since $A \subseteq B$, it follows that $x \in B$. Since $B \subseteq C$ and $x \in B$, it follows that $x \in C$. Thus $x \in A \implies x \in C$, meaning $A \subseteq C$.
@@ -320,6 +323,7 @@ image: ""
   Recall that $x \mid y$ means that there exists $k \in \mathbb{N}$ such that $y = xk$. Prove that $\preceq$ is a partial order on $\mathbb{N}$.
 
   - **Solution 12.1**  
+
     **Proof**
 
     * **Reflexive:** Let $x \in \mathbb{N}$. We can write $x = x \times 1$. Since $1 \in \mathbb{N}$, there exists a positive integer $k=1$ such that $x = xk$, meaning $x \mid x$. Thus, $x \preceq x$.
@@ -344,7 +348,9 @@ image: ""
   $$
 
   - **Solution 13.1**  
+
     **Proof**
+
     $(\Longrightarrow)$ Assume $\sim$ is symmetric. We prove $\sim \,=\, \sim^{-1}$ by showing mutual inclusion
 
     * Let $(x, y) \in \;\sim$, meaning $x \sim y$. Since $\sim$ is symmetric, we have $y \sim x$. By definition of the inverse relation, $y \sim x \iff x \sim^{-1} y$, which means $(x, y) \in \;\sim^{-1}$. Thus, $\sim \,\subseteq\, \sim^{-1}$.
@@ -370,7 +376,9 @@ image: ""
   $$
 
   - **Solution 14.1**  
+
     **Proof**
+
     For simplicity, let $R = \{(x, y) \in X \times X \mid x \sim y\}$, $R^{-1} = \{(x, y) \in X \times X \mid x \sim^{-1} y\}$, and $I = \{(x, y) \in X \times X \mid x \sim_X y\}$.
 
     $(\Longrightarrow)$ Assume $\sim$ is antisymmetric. Let $(x, y) \in R \cap R^{-1}$.
@@ -803,7 +811,9 @@ image: ""
   Let $f \colon X \rightarrow Y$ be a function. Prove that $f$ is injective $\iff \forall A \subseteq X, \, f^{-1}(f(A)) \subseteq A$.
 
   - **Solution 27.1**  
+
     **Proof**
+
     $(\Longrightarrow)$ Assume $f$ is injective. Let $A \subseteq X$ be an arbitrary subset, and let $x \in f^{-1}(f(A))$.
     By definition of preimage, $x \in f^{-1}(f(A)) \implies f(x) \in f(A)$.
     By definition of image, $f(x) \in f(A) \implies \exists x' \in A$ such that $f(x) = f(x')$.

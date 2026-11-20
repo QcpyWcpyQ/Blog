@@ -70,7 +70,7 @@ image: ""
 
 For $A\in M_{m\times n}(\mathbb{F})$ and $B\in M_{n\times k}(\mathbb{F})$, the product is the matrix $AB\in M_{m\times k}(\mathbb{F})$ defined by
 $$
-\boxed{(AB)_{ij}=\sum_{\ell=1}^{n}A_{i\ell}B_{\ell j}}.
+(AB)_{ij}=\sum_{\ell=1}^{n}A_{i\ell}B_{\ell j}.
 $$
 Each entry is obtained by multiplying corresponding entries of **row $i$ of $A$** and **column $j$ of $B$**, then adding. Matrix multiplication is not entrywise multiplication.
 
@@ -233,12 +233,12 @@ $$
   $$
   The scalar $\lambda$ is the **determinant** of this $2\times2$ matrix. Then
   $$
-  \boxed{A\text{ is invertible}\iff ad-bc\neq0}.
+  A\text{ is invertible}\iff ad-bc\neq0.
   $$
   When this condition holds,
   $$
-  \boxed{A^{-1}=\frac{1}{ad-bc}
-  \begin{pmatrix}d&-b\\-c&a\end{pmatrix}}.
+  A^{-1}=\frac{1}{ad-bc}
+  \begin{pmatrix}d&-b\\-c&a\end{pmatrix}.
   $$
   Here division by a nonzero field element means multiplication by its inverse in $\mathbb{F}$.
 

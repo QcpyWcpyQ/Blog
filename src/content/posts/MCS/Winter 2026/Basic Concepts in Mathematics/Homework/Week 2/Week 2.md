@@ -56,7 +56,7 @@ image: ""
     By mathematical induction,
 
     $$
-    \boxed{6\mid(7^n-1)\quad\text{for every integer }n\ge1.}
+    6\mid(7^n-1)\quad\text{for every integer }n\ge1.
     $$
 
     **Key idea.** The useful decomposition is $7^{k+1}-1=7(7^k-1)+6$: one term contains exactly the expression from the induction hypothesis, and the other is already divisible by $6$.
@@ -112,7 +112,7 @@ image: ""
     This completes the induction. Combining it with the table, the exact set of solutions is
 
     $$
-    \boxed{\{n\in\mathbb N:2^n>n^2\}=\{0,1\}\cup\{n\in\mathbb N:n\ge5\}.}
+    \{n\in\mathbb N:2^n>n^2\}=\{0,1\}\cup\{n\in\mathbb N:n\ge5\}.
     $$
 
     **Why the starting point matters.** The statement is true at $0$ and $1$, then false at $2,3,4$. A few successful small cases do not imply that it remains true thereafter; the induction above establishes the uninterrupted range starting at $5$.
@@ -188,7 +188,7 @@ image: ""
     Therefore
 
     $$
-    \boxed{\text{Every positive return time is an integer number of hours.}}
+    \text{Every positive return time is an integer number of hours.}
     $$
 
     The assertion is a necessary condition, not a promise that every sequence of turns returns. A return after one hour is possible: four left turns trace a unit square. Continuing around that square gives returns at later whole hours as well.
@@ -238,7 +238,7 @@ image: ""
     The invariant values differ, so no sequence of allowed operations can transform either word into the other. Therefore:
 
     $$
-    \boxed{\texttt{ywy}\text{ and }\texttt{wyw}\text{ do not represent the same word.}}
+    \texttt{ywy}\text{ and }\texttt{wyw}\text{ do not represent the same word.}
     $$
 
     **Why this invariant is useful.** A search through possible insertions has no obvious stopping point. The letter-count difference rules out all sequences at once. Its full integer value is needed here: both $-1$ and $1$ are odd, so parity alone would not distinguish the two words.
@@ -300,7 +300,7 @@ image: ""
     It holds after every finite sequence of moves. But the fourth vertex $(1,1)$ has both coordinates odd, so it can never be occupied:
 
     $$
-    \boxed{\text{No grasshopper can ever land on the fourth vertex.}}
+    \text{No grasshopper can ever land on the fourth vertex.}
     $$
 
     **Careful reading of the move.** Under the rule as stated, the moving grasshopper may change its own parity pair to that of another grasshopper. The invariant is the absence of the fourth parity class, not that each named grasshopper retains its original class.
@@ -345,12 +345,10 @@ image: ""
     Consequently:
 
     $$
-    \boxed{
     \begin{gathered}
     \text{The types are liar, knight, liar.}\\
     \text{The third person's exact answer is not uniquely determined.}
     \end{gathered}
-    }
     $$
 
     Among the counts $0,1,2,3$, the third may answer $0$, $2$, or $3$, but not $1$. The problem as supplied gives no requirement that all three answers be different, and a liar need not choose one particular false count. Even requiring distinct answers would leave both “two” and “three” possible.
@@ -376,7 +374,7 @@ image: ""
     Thus, after $a$ four-piece cuts and $b$ six-piece cuts, the number of pieces is
 
     $$
-    \boxed{N=1+3a+5b,\qquad a,b\in\mathbb Z_{\ge0}.}
+    N=1+3a+5b,\qquad a,b\in\mathbb Z_{\ge0}.
     $$
 
     Conversely, every such expression is realizable: perform $a$ four-piece cuts and $b$ six-piece cuts, choosing any existing piece at each stage. There is always at least one available piece, and the statement imposes no minimum-size restriction.
@@ -424,7 +422,7 @@ image: ""
     The complete answer, allowing zero operations, is
 
     $$
-    \boxed{\{1,4,6,7\}\cup\{N\in\mathbb Z:N\ge9\}.}
+    \{1,4,6,7\}\cup\{N\in\mathbb Z:N\ge9\}.
     $$
 
     Equivalently, all positive integers except $2,3,5,8$ are reachable. If at least one cut is required, omit $1$.
@@ -475,7 +473,7 @@ image: ""
     In either case:
 
     $$
-    \boxed{100\mid(a-b)\quad\text{or}\quad100\mid(a+b).}
+    100\mid(a-b)\quad\text{or}\quad100\mid(a+b).
     $$
 
     The two integers refer to two distinct entries in the given collection; their values are allowed to coincide. Equal values already give a difference of zero, which is divisible by $100$. Negative integers cause no difficulty because they have residues modulo $100$ as well.

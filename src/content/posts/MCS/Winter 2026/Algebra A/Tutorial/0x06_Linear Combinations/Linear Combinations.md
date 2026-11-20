@@ -79,7 +79,7 @@ image: ""
     Subtracting the third equation from the sum of the first two gives $2a=4$, so $a=2$. Then $b=1$ and $c=0$. Therefore
 
     $$
-    \boxed{v=2v_1+v_2.}
+    v=2v_1+v_2.
     $$
 
     Thus $v$ is a linear combination of $v_1,v_2,v_3$.
@@ -117,7 +117,7 @@ image: ""
     which contradicts $b-c=3$. Hence the system is inconsistent, and
 
     $$
-    \boxed{p(x)\notin\operatorname{span}\{p_1(x),p_2(x),p_3(x)\}.}
+    p(x)\notin\operatorname{span}\{p_1(x),p_2(x),p_3(x)\}.
     $$
 
     Therefore $p(x)$ is not a linear combination of the three given polynomials.
@@ -160,7 +160,7 @@ image: ""
     a contradiction. Therefore
 
     $$
-    \boxed{A\notin\operatorname{span}\{A_1,A_2,A_3\}.}
+    A\notin\operatorname{span}\{A_1,A_2,A_3\}.
     $$
 
     Thus $A$ is not a linear combination of the three given matrices.

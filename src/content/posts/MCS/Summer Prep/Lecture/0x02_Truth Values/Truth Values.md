@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Truth Values
 
 The truth value of a mathematical statement is not determined in isolation, but always relative to a universe of discourse or context, in which the statement is interpreted. For example, consider the statement
@@ -123,7 +124,7 @@ We now turn to the question of how truth values are assigned to statements invol
   An existentially quantified statement of the form $\exists xP(x)$ is true if $P(x)$ is true for some value of $x$. Note that the existentially quantified statement $\exists xP(x)$ is false if $P(x)$ is false for all possible values of $x$.
 
 - **Remark 6**  
-  In algebraic form, the truth values of the qu/antifiers $\forall xP(x)$ and $\exists xP(x)$ in a context $u$ are
+  In algebraic form, the truth values of the quantifiers $\forall xP(x)$ and $\exists xP(x)$ in a context $u$ are
 
   - **Example 6.1**  
     $$

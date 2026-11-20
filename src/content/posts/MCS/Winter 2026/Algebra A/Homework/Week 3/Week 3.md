@@ -119,14 +119,12 @@ image: ""
     Therefore,
 
     $$
-    \boxed{
     A^{-1}=
     \begin{bmatrix}
     0&-1&1\\
     1&0&-1\\
     -1&1&1
     \end{bmatrix}.
-    }
     $$
 
     To solve $AX=b$, multiply both sides by $A^{-1}$:
@@ -150,10 +148,9 @@ image: ""
     -1+1+2
     \end{bmatrix}
     =
-    \boxed{
     \begin{bmatrix}
     1\\-1\\2
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -201,7 +198,7 @@ image: ""
     $$
     Thus $f+g\in W$ and $\lambda f\in W$. Therefore $W$ contains the zero vector and is closed under addition and scalar multiplication, so
     $$
-    \boxed{W\text{ is a vector subspace of }V.}
+    W\text{ is a vector subspace of }V.
     $$
 
     **2.** The set $W$ is not a vector space because it is not closed under addition. Consider
@@ -234,7 +231,7 @@ image: ""
     $$
     Hence $A+B\notin W$, so
     $$
-    \boxed{W\text{ is not a vector subspace of }V.}
+    W\text{ is not a vector subspace of }V.
     $$
 
 ---
@@ -318,11 +315,11 @@ image: ""
     $$
     Therefore,
     $$
-    \boxed{w=v_1+2v_2+3v_3.}
+    w=v_1+2v_2+3v_3.
     $$
     Hence $w$ can be expressed as a linear combination of $v_1,v_2,v_3$, with
     $$
-    \boxed{(a,b,c)=(1,2,3).}
+    (a,b,c)=(1,2,3).
     $$
 
 ---
@@ -401,7 +398,7 @@ image: ""
     $$
     Choosing $t=1$ gives the nonzero solution
     $$
-    \boxed{(a_1,a_2,a_3,a_4)=(-2,-1,0,1).}
+    (a_1,a_2,a_3,a_4)=(-2,-1,0,1).
     $$
     Indeed,
     $$

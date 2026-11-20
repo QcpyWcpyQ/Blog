@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Proofs
 
 Proofs are the primary means by which mathematical truth is established. The purpose of a proof is to justify the truth of a mathematical statement (called the **conclusion**) by considering other mathematical statements (called **premises**). Once a statement is proved, we refer to it as a **theorem**.

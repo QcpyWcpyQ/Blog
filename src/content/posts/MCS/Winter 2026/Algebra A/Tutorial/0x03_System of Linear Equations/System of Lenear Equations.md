@@ -44,7 +44,7 @@ image: ""
     $$
     Therefore,
     $$
-    \boxed{S_b=x_0+S_0}.
+    S_b=x_0+S_0.
     $$
 
 ---
@@ -104,7 +104,7 @@ image: ""
     $$
     Thus
     $$
-    \boxed{Ax=b\text{ is consistent if and only if }r=p+q.}
+    Ax=b\text{ is consistent if and only if }r=p+q.
     $$
 
     Suppose that $r=p+q$. Setting the free variables $x_3=x_4=0$ gives
@@ -117,11 +117,10 @@ image: ""
     $$
     Therefore, one solution is
     $$
-    \boxed{
     x_0=
     \begin{bmatrix}
     5p-2q\\q-2p\\0\\0
-    \end{bmatrix}}.
+    \end{bmatrix}.
     $$
 
   - **Solution 2.2 (The homogeneous and complete solution sets)**
@@ -227,12 +226,11 @@ image: ""
     $$
     \begin{aligned}
     A^{-1}=E_5E_4E_3E_2E_1
-    =\boxed{
-    \begin{bmatrix}
+    =\begin{bmatrix}
     -3&1&1\\
     \frac32&0&-\frac12\\
     -\frac12&0&\frac12
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -257,13 +255,12 @@ image: ""
     $$
     Therefore,
     $$
-    \boxed{
     A^{-1}=
     \begin{bmatrix}
     -3&1&1\\
     \frac32&0&-\frac12\\
     -\frac12&0&\frac12
-    \end{bmatrix},}
+    \end{bmatrix},
     $$
     which agrees with the result from the elementary matrices.
 
@@ -431,7 +428,7 @@ image: ""
     $$
     Adding the three equations gives $a+b+c=3$. Since $a+b=3$, we obtain $c=0$, and then $a=2$ and $b=1$. Therefore,
     $$
-    \boxed{v=2v_1+v_2}.
+    v=2v_1+v_2.
     $$
 
   - **Solution 5.2 (Part b)**
@@ -455,7 +452,7 @@ image: ""
     $$
     Hence $b-c=1$, contradicting the required equation $b-c=3$. Therefore,
     $$
-    \boxed{p\notin\operatorname{span}\{p_1,p_2,p_3\}}.
+    p\notin\operatorname{span}\{p_1,p_2,p_3\}.
     $$
 
   - **Solution 5.3 (Part c)**
@@ -476,5 +473,5 @@ image: ""
     $$
     Thus the system is inconsistent, and
     $$
-    \boxed{A\notin\operatorname{span}\{A_1,A_2,A_3\}}.
+    A\notin\operatorname{span}\{A_1,A_2,A_3\}.
     $$

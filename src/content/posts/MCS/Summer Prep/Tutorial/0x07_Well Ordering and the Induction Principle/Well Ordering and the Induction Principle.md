@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Well Ordering and the Induction Principle
 
 - **Exercise 1**  

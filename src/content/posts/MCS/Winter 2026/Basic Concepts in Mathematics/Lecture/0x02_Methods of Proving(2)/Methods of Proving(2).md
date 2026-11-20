@@ -55,7 +55,7 @@ For a statement of the form “if $A$, then $B$”, the contradictory assumption
   
     Thus there cannot be only finitely many primes. Therefore
     $$
-    \boxed{\text{There are infinitely many prime numbers.}}
+    \text{There are infinitely many prime numbers.}
     $$
 
 ### Rewriting the proof as a construction
@@ -128,7 +128,7 @@ For a statement of the form “if $A$, then $B$”, the contradictory assumption
     $$
     The left side is even because $m\geqslant1$, while the right side is odd because it is a product of odd integers. An even integer cannot equal an odd integer, so this is a contradiction. Hence
     $$
-    \boxed{\log_2 3\notin\mathbb{Q}}.
+    \log_2 3\notin\mathbb{Q}.
     $$
 
     The fraction $m/n$ need not be in lowest terms: parity alone gives the contradiction.
@@ -148,9 +148,9 @@ For a statement of the form “if $A$, then $B$”, the contradictory assumption
   $$
   There is a box containing **at least** $n/k$ objects, and there is a box containing **at most** $n/k$ objects. Equivalently,
   $$
-  \boxed{\min_{1\leqslant i\leqslant k}a_i
+  \min_{1\leqslant i\leqslant k}a_i
     \leqslant\frac nk
-    \leqslant\max_{1\leqslant i\leqslant k}a_i}.
+    \leqslant\max_{1\leqslant i\leqslant k}a_i.
   $$
   The two boxes need not be the same box.
 
@@ -175,12 +175,12 @@ For a statement of the form “if $A$, then $B$”, the contradictory assumption
 - **Remark (Integer bounds)**  
   Since the number of objects in a box is an integer, the conclusions can be written more precisely as
   $$
-  \boxed{\text{Some box contains at least }\left\lceil\frac nk\right\rceil
-    \text{ objects,}}
+  \text{Some box contains at least }\left\lceil\frac nk\right\rceil
+    \text{ objects,}
   $$
   $$
-  \boxed{\text{some box contains at most }\left\lfloor\frac nk\right\rfloor
-    \text{ objects.}}
+  \text{some box contains at most }\left\lfloor\frac nk\right\rfloor
+    \text{ objects.}
   $$
   Here $\lceil t\rceil$ is the smallest integer greater than or equal to $t$, and $\lfloor t\rfloor$ is the largest integer less than or equal to $t$.
 

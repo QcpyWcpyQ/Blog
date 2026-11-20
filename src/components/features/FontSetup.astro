@@ -52,6 +52,7 @@ const bannerSubtitleFontVar = fontConfig.enable
 const navbarTitleFontVar = fontConfig.enable
 	? fontConfig.navbarTitleFont || ""
 	: "";
+const navigationFontVar = fontConfig.enable && fontConfig.navigationFont;
 const codeFontVar = fontConfig.enable ? fontConfig.codeFont || "" : "";
 // --font-code 由 fontConfig.codeFont 决定，行内代码和代码块统一引用它
 // 末尾始终带 MONO_FONT_STACK 保底，避免 codeFont 为空时 var() 解析失败导致字体回退到正文字体
@@ -77,6 +78,7 @@ const codeFontFamily = codeFontVar
     ${bannerTitleFontVar ? `--font-banner-title: var(${bannerTitleFontVar}, inherit);` : ""}
     ${bannerSubtitleFontVar ? `--font-banner-subtitle: var(${bannerSubtitleFontVar}, inherit);` : ""}
     ${navbarTitleFontVar ? `--font-navbar-title: var(${navbarTitleFontVar}, inherit);` : ""}
+    ${navigationFontVar ? `--font-navigation: var(${navigationFontVar}), ${SYSTEM_FONT_STACK};` : ""}
   }
 
   ${

@@ -195,9 +195,8 @@ image: ""
     $$
     In this case,
     $$
-    \boxed{
     (a,b)\cup(c,d)
-    =\bigl(\min\{a,c\},\max\{b,d\}\bigr).}
+    =\bigl(\min\{a,c\},\max\{b,d\}\bigr).
     $$
 
     To verify this, suppose without loss of generality that $a\leqslant c$. Since the intervals intersect, $c<b$. Thus every point between $a$ and $\max\{b,d\}$ lies in at least one of the two intervals, which proves the displayed equality.

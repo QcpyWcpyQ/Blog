@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Arithmetic and Order
 
 - **Definition 1**  
@@ -261,8 +262,10 @@ image: ""
       $$
       hence
       $$
+      \begin{gathered}
       n+n^\prime=2k+2k^\prime=2\left(k+k^\prime\right)\text{ with }k+k^\prime\in\mathbb Z \\
       n\cdot n^\prime = (2k)\cdot \left(2k^\prime\right) = 2 \cdot \left(2kk^\prime\right) \text{ with } 2kk^\prime\in\mathbb Z
+      \end{gathered}
       $$
       Thus that the sum and product of two even integers is even.
 
@@ -276,7 +279,9 @@ image: ""
       $$
       hence
       $$
+      \begin{gathered}
       n+n^\prime=(2k+1)+\left(2k^\prime+1\right)=2\left(k+k^\prime+1\right)\text{ with }k+k^\prime+1\in\mathbb Z \\
       n\cdot n^\prime = (2k+1)\cdot \left(2k^\prime+1\right) = 2 \cdot \left(2kk^\prime+k+k^\prime\right) +1 \text{ with } 2kk^\prime\in\mathbb Z
+      \end{gathered}
       $$
       Thus the product of two odd integers is odd but the sum of them is even.

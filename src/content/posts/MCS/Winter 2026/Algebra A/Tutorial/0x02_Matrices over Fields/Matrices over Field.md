@@ -34,7 +34,7 @@ image: ""
 ---
 
 - **Problem 2**  
-    Show that $A=\begin{pmatrix}4&5 \\1&6\end{pmatrix}$ has an inverse in $M_{2\times 2}(\mathbb R)$ and write it explicately.
+    Show that $A=\begin{pmatrix}4&5 \\1&6\end{pmatrix}$ has an inverse in $M_{2\times 2}(\mathbb R)$ and write it explicitly.
 
     - **Solution 2.1**  
         Suppose $A=\begin{pmatrix}4&5 \\1&6\end{pmatrix}$. We have that $\det(A)=4\times 6-1\times 5=19\neq 0$. Thus $A$ is invertible and the formula for its inverse is 

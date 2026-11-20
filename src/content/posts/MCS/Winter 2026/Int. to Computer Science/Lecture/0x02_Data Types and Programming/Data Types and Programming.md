@@ -237,7 +237,7 @@ $$
 For an array of length $n$, valid indices satisfy
 
 $$
-\boxed{0\leqslant i<n}.
+0\leqslant i<n.
 $$
 
 The last valid index is $n-1$, not $n$. An empty array has no valid element index. The slides do not specify initial element values for `new(n)`; do not assume that it fills the array with zeroes.

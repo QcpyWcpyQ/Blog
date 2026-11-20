@@ -43,7 +43,7 @@ image: ""
 ---
 
 - **Problem 2**  
-    A tree grow bananas and pineapples. In ine move it is allowed to pick two fruits from it. If two bananas or two pineapples are picked, then one more pineapple grows. If one banana and one pineapple are picked, then one more banana grows. In the end there remains one fruit. Which fruit is it if we started with $100$ bananas and $99$ pineapples?
+    A tree grows bananas and pineapples. In one move, two fruits may be picked from the tree. If two bananas or two pineapples are picked, then one more pineapple grows. If one banana and one pineapple are picked, then one more banana grows. In the end there remains one fruit. Which fruit is it if we started with $100$ bananas and $99$ pineapples?
     
     - **Idea 2.1 (Invariant)**  
         Consider the parity of the number of bananas. None of the three possible operations changes this parity.

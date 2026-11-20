@@ -7,10 +7,11 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Proofs
 
 - **Exercise 1**  
-  Let $a, b \in \mathbb{R}$ that satisfy $a+b=10$. Prove that $ab\leqslant 25$ or $a^2+b^2<10$.      
+  Let $a, b \in \mathbb{R}$ satisfy $a+b=10$. Prove that $ab\leqslant 25$ or $a^2+b^2<10$.
 
   - **Solution 1.1**  
     Suppose $a, b \in \mathbb{R}$ satisfy $a+b=10$, then $a=10-b$, and we have       
@@ -38,7 +39,7 @@ image: ""
 ---
 
 - **Exercise 3**  
-  Proof: $P\land\left(Q\lor R\right)\equiv\left(P\land Q\right)\lor\left(P\land R\right)$      
+  Prove that $P\land\left(Q\lor R\right)\equiv\left(P\land Q\right)\lor\left(P\land R\right)$.
 
   - **Solution 3.1**  
     We want to prove $\forall a,b,c\in\mathbb R,\min\{a,\max\{b,c\}\}=\max\{\min\{a,b\},\min\{a,c\}\}$. Let       
@@ -72,14 +73,18 @@ image: ""
     Suppose $a,b,c\in\left\{0,1\right\}$. We split into two cases depending on the value of $a$.
     **Case 1** $a=0$
     $$
+    \begin{gathered}
     \text{LHS}=\min\left\{0,\max\left\{b,c\right\}\right\}=0. \\
     \text{RHS}=\max\left\{\min\left\{0,b\right\},\min\left\{0,c\right\}\right\}=\max\left\{0,0\right\}=0.
+    \end{gathered}
     $$
     Thus $\text{LHS}=\text{RHS}$.
     **Case 2** $a=1$
     $$
+    \begin{gathered}
     \text{LHS}=\min\left\{1,\max\left\{b,c\right\}\right\}=\max\left\{b,c\right\}. \\
     \text{RHS}=\max\left\{\min\left\{1,b\right\},\min\left\{1,c\right\}\right\}=\min\left\{b,c\right\}.
+    \end{gathered}
     $$
     Thus $\text{LHS}=\text{RHS}$.
     Since equality holds for $a=0$ and $a=1$, the identity is true for all $a,b,c\in\left\{0,1\right\}$.

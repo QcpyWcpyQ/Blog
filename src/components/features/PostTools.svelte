@@ -320,26 +320,14 @@ async function exportPdf() {
 	exportError = "";
 	try {
 		preparePrint();
-		const images = Array.from(
-			article?.querySelectorAll<HTMLImageElement>("img") ?? [],
-		);
-		for (const image of images) image.loading = "eager";
-		const loaded = Promise.all(
-			images.map((image) => image.decode().catch(() => {})),
-		);
-		await Promise.race([
-			Promise.all([document.fonts.ready, loaded]),
-			new Promise<void>((resolve) => setTimeout(resolve, 5000)),
-		]);
-		await new Promise<void>((resolve) =>
-			requestAnimationFrame(() => resolve()),
-		);
-		window.print();
+		if (!article || !container) throw new Error("Missing article");
+		const { printArticle } = await import("@/utils/post-print");
+		await printArticle(article, title, container.querySelector("[data-post-print-notes]"));
 	} catch {
 		exportError = "无法打开打印窗口，请使用浏览器的打印功能。";
 	} finally {
 		busy = false;
-		// afterprint restores the title; the listener also handles browser printing.
+		finishPrint();
 	}
 }
 

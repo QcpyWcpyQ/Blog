@@ -54,12 +54,11 @@ image: ""
     0&0&0&0
     \end{bmatrix}\\[1ex]
     &\xrightarrow{R_1\leftarrow R_1-R_2}
-    \boxed{
     \begin{bmatrix}
     1&0&1&-3\\
     0&1&1&2\\
     0&0&0&0
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -90,7 +89,6 @@ image: ""
     Hence all solutions are
 
     $$
-    \boxed{
     X=
     \begin{bmatrix}
     -s+3t\\
@@ -101,16 +99,14 @@ image: ""
     =s\begin{bmatrix}-1\\-1\\1\\0\end{bmatrix}
     +t\begin{bmatrix}3\\-2\\0\\1\end{bmatrix},
     \qquad s,t\in\mathbb R.
-    }
     $$
 
     Taking $(s,t)=(1,0)$ and $(s,t)=(0,1)$ gives the two nonzero solutions
 
     $$
-    \boxed{
     X_1=\begin{bmatrix}-1\\-1\\1\\0\end{bmatrix},
     \qquad
-    X_2=\begin{bmatrix}3\\-2\\0\\1\end{bmatrix}.}
+    X_2=\begin{bmatrix}3\\-2\\0\\1\end{bmatrix}.
     $$
 
     They are not scalar multiples of one another: the fourth component of $X_1$ is $0$, whereas that of $X_2$ is $1$.
@@ -138,30 +134,28 @@ image: ""
 
     $$
     P\xrightarrow{R_1\leftrightarrow R_2}
-    \boxed{
     \begin{bmatrix}
     1&0&-1\\
     0&1&2\\
     0&0&0
-    \end{bmatrix}}.
+    \end{bmatrix}.
     $$
 
     **Matrix $Q$.** The leading $1$s are in columns $1$ and $2$, they move to the right, their pivot columns contain no other nonzero entries, and the zero row is at the bottom. Thus
 
     $$
-    \boxed{Q\text{ is row-reduced and is already in row-reduced echelon form}.}
+    Q\text{ is row-reduced and is already in row-reduced echelon form}.
     $$
 
     **Matrix $S$.** It is in row-echelon form, but it is not row-reduced because the pivot in column $2$ has the nonzero entry $2$ above it. Eliminate that entry:
 
     $$
     S\xrightarrow{R_1\leftarrow R_1-2R_2}
-    \boxed{
     \begin{bmatrix}
     1&0&-2\\
     0&1&1\\
     0&0&0
-    \end{bmatrix}}.
+    \end{bmatrix}.
     $$
 
     Therefore the classification is
@@ -238,14 +232,13 @@ image: ""
     \end{array}
     \right]\\[1ex]
     &\xrightarrow{R_1\leftarrow R_1-R_2}
-    \boxed{
     \left[
     \begin{array}{ccc|c}
     1&0&2&1\\
     0&1&-1&1\\
     0&0&a-2&b-7
     \end{array}
-    \right]}.
+    \right].
     \end{aligned}
     $$
 
@@ -271,23 +264,21 @@ image: ""
     so
 
     $$
-    \boxed{
     (x,y,z)=
     \left(
     1-2\frac{b-7}{a-2},
     1+\frac{b-7}{a-2},
     \frac{b-7}{a-2}
     \right),
-    \qquad a\neq2.}
+    \qquad a\neq2.
     $$
 
     **Case 2: $a=2$ and $b=7$.** The final row becomes $0=0$, leaving two independent equations in three variables. Set $z=t$, where $t\in\mathbb R$. Then
 
     $$
-    \boxed{
     (x,y,z)=(1-2t,1+t,t)
     =(1,1,0)+t(-2,1,1),
-    \qquad t\in\mathbb R.}
+    \qquad t\in\mathbb R.
     $$
 
     Thus there are infinitely many solutions.
@@ -344,19 +335,17 @@ image: ""
     Interchanging rows $1$ and $3$ then gives
 
     $$
-    \boxed{
     N=
     \begin{bmatrix}
     0&1\\
     0&1\\
     1&2
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
     Apply the same operations to $I_3$. The corresponding elementary matrices are
 
     $$
-    \boxed{
     E_1=
     \begin{bmatrix}
     1&0&0\\
@@ -369,7 +358,7 @@ image: ""
     0&0&1\\
     0&1&0\\
     1&0&0
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
     To verify the order of multiplication,
@@ -406,7 +395,6 @@ image: ""
     The inverse of $R_2\leftarrow R_2-2R_1$ is $R_2\leftarrow R_2+2R_1$. The row swap $R_1\leftrightarrow R_3$ is its own inverse. Therefore
 
     $$
-    \boxed{
     E_1^{-1}=
     \begin{bmatrix}
     1&0&0\\
@@ -419,7 +407,7 @@ image: ""
     0&0&1\\
     0&1&0\\
     1&0&0
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
     Direct multiplication verifies that
@@ -456,12 +444,11 @@ image: ""
     0&0&1\\0&1&0\\1&0&0
     \end{bmatrix}\\[1ex]
     &=
-    \boxed{
     \begin{bmatrix}
     0&0&1\\
     0&1&2\\
     1&0&0
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -571,13 +558,12 @@ image: ""
     Therefore
 
     $$
-    \boxed{
     A^{-1}=
     \begin{bmatrix}
     0&-1&1\\
     1&1&-1\\
     -1&0&1
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
   - **Solution 5.2**  
@@ -612,13 +598,12 @@ image: ""
     Thus
 
     $$
-    \boxed{
     B^{-1}=
     \begin{bmatrix}
     1&0&-1\\
     0&\frac12&0\\
     0&0&1
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
     Direct multiplication gives
@@ -652,12 +637,11 @@ image: ""
     0&0&1
     \end{bmatrix}\\[1ex]
     &=
-    \boxed{
     \begin{bmatrix}
     0&-\frac12&1\\
     1&\frac12&-2\\
     -1&0&2
-    \end{bmatrix}}.
+    \end{bmatrix}.
     \end{aligned}
     $$
 
@@ -690,13 +674,12 @@ image: ""
     Therefore $AB\neq BA$, so their inverses are also different. The actual inverse of $AB$ is
 
     $$
-    \boxed{
     (AB)^{-1}=B^{-1}A^{-1}
     =
     \begin{bmatrix}
     1&-1&0\\
     \frac12&\frac12&-\frac12\\
     -1&0&1
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 

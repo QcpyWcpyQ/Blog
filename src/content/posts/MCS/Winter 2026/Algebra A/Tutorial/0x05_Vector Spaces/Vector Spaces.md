@@ -51,7 +51,7 @@ image: ""
     The two inclusions prove
 
     $$
-    \boxed{S_b=x_0+S_0}.
+    S_b=x_0+S_0.
     $$
 
     In words, every solution of a consistent nonhomogeneous system is one particular solution plus a solution of the associated homogeneous system.
@@ -123,7 +123,7 @@ image: ""
     Therefore
 
     $$
-    \boxed{Ax=b\text{ is consistent if and only if }r=p+q.}
+    Ax=b\text{ is consistent if and only if }r=p+q.
     $$
 
     Assume $r=p+q$. Continue with
@@ -147,14 +147,13 @@ image: ""
     Setting the free variables $x_3=x_4=0$ gives one particular solution
 
     $$
-    \boxed{
     x_0=
     \begin{bmatrix}
     5p-2q\\
     q-2p\\
     0\\
     0
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
   - **Solution 2.2**  
@@ -177,19 +176,17 @@ image: ""
     Hence
 
     $$
-    \boxed{
     S_0=
     \left\{
     s\begin{bmatrix}5\\-2\\1\\0\end{bmatrix}
     +t\begin{bmatrix}1\\-1\\0\\1\end{bmatrix}
     :s,t\in\mathbb R
-    \right\}.}
+    \right\}.
     $$
 
     If $r=p+q$, Exercise 1 gives $S_b=x_0+S_0$. Thus the complete solution set is
 
     $$
-    \boxed{
     x=
     \begin{bmatrix}
     5p-2q\\
@@ -199,7 +196,7 @@ image: ""
     \end{bmatrix}
     +s\begin{bmatrix}5\\-2\\1\\0\end{bmatrix}
     +t\begin{bmatrix}1\\-1\\0\\1\end{bmatrix},
-    \qquad s,t\in\mathbb R.}
+    \qquad s,t\in\mathbb R.
     $$
 
     If $r\ne p+q$, the solution set is empty.
@@ -275,13 +272,12 @@ image: ""
     it follows that
 
     $$
-    \boxed{
     A^{-1}=E_6E_5E_4E_3E_2E_1
     =\begin{bmatrix}
     -3&1&1\\[2pt]
     \frac32&0&-\frac12\\[2pt]
     -\frac12&0&\frac12
-    \end{bmatrix}.}
+    \end{bmatrix}.
     $$
 
   - **Solution 3.2**  
@@ -350,13 +346,12 @@ image: ""
     Therefore
 
     $$
-    \boxed{
     A^{-1}=
     \begin{bmatrix}
     -3&1&1\\[2pt]
     \frac32&0&-\frac12\\[2pt]
     -\frac12&0&\frac12
-    \end{bmatrix},}
+    \end{bmatrix},
     $$
 
     exactly as in part 1.
@@ -448,7 +443,7 @@ image: ""
     Therefore
 
     $$
-    \boxed{W_1\text{ and }W_5\text{ are vector spaces; }W_2,W_3,W_4\text{ are not}.}
+    W_1\text{ and }W_5\text{ are vector spaces; }W_2,W_3,W_4\text{ are not}.
     $$
 
   - **Solution 4.2**  
@@ -481,7 +476,7 @@ image: ""
     Hence
 
     $$
-    \boxed{U_1\text{ is a vector space; }U_2\text{ and }U_3\text{ are not}.}
+    U_1\text{ is a vector space; }U_2\text{ and }U_3\text{ are not}.
     $$
 
   - **Solution 4.3**  
@@ -508,7 +503,7 @@ image: ""
     Therefore
 
     $$
-    \boxed{P_1\text{ and }P_2\text{ are vector spaces; }P_3\text{ is not}.}
+    P_1\text{ and }P_2\text{ are vector spaces; }P_3\text{ is not}.
     $$
 
   - **Solution 4.4**  
@@ -529,7 +524,7 @@ image: ""
     This is an affine translate of the subspace $S_0$, just as $W_2$ is an affine translate of $W_1$. It is a vector space only when it contains the zero vector. For the system $Ax=b$, this happens exactly when $b=0$, that is,
 
     $$
-    \boxed{p=q=r=0.}
+    p=q=r=0.
     $$
 
     For every other consistent right-hand side, $S_b$ is an affine plane but not a vector subspace.

@@ -35,7 +35,13 @@
 @media print {
   @page {
     size: A4;
-    margin: 16mm 14mm;
+    margin: 17mm 15mm 16mm;
+    @top-center { content: "遵循许可协议 CC BY-NC-SA 4.0"; font: 9pt sans-serif; }
+    @bottom-center { content: counter(page); font: 9pt sans-serif; }
+    @top-left { content: none; }
+    @top-right { content: none; }
+    @bottom-left { content: none; }
+    @bottom-right { content: none; }
   }
 
   html:root,
@@ -94,6 +100,13 @@
     animation: none !important;
     opacity: 1 !important;
     overflow: visible !important;
+  }
+
+  #content-wrapper > :first-child:has(#post-container) {
+    display: block !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    background: white !important;
   }
 
   #post-container {
@@ -210,6 +223,20 @@
 
   #post-container .markdown-content :where(img, table, pre, blockquote, .katex-display) {
     break-inside: avoid;
+  }
+
+  #post-container :is(.katex-display-container, .horizontal-scroll-container) {
+    overflow: visible !important;
+  }
+
+  #post-container :is(.katex-display-container, .katex-display) {
+    display: block;
+    break-inside: avoid-page;
+    page-break-inside: avoid;
+  }
+
+  #post-container :is(table, thead, tbody, tr, th, td) {
+    background: transparent !important;
   }
 
   #post-container .markdown-content :where(h1, h2, h3, h4, h5, h6) {

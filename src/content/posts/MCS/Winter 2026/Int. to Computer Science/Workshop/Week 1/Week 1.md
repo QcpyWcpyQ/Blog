@@ -17,7 +17,7 @@ image: ""
     6. Create a folder called lab1.
     7. Inside the lab1 folder, create a file called lab1.txt.
     8. Add text to lab1.txt and save the file (Control+s in Windows/Linux,Command+s in MacOS).
-    9. Copy the folder lab1 and paste it in the same place, There is anydifference between the two folders?
+    9. Copy the folder lab1 and paste it in the same place. Is there any difference between the two folders?
     10. Delete lab1 and their copy.
 - **Part 2 (Console Commands)**
     1. Using `mkdir`, create a folder called *lab1_console*.

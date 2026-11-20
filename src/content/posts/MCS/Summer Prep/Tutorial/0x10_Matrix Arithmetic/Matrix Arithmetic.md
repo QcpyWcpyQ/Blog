@@ -7,6 +7,7 @@ category: MCS
 draft: false
 image: ""
 ---
+
 ## Matrix arithmetic
 
 - **Exercise 1**  
