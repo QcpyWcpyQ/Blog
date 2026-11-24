@@ -173,3 +173,35 @@ image: ""
        $$
 
     The identities follow because the maps agree at every $v\in V$.
+
+- **Example 1.9**
+
+  1. Let $T\colon\mathbb R^2\to\mathbb R^3$ and $S\colon\mathbb R^3\to\mathbb R^2$ be given by
+     $$
+     \begin{aligned}
+     T(x,y)&=(x+y,y,-x),\\
+     S(x,y,z)&=(x-y,y-z).
+     \end{aligned}
+     $$
+     What is $TS$? What is $ST$? We have
+     $$
+     \begin{aligned}
+     (TS)(a,b,c)&=T(S(a,b,c))=T(a-b,b-c)=(a-c,b-c,b-a),\\
+     (ST)(r,s)&=S(T(r,s))=S(r+s,s,-r)=(r,s+r).
+     \end{aligned}
+     $$
+
+  2. Let $A\in M_{m\times n}(\mathbb F)$ and $B\in M_{r\times m}(\mathbb F)$, with associated linear maps $T_A\colon\mathbb F^n\to\mathbb F^m$ and $T_B\colon\mathbb F^m\to\mathbb F^r$. What is $T_BT_A$? For every $X\in\mathbb F^n$, we have
+     $$
+     (T_BT_A)(X)=T_B(T_A(X))=T_B(AX)=B(AX)=(BA)X=T_{BA}(X).
+     $$
+     Hence $T_BT_A=T_{BA}$.
+
+  3. Let $V=\mathbb C[x]$, and let $T,S\in\operatorname{End}(V)$ be given by differentiation, $T(p(x))=p'(x)$, and multiplication by $x$, $S(p(x))=xp(x)$, respectively. What is $TS$? What is $ST$? For every $p(x)\in V$, the product rule gives
+     $$
+     (TS)(p(x))=T(xp(x))=(xp(x))'=p(x)+xp'(x).
+     $$
+     Applying $S$ after $T$ gives
+     $$
+     (ST)(p(x))=S(p'(x))=xp'(x).
+     $$
