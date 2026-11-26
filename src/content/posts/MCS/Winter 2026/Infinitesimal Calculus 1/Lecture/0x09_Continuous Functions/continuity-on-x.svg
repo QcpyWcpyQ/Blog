@@ -1,0 +1,90 @@
+<svg aria-labelledby="title desc" xmlns="http://www.w3.org/2000/svg" width="880" height="305" viewBox="0 0 880 305" role="img">
+  <title id="title">Continuity of f and g on X</title>
+  <desc id="desc">On the first closed interval, g has a jump. On the half-open interval, f is discontinuous at the included left endpoint and at one interior point. Along the points 4 − 1/n, f tends to f(4) and g does not tend to g(4). Both functions are continuous at the isolated points.</desc>
+  <rect width="880" height="305" fill="white" />
+  <text x="28" y="23" fill="#242834" font-size="17" font-family="Georgia, serif" text-anchor="start">f : X → ℝ</text>
+  <text x="155" y="23" fill="#a63435" font-size="17" font-family="Georgia, serif" text-anchor="start">g : X → ℝ</text>
+  <path d="M18 160H850" fill="none" stroke="#7a8190" stroke-width="1" />
+  <path d="M40 160H225 M40 151V169 M225 151V169 M276 160H410 M276 151V169 M406 151Q415 160 406 169" fill="none" stroke="#325589" stroke-width="2" />
+  <path d="M40 84 C74 45 99 103 126 166 S180 230 188 172 S203 119 225 107" fill="none" stroke="#242834" stroke-width="2" />
+  <path d="M40 52 C70 32 87 52 104 77 L115 85 M115 41 C145 30 160 90 194 79 S213 70 225 70" fill="none" stroke="#a63435" stroke-width="2" />
+  <circle cx="40" cy="84" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="225" cy="107" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="40" cy="52" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="115" cy="85" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="115" cy="41" r="3" stroke="#a63435" fill="white" stroke-width="1.8" />
+  <circle cx="225" cy="70" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M276 113 C305 118 310 70 339 69 S371 120 388 81 S401 48 410 44" fill="none" stroke="#242834" stroke-width="2" />
+  <circle cx="276" cy="113" r="3" stroke="#242834" fill="white" stroke-width="1.8" />
+  <circle cx="276" cy="52" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="339" cy="69" r="3" stroke="#242834" fill="white" stroke-width="1.8" />
+  <circle cx="339" cy="108" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="410" cy="44" r="3" stroke="#242834" fill="white" stroke-width="1.8" />
+  <path d="M276 205 Q312 184 345 198 T410 207" fill="none" stroke="#a63435" stroke-width="2" />
+  <circle cx="276" cy="205" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="410" cy="207" r="3" stroke="#a63435" fill="white" stroke-width="1.8" />
+  <path d="M472.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="472.0" cy="108.0" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="472.0" cy="72.0" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M550.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="550.0" cy="82.0" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="550.0" cy="72.0" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M576.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="576.0" cy="88.5" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="576.0" cy="88.45448267190434" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M589.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="589.0" cy="95.0" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="589.0" cy="91.0" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M596.8 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="596.8" cy="99.01722092687432" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="596.8" cy="90.07007380960792" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M602.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="602.0" cy="101.5" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="602.0" cy="88.45448267190433" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M605.7 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="605.7142857142857" cy="103.10536742416353" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="605.7142857142857" cy="86.85479816689256" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M608.5 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="608.5" cy="104.19238815542512" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="608.5" cy="85.43502884254441" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M612.4 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="612.4" cy="105.51722092687432" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="612.4" cy="83.16791979355699" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M615.0 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="615.0" cy="106.2583302491977" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="615.0" cy="81.50000000000001" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M617.6 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="617.6" cy="106.87609094935381" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="617.6" cy="79.7279962184402" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M620.2 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="620.2" cy="107.363734711837" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="620.2" cy="77.871322893124" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M623.1 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="623.125" cy="107.750208645242" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="623.125" cy="75.70671611830645" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M625.2 154v6" fill="none" stroke="#325589" stroke-width="1.5" />
+  <circle cx="625.1636363636363" cy="107.91526255953116" r="1.7" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="625.1636363636363" cy="74.16583678792027" r="1.7" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="628" cy="160" r="3" stroke="#325589" fill="#325589" stroke-width="1.8" />
+  <circle cx="628" cy="108" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="628" cy="35" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="692" cy="160" r="3" stroke="#325589" fill="#325589" stroke-width="1.8" />
+  <circle cx="692" cy="73" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="692" cy="57" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <circle cx="760" cy="160" r="3" stroke="#325589" fill="#325589" stroke-width="1.8" />
+  <circle cx="760" cy="106" r="3" stroke="#242834" fill="#242834" stroke-width="1.8" />
+  <circle cx="760" cy="64" r="3" stroke="#a63435" fill="#a63435" stroke-width="1.8" />
+  <path d="M473 166q0 6 9 6h55q10 0 10 5q0 -5 10 -5h54q9 0 9 -6" fill="none" stroke="#325589" stroke-width="1" />
+  <text x="547" y="197" fill="#325589" font-size="15" font-family="Georgia, serif" text-anchor="middle">4 − 1/n</text>
+  <text x="640" y="182" fill="#325589" font-size="15" font-family="Georgia, serif" text-anchor="middle">4</text>
+  <text x="155" y="251" fill="#242834" font-size="17" font-family="Georgia, serif" text-anchor="start">f is continuous on X except at</text>
+  <text x="530" y="267" fill="#a63435" font-size="17" font-family="Georgia, serif" text-anchor="start">g is continuous on X except at</text>
+  <path d="M380 247 C419 242 384 223 354 223 H286 Q276 223 276 211 V172" fill="none" stroke="#325589" stroke-width="1.4" />
+  <path d="M273 177 L276 170 L279 177 Z" fill="#325589" />
+  <path d="M354 223 Q339 223 339 211 V172" fill="none" stroke="#325589" stroke-width="1.4" />
+  <path d="M336 177 L339 170 L342 177 Z" fill="#325589" />
+  <path d="M759 262 C783 235 728 218 674 216 Q628 214 628 193 V171" fill="none" stroke="#325589" stroke-width="1.4" />
+  <path d="M625 176 L628 169 L631 176 Z" fill="#325589" />
+  <path d="M759 267 C775 301 115 312 115 250 V172" fill="none" stroke="#325589" stroke-width="1.4" />
+  <path d="M112 177 L115 170 L118 177 Z" fill="#325589" />
+</svg>

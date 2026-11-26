@@ -438,3 +438,20 @@ We need to study the basic concepts of topology.
        x_0-\frac1n<a_n<x_0+\frac1n.
        $$
        Both bounds tend to $x_0$, so $a_n\to x_0$. Yet $|f(a_n)-l|\geqslant\varepsilon_0$ for every $n$, so $f(a_n)$ does not converge to $l$. This contradicts the hypothesis of part 2.
+
+- **Example 5.5**
+  The limit $\lim_{x\to0}\sin(1/x)$ does not exist.
+
+  ![Graphs of sin(x) and sin(1/x)](./sine-oscillation.svg)
+
+  Let $f(x)=\sin(1/x)$. For $a_n=1/(n\pi)$, we have $a_n\to0$ and
+  $$
+  f(a_n)=\sin\left(\frac1{a_n}\right)=\sin(n\pi)=0\to0.
+  $$
+
+  Now take $a_n=2/((2n+1)\pi)$. Again $a_n\to0$, and
+  $$
+  f(a_n)=\sin\left(\frac1{a_n}\right)
+  =\sin\left(\frac{(2n+1)\pi}{2}\right)=(-1)^n.
+  $$
+  The even terms of $((-1)^n)$ are $1$ and converge to $1$. The odd terms are $-1$ and converge to $-1$. Thus $((-1)^n)$ does not converge, so $\lim_{x\to0}\sin(1/x)$ does not exist.
