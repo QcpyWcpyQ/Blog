@@ -317,3 +317,124 @@ We need to study the basic concepts of topology.
        $$
        \lim_{x\to0}\frac{\sin x}{x}=1.
        $$
+
+- **Theorem 5.3**
+  Let $f,g,h\colon X\to\mathbb R$, and let $x_0$ be a limit point of $X$. Suppose there exists $\delta_0>0$ such that
+  $$
+  f(x)\leqslant h(x)\leqslant g(x)
+  \qquad\text{for every }x\in X\cap(x_0-\delta_0,x_0+\delta_0).
+  $$
+  Then the following statements hold.
+
+  1. If
+     $$
+     \lim_{x\to x_0}f(x)=l_1
+     \qquad\text{and}\qquad
+     \lim_{x\to x_0}g(x)=l_2,
+     $$
+     then $l_1\leqslant l_2$.
+
+  2. If $l_1=l_2=l$, then $\lim_{x\to x_0}h(x)=l$.
+
+  - **Proof 5.3.1**
+
+    1. For every $\varepsilon>0$, there exist $\delta_1,\delta_2>0$ such that, for $x\in X$,
+       $$
+       \begin{aligned}
+       0<|x-x_0|<\delta_1 &\implies |f(x)-l_1|<\varepsilon,\\
+       0<|x-x_0|<\delta_2 &\implies |g(x)-l_2|<\varepsilon.
+       \end{aligned}
+       $$
+       Suppose, for a contradiction, that $l_1>l_2$. Take $\varepsilon=(l_1-l_2)/2>0$ and set $\delta=\min\{\delta_0,\delta_1,\delta_2\}$. Since $x_0$ is a limit point of $X$, choose $x\in X$ with $0<|x-x_0|<\delta$. Then
+       $$
+       \begin{aligned}
+       l_1-\varepsilon &< f(x)<l_1+\varepsilon,\\
+       l_2-\varepsilon &< g(x)<l_2+\varepsilon.
+       \end{aligned}
+       $$
+       Since $l_1-\varepsilon=l_2+\varepsilon=(l_1+l_2)/2$, we obtain
+       $$
+       g(x)<\frac{l_1+l_2}{2}<f(x).
+       $$
+       This contradicts $f(x)\leqslant g(x)$. Hence $l_1\leqslant l_2$.
+
+    2. Suppose $l_1=l_2=l$, and let $\varepsilon>0$. We need $\delta>0$ such that, for every $x\in X$,
+       $$
+       0<|x-x_0|<\delta\implies |h(x)-l|<\varepsilon.
+       $$
+       Choose $\delta_1$ and $\delta_2$ for this $\varepsilon$ as in part 1, and take $\delta=\min\{\delta_0,\delta_1,\delta_2\}$. If $x\in X$ and $0<|x-x_0|<\delta$, then
+       $$
+       \begin{aligned}
+       l-\varepsilon &< f(x)<l+\varepsilon,\\
+       l-\varepsilon &< g(x)<l+\varepsilon.
+       \end{aligned}
+       $$
+       Since $f(x)\leqslant h(x)\leqslant g(x)$, it follows that
+       $$
+       l-\varepsilon<f(x)\leqslant h(x)\leqslant g(x)<l+\varepsilon.
+       $$
+       Thus $|h(x)-l|<\varepsilon$.
+
+- **Theorem 5.4**
+  Let $f\colon X\to\mathbb R$, and let $x_0$ be a limit point of $X$.
+
+  1. Suppose $\lim_{x\to x_0}f(x)=l$. If $a_n\to x_0$ as $n\to\infty$ and $a_n\in X\setminus\{x_0\}$ for every $n\in\mathbb N$, then
+     $$
+     \lim_{n\to\infty}f(a_n)=l.
+     $$
+
+  2. Conversely, suppose that
+     $$
+     \lim_{n\to\infty}f(a_n)=l
+     $$
+     for every sequence $(a_n)$ in $X\setminus\{x_0\}$ that converges to $x_0$. Then
+     $$
+     \lim_{x\to x_0}f(x)=l.
+     $$
+
+  - **Proof 5.4.1**
+
+    1. Since $a_n\to x_0$, for every $\tilde{\varepsilon}>0$ there exists $n_0\in\mathbb N$ such that
+       $$
+       n>n_0\implies |a_n-x_0|<\tilde{\varepsilon}.
+       $$
+       Since $\lim_{x\to x_0}f(x)=l$, for every $\varepsilon>0$ there exists $\delta>0$ such that, for every $x\in X$,
+       $$
+       0<|x-x_0|<\delta\implies |f(x)-l|<\varepsilon.
+       $$
+
+       Fix $\varepsilon>0$. We need $n_0$ such that $n>n_0$ implies $|f(a_n)-l|<\varepsilon$. Choose $\delta$ for this $\varepsilon$ using the function limit. Then take $\tilde{\varepsilon}=\delta$ in the sequence limit to obtain $n_0$. For $n>n_0$, we have
+       $$
+       0<|a_n-x_0|<\delta\implies |f(a_n)-l|<\varepsilon.
+       $$
+
+    2. Suppose, for a contradiction, that $f(x)$ does not tend to $l$ as $x\to x_0$. Then there exists $\varepsilon_0>0$ such that, for every $\delta>0$, the statement
+       $$
+       \forall x\in X,\qquad 0<|x-x_0|<\delta\implies |f(x)-l|<\varepsilon_0
+       $$
+       is false. Thus, for each $\delta>0$, there exists $x\in X$ such that
+       $$
+       0<|x-x_0|<\delta
+       \qquad\text{and}\qquad
+       |f(x)-l|\geqslant\varepsilon_0.
+       $$
+
+       Taking $\delta=1$ and then $\delta=1/2$, choose $x_1,x_2\in X$ satisfying
+       $$
+       \begin{aligned}
+       0<|x_1-x_0|&<1,        & |f(x_1)-l|&\geqslant\varepsilon_0,\\
+       0<|x_2-x_0|&<\tfrac12, & |f(x_2)-l|&\geqslant\varepsilon_0.
+       \end{aligned}
+       $$
+       In general, for each $n\geqslant1$, take $\delta=1/n$ and choose $x_n\in X$ such that
+       $$
+       0<|x_n-x_0|<\frac1n
+       \qquad\text{and}\qquad
+       |f(x_n)-l|\geqslant\varepsilon_0.
+       $$
+
+       Let $a_n=x_n$. Since $0<|a_n-x_0|<1/n$, we have $a_n\ne x_0$ and
+       $$
+       x_0-\frac1n<a_n<x_0+\frac1n.
+       $$
+       Both bounds tend to $x_0$, so $a_n\to x_0$. Yet $|f(a_n)-l|\geqslant\varepsilon_0$ for every $n$, so $f(a_n)$ does not converge to $l$. This contradicts the hypothesis of part 2.

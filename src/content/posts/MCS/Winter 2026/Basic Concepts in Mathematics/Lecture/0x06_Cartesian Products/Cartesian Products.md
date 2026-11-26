@@ -67,6 +67,12 @@ image: ""
   f(i)\in A_i\text{ for every }i\in I\right\}.
   $$
 
+  For sets $A$ and $B$, $A^B$ denotes the set of all functions from $B$ to $A$.
+  $$
+  A^B:=\bigl\{\Gamma\subseteq B\times A \bigm|
+  \forall b\in B,\ \exists!\,a\in A\;\; (b,a)\in\Gamma\bigr\}.
+  $$
+
 - **Theorem 5.1**
   There is a bijection $2^A\times 2^B\to 2^{A\cup B}$ whenever $A\cap B=\varnothing$. Recall that $2^A=\mathcal P(A)$ is the set of all subsets of $A$. For finite sets $A$ and $B$, we have $|2^A|=2^{|A|}$ and $|A\times B|=|A|\cdot|B|$. If $A\cap B=\varnothing$, then $|A\cup B|=|A|+|B|$.
 
